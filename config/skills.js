@@ -878,7 +878,9 @@ module.exports = {
 			},
 			0: {
 				type: 'charging',
-				length: [650, 650, 650], // These are the charging states, overcharging isn't emulated
+				//length: [650, 2700],			//for low level skill only, as you can't fullcharge and overcharge
+				//length: [650, 650, 2700],
+				length: [650, 650, 650, 2700],
 				noInterrupt: [2, 4, 10, 15, 18, 24, 25, 30],
 				glyphs: {
 					24067: { chargeSpeed: 0.25 }
@@ -986,7 +988,9 @@ module.exports = {
 			'*': { type: 'chargeCast' },
 			0: {
 				type: 'charging',
-				length: [650, 650, 650],
+				//length: [650, 2700],			//for low level skill only, as you can't fullcharge and overcharge
+				//length: [650, 650, 2700],
+				length: [650, 650, 650, 2700],
 			    noInterrupt: [2, 3, 4, 15, 18, 24, 25, 30],
 				glyphs: {
 					24009: { chargeSpeed: 0.25 },
@@ -1007,17 +1011,17 @@ module.exports = {
 			},
 			11: {
 				length: [375, 375, 1325],
-				distance: [33.33, 33.33, 0],
+				distance: [33.33, 33.33, 50],
 				noInterrupt: [2, 4, 24, 25, 30]
 			},
 			12: {
 				length: [375, 375, 375, 375, 1325],
-				distance: [33.33, 33.33, 33.33, 33.33, 0],
+				distance: [33.33, 33.33, 33.33, 33.33, 50],
 				noInterrupt: [2, 4, 24, 25, 30]
 			},
 			13: {
 				length: [375, 375, 375, 375, 1325],
-				distance: [33.33, 33.33, 33.33, 33.33, 0],
+				distance: [33.33, 33.33, 33.33, 33.33, 50],
 				noInterrupt: [2, 4, 15, 24, 25, 30]
 			}
 		},
@@ -1051,7 +1055,9 @@ module.exports = {
 			 },                                                		                               
             0: {             
                 type: 'charging',       
-				length: [800, 800, 800],
+				//length: [800, 2700],			//for low level skill only, as you can't fullcharge and overcharge
+				//length: [800, 800, 2700],
+				length: [800, 800, 800, 2700],
 				noInterrupt: [2, 4, 24, 25, 30],
 				abnormals: {
 					4010150: { chargeSpeed: 0.2 }
@@ -1094,7 +1100,9 @@ module.exports = {
 		    },
 			0: {
 				type: 'charging',
-				length: [800, 800, 800],
+				//length: [800, 2700],			//for low level skill only, as you can't fullcharge and overcharge
+				//length: [800, 800, 2700],
+				length: [800, 800, 800, 2700],
 				noInterrupt: [2, 3, 4, 10, 15, 24, 25, 30],
 				abnormals:  {
 					24120: { chargeSpeed: 0.3 },
@@ -1273,7 +1281,7 @@ module.exports = {
 			},
 			0: {
 				type: 'charging',
-				length: [1000, 1000],
+				length: [1000, 1000, 400],
 				noInterrupt: [7, 26],
 				abnormals: {
 					25140: { chargeSpeed: 0.3 }
@@ -1377,7 +1385,7 @@ module.exports = {
 			},
 			0: {
 				type: 'charging',
-				length: [1000, 1000],
+				length: [1000, 1000, 400],
 				noInterrupt: [7, 26]
 			},
 			10: {noInterrupt: [7, 26] },
@@ -1536,7 +1544,9 @@ module.exports = {
 			},
 			0: {
 				type: 'charging',
-				length: [600, 600, 600],
+				//length: [600, 2700],			//for low level skill only, as you can't fullcharge and overcharge
+				//length: [600, 600, 2700],
+				length: [600, 600, 600, 2700],
 				noInterrupt: [4, 22],
 				abnormals: {
 					26180: { chargeSpeed: 0.3 },
@@ -1567,7 +1577,9 @@ module.exports = {
 			},
 			0: {
 				type: 'charging',
-				length: [800, 800, 800],
+				//length: [800, 2700],			//for low level skill only, as you can't fullcharge and overcharge
+				//length: [800, 800, 2700],
+				length: [800, 800, 800, 2700],
 				noInterrupt: [3, 22],
 				abnormals: {
 					26160: { chargeSpeed: 0.3 },
@@ -1860,10 +1872,10 @@ module.exports = {
 			},
 			0: {
 				type: 'charging',
-				length: [800, 1600],
+				length: [800, 1600, 3500],
 				noInterrupt: [26, 27, 38],
-				abnormals: {
-					28031: { chargeSpeed: 0.25 }
+				glyphs: {
+					28031: { chargeSpeed: 0.25 } //there is still an armor roll providing 0.15 more chargeSpeed.
 				}
 			},
 			10: { noInterrupt: [26, 27, 38] },
@@ -2095,7 +2107,7 @@ module.exports = {
 			'*': { noInterrupt: [8, 17, 23] },
 			0: {
 				type: 'charging',
-				length: 1475
+				length: [1050, 450]
 			},
 			10: {
 				type: 'chargeCast',
@@ -2117,7 +2129,7 @@ module.exports = {
 		    '*': { noInterrupt: [8, 17, 23] },
 			0: {
 				type: 'charging',
-				length: 1475
+				length: [1050, 450]
 			},
 			10: {
 				type: 'chargeCast',
@@ -2755,7 +2767,7 @@ module.exports = {
 			},
 			0: {
 				type: 'charging',
-				length: 1200 // Advised to set a bit longer, like 1300, because otherwise auto-release full charge will shoot 2 missiles in reality
+				length: [1200, 250]
 			},
 			10: { distance: -50 },
 			11: { distance: -100 }
