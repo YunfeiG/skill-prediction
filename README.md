@@ -29,7 +29,7 @@ Any races/classes that are not mentioned here will use elin's configuration as d
 
 - Elin: Default race, no need to work on this
 
-- Baraka: Berserker, Slayer
+- Baraka: Slayer, Berzerker
 
 
 ## What if I don't need specialization?
