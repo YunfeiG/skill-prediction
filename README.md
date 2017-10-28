@@ -29,9 +29,9 @@ Any races/classes that are not mentioned here will use elin's configuration as d
 
 - Elin: Default race, no need to work on this
 
-- Baraka: Berserker
+- Baraka: Berserker, Slayer
 
 
-## What if I don't need specialzation?
+## What if I don't need specialization?
 
 Go edit ./skill.js, set RACE_SPECIALIZE value to false.
