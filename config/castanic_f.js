@@ -2396,7 +2396,10 @@ module.exports = {
 				noInterrupt: [7],
 				noRetry: true
 			},
-			3: { length: 1200 }
+			3: {
+				requiredBuff: 10152040, 
+				length: 1200
+			}
 		},
 		9: { // Mana Missiles
 			'*': {
@@ -2523,7 +2526,7 @@ module.exports = {
 		40: { // Rolling Reload
 			0: {
 				fixedSpeed: 1,
-				length: 800,
+				length: 930,
 				distance: 172.5,
 				forceClip: true
 			}
@@ -2638,7 +2641,7 @@ module.exports = {
 				fixedSpeed: 1,
 				length: 550,
 				distance: 436,
-				noInterrupt: ['4-0','4-10'],	//prevent double charges if first one did'nt hit a target.
+				noInterrupt: ['4-0','4-11'],	//prevent double charges if first one did'nt hit a target.
 				noRetry: true
 			},
 			10: { length: 900 },
@@ -2805,35 +2808,35 @@ module.exports = {
 		10: { // Dream Slash
 			'*': {
 				length: 1775,
-				distance: 11,
+				distance: 11.78,
+				noInterrupt: [10],
 				glyphs: {
 					33020: { speed: 1.2 }
 				}
 			},
 			0: {
 				chains: {
-					1: 4,
-					2: 4,
-					3: 4,
-					'4-10': 4,
-					'4-11': 4,
-					5: 4,
-					6: 4,
-					7: 4,
-					8: 4,
-					9: 4,
-					11: 4,
-					12: 4,
-					13: 4,
-					14: 4,
-					15: 4,
-					16: 4,
-					18: 4,
-					19: 4,
-					20: 4,
+					1: 30,
+					2: 30,
+					3: 30,
+					'4-10': 30,
+					'4-11': 30,
+					5: 30,
+					6: 30,
+					7: 30,
+					8: 30,
+					9: 30,
+					11: 30,
+					12: 30,
+					13: 30,
+					14: 30,
+					15: 30,
+					16: 30,
+					18: 30,
+					19: 30
 			    }
-		    },
-			30: true // 17, 21
+			},
+			30: true
 		},
 		11: { // Shining Crescent
 			'*': {
