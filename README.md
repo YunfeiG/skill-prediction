@@ -4,6 +4,8 @@ This version of SP will handle racial differences instead of elin only.
 
 Pardon me the implementation is pretty hardcoded.
 
+Update Oct 30, 2017: Added Male Aman Sorcerer
+
 
 ## Races/Classes that are specialized so far
 
@@ -17,7 +19,7 @@ Any races/classes that are not mentioned here will use elin's configuration as d
 
 - F.Elf: Mystic
 
-- M.Aman: Lancer, Slayer
+- M.Aman: Lancer, Slayer, Sorcerer
 
 - F.Aman: Lancer, Slayer, Sorcerer
 
