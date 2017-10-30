@@ -1055,7 +1055,7 @@ module.exports = {
 				//length: [800, 2700],			//for low level skill only, as you can't fullcharge and overcharge
 				//length: [800, 800, 2700],
 				length: [800, 800, 800, 2700],
-				noInterrupt: [2, 4, 24, 25, 30],
+				noInterrupt: [2, '3-10', '3-11', '3-12', 4, '10-10', '10-11', '10-12', '18-10', '18-11', '18-12', 24, 25, 30],
 				abnormals: {
 					4010150: { chargeSpeed: 0.2 }
 				},
@@ -1346,7 +1346,7 @@ module.exports = {
 			0: { length: 625 }
 		},
 		11: { // Lightning Strike
-			0: { length: 845 } // Elin: 805  | Any other race: 835/845
+			0: { length: 860 }
 		},
 		12: { // Void Pulse
 			0: { length: 935 }
@@ -1363,7 +1363,7 @@ module.exports = {
 			}
 		},
 		16: { // Painblast
-			0: { length: 1330 } // Elin: 1330 | Popori: 1580
+			0: { length: 1600 }
 		},
 		17: { // Painful Trap
 			0: { length: 1100 }
@@ -1489,7 +1489,7 @@ module.exports = {
 		},
 		32: { // Meteor Shower
 			'*': {
-				length: 6475, // Elin: 6475 | M.Helf/F.Casta: 6750/6775
+				length: 6775,
 				glyphs: {
 					25003: { speed: 1.17 },
 					25069: { speed: 1.25 }
@@ -1497,7 +1497,7 @@ module.exports = {
 				noRetry: true
 			},
 			0: true,
-			50: { length: 3700 }
+			50: { length: 3925 }
 		},
 		33: { // Arcane Pulse (Mana Boost)
 			'*': {
