@@ -1518,6 +1518,7 @@ module.exports = {
 		1: { // Arrow
 			0: { length: 400 }
 		},
+		2: { // Arrow Volley
 		'*': { noRetry: true },
 			0: {
 				type: 'lockon',
