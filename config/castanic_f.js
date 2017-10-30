@@ -1055,7 +1055,7 @@ module.exports = {
 				//length: [800, 2700],			//for low level skill only, as you can't fullcharge and overcharge
 				//length: [800, 800, 2700],
 				length: [800, 800, 800, 2700],
-				noInterrupt: [2, 4, 24, 25, 30],
+				noInterrupt: [2, '3-10', '3-11', '3-12', 4, '10-10', '10-11', '10-12', '18-10', '18-11', '18-12', 24, 25, 30],
 				abnormals: {
 					4010150: { chargeSpeed: 0.2 }
 				},
