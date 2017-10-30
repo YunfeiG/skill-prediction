@@ -1055,7 +1055,7 @@ module.exports = {
 				//length: [800, 2700],			//for low level skill only, as you can't fullcharge and overcharge
 				//length: [800, 800, 2700],
 				length: [800, 800, 800, 2700],
-				noInterrupt: [2, 4, 24, 25, 30],
+				noInterrupt: [2, '3-10', '3-11', '3-12', 4, '10-10', '10-11', '10-12', '18-10', '18-11', '18-12', 24, 25, 30],
 				abnormals: {
 					4010150: { chargeSpeed: 0.2 }
 				},
@@ -1363,7 +1363,7 @@ module.exports = {
 			}
 		},
 		16: { // Painblast
-			0: { length: 1600 } // Elin: 1330 | Popori: 1580
+			0: { length: 1600 }
 		},
 		17: { // Painful Trap
 			0: { length: 1100 }
@@ -1497,7 +1497,7 @@ module.exports = {
 				noRetry: true
 			},
 			0: true,
-			50: { length: 3700 }
+			50: { length: 3925 }
 		},
 		33: { // Arcane Pulse (Mana Boost)
 			'*': {
