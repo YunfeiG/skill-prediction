@@ -614,26 +614,26 @@ module.exports = {
 		1: { // Combo Attack
 			0: {
 				length: 750,
-				distance: 36.68
+				distance: 36.78
 			},
 			1: {
 				length: 1025,
-				distance: 35.675
+				distance: 35.68
 			},
 			2: {
 				length: 750,
-				distance: 22.302
+				distance: 28.05
 			},
 			3: {
 				length: 1650,
-				distance: 118.202
+				distance: 46.76
 			}
 		},
 		2: { // Knockdown Strike
 			'*': {
 				consumeAbnormal: 23220,
 				length: 2850,
-				distance: 201.639,
+				distance: 220.47,
 				abnormals: {
 					23070: { speed: 1.25 }
 				},
@@ -645,12 +645,12 @@ module.exports = {
 			0: true,
 			1: true,
 			2: true,
-			30: { length: 2430 }
+			30: { length: 2450 }
 		},
 		3: { // Whirlwind
 			0: {
 				length: 2900,
-				distance: 123.208,
+				distance: 128.69,
 				abnormals: {
 					23080: { speed: 1.25 }
 				}
@@ -675,7 +675,7 @@ module.exports = {
 		8: { // Overhand Strike
 			0: {
 				length: 3365,
-				distance: 161.138,
+				distance: 169.648,
 				noInterrupt: ['1-0', '1-1', '1-2', 4, 6, 8, 10, '14-0', '14-1', 17, 21, 25],
 				abnormals: {
 					300801: { skill: 250100 }
@@ -695,7 +695,7 @@ module.exports = {
 			},
 			30: {
 				length: 1325,
-				distance: 161.138,
+				distance: 169.648,
 				abnormals: {
 					300801: { skill: 250130 }
 				}
@@ -726,8 +726,8 @@ module.exports = {
 		},
 		13: { // Stunning Backhand
 			0: {
-				length: 2130,
-				distance: 86.124,
+				length: 2150,
+				distance: 76.71,
 			}
 		},
 		14: { // Distant Blade
@@ -741,16 +741,16 @@ module.exports = {
 			},
 			1: {
 				length: 600,
-				distance: 75,
+				distance: 100.02,
 			},
 			2: {
 				length: 1500,
-				distance: 150
+				distance: 104.82
 			}
 		},
 		15: { // Startling Kick
 			0: {
-				length: 1490,
+				length: 1475,
 				distance: -175,
 				forceClip: true,
 				glyphs: {
@@ -761,7 +761,7 @@ module.exports = {
 		16: { // Fury Strike
 			0: {
 				length: 1000,
-				distance: 135.847,
+				distance: 142.53,
 			}
 		},
 		17: { // Headlong Rush
@@ -799,7 +799,7 @@ module.exports = {
 		},
 		23: { // Measured Slice
 			'*': {
-				distance: 189
+				distance: 190
 			},
 			0: {
 				length: 3685,
@@ -835,31 +835,31 @@ module.exports = {
 			}
 		},
 		25: { // Ultimate Overhand Strike
-			'*': { distance: 161.138 },
+			'*': { distance: 169.648 },
 			0: { length: 3365},
 			30: { length: 1325 }
 		}
 	},
 	3: { // Berserker
 			1: { // Combo Attack
-				'*': {
+				'*': { 
 					noInterrupt: [2, 4]
 				},
 				0: {
 					length: 1155,
-					distance: 78
+					distance: 78.006
 				},
 				1: {
 					length: 925,
-					distance: 21.05
+					distance: 21.049
 				},
 				2: {
 					length: 1125,
-					distance: 31.84
+					distance: 31.842
 				},
 				3: {
 					length: 1825,
-					distance: 54.28
+					distance: 54.284
 				}
 			},
 		2: { // Axe Block
@@ -889,25 +889,25 @@ module.exports = {
 				}
 			},
 			10: {	//Charge stage 0
-				distance: 85.74, // Cast F. - TODO
+				distance: 87.271, // Cast F. - TODO
                 noInterrupt: [2, 4, 24, 25, 30]			
 			}, 
 			11: {	//Charge stage 1
-				distance: 85.74,
+				distance: 87.271,
                 noInterrupt: [2, 4, 24, 25, 30]
 			},
 			12: {	//Charge stage 2
-				distance: 85.74,
+				distance: 87.271,
                 noInterrupt: [2, 4, 24, 25, 30]		
 	        },
 			13: {	//Charge stage 3 and above
-				distance: 85.74,
-				noInterrupt: [2, 4, 24, 25, 30]			  
+				distance: 87.271,
+				noInterrupt: [2, 4, 24, 25, 30]
 			}
 		},
 		4: { // Flatten
 			'*': {
-				length: 3150,
+				length: 3115,
 				distance: 105.685,
 				glyphs: {
 					24008: { speed: 1.25 },
@@ -1045,11 +1045,11 @@ module.exports = {
 				noRetry: true
 			}
 		},
-		/*15: { // Vampiric Blow
+		15: { // Vampiric Blow
             '*': {                    // Chained VB Usage: 1. "Show default Chained Skills" in the Chained Skills menu must be on.        
 				type: 'chargeCast',  //                    2. Must be in combat when used.  
 				length: 1940        //                    Else the animation of VB won't go off causing slight desync.
-			 },                                                		                               
+			},                                                		                               
             0: {             
                 type: 'charging',       
 				//length: [800, 2700],			//for low level skill only, as you can't fullcharge and overcharge
@@ -1060,29 +1060,29 @@ module.exports = {
 					4010150: { chargeSpeed: 0.2 }
 				},
 				chains: {
-                    3: 14,
-                    10: 14,
-                    18: 14
+                    '3-13': 14,
+                    '10-13': 14,
+                    '18-13': 14
                 }
             },
             10: {
-				distance: 72.78,
+				distance: 87.271,
 				noInterrupt: [2, 4, 24, 25, 30]
 			},
             11: {
-				distance: 72.78,
+				distance: 87.271,
 				noInterrupt: [2, 4, 24, 25, 30]
 			},
             12: {
-				distance: 72.78,
+				distance: 87.271,
 				noInterrupt: [2, 4, 24, 25, 30]
 			},
             13: {
-				distance: 72.78,
+				distance: 87.271,
 				noInterrupt: [2, 4, 24, 25, 30]
 			},
-            14: { distance: 72.78 }
-		},*/
+            14: { distance: 87.271 }
+		},
 		16: { // Fearsome Shout
 		    0: {
 				fixedSpeed: 1,
@@ -1108,19 +1108,19 @@ module.exports = {
 			    }
 			},
 			10: {
-			    distance: 171.48,
+			    distance: 167.625,
                 noInterrupt: [2, 4, 24, 25, 30]
 			},
 			11: {
-				distance: 171.48,
+				distance: 167.625,
 				noInterrupt: [2, 4, 24, 25, 30]
 			 },
 			12: {
-				distance: 171.48,
+				distance: 167.625,
 				noInterrupt: [2, 4, 24, 25, 30]
 		    },
 			13: {
-				distance: 171.48,
+				distance: 167.625,
 				noInterrupt: [2, 4, 15, 24, 25, 30]
 			}
 		},
@@ -1261,7 +1261,7 @@ module.exports = {
 			0: { length: 730 }
 		},
 		2: { // Frost Sphere
-			0: { length: 810 } // Popori/M.Casta/M.Helf/M.Human/F.Casta/F.Aman/F.Helf/F.Human: 810 | Baraka: 910 | Elin: 1010 | M.Aman: 1255
+			0: { length: 1010 } // Popori/M.Casta/M.Helf/M.Human/F.Casta/F.Aman/F.Helf/F.Human: 810 | Baraka: 910 | Elin: 1010 | M.Aman: 1255
 		},
 		3: { // Lightning Trap
 			0: {
@@ -1274,7 +1274,7 @@ module.exports = {
 		4: { // Arcane Pulse
 			'*': {
 				type: 'chargeCast',
-				length: 1285 // Elin: 1015  | Any other race: 1285
+				length: 1015 // Elin: 1015  | Any other race: 1285
 			},
 			0: {
 				type: 'charging',
@@ -1314,7 +1314,7 @@ module.exports = {
 		},
 		6: { // Meteor Strike
 			0: {
-				length: 3925, // Elin: 3725 | Any other race: 3925
+				length: 3725, // Elin: 3725 | Any other race: 3925
 				glyphs: {
 					25003: { speed: 1.17 },
 					25069: { speed: 1.25 }
@@ -1346,7 +1346,7 @@ module.exports = {
 			0: { length: 625 }
 		},
 		11: { // Lightning Strike
-			0: { length: 845 } // Elin: 805  | Any other race: 835/845
+			0: { length: 805 } // Elin: 805  | Any other race: 835/845
 		},
 		12: { // Void Pulse
 			0: { length: 935 }
@@ -1497,12 +1497,12 @@ module.exports = {
 				noRetry: true
 			},
 			0: true,
-			50: { length: 3700 }
+			50: { length: 3725 }
 		},
 		33: { // Arcane Pulse (Mana Boost)
 			'*': {
 				type: 'chargeCast',
-				length: 1285, // Elin: 1015  | Any other race: 1285
+				length: 1015, // Elin: 1015  | Any other race: 1285
 				noRetry: true
 			},
 			10: true,
@@ -2272,6 +2272,1026 @@ module.exports = {
 		},
 		43: { // Release																																																																							
 			0: { length: [400, 575] }
+		}
+	},
+	8: { // Reaper
+		'*' : { consumeAbnormal: [10151020, 10151021, 10151022, 10141023] },
+		1: { // Spiral Barrage
+			'*': {
+				length: 1000,
+				distance: 48,
+				inPlace: {
+					movement: [{
+						duration: 766,
+						speed: 1,
+						unk: 1,
+						distance: 0
+					},
+					{
+						duration: 346,
+						speed: 1,
+						unk: 1,
+						distance: 0
+					}],
+					distance: 0
+				},
+				noInterrupt: [3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 20, 40],
+				abnormals: {
+					10151020: { chain: 2 },
+					10151021: { chain: 3 },
+					10151022: { chain: 4 },
+					10151023: { chain: 5 }
+				},
+				chains: { 1: 1 },
+				noRetry: true
+			},
+			0: { triggerAbnormal: { 10151020: 2000 } },
+			1: { triggerAbnormal: { 10151020: 2000 } },
+			2: {
+				length: 1200,
+				distance: 42,
+				inPlace: {
+					movement: [{
+						duration: 950,
+						speed: 1,
+						unk: 1,
+						distance: 0
+					},
+					{
+						duration: 346,
+						speed: 1,
+						unk: 1,
+						distance: 0
+					}],
+					distance: 0
+				},
+				triggerAbnormal: { 10151021: 2000 },
+			},
+			3: {
+				length: 860,
+				distance: 56,
+				inPlace: {
+					movement: [{
+						duration: 616,
+						speed: 1,
+						unk: 1,
+						distance: 0
+					},
+					{
+						duration: 346,
+						speed: 1,
+						unk: 1,
+						distance: 0
+					}],
+					distance: 0
+				},
+				triggerAbnormal: { 10151022: 1800 },
+			},
+			4: {
+				length: 1400,
+				distance: 60,
+				inPlace: {
+					movement: [{
+						duration: 1150,
+						speed: 1,
+						unk: 1,
+						distance: 0
+					},
+					{
+						duration: 346,
+						speed: 1,
+						unk: 1,
+						distance: 0
+					}],
+					distance: 0
+				},
+				triggerAbnormal: { 10151023: 2000 },
+			},
+			5: {
+				length: 1900,
+				distance: 91,
+				inPlace: {
+					movement: [{
+						duration: 2016,
+						speed: 1,
+						unk: 1,
+						distance: 0
+					}],
+					distance: 0
+				}
+			}
+		},
+		3: { // Double Shear
+			'*': {
+				length: 2025,
+				noInterrupt: ['1-0', '1-2', 3, 4, 12, 14, 20],
+				abnormals: {
+					29030: { speed: 1.25 },
+				},
+				chains: {
+					1: 30,
+					5: 30,
+					6: 30,
+					8: 30,
+					9: 30,
+					10: 30,
+					11: 30
+				}
+			},
+			0: true,
+			30: true
+		},
+		4: { // Sundering Strike
+			'*': { noRetry: true },
+			0: {
+				type: 'nullChain',
+				length: [1175, 1750, 1025],
+				distance: [0, 100, 0],
+				inPlace: {
+					movement: [
+						[],
+						[{
+							duration: 1757,
+							speed: 1,
+							unk: 1,
+							distance: 0
+						}],
+						[]
+					],
+					distance: [0, 0, 0]
+				},
+				noInterrupt: [1, 4, 8, 9, 10, 11, 12, 14, 20],
+			},
+			30: {
+				length: [1750, 1025],
+				distance: [100, 0],
+				inPlace: {
+					movement: [
+						[{
+							duration: 1757,
+							speed: 1,
+							unk: 1,
+							distance: 0
+						}],
+						[]
+					],
+					distance: [0, 0]
+				}
+			}
+		},
+		5: { // Grim Strike
+			'*': {
+				distance: [120, 0],
+				inPlace: {
+					movement: [
+						[{
+							duration: 2416,
+							speed: 1,
+							unk: 1,
+							distance: 0
+						}],
+						[{
+							duration: 1065,
+							speed: 1,
+							unk: 1,
+							distance: 0
+						}]
+					],
+					distance: [0, 0]
+				}
+			},
+			0: {
+				length: [2400, 975],
+				noInterrupt: ['1-0', '1-2', 4, 12, 14, 20],
+				chains: {
+					1: 30,
+					3: 30,
+					5: 30,
+					6: 30,
+					8: 30,
+					9: 30,
+					10: 30,
+					11: 30
+				}
+			},
+			30: { length: [1450, 975] }
+		},
+		6: { // Death Spiral
+			'*': {
+				length: 1250,
+				abnormals: {
+					10151131: { chain: 31 }
+				},
+				chains: {
+					1: 30,
+					3: 30,
+					4: 30,
+					5: 30,
+					6: 30,
+					8: 30,
+					9: 30,
+					10: 30,
+					11: 30,
+					12: 30
+				},
+				noRetry: true
+			},
+			0: { noInterrupt: ['6-31'] },
+			30: true,
+			31: true
+		},
+		8: { // Whipsaw
+			'*': {
+				length: 2500,
+				noInterrupt: [4, 5, 6, 8, 9, 11, 12, 14, 20],
+				chains: {
+					1: 30,
+					3: 30,
+					10: 30
+				}
+			},
+			0: true,
+			30: true
+		},
+		9: { // Smite
+			0: {
+				length: 1725,
+				distance: 168,
+				inPlace: {
+					movement: [{
+						duration: 1832,
+						speed: 1,
+						unk: 1,
+						distance: 0
+					}],
+					distance: 0
+				},
+				noInterrupt: [1, 3, 4, 5, 6, 8, 9, 10, 11, 12, 14, 20]
+			}
+		},
+		10: { // Pendulum Strike
+			'*': {
+				length: 1000,
+				distance: -200,
+				noInterrupt: [10],
+				chains: {
+					1: 30,
+					3: 30,
+					4: 30,
+					5: 30,
+					6: 30,
+					8: 30,
+					9: 30,
+					11: 30,
+					12: 30,
+					14: 30
+				}
+			},
+			0: true,
+			30: true
+		},
+		11: { // Shadow Lash
+			'*': {
+				noRetry: true,
+				abnormals: {
+					10151040: { chain: 1 },
+					10151041: { chain: 2 },
+					10151042: { chain: 3 }
+				}
+			},
+			0: {
+				length: 2150,
+				triggerAbnormal: { 10151040: 2000 },
+				noInterrupt: [1, 3, 4, 5, 6, 8, 9, 10, 12, 13, 14, 15, 16, 18, 20, 40]
+			},
+			1: {
+				length: 1250,
+				consumeAbnormal: 10151040,
+				triggerAbnormal: { 10151041: 2000 },
+				noInterrupt: [1, 3, 4, 5, 6, 8, 9, 10, '11-0', 12, 13, 14, 15, 16, 18, 20, 40]
+			},
+			2: {
+				length: 1250,
+				consumeAbnormal: 10151041,
+				triggerAbnormal: { 10151042: 2000 },
+				noInterrupt: [1, 3, 4, 5, 6, 8, 9, 10, '11-1', 12, 13, 14, 15, 16, 18, 20, 40]
+			},
+			3: {
+				length: 1250,
+				consumeAbnormal: 10151042,
+				noInterrupt: [1, 3, 4, 5, 6, 8, 9, 10, '11-2', 12, 13, 14, 15, 16, 18, 20, 40]
+			}
+		},
+		12: { // Shadow Burst
+			'*': {
+				glyphs: {
+					29026: { speed: 1.25 },
+				}
+			},
+			0: {
+				length: 3265,
+				noInterrupt: [1, 3, 4, 5, 6, 8, 9, 10, 11, 14, 20],
+				chains: {
+					12: 1
+				}
+			},
+			1: {
+				length: 2060,
+				noInterrupt: ['12-1']
+			}
+		},
+		/*14: { // retaliate
+			0: {
+				type: 'retaliate',
+				length: 1610,
+				noRetry: true
+			}
+		},*/
+		15: { // Retribution
+			0: {
+				fixedSpeed: 1,
+				length: 1575
+			}
+		},
+		16: { // Shadow Reaping
+			0: {
+				fixedSpeed: 1,
+				length: 775
+			}
+		},
+		18: { // Shrouded Escape
+			0: {
+				length: 850,
+				distance: 150,
+			}
+		},
+		40: { // Shadow Step
+			'*': {
+				length: 700,
+				distance: 180,
+				forceClip: true,
+				abnormals: {
+					10151000: { chain: 30 }
+				}
+			},
+			0: true,
+			30: true
+		}
+	},
+	9: { // Gunner
+		1: { // Blast
+			'*': {
+				fixedSpeed: 1,
+				noRetry: true,
+				length: 1200,
+				noInterrupt: [1]
+			},
+			1: true,
+			2: true
+		},
+		3: { // Scattershot
+			'*': {
+				length: 1725,
+				distance: -108,
+				noInterrupt: [3],
+				glyphs: {
+					30007: {
+						movement: [
+							{
+								duration: 394,
+								speed: 1,
+								unk: 1,
+								distance: 0
+							},
+							{
+								duration: 111,
+								speed: 1,
+								unk: 1,
+								distance: 0
+							},
+							{
+								duration: 1333,
+								speed: 1.8,
+								unk: 1,
+								distance: 64.8
+							}
+						],
+						distance: 0.6
+					}
+				},
+				chains: {
+					'2-1': 30,
+					4: 30,
+					'7-3': 30,
+					'9-11': 30,
+					10: 30,
+					11: 30,
+					13: 30,
+					15: 30,
+					19: 30,
+					40: 30
+				}
+			},
+			1: true,
+			2: true,
+			30: true
+		},
+		4: { // Point Blank
+			'*': {
+				length: 1525,
+				distance: 137.88,
+				noInterrupt: ['4-3'],
+				chains: {
+					'2-1': 30,
+					3: 30,
+					4: 4,
+					'7-3': 30,
+					'9-10': 30,
+					'9-11': 30,
+					10: 30,
+					11: 30,
+					13: 30,
+					15: 30,
+					19: 30,
+					40: 30
+				}
+			},
+			1: { noRetry: true },
+			2: { noRetry: true },
+			3: {
+				length: 1200,
+				distance: -198.53
+			},
+			4: {
+				length: 1200,
+				distance: -198.53
+			},
+			30: { noRetry: true }
+		},
+		5: { // Burst Fire
+			0: { length: 850 },
+			1: {
+				fixedSpeed: 1,
+				length: 122,
+				stamina: 70,
+				instantStamina: true,
+				glyphs: {
+					30046: { stamina: -10 }
+				}
+			}
+		},
+		6: { // Time Bomb
+			'*': {
+				fixedSpeed: 1,
+				length: 1000
+			},
+			1: true,
+			2: true
+		},
+		7: { // Arcane Barrage
+			'*': { length: 1525 },
+			1: {
+				fixedSpeed: 1,
+				noInterrupt: [7],
+				noRetry: true
+			},
+			2: {
+				fixedSpeed: 1,
+				noInterrupt: [7],
+				noRetry: true
+			},
+			3: { length: 1200 }
+		},
+		9: { // Mana Missiles
+			'*': {
+				type: 'chargeCast',
+				length: 1250
+			},
+			0: {
+				type: 'charging',
+				length: 1200	//advised to set a bit longer, like 1300, because otherwise auto-release full charge will shoot 2 missiles in reality
+			},
+			10: { distance: -50 },
+			11: { distance: -100 }
+		},
+		10: { // Arc Bomb
+			'*': {
+				length: 1325,
+				chains: {
+					15: 30,
+					40: 30
+				},
+				chains: {
+					'2-1': 30,
+					3: 30,
+					4: 30,
+					'7-3': 30,
+					'9-10': 30,
+					'9-11': 30,
+					10: 30,
+					11: 30,
+					13: 30,
+					15: 30,
+					19: 30,
+					40: 30
+				}
+			},
+			1: true,
+			2: true,
+			30: true
+		},
+		11: { // Rocket Jump
+			'*': {
+				length: 1400,
+				noInterrupt: [15],
+				distance: 415.45,
+				chains: {
+					'2-1': 30,
+					3: 30,
+					4: 30,
+					'7-3': 30,
+					'9-10': 30,
+					'9-11': 30,
+					10: 30,
+					11: 30,
+					13: 30,
+					//15: 30, fixed with noInterrupt but anyway it can't chain
+					19: 30,
+					40: 31
+				}
+			},
+			1: true,
+			2: true,
+			30: true,
+			31: {
+				length: 1700,
+				distance: 503.64
+			}
+		},
+		13: { // Balder's Vengeance
+			'*': {
+				length: 5800,
+				distance: -269.09,
+				chains: {
+					'2-1': 30,
+					3: 30,
+					4: 30,
+					'7-3': 30,
+					'9-10': 30,
+					'9-11': 30,
+					10: 30,
+					11: 30,
+					13: 30,
+					15: 30,
+					19: 30,
+					40: 30
+				},
+				noRetry: true
+			},
+			1: true,
+			2: true,
+			30: true
+		},
+		15: { // Replenishment
+			'*': {
+				fixedSpeed: 1,
+				length: 1325,
+				noInterrupt: [15],
+				chains: {
+					'2-1': 30,
+					3: 30,
+					4: 30,
+					'7-3': 30,
+					'9-10': 30,
+					'9-11': 30,
+					10: 30,
+					11: 30,
+					13: 30,
+					15: 30,
+					19: 30,
+					40: 30
+				}
+			},
+			1: true,
+			2: true,
+			30: true
+		},
+		18: { // HB
+			'*': {
+				fixedSpeed: 1,
+				length: 1430
+			},
+			1: true,
+			2: true
+		},
+		40: { // Rolling Reload
+			0: {
+				fixedSpeed: 1,
+				length: 800,
+				distance: 172.5,
+				forceClip: true
+			}
+		}
+	},
+	11: { // Ninja
+		'*' : { consumeAbnormal: [ 10154000, 10154001, 10154002, 10154003, 10154004, 10154005, 10154006 ] },
+		1: { // Combo Attack
+			'*': {
+				fixedSpeed: 1,
+				length: 650,
+				distance: 44.86,
+				noRetry: true,
+			},
+			0: {
+				abnormals: {
+					10154000: { chain: 1 },
+					10154001: { chain: 2 },
+					10154002: { chain: 3 },
+					10154003: { chain: 4 },
+					10154004: { chain: 5 },
+					10154005: { chain: 6 }
+				},
+				triggerAbnormal: { 10154000: 1650 },
+				chains: {
+					1: 30,
+					4: 30,
+					6: 30,
+					7: 30,
+					9: 30,
+					12: 30,
+					13: 30,
+					14: 30,
+					15: 30,
+					16: 30,
+					18: 30,
+					19: 30,
+					20: 30
+				}
+			},
+			1: {
+				length: 1125,
+				distance: 52.47,
+				triggerAbnormal: { 10154001: 1500 }
+			},
+			2: {
+				length: 1200,
+				distance: 69.96,
+				triggerAbnormal: { 10154002: 1400 }
+			},
+			3: {
+				length: 1225,
+				distance: 38.01,
+				triggerAbnormal: { 10154003: 1400 }
+			},
+			4: {
+				length: 1700,
+				distance: 54.69,
+				triggerAbnormal: { 10154004: 1400 }
+			},
+			5: {
+				length: 1500,
+				distance: 37.80,
+				triggerAbnormal: { 10154005: 1600 }
+			},
+			6: {
+				length: 1150,
+				distance: 82.62,
+				triggerAbnormal: { 10154006: 100 }
+			},
+			30: {
+				abnormals: {
+					10154000: { chain: 1 },
+					10154001: { chain: 2 },
+					10154002: { chain: 3 },
+					10154003: { chain: 4 },
+					10154004: { chain: 5 },
+					10154005: { chain: 6 }
+				},
+				triggerAbnormal: { 10154000: 1650 }
+			},
+			40: {
+				abnormals: {
+					10154000: { chain: 41 },
+					10154001: { chain: 42 },
+					10154002: { chain: 43 },
+					10154003: { chain: 44 },
+					10154004: { chain: 45 },
+					10154005: { chain: 46 }
+				},
+				triggerAbnormal: { 10154000: 1650 },
+				chains: {
+					1: 70,
+					4: 70,
+					6: 70,
+					7: 70,
+					9: 70,
+					12: 70,
+					13: 70,
+					14: 70,
+					15: 70,
+					16: 70,
+					18: 70,
+					19: 70,
+					20: 70
+				}
+			},
+			41: {
+				length: 1125,
+				distance: 52.47,
+				triggerAbnormal: { 10154001: 1500 }
+			},
+			42: {
+				length: 1200,
+				distance: 69.96,
+				triggerAbnormal: { 10154002: 1400 }
+			},
+			43: {
+				length: 1225,
+				distance: 38.01,
+				triggerAbnormal: { 10154003: 1400 }
+			},
+			44: {
+				length: 1700,
+				distance: 54.69,
+				triggerAbnormal: { 10154004: 1400 }
+			},
+			45: {
+				length: 1500,
+				distance: 37.80,
+				triggerAbnormal: { 10154005: 1600 }
+			},
+			46: {
+				length: 1150,
+				distance: 82.62,
+				triggerAbnormal: { 10154006: 100 }
+			},
+			70: {
+				abnormals: {
+					10154000: { chain: 41 },
+					10154001: { chain: 42 },
+					10154002: { chain: 43 },
+					10154003: { chain: 44 },
+					10154004: { chain: 45 },
+					10154005: { chain: 46 }
+				},
+				triggerAbnormal: { 10154000: 1650 }
+			}
+		},
+		2: { // Shadow Jump
+			'*': {
+				fixedSpeed: 1,
+				length: 650,
+				distance: 175,
+				forceClip: true,
+				abnormals: {
+					10154010: { chain: 30 }
+				}
+			},
+			0: true,
+			30: true
+		},
+		3: { // Leaves on the Wind
+			0: { length: 1275 }
+		},
+		4: { // Jagged Path
+			1: {
+				type: 'dash',
+				fixedSpeed: 1,
+				length: 665,
+				distance: 469
+			},
+			10: { length: 1500 },
+			11: {
+				length: 300,
+				distance: 150
+			}
+		},
+		5: { // Impact Bomb
+            '*': {
+                length: 1025,
+                distance: -291.6,
+                noInterrupt: [5],
+                forceClip: true,
+                noRetry: true
+            },
+            0: { 
+                type: 'nullChain',
+                chains: {
+					1: 30,
+					2: 30,
+					3: 30,
+					4: 30,
+					6: 30,
+					7: 30,
+					8: 30,
+					9: 30,
+					11: 30,
+					12: 30,
+					13: 30,
+					14: 30,
+					15: 30,
+					16: 30,
+					17: 30,
+					18: 30,
+					19: 30,
+					20: 30
+                }
+            },
+            30: true
+        },
+		6: { // One Thousand Cuts
+			1: {
+				type: 'dash',
+				fixedSpeed: 1,
+				length: 300,
+				distance: 246
+			},
+			10: { length: 3500 }
+		},
+		7: { // Decoy Jutsu
+			0: {
+				length: 1550,
+				onlyTarget: true
+			}
+		},
+		8: { // Fire Avalanche
+			'*': {
+				length: [700, 1375, 325],
+				distance: [0, 367.31, 0],
+				noInterrupt: [9, 18],
+				abnormals: {
+					10154080: { chain: 1 },
+					10154081: { chain: 2 }
+				},
+				chains: {
+					1: 30,
+					4: 30,
+					6: 30,
+					7: 30,
+					12: 30,
+					13: 30,
+					14: 30,
+					15: 30,
+					16: 30,
+					17: 30,
+					19: 30,
+					20: 30
+				},
+				noRetry: true
+			},
+			0: true,
+			1: {
+				length: [1375, 325],
+				distance: [411.39, 0]
+			},
+			2: {
+				length: [1375, 325],
+				distance: [455.47, 0]
+			},
+			30: true
+		},
+		9: { // Smoke Bomb
+			0: { length: 700 }
+		},
+		11: { // Focus
+			0: { length: 1430 },
+			50: { length: 1430 }
+		},
+		12: { // Skyfall
+			'*': {
+				length: 1325,
+				distance: 154.72,
+				noInterrupt: [9, 12, 18],
+				chains: {
+					1: 30,
+					4: 30,
+					6: 30,
+					7: 30,
+					8: 30,
+					13: 30,
+					14: 30,
+					15: 30,
+					16: 30,
+					17: 30,
+					19: 30,
+					20: 30
+				}
+			},
+			1: true,
+			2: true,
+			30: true
+		},
+		13: { // Circle of Steel
+			'*': {
+				length: 3225,
+				distance: 245.06,
+				noInterrupt: [9, 13, 18],
+				chains: {
+					1: 30,
+					4: 30,
+					6: 30,
+					7: 30,
+					8: 30,
+					12: 30,
+					14: 30,
+					15: 30,
+					16: 30,
+					17: 30,
+					19: 30,
+					20: 30
+				}
+			},
+			1: true,
+			2: true,
+			30: true
+		},
+		14: { // Double Cut
+			'*': {
+				length: 1425,
+				distance: 162,
+				noInterrupt: [9, 14, 18],
+				chains: {
+					1: 30,
+					4: 30,
+					6: 30,
+					7: 30,
+					8: 30,
+					12: 30,
+					13: 30,
+					15: 30,
+					16: 30,
+					17: 30,
+					19: 30,
+					20: 30
+				}
+			},
+			1: true,
+			2: true,
+			30: true
+		},
+		15: { // Burning Heart
+			'*': {
+				stamina: 100,
+				instantStamina: true,
+				abnormals: {
+					32033: { speed: 1.2 },
+					32058: { speed: 1.3 }
+				}
+			},
+			0: { length: 880 },
+			1: { length: 390 },
+			2: { length: 390 },
+			3: { length: 390 },
+			4: { length: 390 },
+			5: { length: 390 },
+			6: { length: 390 },
+			7: { length: 390 },
+			8: { length: 390 },
+			9: { length: 390 }
+		},
+		16: { // Death Blossom
+			0: {
+				fixedSpeed: 1,
+				length: 1525
+			}
+		},
+		17: { // Attunement
+			'*': { length: 1000 },
+			0: true,
+			30: true
+		},
+		18: { // Bladestorm
+			0: { length: 1000 }
+		},
+		19: { // Chakra Thrust
+			'*': {
+				length: [225, 825],
+				distance: 127.5,
+				chains: {
+					1: 30,
+					4: 30,
+					6: 30,
+					7: 30,
+					8: 30,
+					9: 30,
+					12: 30,
+					13: 30,
+					15: 30,
+					16: 30,
+					17: 30,
+					18: 30,
+					19: 30,
+					20: 30
+				}
+			},
+			0: true,
+			30: true
+		},
+		20: { // Clone Jutsu
+			0: {
+				fixedSpeed: 1,
+				length: 1275
+			}
 		}
 	}
 }
