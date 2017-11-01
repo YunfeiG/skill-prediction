@@ -517,7 +517,7 @@ module.exports = {
 		},
 		18: { // Shield Barrage
 			0: {
-				length: 595, // M.Helf: 525, M.Human,M.Aman,F.Aman,Popori: 595
+				length: 625, // M.Helf: 525, M.Human,M.Aman,F.Aman,Popori: 595
 				distance: 95,	//Popori: 92.39, M.Aman: 95, M.Human,F.Aman: 100.125
 				noInterrupt: [2],
 				abnormals: {
