@@ -3184,6 +3184,7 @@ module.exports = {
 				fixedSpeed: 1,
 				length: 650,
 				distance: 44.86,
+				noInterrupt: [17],
 				noRetry: true,
 			},
 			0: {
