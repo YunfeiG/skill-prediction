@@ -4045,7 +4045,7 @@ module.exports = {
 				fixedSpeed: 1,
 				length: 650,
 				distance: 44.86,
-				noInterrupt: [17]
+				noInterrupt: [17],
 				triggerAbnormal: { 10154000: 1650 },
 				noRetry: true
 			},
