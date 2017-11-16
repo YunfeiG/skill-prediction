@@ -4,7 +4,7 @@ This version of SP will handle racial differences instead of elin only.
 
 Pardon me the implementation is pretty hardcoded.
 
-Update Oct 30, 2017: Added Male Aman Sorcerer
+Update Nov 16, 2017: Skill level support for Burst fire, Hardened wax effect, Elin gunner, F.Casta slayer, F.Aman, Dynamic server_timeout ( 3000 for berserker and 100 for other classes ). S_EACH_SKILL_RESULT reverts to version 1 for NA support( I don't play EU TERA )
 
 
 ## Races/Classes that are specialized so far
@@ -21,17 +21,17 @@ Any races/classes that are not mentioned here will use elin's configuration as d
 
 - M.Aman: Lancer, Slayer, Sorcerer
 
-- F.Aman: Lancer, Slayer, Sorcerer
+- F.Aman: Lancer, Warrior (level25), Slayer, Sorcerer
 
-- M.Cast: Slayer
+- M.Cast: Slayer, Berserker (Not level65 yet)
 
-- F.Cast: None
+- F.Cast: Slayer (level10)
 
 - Popori: Warrior, Lancer, Slayer, Berserker, Archer, Mystic
 
-- Elin: Default race, no need to work on this
+- Elin: Gunner (Not level65 yet)
 
-- Baraka: Slayer, Berzerker
+- Baraka: Slayer, Berserker
 
 
 ## What if I don't need specialization?
