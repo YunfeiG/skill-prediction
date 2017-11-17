@@ -825,10 +825,8 @@ module.exports = {
 		    }
 		},
 		25: { // Wallop
-			0: {
-				length: 2375,
+			'*' :{
 				distance: 100,
-				noInterrupt: [1, 2, 3, 4, 5, 9, 11, 12, '18-0', 21, 23, 24, 25, 26, 27],
 				abnormals: {
 					7692002: { chain: 6 },
 					9692002: { chain: 6 }
@@ -841,10 +839,11 @@ module.exports = {
 					18: 30
 			    }
 			},
-			30: {
-				length: 1900, // 1910
-				distance: 100
-			}
+			0: {
+				length: 2375,
+				noInterrupt: [1, 2, 3, 4, 5, 9, 11, 12, '18-0', 21, 23, 24, 25, 26, 27]
+			},
+			30: { length: 1900 }
 		},
 		26: { // Backstep
 			0: {
@@ -1002,6 +1001,7 @@ module.exports = {
 			'*': { 
 				length: 905,
 				distance: 150,
+				noInterrupt: [4],
 				forceclip: true,
 				abnormals: {
 					400800: { chain: 6 },
@@ -1310,6 +1310,7 @@ module.exports = {
 				length: 1155,
 				distance: 78,
 				race: {
+					3: { distance: 63.24 }, // F.Helf: 63.236
 					6: { distance: 55.69 }, // M.Casta: 56.687
 					8: { distance: 48.89 }, // Popori: 48.886
 					9: {	// Elin: 1110, 78.005
@@ -1323,6 +1324,7 @@ module.exports = {
 				length: 925,
 				distance: 21.05,
 				race: {
+					3: { distance: 27.38 }, // F.Helf: 27.382
 					6: { distance: 23.27 }, // M.Casta: 23.274
 					8: { distance: 7.06 }, // Popori: 7.06
 					9: { distance: 21.05 }, // Elin: 21.05
@@ -1333,6 +1335,7 @@ module.exports = {
 				length: 1125,
 				distance: 31.84,
 				race: {
+					3: { distance: 32.47 }, // F.Helf: 32.474
 					6: { distance: 22.83 }, // M.Casta: 22.833
 					8: { distance: 40.93 }, // Popori: 40.926
 					9: { distance: 31.84 }, // Elin: 31.842
@@ -1343,6 +1346,7 @@ module.exports = {
 				length: 1825,
 				distance: 54.28,
 				race: {
+					3: { distance: 55.25 }, // F.Helf: 55.251
 					6: { distance: 59.47 }, // M.Casta: 59.467
 					8: { distance: 43.68 }, // Popori: 43.68
 					9: { distance: 54.29 }, // Elin: 54.285
@@ -1386,6 +1390,7 @@ module.exports = {
 				distance: 87.28, // 87.272 Cast F. - TODO
 				noInterrupt: [2, 4, 24, 25, 30],
 				race: {
+					3: { distance: 90.98 }, // F.Helf: 90.983
 					6: { distance: 69.7 }, // M.Casta: 69.704
 					8: { distance: 69.51 }, // Popori: 69.513
 					9: { distance: 87.27 }, // Elin: 87.272
@@ -1396,6 +1401,7 @@ module.exports = {
 				distance: 87.28, // 87.272
 				noInterrupt: [2, 4, 24, 25, 30],
 				race: {
+					3: { distance: 90.98 }, // F.Helf: 90.983
 					6: { distance: 69.7 }, // M.Casta: 69.704
 					8: { distance: 69.51 }, // Popori: 69.513
 					9: { distance: 87.27 }, // Elin: 87.272
@@ -1406,6 +1412,7 @@ module.exports = {
 				distance: 87.28, // 87.272
 				noInterrupt: [2, 4, 24, 25, 30],
 				race: {
+					3: { distance: 90.98 }, // F.Helf: 90.983
 					6: { distance: 69.7 }, // M.Casta: 69.704
 					8: { distance: 69.51 }, // Popori: 69.513
 					9: { distance: 87.27 }, // Elin: 87.272
@@ -1417,6 +1424,7 @@ module.exports = {
 				distance: 87.28, // 87.272
 				noInterrupt: [2, 4, 24, 25, 30],
 				race: {
+					3: { distance: 90.98 }, // F.Helf: 90.983
 					6: { distance: 69.7 }, // M.Casta: 69.704
 					8: { distance: 69.51 }, // Popori: 69.513
 					9: { distance: 87.27 }, // Elin: 87.272
@@ -1484,6 +1492,7 @@ module.exports = {
 				distance: 80.47,
 				noRetry: true,
 				race: {
+					3: { distance: 71.34 }, // F.Helf: 71.336
 					6: { distance: 66.21 }, // M.Casta: 66.21
 					8: { distance: 53.41 }, // Popori: 53.412
 					9: { distance: 80.47 }, // Elin: 80.468
@@ -1543,22 +1552,34 @@ module.exports = {
 			10: {
 				length: 1325, // Cast F. - TODO
 				distance: 50,
-				noInterrupt: [2, 4, 24, 25, 30] 
+				noInterrupt: [2, 4, 24, 25, 30],
+				races: {
+					3: { length: 1800 }	// F.Helf, true for low level cyclone, not sure about cyclone XI
+				}
 			},
 			11: {
 				length: [375, 375, 1325],
 				distance: [33.33, 33.33, 50],
-				noInterrupt: [2, 4, 24, 25, 30]
+				noInterrupt: [2, 4, 24, 25, 30],
+				races: {
+					3: { length: [375, 375, 1800] }	// F.Helf, true for low level cyclone, not sure about cyclone XI
+				}
 			},
 			12: {
 				length: [375, 375, 375, 375, 1325],
 				distance: [33.33, 33.33, 33.33, 33.33, 50],
-				noInterrupt: [2, 4, 24, 25, 30]
+				noInterrupt: [2, 4, 24, 25, 30],
+				races: {
+					3: { length: [375, 375, 1800] }	// F.Helf, true for low level cyclone, not sure about cyclone XI
+				}
 			},
 			13: {
 				length: [375, 375, 375, 375, 1325],
 				distance: [33.33, 33.33, 33.33, 33.33, 50],
-				noInterrupt: [2, 4, 15, 24, 25, 30]
+				noInterrupt: [2, 4, 15, 24, 25, 30],
+				races: {
+					3: { length: [375, 375, 1800] }	// F.Helf, true for low level cyclone, not sure about cyclone XI
+				}
 			}
 		},
 		11: { // Leaping Strike 
@@ -1612,6 +1633,7 @@ module.exports = {
 				distance: 87.28, // 87.272
 				noInterrupt: [2, 4, 24, 25, 30],
 				race: {
+					3: { distance: 72.79 }, // F.Helf: 72.785, Skill level I
 					6: { distance: 69.7 }, // M.Casta: 69.704
 					8: { distance: 69.51 }, // Popori: 69.513
 					9: { distance: 87.27 }, // Elin: 87.272
@@ -1622,6 +1644,7 @@ module.exports = {
 				distance: 87.28, // 87.272
 				noInterrupt: [2, 4, 24, 25, 30],
 				race: {
+					3: { distance: 72.79 }, // F.Helf: 72.785, Skill level I
 					6: { distance: 69.7 }, // M.Casta: 69.704
 					8: { distance: 69.51 }, // Popori: 69.513
 					9: { distance: 87.27 }, // Elin: 87.272
@@ -1632,6 +1655,7 @@ module.exports = {
 				distance: 87.28, // 87.272
 				noInterrupt: [2, 4, 24, 25, 30],
 				race: {
+					3: { distance: 72.79 }, // F.Helf: 72.785, Skill level I
 					6: { distance: 69.7 }, // M.Casta: 69.704
 					8: { distance: 69.51 }, // Popori: 69.513
 					9: { distance: 87.27 }, // Elin: 87.272
@@ -1642,6 +1666,7 @@ module.exports = {
 				distance: 87.28, // 87.272
 				noInterrupt: [2, 4, 24, 25, 30],
 				race: {
+					3: { distance: 72.79 }, // F.Helf: 72.785, Skill level I
 					6: { distance: 69.7 }, // M.Casta: 69.704
 					8: { distance: 69.51 }, // Popori: 69.513
 					9: { distance: 87.27 }, // Elin: 87.272
@@ -2177,7 +2202,13 @@ module.exports = {
 			}
 		},
 		31: { // Warp Barrier
-			'*': { length: 475 },
+			'*': { 
+				length: 475,
+				abnormals: {
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
+				}
+			},
 			0: true,
 			10: true,
 			20: true
