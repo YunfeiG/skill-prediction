@@ -677,10 +677,7 @@ module.exports = {
 				type: 'retaliate',
 				length: 1645, // Is this correct?
 				noRetry: true,
-				noInterrupt: [2],
-				race: {
-					9: { distance: 1625 } // Elin, also this?
-				}
+				noInterrupt: [2]
 			}
 		},
 		12: { // Infuriate
@@ -1384,7 +1381,12 @@ module.exports = {
 					400500: { chargeSpeed: 0.2 },
 					400501: { chargeSpeed: 0.4 },
 					4010150: { chargeSpeed: 0.2 } // All of these do not
-				}
+				},
+				level: [
+					{ length: [800, 99999] },	// 1300
+					{ length: [800, 800, 99999] },	// 1150
+					{ length: [800, 800, 99999] }	// 1150
+				]
 			},
 			10: {
 				distance: 87.28, // 87.272 Cast F. - TODO
@@ -1434,7 +1436,7 @@ module.exports = {
 		},
 		4: { // Flatten
 			'*': {
-				length: 3150, // 3120 pori?
+				length: 3120, // 3120 pori?
 				distance: 105.685,
 				glyphs: {
 					24008: { speed: 1.25 },
@@ -1445,6 +1447,7 @@ module.exports = {
 					24101: { speed: 1.30 }
 				},
 				race: {
+					3: { distance: 90.6 }, // F.Helf: 90.601
 					6: { distance: 75 }, // M.Casta: 75
 					8: { distance: 73.34 }, // Popori: 73.344
 					9: { distance: 105.69 }, // Elin: 105.685
@@ -1522,7 +1525,7 @@ module.exports = {
 			'*': { noInterrupt: [2] },
 			0: {
 				fixedSpeed: 1,
-				length: 600
+				length: [450, 650]
 			},
 			30: { 
 				length: 1760, // /Need M.Casta
@@ -1547,7 +1550,12 @@ module.exports = {
 					400501: { chargeSpeed: 0.4 },
 					4010150: { chargeSpeed: 0.2 },
 					401400: { chain: 6 }
-				}
+				},
+				level: [
+					{ length: [800, 99999] },	// 1300
+					{ length: [800, 800, 99999] },	// 1150
+					{ length: [800, 800, 99999] }	// 1150
+				]
 			},
 			10: {
 				length: 1325, // Cast F. - TODO
@@ -1584,7 +1592,7 @@ module.exports = {
 		},
 		11: { // Leaping Strike 
 			0: {
-				length: 2290, // 2250 popori?
+				length: 2250
 				distance: 250,
 				abnormals: {
 					7692002: { chain: 6 },
@@ -1627,7 +1635,12 @@ module.exports = {
                     '3-13': 14, // this is fine though maybe uneeded, 13: 14 does the same
                     '10-13': 14,
                     '18-13': 14
-                }
+                },
+				level: [
+					{ length: [800, 99999] },	// 1600
+					{ length: [800, 800, 99999] },	// 1600
+					{ length: [800, 800, 99999] }	// 1600
+				]
             },
             10: {
 				distance: 87.28, // 87.272
@@ -1705,7 +1718,12 @@ module.exports = {
 					400501: { chargeSpeed: 0.4 },
 					4010150: { chargeSpeed: 0.2 },
 					401400: { chain: 6 }
-			    }
+			    },
+				level: [
+					{ length: [800, 99999] },	// 1600
+					{ length: [800, 800, 99999] },	// 1600
+					{ length: [800, 800, 99999] }	// 1600
+				]
 			},
 			10: {
 			    distance: 167.63, // 167.624
