@@ -1592,7 +1592,7 @@ module.exports = {
 		},
 		11: { // Leaping Strike 
 			0: {
-				length: 2250
+				length: 2250,
 				distance: 250,
 				abnormals: {
 					7692002: { chain: 6 },
