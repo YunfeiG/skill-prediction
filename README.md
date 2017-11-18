@@ -4,7 +4,7 @@ This version of SP will handle racial differences instead of elin only.
 
 Pardon me the implementation is pretty hardcoded.
 
-Update Nov 16, 2017: Skill level support for Burst fire, Hardened wax effect, Elin gunner, F.Casta slayer, F.Aman, Dynamic server_timeout ( 3000 for berserker and 100 for other classes ). S_EACH_SKILL_RESULT reverts to version 1 for NA support( I don't play EU TERA )
+Update Nov 19, 2017: Skill level support for Zerk charge skills
 
 
 Soon™: Charge skills level support, Burst fire and Mana charge armor roll support, Double casts prevention(Short skills like Teleporting jaunts, Overpower, Restraning arrow, Web arrow)
