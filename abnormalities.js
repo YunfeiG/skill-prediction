@@ -12,7 +12,7 @@ class AbnormalityPrediction {
 		this.cid = null
 		this.myAbnormals = {}
 
-		dispatch.hook('S_LOGIN', 1, event => { this.cid = event.cid })
+		dispatch.hook('S_LOGIN', 6, event => { this.cid = event.guid })
 
 		dispatch.hook('S_RETURN_TO_LOBBY', 1, () => { this.removeAll() })
 
@@ -33,7 +33,7 @@ class AbnormalityPrediction {
 
 				if(event.duration != 0x7fffffff) event.duration = Math.max(event.duration - this.ping.min, 0)
 
-				if(type == 'S_ABNORMALITY_BEGIN' && this.exists(event.id)) {
+				if(type === 'S_ABNORMALITY_BEGIN' === this.exists(event.id)) { // Transform packet type so it will always be valid
 					this.add(event.id, event.duration, event.stacks)
 					return false
 				}
@@ -61,6 +61,12 @@ class AbnormalityPrediction {
 
 	exists(id) {
 		return !!this.myAbnormals[id]
+	}
+
+	inMap(map) {
+		for(let id in this.myAbnormals)
+			if(map[id]) return true
+		return false
 	}
 
 	add(id, duration, stacks) {
