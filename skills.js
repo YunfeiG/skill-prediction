@@ -14,8 +14,8 @@ const JITTER_COMPENSATION	= true,
 											Warning: Will cause occasional clipping through gates when disabled. Do NOT abuse this.
 										*/
 	DEFEND_SUCCESS_STRICT	= true,		//	Set this to false to see Brawler's Perfect Block icon at very high ping (warning: may crash client).
-	DEBUG					= true,
-	DEBUG_LOC				= true,
+	DEBUG					= false,
+	DEBUG_LOC				= false,
 	DEBUG_GLYPH				= false
 
 const {protocol, sysmsg} = require('tera-data-parser'),
