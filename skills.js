@@ -1,4 +1,4 @@
-const JITTER_COMPENSATION	= false,
+const JITTER_COMPENSATION	= true,
 	JITTER_ADJUST			= 0,		//	This number is added to your detected minimum ping to get the compensation amount.
 	SKILL_RETRY_COUNT		= 1,		//	Number of times to retry each skill (0 = disabled). Recommended 1-3.
 	SKILL_RETRY_MS			= 80,		/*	Time to wait between each retry.
@@ -14,8 +14,8 @@ const JITTER_COMPENSATION	= false,
 											Warning: Will cause occasional clipping through gates when disabled. Do NOT abuse this.
 										*/
 	DEFEND_SUCCESS_STRICT	= true,		//	Set this to false to see Brawler's Perfect Block icon at very high ping (warning: may crash client).
-	DEBUG					= false,
-	DEBUG_LOC				= false,
+	DEBUG					= true,
+	DEBUG_LOC				= true,
 	DEBUG_GLYPH				= false
 
 const {protocol, sysmsg} = require('tera-data-parser'),
@@ -77,9 +77,10 @@ module.exports = function SkillPrediction(dispatch) {
 		
 	let SERVER_TIMEOUT;
 
-	dispatch.hook('S_LOGIN', 1, event => {
-		skillsCache = {}
-		;({cid, model} = event)
+	dispatch.hook('S_LOGIN', 6, event => {
+		skillsCache = {};
+		cid = event.guid;
+		model = event.templateId;
 		race = Math.floor((model - 10101) / 100)
 		job = (model - 10101) % 100
 
@@ -87,8 +88,11 @@ module.exports = function SkillPrediction(dispatch) {
 		if(job==3){
 			SERVER_TIMEOUT = 3000;
 		}
+		else if(job==7 || job==8){
+			SERVER_TIMEOUT = 60;
+		}
 		else{
-			SERVER_TIMEOUT = 100;
+			SERVER_TIMEOUT = 150;
 		}
 
 		hookInventory()
@@ -180,8 +184,8 @@ module.exports = function SkillPrediction(dispatch) {
 		partyMembers = []
 
 		for(let member of event.members)
-			if(!member.cID.equals(cid))
-				partyMembers.push(member.cID)
+			if(!member.cid.equals(cid))
+				partyMembers.push(member.cid)
 	})
 
 	dispatch.hook('S_LEAVE_PARTY', () => { partyMembers = null })
