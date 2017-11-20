@@ -1,10 +1,10 @@
-const JITTER_COMPENSATION	= true,
+const JITTER_COMPENSATION	= false,
 	JITTER_ADJUST			= 0,		//	This number is added to your detected minimum ping to get the compensation amount.
 	SKILL_RETRY_COUNT		= 1,		//	Number of times to retry each skill (0 = disabled). Recommended 1-3.
 	SKILL_RETRY_MS			= 80,		/*	Time to wait between each retry.
 											SKILL_RETRY_MS * SKILL_RETRY_COUNT should be under 100, otherwise skills may go off twice.
 										*/
-	SKILL_RETRY_JITTERCOMP	= 15,		//	Skills that support retry will be sent this much earlier than estimated by jitter compensation.
+	SKILL_RETRY_JITTERCOMP	= 20,		//	Skills that support retry will be sent this much earlier than estimated by jitter compensation.
 	SKILL_RETRY_ALWAYS		= false,	//	Setting this to true will reduce ghosting for extremely short skills, but may cause other skills to fail.
 	SKILL_DELAY_ON_FAIL		= true,		//	Basic initial desync compensation. Useless at low ping (<50ms).
 	/*SERVER_TIMEOUT			= 3000,			This number is added to your maximum ping + skill retry period to set the failure threshold for skills.
@@ -85,15 +85,11 @@ module.exports = function SkillPrediction(dispatch) {
 		job = (model - 10101) % 100
 
 		if(DEBUG) console.log('Race '+race+', Class '+ job);
-		if(job==3){
-			SERVER_TIMEOUT = 3000;
-		}
-		else if(job==7 || job==8){
-			SERVER_TIMEOUT = 60;
-		}
-		else{
-			SERVER_TIMEOUT = 150;
-		}
+		SERVER_TIMEOUT = 120;
+		if(job==3) SERVER_TIMEOUT = 2800;
+		if(job==5) SERVER_TIMEOUT = 1600;
+		if(job==7) SERVER_TIMEOUT = 60;
+		if(job==8) SERVER_TIMEOUT = 60;
 
 		hookInventory()
 	})
@@ -180,7 +176,7 @@ module.exports = function SkillPrediction(dispatch) {
 		})
 	}
 
-	dispatch.hook('S_PARTY_MEMBER_LIST', 1, event => {
+	dispatch.hook('S_PARTY_MEMBER_LIST', 5, event => {
 		partyMembers = []
 
 		for(let member of event.members)
