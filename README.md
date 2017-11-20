@@ -2,9 +2,7 @@
 
 This version of SP will handle racial differences instead of elin only.
 
-Pardon me the implementation is pretty hardcoded.
-
-Update Nov 21, 2017: Archer charge skills support. F.Human archer
+Update Nov 21, 2017: Archer charge skills level support. F.Human archer data
 
 
 Soon™: Burst fire and Mana charge armor roll support, Double casts prevention(Short skills like Teleporting jaunts, Overpower, Restraning arrow, Web arrow)
