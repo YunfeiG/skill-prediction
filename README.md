@@ -4,10 +4,10 @@ This version of SP will handle racial differences instead of elin only.
 
 Pardon me the implementation is pretty hardcoded.
 
-Update Nov 19, 2017: Skill level support for Zerk charge skills
+Update Nov 21, 2017: Archer charge skills support. F.Human archer
 
 
-Soon™: Charge skills level support, Burst fire and Mana charge armor roll support, Double casts prevention(Short skills like Teleporting jaunts, Overpower, Restraning arrow, Web arrow)
+Soon™: Burst fire and Mana charge armor roll support, Double casts prevention(Short skills like Teleporting jaunts, Overpower, Restraning arrow, Web arrow)
 
 
 ## Races/Classes that are specialized so far
@@ -16,7 +16,7 @@ Any races/classes that are not mentioned here will use elin's configuration as d
 
 - M.Human: Lancer, Slayer, Archer
 
-- F.Human: None
+- F.Human: Archer
 
 - M.Elf: Warrior, Lancer, Slayer
 
@@ -35,8 +35,3 @@ Any races/classes that are not mentioned here will use elin's configuration as d
 - Elin: Gunner (Not level65 yet)
 
 - Baraka: Slayer, Berserker
-
-
-## What if I don't need specialization?
-
-Go edit ./skill.js, set RACE_SPECIALIZE value to false.
