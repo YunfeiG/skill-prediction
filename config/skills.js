@@ -2292,7 +2292,10 @@ module.exports = {
 		3: { // Radiant Arrow
 			'*': {
 				type: 'chargeCast',
-				length: 1760
+				length: 1760,
+				races: {
+					1: { length: 1600 }	// F.Human
+				}
 			},
 			0: {
 				type: 'charging',
@@ -2301,7 +2304,12 @@ module.exports = {
 				abnormals: {
 					26180: { chargeSpeed: 0.3 },
 					601450: { chargeSpeed: 0.5 }
-				}
+				},
+				level: [
+					{ length: [600, 99999] },	// 1400
+					{ length: [600, 600, 99999] },	// 1400
+					{ length: [600, 600, 99999] },	// 1400
+				]
 			},
 			10: { 
 				distance: -100,
@@ -2335,7 +2343,10 @@ module.exports = {
 		4: { // Penetrating Arrow
 			'*': {
 				type: 'chargeCast',
-				length: 1315
+				length: 1315,
+				races: {
+					1: { length: 1275 }	// F.Human
+				}
 			},
 			0: {
 				type: 'charging',
@@ -2347,12 +2358,18 @@ module.exports = {
 					26171: { chargeSpeed: 0.4 },
 					26190: { chargeSpeed: 0.3 },
 					601450: { chargeSpeed: 0.5 }
-				}
+				},
+				level: [
+					{ length: [1000, 99999] },	// 1400
+					{ length: [1000, 1000, 99999] },	// 1400
+					{ length: [1000, 1000, 99999] },	// 1400
+				]
 			},
 			10: { 
 				distance: -50,
 				noInterrupt: [22],
 				race: {
+					1: { distance: -80 }, // F.Human
 					8: { distance: -48.69 } // Popori, 48.688
 				}
 			}, // Cast F. - TODO
@@ -2360,6 +2377,7 @@ module.exports = {
 				distance: -50,
 				noInterrupt: [22],
 				race: {
+					1: { distance: -80 }, // F.Human
 					8: { distance: -48.69 } // Popori, 48.688
 				}
 		    },
@@ -2367,6 +2385,7 @@ module.exports = {
 				distance: -50,
 				noInterrupt: [22],
 				race: {
+					1: { distance: -80 }, // F.Human
 					8: { distance: -48.69 } // Popori, 48.688
 				}
 			},
@@ -2374,6 +2393,7 @@ module.exports = {
 				distance: -50,
 				noInterrupt: [22],
 				race: {
+					1: { distance: -80 }, // F.Human
 					8: { distance: -48.69 } // Popori, 48.688
 				}
 			}
@@ -2522,6 +2542,7 @@ module.exports = {
 					26102: { speed: 1.3 }
 				},
 				race: {
+					1: { length: 3575 }, // F.Human
 					8: { distance: -96.6 } // Popori, -96.604
 				}
 			}
