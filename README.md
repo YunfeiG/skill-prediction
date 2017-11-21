@@ -26,7 +26,7 @@ Any races/classes that are not mentioned here will use elin's configuration as d
 
 - M.Cast: Slayer, Berserker (Not level65 yet)
 
-- F.Cast: Slayer (level10)
+- F.Cast: Slayer
 
 - Popori: Warrior, Lancer, Slayer, Berserker, Archer, Mystic
 
