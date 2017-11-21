@@ -1123,6 +1123,7 @@ module.exports = {
 					4: { distance: 40 }, // M.Aman: 40
 					5: { distance: 62.07 }, // F.Aman: 62.073
 					6: { distance: 86.12 }, // M.Casta: 86.124
+					7: { distance: 80 }, // F.Casta: 80
 					8: { distance: 56.49 }, // Popori: 56.491
 					9: { distance: 76.71 }, // Elin: 76.706
 					10: { distance: 47.07 } // Baraka: 47.072
@@ -1191,6 +1192,7 @@ module.exports = {
 					4: { distance: 100 }, // M.Aman: 100
 					5: { distance: 96.25 }, // F.Aman: 96.25
 					6: { distance: 135.85 }, // M.Casta: 135.847
+					7: { distance: 140 }, // F.Casta: 140
 					8: { distance: 141.74 }, // Popori: 141.738
 					9: { distance: 142.53 }, // Elin: 142.53
 					10: { distance: 100 } // Baraka: 100
@@ -1370,7 +1372,7 @@ module.exports = {
 			},
 			0: {
 				type: 'charging',
-				length: [650, 650, 650, 99999],		// 2700, Overcharge hold charge time: 2515 | Charge hold time is fixed, so therefore the more attack speed you have the more free time you have after a fully charging to reposition.
+				length: [650, 650, 650],		// 2700, Overcharge hold charge time: 2515 | Charge hold time is fixed, so therefore the more attack speed you have the more free time you have after a fully charging to reposition.
 				noInterrupt: [2, 4, 10, 15, 18, 24, 25, 30], // Maximum Over Charge hold time = (overChargeLength * 1 + ChargingSpeed from glyphs) + (overChargeLength * 1)
 				glyphs: { // SP doesn't apply this but it isn't too off from what it actually is.
 					24067: { chargeSpeed: 0.25 } // Only these affect charge hold time
@@ -1383,9 +1385,9 @@ module.exports = {
 					4010150: { chargeSpeed: 0.2 } // All of these do not
 				},
 				level: [
-					{ length: [800, 99999] },	// 1300
-					{ length: [800, 800, 99999] },	// 1150
-					{ length: [800, 800, 99999] }	// 1150
+					{ length: 800 },	// 1300
+					{ length: [800, 800] },	// 1150
+					{ length: [800, 800] }	// 1150
 				]
 			},
 			10: {
@@ -1536,7 +1538,7 @@ module.exports = {
 			'*': { type: 'chargeCast' },
 			0: {
 				type: 'charging',
-				length: [650, 650, 650, 99999],		// 2700
+				length: [650, 650, 650],		// 2700
 			    noInterrupt: [2, 3, 4, 15, 18, 24, 25, 30],
 				glyphs: {
 					24009: { chargeSpeed: 0.25 },
@@ -1552,9 +1554,9 @@ module.exports = {
 					401400: { chain: 6 }
 				},
 				level: [
-					{ length: [800, 99999] },	// 1300
-					{ length: [800, 800, 99999] },	// 1150
-					{ length: [800, 800, 99999] }	// 1150
+					{ length: 800 },	// 1300
+					{ length: [800, 800] },	// 1150
+					{ length: [800, 800] }	// 1150
 				]
 			},
 			10: {
@@ -1624,7 +1626,7 @@ module.exports = {
 			 },                               // Chained VB Usage: 1. "Show default Chained Skills" in the Chained Skills menu must be on.        		                               
             0: {                             //                    2. Must be in combat when used.  3. the VB chain icon must be shown
                 type: 'charging',           //                    Else the animation of VB won't go off causing slight desync.
-				length: [800, 800, 800, 99999],		// 2700
+				length: [800, 800, 800],		// 2700
 				noInterrupt: [2, '3-0', 4, '10-0', '18-0', 24, 25, 30], // VB can't chain to stages 10, 11 or 12 in the client, it only can on stages 13
 				abnormals: {
 					400500: { chargeSpeed: 0.2 },
@@ -1637,9 +1639,9 @@ module.exports = {
                     '18-13': 14
                 },
 				level: [
-					{ length: [800, 99999] },	// 1600
-					{ length: [800, 800, 99999] },	// 1600
-					{ length: [800, 800, 99999] }	// 1600
+					{ length: 800 },	// 1600
+					{ length: [800, 800] },	// 1600
+					{ length: [800, 800] }	// 1600
 				]
             },
             10: {
@@ -1710,7 +1712,7 @@ module.exports = {
 		    },
 			0: {
 				type: 'charging',
-				length: [800, 800, 800, 99999],		// 2700
+				length: [800, 800, 800],		// 2700
 				noInterrupt: [2, 3, 4, 10, 15, 24, 25, 30],
 				abnormals:  {
 					24120: { chargeSpeed: 0.3 },
@@ -1720,9 +1722,9 @@ module.exports = {
 					401400: { chain: 6 }
 			    },
 				level: [
-					{ length: [800, 99999] },	// 1600
-					{ length: [800, 800, 99999] },	// 1600
-					{ length: [800, 800, 99999] }	// 1600
+					{ length: 800 },	// 1600
+					{ length: [800, 800] },	// 1600
+					{ length: [800, 800] }	// 1600
 				]
 			},
 			10: {
@@ -1979,7 +1981,7 @@ module.exports = {
 			},
 			0: {
 				type: 'charging',
-				length: [1000, 1000, 99999],	// 400
+				length: [1000, 1000],	// 400
 				noInterrupt: [7, 26],
 				abnormals: {
 					25140: { chargeSpeed: 0.3 }
@@ -2110,7 +2112,7 @@ module.exports = {
 			},
 			0: {
 				type: 'charging',
-				length: [1000, 1000, 99999],	// 400
+				length: [1000, 1000],	// 400
 				noInterrupt: [7, 26]
 			},
 			10: {noInterrupt: [7, 26] },
@@ -2299,16 +2301,16 @@ module.exports = {
 			},
 			0: {
 				type: 'charging',
-				length: [600, 600, 600, 99999],
+				length: [600, 600, 600],	// 2700
 				noInterrupt: [4, 22],
 				abnormals: {
 					26180: { chargeSpeed: 0.3 },
 					601450: { chargeSpeed: 0.5 }
 				},
 				level: [
-					{ length: [600, 99999] },	// 1400
-					{ length: [600, 600, 99999] },	// 1400
-					{ length: [600, 600, 99999] },	// 1400
+					{ length: 600 },	// 1400
+					{ length: [600, 600] },	// 1400
+					{ length: [600, 600] },	// 1400
 				]
 			},
 			10: { 
@@ -2350,7 +2352,7 @@ module.exports = {
 			},
 			0: {
 				type: 'charging',
-				length: [800, 800, 800, 99999],
+				length: [800, 800, 800],	// 2700
 				noInterrupt: [3, 22],
 				abnormals: {
 					26160: { chargeSpeed: 0.3 },
@@ -2360,9 +2362,9 @@ module.exports = {
 					601450: { chargeSpeed: 0.5 }
 				},
 				level: [
-					{ length: [1000, 99999] },	// 1400
-					{ length: [1000, 1000, 99999] },	// 1400
-					{ length: [1000, 1000, 99999] },	// 1400
+					{ length: 1000 },	// 1400
+					{ length: [1000, 1000] },	// 1400
+					{ length: [1000, 1000] },	// 1400
 				]
 			},
 			10: { 
@@ -2697,7 +2699,7 @@ module.exports = {
 			},
 			0: {
 				type: 'charging',
-				length: [800, 1600, 99999],	// 3500
+				length: [800, 1600],	// 3500
 				noInterrupt: [26, 27, 38],
 				glyphs: {
 					28031: { chargeSpeed: 0.25 }
@@ -2955,7 +2957,7 @@ module.exports = {
 			'*': { noInterrupt: [8, 17, 23] },
 			0: {
 				type: 'charging',
-				length: [1050, 99999]	// 450
+				length: 1050	// 450
 			},
 			10: {
 				type: 'chargeCast',
@@ -2977,7 +2979,7 @@ module.exports = {
 		    '*': { noInterrupt: [8, 17, 23] },
 			0: {
 				type: 'charging',
-				length: [1050, 99999]	// 450
+				length: 1050	// 450
 			},
 			10: {
 				type: 'chargeCast',
@@ -3657,7 +3659,7 @@ module.exports = {
 			},
 			0: {
 				type: 'charging',
-				length: [1200, 99999] // 250
+				length: 1250 // 250
 			},
 			10: { distance: -50 },
 			11: { distance: -100 }
