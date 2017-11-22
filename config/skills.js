@@ -2933,7 +2933,7 @@ module.exports = {
 			0: true,
 			50: true
 		},
-		17: { // Teleport Jaunt
+		/*17: { // Teleport Jaunt
 			0: {
 				type: 'teleport',
 				length: [200, 260],
@@ -2952,7 +2952,7 @@ module.exports = {
 					9692002: { chain: 6 }
 				}
 			}
-		},
+		},*/
 		18: { // Arun's Vitae
 			'*': { noInterrupt: [8, 17, 23] },
 			0: {
@@ -3580,12 +3580,12 @@ module.exports = {
 		4: { // Point Blank
 			'*': {
 				length: 1525,
-				distance: 137.88,
-				noInterrupt: ['4-3', '4-4'],
+				distance: 137.88
+			},
+			1: {
 				chains: {
 					'2-1': 30,
 					3: 30,
-					4: 4,
 					'7-3': 30,
 					'9-10': 30,
 					'9-11': 30,
@@ -3595,22 +3595,27 @@ module.exports = {
 					15: 30,
 					19: 30,
 					40: 30
-				}
+				},
+				noInterrupt: ['4-1','4-2','4-30']
 			},
-			1: {
-				noInterrupt: [4],
-				noRetry: true
+			2: {
+				noInterrupt: ['4-1','4-2','4-30']
 			},
-			2: { noRetry: true },
 			3: {
 				length: 1195,
-				distance: -198.53
+				distance: -198.53,
+				noInterrupt: ['4-3','4-4'],
+				chains: {
+					'4-1': 4,
+					'4-2': 4,
+					'4-30' : 4
+				}
 			},
 			4: {
 				length: 1195,
 				distance: -198.53
 			},
-			30: { noRetry: true }
+			30: true
 		},
 		5: { // Burst Fire
 			0: { length: 850 },
