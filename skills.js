@@ -76,6 +76,9 @@ module.exports = function SkillPrediction(dispatch) {
 		debugActionTime = 0;
 		
 	let SERVER_TIMEOUT;
+	
+	let manaChargeSpeed = false;
+	let burstFireCost = false;
 
 	dispatch.hook('S_LOGIN', 6, event => {
 		skillsCache = {};
@@ -154,15 +157,33 @@ module.exports = function SkillPrediction(dispatch) {
 	})
 
 	function hookInventory() {
-		if(!inventoryHook) inventoryHook = dispatch.hook('S_INVEN', 5, event => {
+		if(!inventoryHook) inventoryHook = dispatch.hook('S_INVEN', 10, event => {
 			inventory = event.first ? event.items : inventory.concat(event.items)
 
 			if(!event.more) {
 				equippedWeapon = false
-
+				manaChargeSpeed = false
+				burstFireCost = false
 				for(let item of inventory)
 					if(item.slot == 1) {
 						equippedWeapon = true
+						break
+					}
+				for(let item of inventory)
+					if(item.slot == 3) {
+						let passivitySet = item.passivitySet
+						let passivitySets = item.passivitySets[passivitySet]
+						let entries = passivitySets.passivities
+						for(let roll of entries) {
+							if(roll.dbid == 350708){
+								manaChargeSpeed = true
+								console.log('Mana charge roll activated')
+							}
+							if(roll.dbid == 350905){
+								burstFireCost = true
+								console.log('Burst fire roll activated')
+							}
+						}
 						break
 					}
 
@@ -491,6 +512,8 @@ module.exports = function SkillPrediction(dispatch) {
 				return
 			}
 		}
+		
+		if(manaChargeSpeed) chargeSpeed += 0.15;
 
 		if(interruptType) {
 			info.type == 'chargeCast' ? clearStage() : sendActionEnd(interruptType)
@@ -506,6 +529,8 @@ module.exports = function SkillPrediction(dispatch) {
 			movement = null,
 			stamina = info.stamina
 
+		if(burstFireCost) stamina -= 5;	
+		
 		if(info.glyphs)
 			for(let id in info.glyphs)
 				if(currentGlyphs[id]) {
