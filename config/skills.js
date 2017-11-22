@@ -998,8 +998,9 @@ module.exports = {
 			'*': { 
 				length: 905,
 				distance: 150,
-				noInterrupt: [4],
 				forceclip: true,
+				noInterrupt: [4],
+				noRetry: true,
 				abnormals: {
 					400800: { chain: 6 },
 					400801: { chain: 6 },
@@ -1008,7 +1009,8 @@ module.exports = {
 					501322: { chain: 6 },
 					501323: { chain: 6 },
 					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					9692002: { chain: 6 },
+					301200: { chain: 30 },
 				},
 				race: {
 					8: {	// Popori: 150.316, 1185
@@ -1018,7 +1020,7 @@ module.exports = {
 				}
 			},
 			0: true,
-			30: { requiredBuff: 301200 }
+			30: true
 		},
 		5: { // Dash
 			0: {
@@ -2933,7 +2935,7 @@ module.exports = {
 			0: true,
 			50: true
 		},
-		/*17: { // Teleport Jaunt
+		17: { // Teleport Jaunt
 			0: {
 				type: 'teleport',
 				length: [200, 260],
@@ -2952,7 +2954,7 @@ module.exports = {
 					9692002: { chain: 6 }
 				}
 			}
-		},*/
+		},
 		18: { // Arun's Vitae
 			'*': { noInterrupt: [8, 17, 23] },
 			0: {
@@ -3504,6 +3506,7 @@ module.exports = {
 				length: 700,
 				distance: 180,
 				forceClip: true,
+				noRetry: true,
 				abnormals: {
 					400800: { chain: 6 },
 					400801: { chain: 6 },
@@ -4106,10 +4109,11 @@ module.exports = {
 					501322: { chain: 6 },
 					501323: { chain: 6 },
 					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					9692002: { chain: 6 },
+					10153150: { chain: 30 },
 				}
 			},
-			0: true, // TODO: Figure out which animations are correct
+			0: true,
 			1: true,
 			30: true,
 			31: true
@@ -4275,6 +4279,7 @@ module.exports = {
 				length: 650,
 				distance: 175,
 				forceClip: true,
+				noRetry: true,
 				abnormals: {
 					400800: { chain: 6 },
 					400801: { chain: 6 },
@@ -4433,9 +4438,8 @@ module.exports = {
 			30: true
 		},
 		9: { // Smoke Bomb
-			'*': { length: 725 },
-			0: { 
-				type: 'nullChain',
+			'*': { 
+				length: 725,
 				abnormals: {
 					400800: { chain: 6 },
 					400801: { chain: 6 },
@@ -4444,7 +4448,8 @@ module.exports = {
 					501322: { chain: 6 },
 					501323: { chain: 6 }
 				}
-			 },
+			},
+			0: { type: 'nullChain' },
 			30: true
 		},
 		11: { // Focus
@@ -5023,6 +5028,7 @@ module.exports = {
 				length: 825,
 				distance: 188.18,
 				forceClip: true,
+				noInterrupt: [14],
 				abnormals: {
 					400800: { chain: 6 },
 					400801: { chain: 6 },
