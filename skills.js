@@ -14,8 +14,8 @@ const JITTER_COMPENSATION	= false,
 											Warning: Will cause occasional clipping through gates when disabled. Do NOT abuse this.
 										*/
 	DEFEND_SUCCESS_STRICT	= true,		//	Set this to false to see Brawler's Perfect Block icon at very high ping (warning: may crash client).
-	DEBUG					= false,
-	DEBUG_LOC				= false,
+	DEBUG					= true,
+	DEBUG_LOC				= true,
 	DEBUG_GLYPH				= false
 
 const {protocol, sysmsg} = require('tera-data-parser'),
@@ -175,14 +175,8 @@ module.exports = function SkillPrediction(dispatch) {
 						let passivitySets = item.passivitySets[passivitySet]
 						let entries = passivitySets.passivities
 						for(let roll of entries) {
-							if(roll.dbid == 350708){
-								manaChargeSpeed = true
-								console.log('Mana charge roll activated')
-							}
-							if(roll.dbid == 350905){
-								burstFireCost = true
-								console.log('Burst fire roll activated')
-							}
+							if(roll.dbid == 350708) manaChargeSpeed = true
+							if(roll.dbid == 350905) burstFireCost = true
 						}
 						break
 					}
@@ -1156,9 +1150,9 @@ module.exports = function SkillPrediction(dispatch) {
 				get(skills, job, group, '*', 'race', race),
 				get(skills, job, group, '*', 'race', race, 'level', level),
 				get(skills, job, group, sub),
+				get(skills, job, group, sub, 'level', level),
 				get(skills, job, group, sub, 'race', race),
-				get(skills, job, group, sub, 'race', race),
-				get(skills, job, group, sub, 'race', race, 'race', race)
+				get(skills, job, group, sub, 'race', race, 'level', level)
 			]
 
 		// Note: Exact skill (group, sub) must be specified for prediction to be enabled. This helps to avoid breakage in future patches
