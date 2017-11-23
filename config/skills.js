@@ -1312,6 +1312,10 @@ module.exports = {
 				distance: 78,
 				race: {
 					3: { distance: 63.24 }, // F.Helf: 63.236
+					4: {	// M.Aman
+						length: 1110,
+						distance: 27.72	// 27.715
+					},
 					6: { distance: 55.69 }, // M.Casta: 56.687
 					8: { distance: 48.89 }, // Popori: 48.886
 					9: {	// Elin: 1110, 78.005
@@ -1326,6 +1330,7 @@ module.exports = {
 				distance: 21.05,
 				race: {
 					3: { distance: 27.38 }, // F.Helf: 27.382
+					4: { distance: 25 },	// M.Aman: 25
 					6: { distance: 23.27 }, // M.Casta: 23.274
 					8: { distance: 7.06 }, // Popori: 7.06
 					9: { distance: 21.05 }, // Elin: 21.05
@@ -1337,6 +1342,7 @@ module.exports = {
 				distance: 31.84,
 				race: {
 					3: { distance: 32.47 }, // F.Helf: 32.474
+					4: { distance: 25 }, // M.Aman: 25
 					6: { distance: 22.83 }, // M.Casta: 22.833
 					8: { distance: 40.93 }, // Popori: 40.926
 					9: { distance: 31.84 }, // Elin: 31.842
@@ -1348,6 +1354,10 @@ module.exports = {
 				distance: 54.28,
 				race: {
 					3: { distance: 55.25 }, // F.Helf: 55.251
+					4: {	// M.Aman
+						length: 2000,
+						distance: 45
+					},
 					6: { distance: 59.47 }, // M.Casta: 59.467
 					8: { distance: 43.68 }, // Popori: 43.68
 					9: { distance: 54.29 }, // Elin: 54.285
@@ -1374,7 +1384,7 @@ module.exports = {
 			},
 			0: {
 				type: 'charging',
-				length: [650, 650, 650],		// 2700, Overcharge hold charge time: 2515 | Charge hold time is fixed, so therefore the more attack speed you have the more free time you have after a fully charging to reposition.
+				length: [650, 650, 650],		// 2300, Overcharge hold charge time: 2515 | Charge hold time is fixed, so therefore the more attack speed you have the more free time you have after a fully charging to reposition.
 				noInterrupt: [2, 4, 10, 15, 18, 24, 25, 30], // Maximum Over Charge hold time = (overChargeLength * 1 + ChargingSpeed from glyphs) + (overChargeLength * 1)
 				glyphs: { // SP doesn't apply this but it isn't too off from what it actually is.
 					24067: { chargeSpeed: 0.25 } // Only these affect charge hold time
@@ -1387,9 +1397,9 @@ module.exports = {
 					4010150: { chargeSpeed: 0.2 } // All of these do not
 				},
 				level: [
-					{ length: 800 },	// 1300
-					{ length: [800, 800] },	// 1150
-					{ length: [800, 800] }	// 1150
+					{ length: 800 },	// 2300
+					{ length: [800, 800] },	// 2300
+					{ length: [800, 800] }	// 2300
 				]
 			},
 			10: {
@@ -1397,6 +1407,7 @@ module.exports = {
 				noInterrupt: [2, 4, 24, 25, 30],
 				race: {
 					3: { distance: 90.98 }, // F.Helf: 90.983
+					4: { distance: 35 }, // M.Aman: 35
 					6: { distance: 69.7 }, // M.Casta: 69.704
 					8: { distance: 69.51 }, // Popori: 69.513
 					9: { distance: 87.27 }, // Elin: 87.272
@@ -1408,6 +1419,7 @@ module.exports = {
 				noInterrupt: [2, 4, 24, 25, 30],
 				race: {
 					3: { distance: 90.98 }, // F.Helf: 90.983
+					4: { distance: 35 }, // M.Aman: 35
 					6: { distance: 69.7 }, // M.Casta: 69.704
 					8: { distance: 69.51 }, // Popori: 69.513
 					9: { distance: 87.27 }, // Elin: 87.272
@@ -1419,6 +1431,7 @@ module.exports = {
 				noInterrupt: [2, 4, 24, 25, 30],
 				race: {
 					3: { distance: 90.98 }, // F.Helf: 90.983
+					4: { distance: 35 }, // M.Aman: 35
 					6: { distance: 69.7 }, // M.Casta: 69.704
 					8: { distance: 69.51 }, // Popori: 69.513
 					9: { distance: 87.27 }, // Elin: 87.272
@@ -1431,6 +1444,7 @@ module.exports = {
 				noInterrupt: [2, 4, 24, 25, 30],
 				race: {
 					3: { distance: 90.98 }, // F.Helf: 90.983
+					4: { distance: 35 }, // M.Aman: 35
 					6: { distance: 69.7 }, // M.Casta: 69.704
 					8: { distance: 69.51 }, // Popori: 69.513
 					9: { distance: 87.27 }, // Elin: 87.272
@@ -1500,6 +1514,7 @@ module.exports = {
 				noRetry: true,
 				race: {
 					3: { distance: 71.34 }, // F.Helf: 71.336
+					4: { distance: 50.07 }, // M.Aman: 50.071
 					6: { distance: 66.21 }, // M.Casta: 66.21
 					8: { distance: 53.41 }, // Popori: 53.412
 					9: { distance: 80.47 }, // Elin: 80.468
@@ -1540,7 +1555,7 @@ module.exports = {
 			'*': { type: 'chargeCast' },
 			0: {
 				type: 'charging',
-				length: [650, 650, 650],		// 2700
+				length: [650, 650, 650],		// 2300
 			    noInterrupt: [2, 3, 4, 15, 18, 24, 25, 30],
 				glyphs: {
 					24009: { chargeSpeed: 0.25 },
@@ -1556,9 +1571,9 @@ module.exports = {
 					401400: { chain: 6 }
 				},
 				level: [
-					{ length: 800 },	// 1300
-					{ length: [800, 800] },	// 1150
-					{ length: [800, 800] }	// 1150
+					{ length: 800 },	// 2300
+					{ length: [800, 800] },	// 2300
+					{ length: [800, 800] }	// 2300
 				]
 			},
 			10: {
@@ -1628,7 +1643,7 @@ module.exports = {
 			 },                               // Chained VB Usage: 1. "Show default Chained Skills" in the Chained Skills menu must be on.        		                               
             0: {                             //                    2. Must be in combat when used.  3. the VB chain icon must be shown
                 type: 'charging',           //                    Else the animation of VB won't go off causing slight desync.
-				length: [800, 800, 800],		// 2700
+				length: [800, 800, 800],		// 2300
 				noInterrupt: [2, '3-0', 4, '10-0', '18-0', 24, 25, 30], // VB can't chain to stages 10, 11 or 12 in the client, it only can on stages 13
 				abnormals: {
 					400500: { chargeSpeed: 0.2 },
@@ -1641,16 +1656,17 @@ module.exports = {
                     '18-13': 14
                 },
 				level: [
-					{ length: 800 },	// 1600
-					{ length: [800, 800] },	// 1600
-					{ length: [800, 800] }	// 1600
+					{ length: 800 },	// 2300
+					{ length: [800, 800] },	// 2300
+					{ length: [800, 800] }	// 2300
 				]
             },
             10: {
 				distance: 87.28, // 87.272
 				noInterrupt: [2, 4, 24, 25, 30],
 				race: {
-					3: { distance: 72.79 }, // F.Helf: 72.785, Skill level I
+					3: { distance: 72.79 }, // F.Helf: 72.785
+					4: { distance: 35 }, // M.Aman: 35
 					6: { distance: 69.7 }, // M.Casta: 69.704
 					8: { distance: 69.51 }, // Popori: 69.513
 					9: { distance: 87.27 }, // Elin: 87.272
@@ -1661,7 +1677,8 @@ module.exports = {
 				distance: 87.28, // 87.272
 				noInterrupt: [2, 4, 24, 25, 30],
 				race: {
-					3: { distance: 72.79 }, // F.Helf: 72.785, Skill level I
+					3: { distance: 72.79 }, // F.Helf: 72.785
+					4: { distance: 35 }, // M.Aman: 35
 					6: { distance: 69.7 }, // M.Casta: 69.704
 					8: { distance: 69.51 }, // Popori: 69.513
 					9: { distance: 87.27 }, // Elin: 87.272
@@ -1672,7 +1689,8 @@ module.exports = {
 				distance: 87.28, // 87.272
 				noInterrupt: [2, 4, 24, 25, 30],
 				race: {
-					3: { distance: 72.79 }, // F.Helf: 72.785, Skill level I
+					3: { distance: 72.79 }, // F.Helf: 72.785
+					4: { distance: 35 }, // M.Aman: 35
 					6: { distance: 69.7 }, // M.Casta: 69.704
 					8: { distance: 69.51 }, // Popori: 69.513
 					9: { distance: 87.27 }, // Elin: 87.272
@@ -1683,7 +1701,8 @@ module.exports = {
 				distance: 87.28, // 87.272
 				noInterrupt: [2, 4, 24, 25, 30],
 				race: {
-					3: { distance: 72.79 }, // F.Helf: 72.785, Skill level I
+					3: { distance: 72.79 }, // F.Helf: 72.785
+					4: { distance: 35 }, // M.Aman: 35
 					6: { distance: 69.7 }, // M.Casta: 69.704
 					8: { distance: 69.51 }, // Popori: 69.513
 					9: { distance: 87.27 }, // Elin: 87.272
@@ -1714,7 +1733,7 @@ module.exports = {
 		    },
 			0: {
 				type: 'charging',
-				length: [800, 800, 800],		// 2700
+				length: [800, 800, 800],		// 2300
 				noInterrupt: [2, 3, 4, 10, 15, 24, 25, 30],
 				abnormals:  {
 					24120: { chargeSpeed: 0.3 },
@@ -1724,9 +1743,9 @@ module.exports = {
 					401400: { chain: 6 }
 			    },
 				level: [
-					{ length: 800 },	// 1600
-					{ length: [800, 800] },	// 1600
-					{ length: [800, 800] }	// 1600
+					{ length: 800 },	// 2300
+					{ length: [800, 800] },	// 2300
+					{ length: [800, 800] }	// 2300
 				]
 			},
 			10: {
@@ -2310,9 +2329,9 @@ module.exports = {
 					601450: { chargeSpeed: 0.5 }
 				},
 				level: [
-					{ length: 600 },	// 1400
-					{ length: [600, 600] },	// 1400
-					{ length: [600, 600] },	// 1400
+					{ length: 600 },	// 2800
+					{ length: [600, 600] },	// 2800
+					{ length: [600, 600] },	// 2800
 				]
 			},
 			10: { 
@@ -2354,7 +2373,7 @@ module.exports = {
 			},
 			0: {
 				type: 'charging',
-				length: [800, 800, 800],	// 2700
+				length: [800, 800, 800],	// 2800
 				noInterrupt: [3, 22],
 				abnormals: {
 					26160: { chargeSpeed: 0.3 },
@@ -2364,9 +2383,9 @@ module.exports = {
 					601450: { chargeSpeed: 0.5 }
 				},
 				level: [
-					{ length: 1000 },	// 1400
-					{ length: [1000, 1000] },	// 1400
-					{ length: [1000, 1000] },	// 1400
+					{ length: 1000 },	// 2800
+					{ length: [1000, 1000] },	// 2800
+					{ length: [1000, 1000] },	// 2800
 				]
 			},
 			10: { 
