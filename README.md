@@ -9,6 +9,8 @@ Update Nov 22, 2017: Point blank, blocks button spam and invalid skill casts, an
 
 Soon™: Double casts prevention(Short skills like Teleporting jaunts, Overpower, Restraning arrow, Web arrow)
 
+Reading exact length and distance data from tera data center (Boring af)
+
 
 ## Races/Classes that are specialized so far
 
