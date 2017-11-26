@@ -1311,6 +1311,8 @@ module.exports = {
 				length: 1155,
 				distance: 78,
 				race: {
+					0: { distance: 58.1 }, // M.Human: 58.10235
+					1: { distance: 61.96 }, // F.Human: 61.9559364
 					3: { distance: 63.24 }, // F.Helf: 63.236
 					4: {	// M.Aman
 						length: 1110,
@@ -1329,6 +1331,8 @@ module.exports = {
 				length: 925,
 				distance: 21.05,
 				race: {
+					0: { distance: 23.28 }, // M.Human: 23.28463
+					1: { distance: 23.28 }, // F.Human: 23.28463
 					3: { distance: 27.38 }, // F.Helf: 27.382
 					4: { distance: 25 },	// M.Aman: 25
 					6: { distance: 23.27 }, // M.Casta: 23.274
@@ -1341,6 +1345,8 @@ module.exports = {
 				length: 1125,
 				distance: 31.84,
 				race: {
+					0: { distance: 22.93 }, // M.Human: 22.8330917
+					1: { distance: 22.83 }, // F.Human: 22.83308
 					3: { distance: 32.47 }, // F.Helf: 32.474
 					4: { distance: 25 }, // M.Aman: 25
 					6: { distance: 22.83 }, // M.Casta: 22.833
@@ -1353,6 +1359,8 @@ module.exports = {
 				length: 1825,
 				distance: 54.28,
 				race: {
+					0: { distance: 69.26 }, // M.Human: 69.2654953
+					1: { distance: 70.41 }, // F.Human: 70.41038
 					3: { distance: 55.25 }, // F.Helf: 55.251
 					4: {	// M.Aman
 						length: 2000,
@@ -1466,6 +1474,7 @@ module.exports = {
 				},
 				race: {
 					3: { distance: 90.6 }, // F.Helf: 90.601
+					4: { distance: 80 }, // M.Aman: 80
 					6: { distance: 75 }, // M.Casta: 75
 					8: { distance: 73.34 }, // Popori: 73.344
 					9: { distance: 105.69 }, // Elin: 105.685
@@ -1597,7 +1606,7 @@ module.exports = {
 				distance: [33.33, 33.33, 33.33, 33.33, 50],
 				noInterrupt: [2, 4, 24, 25, 30],
 				races: {
-					3: { length: [375, 375, 1800] }	// F.Helf, true for low level cyclone, not sure about cyclone XI
+					3: { length: [375, 375, 375, 375, 1800] }	// F.Helf, true for low level cyclone, not sure about cyclone XI
 				}
 			},
 			13: {
@@ -1605,7 +1614,7 @@ module.exports = {
 				distance: [33.33, 33.33, 33.33, 33.33, 50],
 				noInterrupt: [2, 4, 15, 24, 25, 30],
 				races: {
-					3: { length: [375, 375, 1800] }	// F.Helf, true for low level cyclone, not sure about cyclone XI
+					3: { length: [375, 375, 375, 375, 1800] }	// F.Helf, true for low level cyclone, not sure about cyclone XI
 				}
 			}
 		},
@@ -1712,6 +1721,8 @@ module.exports = {
             14: { 
 				distance: 87.28, // 87.272
 				race: {
+					3: { distance: 72.79 }, // F.Helf: 72.785
+					4: { distance: 35 }, // M.Aman: 35
 					6: { distance: 69.7 }, // M.Casta: 69.704
 					8: { distance: 69.51 }, // Popori: 69.513
 					9: { distance: 87.27 }, // Elin: 87.272
@@ -3966,6 +3977,7 @@ module.exports = {
 			'*': {
 				length: [1025, 1825],
 				distance: [0, 171.61],
+				noRetry: true,
 				abnormals: {
 					31120: { chain: 31 }
 				},
