@@ -1345,7 +1345,7 @@ module.exports = {
 				length: 1125,
 				distance: 31.84,
 				race: {
-					0: { distance: 22.93 }, // M.Human: 22.8330917
+					0: { distance: 22.83 }, // M.Human: 22.8330917
 					1: { distance: 22.83 }, // F.Human: 22.83308
 					3: { distance: 32.47 }, // F.Helf: 32.474
 					4: { distance: 25 }, // M.Aman: 25
@@ -4119,7 +4119,8 @@ module.exports = {
 		21: { // Mounting Rage
 			'*': {
 				fixedSpeed: 1,
-				length: 1275
+				length: 1275,
+				abnormals: { 10153040: { chain: 6 } }
 			},
 			1: true,
 			2: true
