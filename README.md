@@ -2,7 +2,9 @@
 
 This version of SP will handle racial differences instead of elin only.
 
-Update Nov 23, Gunner Burst fire -5 willpower cost armor roll support. Priest Mana charge +15% charge speed armor roll support
+Update Nov 27, 2017, Brawler: You can no longer cast Mounting rage client side when Growing fury is active
+
+Update Nov 23, 2017, Gunner Burst fire -5 willpower cost armor roll support. Priest Mana charge +15% charge speed armor roll support
 
 Update Nov 22, 2017: Point blank, blocks button spam and invalid skill casts, and becomes slow, it was not supposed to be that fast.
 
