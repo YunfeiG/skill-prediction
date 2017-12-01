@@ -1,7 +1,7 @@
 const JITTER_COMPENSATION	= false,
 	JITTER_ADJUST			= 0,		//	This number is added to your detected minimum ping to get the compensation amount.
 	SKILL_RETRY_COUNT		= 1,		//	Number of times to retry each skill (0 = disabled). Recommended 1-3.
-	SKILL_RETRY_MS			= 80,		/*	Time to wait between each retry.
+	SKILL_RETRY_MS			= 40,		/*	Time to wait between each retry.
 											SKILL_RETRY_MS * SKILL_RETRY_COUNT should be under 100, otherwise skills may go off twice.
 										*/
 	SKILL_RETRY_JITTERCOMP	= 20,		//	Skills that support retry will be sent this much earlier than estimated by jitter compensation.
@@ -79,25 +79,28 @@ module.exports = function SkillPrediction(dispatch) {
 	
 	let manaChargeSpeed = false;
 	let burstFireCost = false;
+	
+	let previousSkill = 0;
+	let timer = null;
 
-	dispatch.hook('S_LOGIN', 6, event => {
+	dispatch.hook('S_LOGIN', 9, event => {
 		skillsCache = {};
-		cid = event.guid;
+		cid = event.gameId;
 		model = event.templateId;
 		race = Math.floor((model - 10101) / 100)
 		job = (model - 10101) % 100
 
 		if(DEBUG) console.log('Race '+race+', Class '+ job);
-		SERVER_TIMEOUT = 120;
+		SERVER_TIMEOUT = 240;
 		if(job==3) SERVER_TIMEOUT = 2800;
 		if(job==5) SERVER_TIMEOUT = 1600;
-		if(job==7) SERVER_TIMEOUT = 60;
-		if(job==8) SERVER_TIMEOUT = 60;
+		if(job==7) SERVER_TIMEOUT = 160;
+		if(job==8) SERVER_TIMEOUT = 160;
 
 		hookInventory()
 	})
 
-	dispatch.hook('S_LOAD_TOPO', 1, event => {
+	dispatch.hook('S_LOAD_TOPO', 2, event => {
 		vehicleEx = null
 
 		currentAction = null
@@ -128,6 +131,13 @@ module.exports = function SkillPrediction(dispatch) {
 
 		currentGlyphs[event.id] = event.enabled
 	})
+	
+	/*dispatch.hook('S_CREST_MESSAGE', 1, event => {
+		if(event.type == 6) if(previousSkill == event.skillID){
+			clearTimeout(timer);
+			previousSkill = 0;
+		}
+	});*/
 
 	dispatch.hook('S_PLAYER_CHANGE_STAMINA', 1, event => { currentStamina = event.current })
 
@@ -209,8 +219,8 @@ module.exports = function SkillPrediction(dispatch) {
 		if(cid.equals(event.target)) vehicleEx = null
 	})
 
-	dispatch.hook('C_PLAYER_LOCATION', 1, event => {
-		if(DEBUG_LOC) console.log('Location %d %d (%d %d %d %d) > (%d %d %d)', event.type, event.speed, Math.round(event.x1), Math.round(event.y1), Math.round(event.z1), event.w, Math.round(event.x2), Math.round(event.y2), Math.round(event.z2))
+	dispatch.hook('C_PLAYER_LOCATION', 2, event => {
+		if(DEBUG_LOC) console.log('Location %d %d (%d %d %d %d) > (%d %d %d)', event.type, event.speed, Math.round(event.x), Math.round(event.y), Math.round(event.z), event.w, Math.round(event.toX), Math.round(event.toY), Math.round(event.toZ))
 
 		if(currentAction) {
 			let info = skillInfo(currentAction.skill)
@@ -220,9 +230,9 @@ module.exports = function SkillPrediction(dispatch) {
 
 		currentLocation = {
 			// This is not correct, but the midpoint location seems to be "close enough" for the client to not teleport the player
-			x: (event.x1 + event.x2) / 2,
-			y: (event.y1 + event.y2) / 2,
-			z: (event.z1 + event.z2) / 2,
+			x: (event.x + event.toX) / 2,
+			y: (event.y + event.toY) / 2,
+			z: (event.z + event.toZ) / 2,
 			w: event.w
 		}
 	})
@@ -446,6 +456,9 @@ module.exports = function SkillPrediction(dispatch) {
 			sendCannotStartSkill(event.skill)
 			return false
 		}
+		
+		// Double cast prevention
+		
 
 		// Skill override (chain)
 		if(skill != event.skill) {
@@ -573,6 +586,10 @@ module.exports = function SkillPrediction(dispatch) {
 				return false
 			})
 	}
+	/*
+	function timerReset(){
+		timer = null;
+	}*/
 
 	function toServerLocked(data) {
 		sending = true
