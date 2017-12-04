@@ -2,7 +2,6 @@
 	* '*' can be used in place of the skill or sub-skill to set default values
 	* Processing order is 'noInterrupt' > 'chains' > 'abnormals'
 	* Default race is Elin unless specified
-
 	Races:
 	0 = Male Human
 	1 = Female Human
@@ -15,7 +14,6 @@
 	8 = Popori
 	9 = Elin
 	10 = Baraka
-
 	Refer to here for what races have its numbers already added: https://github.com/Leyki/skill-prediction/wiki#race-specific-durations-and-distances-on-skills-status 
 	If a race doesn't have its own property therefore assumed to use the same default value.
 */

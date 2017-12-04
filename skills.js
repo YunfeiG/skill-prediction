@@ -7,9 +7,7 @@ const JITTER_COMPENSATION	= false,
 	SKILL_RETRY_JITTERCOMP	= 20,		//	Skills that support retry will be sent this much earlier than estimated by jitter compensation.
 	SKILL_RETRY_ALWAYS		= false,	//	Setting this to true will reduce ghosting for extremely short skills, but may cause other skills to fail.
 	SKILL_DELAY_ON_FAIL		= true,		//	Basic initial desync compensation. Useless at low ping (<50ms).
-	/*SERVER_TIMEOUT			= 3000,			This number is added to your maximum ping + skill retry period to set the failure threshold for skills.
-											If animations are being cancelled while damage is still applied, increase this number.
-										*/
+	
 	FORCE_CLIP_STRICT		= true,		/*	Set this to false for smoother, less accurate iframing near walls.
 											Warning: Will cause occasional clipping through gates when disabled. Do NOT abuse this.
 										*/
@@ -92,11 +90,10 @@ module.exports = function SkillPrediction(dispatch) {
 
 		if(DEBUG) console.log('Race '+race+', Class '+ job);
 		SERVER_TIMEOUT = 240;
-		if(job==3) SERVER_TIMEOUT = 2800;
-		if(job==5) SERVER_TIMEOUT = 1600;
-		if(job==7) SERVER_TIMEOUT = 160;
-		if(job==8) SERVER_TIMEOUT = 160;
-
+		if(job==3) SERVER_TIMEOUT = 2800;	// prevent charge skills from getting animation cancelled at client side
+		if(job==5) SERVER_TIMEOUT = 1600;	// prevent charge skills from getting animation cancelled at client side
+		if(job==6) SERVER_TIMEOUT = 6000;	// prevent resurrection from getting animation cancelled at client side
+		if(job==7) SERVER_TIMEOUT = 6000;	// prevent resurrection from getting animation cancelled at client side
 		hookInventory()
 	})
 
@@ -799,7 +796,7 @@ module.exports = function SkillPrediction(dispatch) {
 
 				// Skills that may only be cancelled during part of the animation are hard to emulate, so we use server response instead
 				// This may cause bugs with very high ping and casting the same skill multiple times
-				if(currentAction && event.skill == currentAction.skill && (event.type == 2 || event.type == 25)) sendActionEnd(event.type)
+				if(currentAction && event.skill == currentAction.skill && [2, 13, 25, 29, 37, 43].includes(event.type)) sendActionEnd(event.type)
 
 				return false
 			}
