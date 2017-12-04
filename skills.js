@@ -92,8 +92,6 @@ module.exports = function SkillPrediction(dispatch) {
 		SERVER_TIMEOUT = 240;
 		if(job==3) SERVER_TIMEOUT = 2800;	// prevent charge skills from getting animation cancelled at client side
 		if(job==5) SERVER_TIMEOUT = 1600;	// prevent charge skills from getting animation cancelled at client side
-		if(job==6) SERVER_TIMEOUT = 6000;	// prevent resurrection from getting animation cancelled at client side
-		if(job==7) SERVER_TIMEOUT = 6000;	// prevent resurrection from getting animation cancelled at client side
 		hookInventory()
 	})
 
