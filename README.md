@@ -5,7 +5,7 @@ This version of SP will handle racial differences instead of elin only.
 
 ## Update/fix logs
 
-Dec 6, 2017, KD/Stagger animation fix, Maybe Sorcerer: Teleport->Arcane pulse rubberband fix and Gunner: Roll->Rocket jump fix.
+Dec 6, 2017, KD/Stagger animation fix, ~~Maybe Sorcerer: Teleport->Arcane pulse rubberband fix and Gunner: Roll->Rocket jump fix.~~
 
 Dec 4, 2017, Removed some unused silence/fear abnormalities in the check. Mystic can now resist Kalivan's big lightning and Lilith's chain hook by Corruption Ring now.
 
