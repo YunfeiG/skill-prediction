@@ -410,7 +410,7 @@ module.exports = function SkillPrediction(dispatch) {
 		}
 
 		if(currentAction) {
-			if(currentAction.skill & Flags.CC && (currentAction.skill & 0xffffff !== templateId * 100 + 2 || info.type !== 'retaliate')) {
+			if(currentAction.skill & Flags.CC && (currentAction.skill & 0xffffff !== model * 100 + 2 || info.type !== 'retaliate')) {
 				sendCannotStartSkill(event.skill)
  				return false
  			}
