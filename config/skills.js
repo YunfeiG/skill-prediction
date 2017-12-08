@@ -3728,6 +3728,9 @@ module.exports = {
 				type: 'nullChain',
 			},
 			2: {
+				chains: {
+					40: 6
+				},
 				consumeAbnormal: 10152010
 			},
 			30: true
