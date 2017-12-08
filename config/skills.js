@@ -3850,8 +3850,7 @@ module.exports = {
 					7692002: { chain: 6 },
 					9692002: { chain: 6 }
 				},
-				forceClip: true,
-				triggerAbnormal: { 10152010: 3100 }
+				forceClip: true
 			}
 		}
 	},
