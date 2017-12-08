@@ -3627,15 +3627,24 @@ module.exports = {
 					19: 30,
 					40: 30
 				},
+				triggerAbnormal: {
+					10152000: 3100,
+					10152001: 3100
+				},
 				noInterrupt: ['4-1','4-2','4-30']
 			},
 			2: {
+				triggerAbnormal: {
+					10152000: 3100,
+					10152001: 3100
+				},
 				noInterrupt: ['4-1','4-2','4-30']
 			},
 			3: {
 				length: 1195,
 				distance: -198.53,
 				noInterrupt: ['4-3','4-4'],
+				consumeAbnormal: [10152000, 10152001],
 				chains: {
 					'4-1': 4,
 					'4-2': 4,
@@ -3644,9 +3653,15 @@ module.exports = {
 			},
 			4: {
 				length: 1195,
-				distance: -198.53
+				distance: -198.53,
+				consumeAbnormal: [10152000, 10152001]
 			},
-			30: true
+			30: {
+				triggerAbnormal: {
+					10152000: 3100,
+					10152001: 3100
+				}
+			}
 		},
 		5: { // Burst Fire
 			0: { length: 850 },
@@ -3669,7 +3684,8 @@ module.exports = {
 		6: { // Time Bomb
 			'*': {
 				fixedSpeed: 1,
-				length: 1000
+				length: 1000,
+				triggerAbnormal: { 10152010: 3100 }
 			},
 			1: true,
 			2: true
@@ -3679,12 +3695,14 @@ module.exports = {
 			1: {
 				fixedSpeed: 1,
 				noInterrupt: [7],
-				noRetry: true
+				noRetry: true,
+				triggerAbnormal: { 10152010: 3100 }
 			},
 			2: {
 				fixedSpeed: 1,
 				noInterrupt: [7],
-				noRetry: true
+				noRetry: true,
+				triggerAbnormal: { 10152010: 3100 }
 			},
 			3: { length: 1200 }
 		},
@@ -3703,10 +3721,15 @@ module.exports = {
 		10: { // Arc Bomb
 			'*': {
 				length: 1325,
-				noRetry: true
+				noRetry: true,
 			},
-			1: { type: 'nullChain' },
-			2: { type: 'nullChain' },
+			1: {
+				noInterrupt: [10],
+				type: 'nullChain',
+			},
+			2: {
+				consumeAbnormal: 10152010
+			},
 			30: true
 		},
 		11: { // Rocket Jump
@@ -3827,7 +3850,8 @@ module.exports = {
 					7692002: { chain: 6 },
 					9692002: { chain: 6 }
 				},
-				forceClip: true
+				forceClip: true,
+				triggerAbnormal: { 10152010: 3100 }
 			}
 		}
 	},
