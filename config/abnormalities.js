@@ -19,5 +19,27 @@ module.exports = {
 	10154003: true,
 	10154004: true,
 	10154005: true,
-	10154006: true
+	10154006: true,
+	
+	/* Gunner */
+    10152000: true,	// PB forward
+    10152001: true, // PB forward
+	10152002: true, // PB backward
+    10152010: true, // Time Bomb, Arcane Barrage fire & Rolling Reload, responsible for client sending action 2 of many next skills.
+	10152011: true, // Blast
+    10152012: true, // Rolling Reload
+    10152040: true, // Arcane Barrage flying
+    10152081: true, // Arcane Barrage detonate
+    10152050: true, // Burst fire shoot
+    10152053: true, // Burst fire windup
+    10152054: true, // Burst fire shoot
+    10152072: true, // Replenishment
+    10152082: true, // Bombardment cast
+    10152083: true, // Scatter Shot
+    10152084: true, // Time bomb fire
+    10152085: true, // Mana Missiles fire
+    10152086: true, // Arc Bomb
+	10152087: true, // Rocket Jump
+    10152097: true, // Balder's Vengeance
+    10153093: true // Rocket Jump & Rolling Reload
 }
