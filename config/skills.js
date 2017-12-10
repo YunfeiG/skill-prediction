@@ -77,14 +77,14 @@ module.exports = {
 					21101: { stamina: -120 }
 				},
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null },
+					7692002: { chain: null },
+					9692002: { chain: null }
 				},
 				race: {
 					8: { length: 1060 } // Popori
@@ -162,14 +162,14 @@ module.exports = {
 				length: 2025, 
 				noInterrupt: [2, 32],
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null },
+					7692002: { chain: null },
+					9692002: { chain: null }
 				},
 				race: {
 					2: { length: 2055 }, // M.Helf
@@ -201,8 +201,8 @@ module.exports = {
 				distance: 250,
 				noInterrupt: [32],
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: null },
+					9692002: { chain: null }
 				},
 				race: {
 					2: { length: 1525 }, // M.Helf
@@ -228,8 +228,8 @@ module.exports = {
 				length: 1135,
 				distance: 467.88,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: null },
+					9692002: { chain: null }
 				},
 				noRetry: true,
 				noInterrupt: [32]
@@ -307,8 +307,8 @@ module.exports = {
 				distance: 65.35,
 				requiredBuff: 100700,
 				abnormals: {
-					100200: { chain: 6 },
-					100201: { chain: 6 }
+					100200: { chain: null },
+					100201: { chain: null }
 				},
 				race: {
 					2: { distance: 68.81 }, // M.Helf: 68.805
@@ -449,8 +449,8 @@ module.exports = {
 				fixedSpeed: 1,
 				requiredBuff: [100200, 100201],
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: null },
+					9692002: { chain: null }
 				},
 				stamina: 50
 			}
@@ -567,8 +567,8 @@ module.exports = {
 				type: 'holdInfinite',
 				fixedSpeed: 1,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: null },
+					9692002: { chain: null }
 				},
 				stamina: 50
 			}
@@ -709,8 +709,8 @@ module.exports = {
 				length: 1135,
 				distance: 474.5,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: null },
+					9692002: { chain: null }
 				},
 				noInterrupt: [2, 15]
 			},
@@ -823,8 +823,8 @@ module.exports = {
 			'*' :{
 				distance: 100,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: null },
+					9692002: { chain: null }
 				},
 				chains: {
 					8: 30,
@@ -853,14 +853,14 @@ module.exports = {
 					22089: { stamina: -100 }
 				},
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null },
+					7692002: { chain: null },
+					9692002: { chain: null }
 				}
 			}
 		},
@@ -1000,14 +1000,14 @@ module.exports = {
 				noInterrupt: [4],
 				noRetry: true,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 },
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null },
+					7692002: { chain: null },
+					9692002: { chain: null },
 					301200: { chain: 30 },
 				},
 				race: {
@@ -1025,12 +1025,12 @@ module.exports = {
 				fixedSpeed: 1,
 				length: 700,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null }
 				}
 			}
 		},
@@ -1080,8 +1080,8 @@ module.exports = {
 				length: 2175,
 				distance: 250,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: null },
+					9692002: { chain: null }
 				}
 			}
 		},
@@ -1171,14 +1171,14 @@ module.exports = {
 					23060: { speed: 1.25 }
 				},
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null },
+					7692002: { chain: null },
+					9692002: { chain: null }
 				}
 		    }
 		},
@@ -1206,14 +1206,14 @@ module.exports = {
 				length: 1000,
 				distance: 413, // Baraka, 420.018 | M.Aman, 420.007 | M.Human 420
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null },
+					7692002: { chain: null },
+					9692002: { chain: null }
 				}
 			}
 		},
@@ -1375,8 +1375,8 @@ module.exports = {
 		    '*': {
 				type: 'holdInfinite',
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: null },
+					9692002: { chain: null }
 				}
 			},
 			0: { fixedSpeed: 1 },
@@ -1505,12 +1505,12 @@ module.exports = {
 				length: 700,
 				noInterrupt: [2],
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null }
 				}
 			}
 		},
@@ -1575,7 +1575,7 @@ module.exports = {
 					400500: { chargeSpeed: 0.2 },
 					400501: { chargeSpeed: 0.4 },
 					4010150: { chargeSpeed: 0.2 },
-					401400: { chain: 6 }
+					401400: { chain: null }
 				},
 				level: [
 					{ length: 800 },	// 2300
@@ -1621,8 +1621,8 @@ module.exports = {
 				length: 2250,
 				distance: 250,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: null },
+					9692002: { chain: null }
 				},
 				noInterrupt: [2]
 			}
@@ -1749,7 +1749,7 @@ module.exports = {
 					400500: { chargeSpeed: 0.2 },
 					400501: { chargeSpeed: 0.4 },
 					4010150: { chargeSpeed: 0.2 },
-					401400: { chain: 6 }
+					401400: { chain: null }
 			    },
 				level: [
 					{ length: 800 },	// 2300
@@ -1834,12 +1834,12 @@ module.exports = {
 				length: 1015,
 				distance: 150,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null }
 				}
 			},
 			10: { noInterrupt: [2, 3, 4, 10, 15, 18, 25, 30] },
@@ -1904,14 +1904,14 @@ module.exports = {
 				forceClip: true,
 				noInterrupt: [2, 29],
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null },
+					7692002: { chain: null },
+					9692002: { chain: null }
 				}
 			}
 		},
@@ -1940,8 +1940,8 @@ module.exports = {
 				length: 1135,
 				distance: 470,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: null },
+					9692002: { chain: null }
 				},
 				noInterrupt: [2],
 				noRetry: true
@@ -2069,14 +2069,14 @@ module.exports = {
 				distance: -200,
 				forceClip: true,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null },
+					7692002: { chain: null },
+					9692002: { chain: null }
 				}
 			}
 		},
@@ -2129,8 +2129,8 @@ module.exports = {
 				length: 1100,
 				distance: -187.5,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: null },
+					9692002: { chain: null }
 				},
 				forceClip: true
 			}
@@ -2229,14 +2229,14 @@ module.exports = {
 				teleportStage: 1,
 				noRetry: true,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null },
+					7692002: { chain: null },
+					9692002: { chain: null }
 				}
 			}
 		},
@@ -2255,8 +2255,8 @@ module.exports = {
 			'*': { 
 				length: 475,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: null },
+					9692002: { chain: null }
 				}
 			},
 			0: true,
@@ -2450,14 +2450,14 @@ module.exports = {
 				distance: -200,
 				forceClip: true,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null },
+					7692002: { chain: null },
+					9692002: { chain: null }
 				}
 			}
 		},
@@ -2508,8 +2508,8 @@ module.exports = {
 				length: 1340,
 				distance: -250,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: null },
+					9692002: { chain: null }
 				},
 				forceClip: true
 			}
@@ -2598,12 +2598,12 @@ module.exports = {
 				length: 1075, // 1000
 				distance: 413, // 412.078
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null }
 				}
 			}
 		}
@@ -2703,8 +2703,8 @@ module.exports = {
 				length: 1125,
 				distance: -250.5,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: null },
+					9692002: { chain: null }
 				},
 				forceClip: true
 			}
@@ -2821,14 +2821,14 @@ module.exports = {
 				distance: -200,
 				forceClip: true,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null },
+					7692002: { chain: null },
+					9692002: { chain: null }
 				}
 			}
 		},
@@ -2972,14 +2972,14 @@ module.exports = {
 				teleportStage: 1,
 				noRetry: true,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null },
+					7692002: { chain: null },
+					9692002: { chain: null }
 				}
 			}
 		},
@@ -3160,7 +3160,7 @@ module.exports = {
 		}
 	},
 	8: { // Reaper
-		'*' : { consumeAbnormal: [10151020, 10151021, 10151022, 10141023] },
+		'*' : { consumeAbnormal: [10151020, 10151021, 10151022, 10151023] },
 		1: { // Spiral Barrage
 			'*': {
 				length: 1000,
@@ -3287,9 +3287,23 @@ module.exports = {
 			30: true
 		},
 		4: { // Sundering Strike
-			'*': { noRetry: true },
+			'*': {
+				noInterrupt: [1, 4, 8, 9, 10, 11, 12, 14, 20],
+				chains: {
+					1: null,
+					3: null,
+					//4: null,
+					5: null,
+					6: null,
+					8: null,
+					9: null,
+					10: null,
+					11: null,
+					12: null
+				},
+				noRetry: true
+			},
 			0: {
-				type: 'nullChain',
 				length: [1175, 1750, 1025],
 				distance: [0, 100, 0],
 				inPlace: {
@@ -3304,8 +3318,7 @@ module.exports = {
 						[]
 					],
 					distance: [0, 0, 0]
-				},
-				noInterrupt: [1, 4, 8, 9, 10, 11, 12, 14, 20]
+				}
 			},
 			30: {
 				length: [1750, 1025],
@@ -3412,12 +3425,12 @@ module.exports = {
 					distance: 0
 				},
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null }
 				},
 				noInterrupt: [1, 3, 4, 5, 6, 8, 9, 10, 11, 12, 14, 20]
 			}
@@ -3427,8 +3440,8 @@ module.exports = {
 				length: 1000,
 				distance: -200,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: null },
+					9692002: { chain: null }
 				},
 				noInterrupt: [10],
 				chains: {
@@ -3502,8 +3515,8 @@ module.exports = {
 				fixedSpeed: 1,
 				length: 1575,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: null },
+					9692002: { chain: null }
 				}
 			}
 		},
@@ -3518,14 +3531,14 @@ module.exports = {
 				length: 850,
 				distance: 150,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null },
+					7692002: { chain: null },
+					9692002: { chain: null }
 				}
 			}
 		},
@@ -3536,14 +3549,14 @@ module.exports = {
 				forceClip: true,
 				noRetry: true,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 },
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null },
+					7692002: { chain: null },
+					9692002: { chain: null },
 					10151000: { chain: 30 }
 				}
 			},
@@ -3768,14 +3781,24 @@ module.exports = {
 				length: 1325,
 				noInterrupt: [10, 20],
 				noRetry: true,
-				triggerAbnormal: { 10152086: 4100 }
-			},
-			1: { type: 'nullChain' },
-			2: {
+				triggerAbnormal: { 10152086: 4100 },
 				chains: {
-					40: 6		// nullchain after rolling reload, not a nullchain after timebomb/arcane barrage fire
+					'2-1': null,
+					3: null,
+					4: null,
+					'7-3': null,
+					'9-10': null,
+					'9-11': null,
+					//10: null,
+					11: null,
+					13: null,
+					15: null,
+					19: null,
+					40: null
 				}
 			},
+			1: true,
+			2: true,
 			30: true
 		},
 		11: { // Rocket Jump
@@ -3799,14 +3822,14 @@ module.exports = {
 					40: 31
 				},
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null },
+					7692002: { chain: null },
+					9692002: { chain: null }
 				},
 				noRetry: true
 			},
@@ -3827,29 +3850,25 @@ module.exports = {
 			'*': {
 				length: 5800,
 				distance: -269.09,
-				/*chains: {
-					'2-1': 30,
-					3: 30,
-					4: 30,
-					'7-3': 30,
-					'9-10': 30,
-					'9-11': 30,
-					10: 30,
-					11: 30,
-					13: 30,
-					15: 30,
-					19: 30,
-					40: 30
-				},*/
+				chains: {
+					'2-1': null,
+					3: null,
+					4: null,
+					'7-3': null,
+					'9-10': null,
+					'9-11': null,
+					10: null,
+					11: null,
+					//13: null,
+					15: null,
+					19: null,
+					40: null
+				},
 				triggerAbnormal: { 10152097: 4000 },
 				noRetry: true
 			},
-			1: { type: 'nullChain' },
-			2: {
-				chains: {
-					40: 6		// nullchain after rolling reload, not a nullchain after timebomb/arcane barrage fire
-				}
-			}, 
+			1: true,
+			2: true,
 			30: true
 		},
 		15: { // Replenishment
@@ -3890,14 +3909,24 @@ module.exports = {
 		19: { // ST
 			'*' : {
 				length: 1325,
-				noRetry: true
-			},
-			1: { type: 'nullChain' },
-			2: {
+				noRetry: true,
 				chains: {
-					40: 6		// nullchain after rolling reload, not a nullchain after timebomb/arcane barrage fire
-				}
-			}, 
+					'2-1': null,
+					3: null,
+					4: null,
+					'7-3': null,
+					'9-10': null,
+					'9-11': null,
+					10: null,
+					11: null,
+					13: null,
+					15: null,
+					//19: null,
+					40: null
+				},
+			},
+			1: true,
+			2: true,
 			30: true
 		},
 		20: { // Retaliate
@@ -3919,8 +3948,8 @@ module.exports = {
 					10152080: 4100
 				},
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: null },
+					9692002: { chain: null }
 				},
 				forceClip: true,
 				noRetry: true
@@ -3971,8 +4000,8 @@ module.exports = {
 		2: { // Counter
 			'*': {
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: null },
+					9692002: { chain: null }
 				},
 				noRetry: true
 			},
@@ -4049,8 +4078,8 @@ module.exports = {
 			'*': {
 				length: 3225,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: null },
+					9692002: { chain: null }
 				}
 			},
 			0: true,
@@ -4062,8 +4091,8 @@ module.exports = {
 				length: [2950, 650],
 				distance: [0, 135],
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: null },
+					9692002: { chain: null }
 				}
 			}
 		},
@@ -4161,8 +4190,8 @@ module.exports = {
 				distance: 155,
 				requiredBuff: 10153000,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: null },
+					9692002: { chain: null }
 				},
 				chains: {
 					1: 30,
@@ -4214,7 +4243,7 @@ module.exports = {
 			'*': {
 				fixedSpeed: 1,
 				length: 1275,
-				abnormals: { 10153040: { chain: 6 } }
+				abnormals: { 10153040: { chain: null } }
 			},
 			1: true,
 			2: true
@@ -4228,14 +4257,14 @@ module.exports = {
 				hasChains: true,
 				noRetry: true,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 },
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null },
+					7692002: { chain: null },
+					9692002: { chain: null },
 					10153150: { chain: 30 },
 				}
 			},
@@ -4407,14 +4436,14 @@ module.exports = {
 				forceClip: true,
 				noRetry: true,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 },
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null },
+					7692002: { chain: null },
+					9692002: { chain: null },
 					10154010: { chain: 30 }
 				}
 			},
@@ -4422,8 +4451,29 @@ module.exports = {
 			30: true
 		},
 		3: { // Leaves on the Wind
-			'*': { length: 1275 },
-			0: { type: 'nullChain' },
+			'*': {
+				length: 1275,
+				noInterrupt: [3],
+			},
+			0: {
+				chains: {
+					1: null,
+					'4-10': null,
+					5: null,
+					6: null,
+					7: null,
+					9: null,
+					10: null,
+					12: null,
+					13: null,
+					14: null,
+					15: null,
+					16: null,
+					18: null,
+					19: null,
+					20: null
+				}
+			},
 			30: true
 		},
 		4: { // Jagged Path
@@ -4433,14 +4483,14 @@ module.exports = {
 				length: 665,
 				distance: 469,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null },
+					7692002: { chain: null },
+					9692002: { chain: null }
 				}	
 			},
 			10: { length: 1500 },
@@ -4453,21 +4503,41 @@ module.exports = {
 			'*': {
 				length: 1008,
 				distance: -291.6,
-				noInterrupt: [5],
+				noInterrupt: [2, 5],
 				forceClip: true,
 				noRetry: true,
+				chains: {
+					1: null,
+					2: null,
+					3: null,
+					'4-10': null,
+					6: null,
+					7: null,
+					8: null,
+					9: null,
+					10: null,
+					11: null,
+					12: null,
+					13: null,
+					14: null,
+					15: null,
+					16: null,
+					17: null,
+					19: null,
+					20: null
+				},
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null },
+					7692002: { chain: null },
+					9692002: { chain: null }
 				}
 			},
-			0: { type: 'nullChain' },
+			0: true,
 			30: true
 		},
 		6: { // One Thousand Cuts
@@ -4490,14 +4560,14 @@ module.exports = {
 					20: 30
 				},
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null },
+					7692002: { chain: null },
+					9692002: { chain: null }
 				}
 			 },
 			0: true,
@@ -4515,14 +4585,14 @@ module.exports = {
 				length: 1550,
 				onlyTarget: true,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null },
+					7692002: { chain: null },
+					9692002: { chain: null }
 				}
 			}
 		},
@@ -4566,16 +4636,37 @@ module.exports = {
 		9: { // Smoke Bomb
 			'*': { 
 				length: 725,
+				noInterrupr: [2, 9],
+				chains: {
+					1: null,
+					2: null,
+					3: null,
+					'4-10': null,
+					5: null,
+					6: null,
+					7: null,
+					8: null,
+					10: null,
+					11: null,
+					12: null,
+					13: null,
+					14: null,
+					15: null,
+					16: null,
+					17: null,
+					19: null,
+					20: null
+				},
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null }
 				}
 			},
-			0: { type: 'nullChain' },
+			0: true,
 			30: true
 		},
 		11: { // Focus
@@ -4617,21 +4708,21 @@ module.exports = {
 				length: 3225,
 				distance: 245.06,
 			    chains: {
-				1: 30,
-				2: 30, 
-				4: 30,
-				5: 30, 
-				6: 30,
-				7: 30,
-				8: 30,
-				9: 30,
-				12: 30,
-				14: 30,
-				15: 30,
-				16: 30,
-				18: 30,
-				19: 30,
-				20: 30
+					1: 30,
+					2: 30, 
+					4: 30,
+					5: 30, 
+					6: 30,
+					7: 30,
+					8: 30,
+					9: 30,
+					12: 30,
+					14: 30,
+					15: 30,
+					16: 30,
+					18: 30,
+					19: 30,
+					20: 30
 				}
 			},
 			1: true,
@@ -4687,9 +4778,26 @@ module.exports = {
 		16: { // Death Blossom
 			'*': {
 				fixedSpeed: 1,
-				length: 1525
+				length: 1525,
+				noInterrupt: [16],
+				chains: {
+					1: null,
+					'4-10': null,
+					5: null,
+					6: null,
+					7: null,
+					9: null,
+					10: null,
+					12: null,
+					13: null,
+					14: null,
+					15: null,
+					18: null,
+					19: null,
+					20: null
+				}
 			},
-			0: { type: 'nullChain' },
+			0: true,
 			30: true
 		},
 		17: { // Attunement
@@ -4720,9 +4828,26 @@ module.exports = {
 		18: { // Bladestorm
 			'*': { 
 				length: 1000,
-				distance: 68.535
+				distance: 68.535,
+				noInterrupt: [18],
+				chains: {
+					1: null,
+					3: null,
+					'4-10': null,
+					6: null,
+					7: null,
+					9: null,
+					10: null,
+					12: null,
+					13: null,
+					14: null,
+					15: null,
+					16: null,
+					19: null,
+					20: null
+				}
 			 },
-			0: { type: 'nullChain' },
+			0: true,
 			30: true
 		},
 		19: { // Chakra Thrust
@@ -5033,12 +5158,30 @@ module.exports = {
 					33020: { speed: 1.2 }
 				},
 				chains: {
-					17: 30, // Not correct since still triggers substage 4 on them.
-					21: 30 //  But for now it works /shrug
+					1: null,
+					2: null,
+					3: null,
+					4: null,
+					5: null,
+					6: null,
+					7: null,
+					8: null,
+					9: null,
+					11: null,
+					12: null,
+					13: null,
+					14: null,
+					15: null,
+					16: null,
+					//17: 30, // Not correct since still triggers substage 4 on them.
+					18: null,
+					19: null,
+					//20: null,
+					//21: 30 //  But for now it works /shrug
 				}
 			},
-			0: { type: 'nullChain' }, // This skill triggers substage 4 on most skills and simply adding the chains doesn't do so we add nullChain. But
-			30: true // if we add a chain to a skill that we want to trigger substage 4 on, it will break, ghosting if there's no fast enough server response.
+			0: true,
+			30: true
 		},
 		11: { // Shining Crescent
 			'*': {
@@ -5156,14 +5299,14 @@ module.exports = {
 				forceClip: true,
 				noInterrupt: [14],
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: null },
+					400801: { chain: null },
+					501320: { chain: null },
+					501321: { chain: null },
+					501322: { chain: null },
+					501323: { chain: null },
+					7692002: { chain: null },
+					9692002: { chain: null }
 				}
 			},
 			0: true,
@@ -5271,8 +5414,8 @@ module.exports = {
 			0: {
 				length: 1500,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: null },
+					9692002: { chain: null }
 				},
 				onlyTarget: true
 			}
