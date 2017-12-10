@@ -77,14 +77,14 @@ module.exports = {
 					21101: { stamina: -120 }
 				},
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null },
-					7692002: { chain: null },
-					9692002: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 },
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				},
 				race: {
 					8: { length: 1060 } // Popori
@@ -162,14 +162,14 @@ module.exports = {
 				length: 2025, 
 				noInterrupt: [2, 32],
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null },
-					7692002: { chain: null },
-					9692002: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 },
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				},
 				race: {
 					2: { length: 2055 }, // M.Helf
@@ -201,8 +201,8 @@ module.exports = {
 				distance: 250,
 				noInterrupt: [32],
 				abnormals: {
-					7692002: { chain: null },
-					9692002: { chain: null }
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				},
 				race: {
 					2: { length: 1525 }, // M.Helf
@@ -228,8 +228,8 @@ module.exports = {
 				length: 1135,
 				distance: 467.88,
 				abnormals: {
-					7692002: { chain: null },
-					9692002: { chain: null }
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				},
 				noRetry: true,
 				noInterrupt: [32]
@@ -307,8 +307,8 @@ module.exports = {
 				distance: 65.35,
 				requiredBuff: 100700,
 				abnormals: {
-					100200: { chain: null },
-					100201: { chain: null }
+					100200: { chain: 6 },
+					100201: { chain: 6 }
 				},
 				race: {
 					2: { distance: 68.81 }, // M.Helf: 68.805
@@ -449,8 +449,8 @@ module.exports = {
 				fixedSpeed: 1,
 				requiredBuff: [100200, 100201],
 				abnormals: {
-					7692002: { chain: null },
-					9692002: { chain: null }
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				},
 				stamina: 50
 			}
@@ -567,8 +567,8 @@ module.exports = {
 				type: 'holdInfinite',
 				fixedSpeed: 1,
 				abnormals: {
-					7692002: { chain: null },
-					9692002: { chain: null }
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				},
 				stamina: 50
 			}
@@ -709,8 +709,8 @@ module.exports = {
 				length: 1135,
 				distance: 474.5,
 				abnormals: {
-					7692002: { chain: null },
-					9692002: { chain: null }
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				},
 				noInterrupt: [2, 15]
 			},
@@ -823,8 +823,8 @@ module.exports = {
 			'*' :{
 				distance: 100,
 				abnormals: {
-					7692002: { chain: null },
-					9692002: { chain: null }
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				},
 				chains: {
 					8: 30,
@@ -853,14 +853,14 @@ module.exports = {
 					22089: { stamina: -100 }
 				},
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null },
-					7692002: { chain: null },
-					9692002: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 },
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				}
 			}
 		},
@@ -1000,14 +1000,14 @@ module.exports = {
 				noInterrupt: [4],
 				noRetry: true,
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null },
-					7692002: { chain: null },
-					9692002: { chain: null },
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 },
+					7692002: { chain: 6 },
+					9692002: { chain: 6 },
 					301200: { chain: 30 },
 				},
 				race: {
@@ -1025,12 +1025,12 @@ module.exports = {
 				fixedSpeed: 1,
 				length: 700,
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 }
 				}
 			}
 		},
@@ -1080,8 +1080,8 @@ module.exports = {
 				length: 2175,
 				distance: 250,
 				abnormals: {
-					7692002: { chain: null },
-					9692002: { chain: null }
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				}
 			}
 		},
@@ -1171,14 +1171,14 @@ module.exports = {
 					23060: { speed: 1.25 }
 				},
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null },
-					7692002: { chain: null },
-					9692002: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 },
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				}
 		    }
 		},
@@ -1206,14 +1206,14 @@ module.exports = {
 				length: 1000,
 				distance: 413, // Baraka, 420.018 | M.Aman, 420.007 | M.Human 420
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null },
-					7692002: { chain: null },
-					9692002: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 },
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				}
 			}
 		},
@@ -1375,8 +1375,8 @@ module.exports = {
 		    '*': {
 				type: 'holdInfinite',
 				abnormals: {
-					7692002: { chain: null },
-					9692002: { chain: null }
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				}
 			},
 			0: { fixedSpeed: 1 },
@@ -1505,12 +1505,12 @@ module.exports = {
 				length: 700,
 				noInterrupt: [2],
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 }
 				}
 			}
 		},
@@ -1575,7 +1575,7 @@ module.exports = {
 					400500: { chargeSpeed: 0.2 },
 					400501: { chargeSpeed: 0.4 },
 					4010150: { chargeSpeed: 0.2 },
-					401400: { chain: null }
+					401400: { chain: 6 }
 				},
 				level: [
 					{ length: 800 },	// 2300
@@ -1621,8 +1621,8 @@ module.exports = {
 				length: 2250,
 				distance: 250,
 				abnormals: {
-					7692002: { chain: null },
-					9692002: { chain: null }
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				},
 				noInterrupt: [2]
 			}
@@ -1749,7 +1749,7 @@ module.exports = {
 					400500: { chargeSpeed: 0.2 },
 					400501: { chargeSpeed: 0.4 },
 					4010150: { chargeSpeed: 0.2 },
-					401400: { chain: null }
+					401400: { chain: 6 }
 			    },
 				level: [
 					{ length: 800 },	// 2300
@@ -1834,12 +1834,12 @@ module.exports = {
 				length: 1015,
 				distance: 150,
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 }
 				}
 			},
 			10: { noInterrupt: [2, 3, 4, 10, 15, 18, 25, 30] },
@@ -1904,14 +1904,14 @@ module.exports = {
 				forceClip: true,
 				noInterrupt: [2, 29],
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null },
-					7692002: { chain: null },
-					9692002: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 },
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				}
 			}
 		},
@@ -1940,8 +1940,8 @@ module.exports = {
 				length: 1135,
 				distance: 470,
 				abnormals: {
-					7692002: { chain: null },
-					9692002: { chain: null }
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				},
 				noInterrupt: [2],
 				noRetry: true
@@ -2069,14 +2069,14 @@ module.exports = {
 				distance: -200,
 				forceClip: true,
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null },
-					7692002: { chain: null },
-					9692002: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 },
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				}
 			}
 		},
@@ -2129,8 +2129,8 @@ module.exports = {
 				length: 1100,
 				distance: -187.5,
 				abnormals: {
-					7692002: { chain: null },
-					9692002: { chain: null }
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				},
 				forceClip: true
 			}
@@ -2229,14 +2229,14 @@ module.exports = {
 				teleportStage: 1,
 				noRetry: true,
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null },
-					7692002: { chain: null },
-					9692002: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 },
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				}
 			}
 		},
@@ -2255,8 +2255,8 @@ module.exports = {
 			'*': { 
 				length: 475,
 				abnormals: {
-					7692002: { chain: null },
-					9692002: { chain: null }
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				}
 			},
 			0: true,
@@ -2450,14 +2450,14 @@ module.exports = {
 				distance: -200,
 				forceClip: true,
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null },
-					7692002: { chain: null },
-					9692002: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 },
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				}
 			}
 		},
@@ -2508,8 +2508,8 @@ module.exports = {
 				length: 1340,
 				distance: -250,
 				abnormals: {
-					7692002: { chain: null },
-					9692002: { chain: null }
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				},
 				forceClip: true
 			}
@@ -2598,12 +2598,12 @@ module.exports = {
 				length: 1075, // 1000
 				distance: 413, // 412.078
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 }
 				}
 			}
 		}
@@ -2703,8 +2703,8 @@ module.exports = {
 				length: 1125,
 				distance: -250.5,
 				abnormals: {
-					7692002: { chain: null },
-					9692002: { chain: null }
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				},
 				forceClip: true
 			}
@@ -2821,14 +2821,14 @@ module.exports = {
 				distance: -200,
 				forceClip: true,
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null },
-					7692002: { chain: null },
-					9692002: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 },
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				}
 			}
 		},
@@ -2972,14 +2972,14 @@ module.exports = {
 				teleportStage: 1,
 				noRetry: true,
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null },
-					7692002: { chain: null },
-					9692002: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 },
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				}
 			}
 		},
@@ -3425,12 +3425,12 @@ module.exports = {
 					distance: 0
 				},
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 }
 				},
 				noInterrupt: [1, 3, 4, 5, 6, 8, 9, 10, 11, 12, 14, 20]
 			}
@@ -3440,8 +3440,8 @@ module.exports = {
 				length: 1000,
 				distance: -200,
 				abnormals: {
-					7692002: { chain: null },
-					9692002: { chain: null }
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				},
 				noInterrupt: [10],
 				chains: {
@@ -3515,8 +3515,8 @@ module.exports = {
 				fixedSpeed: 1,
 				length: 1575,
 				abnormals: {
-					7692002: { chain: null },
-					9692002: { chain: null }
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				}
 			}
 		},
@@ -3531,14 +3531,14 @@ module.exports = {
 				length: 850,
 				distance: 150,
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null },
-					7692002: { chain: null },
-					9692002: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 },
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				}
 			}
 		},
@@ -3549,14 +3549,14 @@ module.exports = {
 				forceClip: true,
 				noRetry: true,
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null },
-					7692002: { chain: null },
-					9692002: { chain: null },
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 },
+					7692002: { chain: 6 },
+					9692002: { chain: 6 },
 					10151000: { chain: 30 }
 				}
 			},
@@ -3822,14 +3822,14 @@ module.exports = {
 					40: 31
 				},
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null },
-					7692002: { chain: null },
-					9692002: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 },
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				},
 				noRetry: true
 			},
@@ -3948,8 +3948,8 @@ module.exports = {
 					10152080: 4100
 				},
 				abnormals: {
-					7692002: { chain: null },
-					9692002: { chain: null }
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				},
 				forceClip: true,
 				noRetry: true
@@ -4000,8 +4000,8 @@ module.exports = {
 		2: { // Counter
 			'*': {
 				abnormals: {
-					7692002: { chain: null },
-					9692002: { chain: null }
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				},
 				noRetry: true
 			},
@@ -4078,8 +4078,8 @@ module.exports = {
 			'*': {
 				length: 3225,
 				abnormals: {
-					7692002: { chain: null },
-					9692002: { chain: null }
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				}
 			},
 			0: true,
@@ -4091,8 +4091,8 @@ module.exports = {
 				length: [2950, 650],
 				distance: [0, 135],
 				abnormals: {
-					7692002: { chain: null },
-					9692002: { chain: null }
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				}
 			}
 		},
@@ -4190,8 +4190,8 @@ module.exports = {
 				distance: 155,
 				requiredBuff: 10153000,
 				abnormals: {
-					7692002: { chain: null },
-					9692002: { chain: null }
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				},
 				chains: {
 					1: 30,
@@ -4243,7 +4243,7 @@ module.exports = {
 			'*': {
 				fixedSpeed: 1,
 				length: 1275,
-				abnormals: { 10153040: { chain: null } }
+				abnormals: { 10153040: { chain: 6 } }
 			},
 			1: true,
 			2: true
@@ -4257,14 +4257,14 @@ module.exports = {
 				hasChains: true,
 				noRetry: true,
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null },
-					7692002: { chain: null },
-					9692002: { chain: null },
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 },
+					7692002: { chain: 6 },
+					9692002: { chain: 6 },
 					10153150: { chain: 30 },
 				}
 			},
@@ -4436,14 +4436,14 @@ module.exports = {
 				forceClip: true,
 				noRetry: true,
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null },
-					7692002: { chain: null },
-					9692002: { chain: null },
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 },
+					7692002: { chain: 6 },
+					9692002: { chain: 6 },
 					10154010: { chain: 30 }
 				}
 			},
@@ -4483,14 +4483,14 @@ module.exports = {
 				length: 665,
 				distance: 469,
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null },
-					7692002: { chain: null },
-					9692002: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 },
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				}	
 			},
 			10: { length: 1500 },
@@ -4527,14 +4527,14 @@ module.exports = {
 					20: null
 				},
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null },
-					7692002: { chain: null },
-					9692002: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 },
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				}
 			},
 			0: true,
@@ -4560,14 +4560,14 @@ module.exports = {
 					20: 30
 				},
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null },
-					7692002: { chain: null },
-					9692002: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 },
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				}
 			 },
 			0: true,
@@ -4585,14 +4585,14 @@ module.exports = {
 				length: 1550,
 				onlyTarget: true,
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null },
-					7692002: { chain: null },
-					9692002: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 },
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				}
 			}
 		},
@@ -4658,12 +4658,12 @@ module.exports = {
 					20: null
 				},
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 }
 				}
 			},
 			0: true,
@@ -5299,14 +5299,14 @@ module.exports = {
 				forceClip: true,
 				noInterrupt: [14],
 				abnormals: {
-					400800: { chain: null },
-					400801: { chain: null },
-					501320: { chain: null },
-					501321: { chain: null },
-					501322: { chain: null },
-					501323: { chain: null },
-					7692002: { chain: null },
-					9692002: { chain: null }
+					400800: { chain: 6 },
+					400801: { chain: 6 },
+					501320: { chain: 6 },
+					501321: { chain: 6 },
+					501322: { chain: 6 },
+					501323: { chain: 6 },
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				}
 			},
 			0: true,
@@ -5414,8 +5414,8 @@ module.exports = {
 			0: {
 				length: 1500,
 				abnormals: {
-					7692002: { chain: null },
-					9692002: { chain: null }
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
 				},
 				onlyTarget: true
 			}
