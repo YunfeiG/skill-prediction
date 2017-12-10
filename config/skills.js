@@ -3552,7 +3552,7 @@ module.exports = {
 		}
 	},
 	9: { // Gunner
-		'*': { consumeAbnormal: 10152010 },
+		'*': { consumeAbnormal: [10152000, 10152001, 10152002, 10152010, 10152011, 10152012] },
 		1: { // Blast
 			'*': {
 				fixedSpeed: 1,
@@ -3633,12 +3633,13 @@ module.exports = {
 			'*': {
 				length: 1525,
 				distance: 137.88,
-				noRetry: true
-			},
-			1: {
+				noRetry: true,
 				chains: {
 					'2-1': 30,
 					3: 30,
+					'4-1': 4,
+					'4-2': 4,
+					'4-30': 4,
 					'7-3': 30,
 					'9-10': 30,
 					'9-11': 30,
@@ -3649,6 +3650,8 @@ module.exports = {
 					19: 30,
 					40: 30
 				},
+			},
+			1: {
 				triggerAbnormal: {
 					10152000: 3100,
 					10152001: 3100
@@ -3656,7 +3659,6 @@ module.exports = {
 				noInterrupt: ['4-1','4-2','4-30',20]
 			},
 			2: {
-				requiredBuff: 10152011,
 				triggerAbnormal: {
 					10152000: 3100,
 					10152001: 3100
@@ -3667,19 +3669,12 @@ module.exports = {
 				length: 1195,
 				distance: -198.53,
 				noInterrupt: ['4-3','4-4',20],
-				triggerAbnormal: { 10152002: 4100 },
-				consumeAbnormal: [10152000, 10152001],
-				chains: {
-					'4-1': 4,
-					'4-2': 4,
-					'4-30' : 4
-				}
+				triggerAbnormal: { 10152002: 4100 }
 			},
 			4: {
 				length: 1195,
 				distance: -198.53,
-				triggerAbnormal: { 10152002: 4100 },
-				consumeAbnormal: [10152000, 10152001]
+				triggerAbnormal: { 10152002: 4100 }
 			},
 			30: {
 				triggerAbnormal: {
