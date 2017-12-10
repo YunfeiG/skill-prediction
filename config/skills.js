@@ -3823,7 +3823,6 @@ module.exports = {
 				distance: 503.64,
 				race: {
 					9: {	// Elin
-						length: 1675,
 						distance: 506.27
 					}
 				}

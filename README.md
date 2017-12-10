@@ -9,7 +9,7 @@ Dec 10, 2017, Massive gunner refinements. Mainly chains of arc bomb, ST, and bal
 
 Dec 9, 2017, Gunner point blank: revert to fast speed, but if you do PBx2 too fast, the skill goes on cooldown twice. Fix arc bomb being no animation when used after timebomb and arcane barrage fire.
 
-Dec 6, 2017, KD/Stagger animation fix, ~~Maybe Sorcerer: Teleport->Arcane pulse rubberband fix and Gunner: Roll->Rocket jump fix.~~
+Dec 6, 2017, KD/Stagger animation fix, ~~Maybe Sorcerer: Teleport->Arcane pulse rubberband fix~~ and Gunner: Roll->Rocket jump fix.
 
 Dec 4, 2017, Removed some unused silence/fear abnormalities in the check. Mystic can now resist Kalivan's big lightning and Lilith's chain hook by Corruption Ring now.
 
