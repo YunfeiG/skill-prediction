@@ -3694,7 +3694,7 @@ module.exports = {
 				noInterrupr: ['5-0'],
 				noRetry: true,
 				fixedSpeed: 1,
-				length: 140,
+				length: 130,
 				stamina: 70,
 				instantStamina: true,
 				glyphs: {
