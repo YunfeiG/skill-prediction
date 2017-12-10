@@ -3552,20 +3552,40 @@ module.exports = {
 		}
 	},
 	9: { // Gunner
+		'*': { consumeAbnormal: 10152010 },
 		1: { // Blast
 			'*': {
 				fixedSpeed: 1,
 				length: 1195,
-				noInterrupt: [1]
+				noInterrupt: [1],
+				triggerAbnormal: { 10152011: 3100 },
+				noRetry: true
 			},
 			1: true,
 			2: true
+		},
+		2: { // Bombardment
+			'*': { noRetry: true },
+			0: {
+				type: 'lockon',
+				fixedSpeed: 1,
+				length: 59900
+			},
+			1: {
+				type: 'lockonCast',
+				triggerAbnormal: { 10152082: 4100 },
+				length: 3000,
+				glyphs: {
+					30004: { speed: 1.25 }
+				}
+			}
 		},
 		3: { // Scattershot
 			'*': {
 				length: 1725,
 				distance: -108,
-				noInterrupt: [3],
+				noInterrupt: [3, 20],
+				triggerAbnormal: { 10152083: 4100 },
 				glyphs: {
 					30007: {
 						movement: [
@@ -3602,7 +3622,8 @@ module.exports = {
 					15: 30,
 					19: 30,
 					40: 30
-				}
+				},
+				noRetry: true
 			},
 			1: true,
 			2: true,
@@ -3611,7 +3632,8 @@ module.exports = {
 		4: { // Point Blank
 			'*': {
 				length: 1525,
-				distance: 137.88
+				distance: 137.88,
+				noRetry: true
 			},
 			1: {
 				chains: {
@@ -3631,19 +3653,21 @@ module.exports = {
 					10152000: 3100,
 					10152001: 3100
 				},
-				noInterrupt: ['4-1','4-2','4-30']
+				noInterrupt: ['4-1','4-2','4-30',20]
 			},
 			2: {
+				requiredBuff: 10152011,
 				triggerAbnormal: {
 					10152000: 3100,
 					10152001: 3100
 				},
-				noInterrupt: ['4-1','4-2','4-30']
+				noInterrupt: ['4-1','4-2','4-30',20]
 			},
 			3: {
 				length: 1195,
 				distance: -198.53,
-				noInterrupt: ['4-3','4-4'],
+				noInterrupt: ['4-3','4-4',20],
+				triggerAbnormal: { 10152002: 4100 },
 				consumeAbnormal: [10152000, 10152001],
 				chains: {
 					'4-1': 4,
@@ -3654,6 +3678,7 @@ module.exports = {
 			4: {
 				length: 1195,
 				distance: -198.53,
+				triggerAbnormal: { 10152002: 4100 },
 				consumeAbnormal: [10152000, 10152001]
 			},
 			30: {
@@ -3666,8 +3691,10 @@ module.exports = {
 		5: { // Burst Fire
 			0: { length: 850 },
 			1: {
+				noInterrupr: ['5-0'],
+				noRetry: true,
 				fixedSpeed: 1,
-				length: 122,
+				length: 140,
 				stamina: 70,
 				instantStamina: true,
 				glyphs: {
@@ -3685,7 +3712,11 @@ module.exports = {
 			'*': {
 				fixedSpeed: 1,
 				length: 1000,
-				triggerAbnormal: { 10152010: 3100 }
+				triggerAbnormal: {
+					10152010: 3100,
+					10152084: 4100
+				},
+				noRetry: true,
 			},
 			1: true,
 			2: true
@@ -3695,43 +3726,60 @@ module.exports = {
 			1: {
 				fixedSpeed: 1,
 				noInterrupt: [7],
-				noRetry: true,
-				triggerAbnormal: { 10152010: 3100 }
+				triggerAbnormal: {
+					10152010: 3100,
+					10152040: 3100
+				},
+				noRetry: true
 			},
 			2: {
 				fixedSpeed: 1,
 				noInterrupt: [7],
-				noRetry: true,
-				triggerAbnormal: { 10152010: 3100 }
+				triggerAbnormal: {
+					10152010: 3100,
+					10152040: 3100
+				},
+				noRetry: true
 			},
-			3: { length: 1200 }
+			3: {
+				length: 1200,
+				consumeAbnormal: 10152040,
+				triggerAbnormal: { 10152081: 4100 },
+				noInterrupr: ['7-3'],
+				noRetry: true
+			}
 		},
 		9: { // Mana Missiles
 			'*': {
 				type: 'chargeCast',
-				length: 1250
+				length: 1250,
+				noRetry: true
 			},
 			0: {
 				type: 'charging',
 				length: 1250 // 250
 			},
-			10: { distance: -50 },
-			11: { distance: -100 }
+			10: {
+				distance: -50,
+				triggerAbnormal: { 10152085: 4100 }
+			},
+			11: {
+				distance: -100,
+				triggerAbnormal: { 10152085: 4100 }
+			}
 		},
 		10: { // Arc Bomb
 			'*': {
 				length: 1325,
+				noInterrupt: [10, 20],
 				noRetry: true,
+				triggerAbnormal: { 10152086: 4100 }
 			},
-			1: {
-				noInterrupt: [10],
-				type: 'nullChain',
-			},
+			1: { type: 'nullChain' },
 			2: {
 				chains: {
-					40: 6
-				},
-				consumeAbnormal: 10152010
+					40: 6		// nullchain after rolling reload, not a nullchain after timebomb/arcane barrage fire
+				}
 			},
 			30: true
 		},
@@ -3739,7 +3787,8 @@ module.exports = {
 			'*': {
 				length: 1400,
 				distance: 415.45,
-				noInterrupt: [15],
+				noInterrupt: [3, 11, 15, 20],
+				triggerAbnormal: { 10152087: 4100 },
 				chains: {
 					'2-1': 30,
 					3: 30,
@@ -3763,7 +3812,8 @@ module.exports = {
 					501323: { chain: 6 },
 					7692002: { chain: 6 },
 					9692002: { chain: 6 }
-				}
+				},
+				noRetry: true
 			},
 			1: true,
 			2: true,
@@ -3783,6 +3833,37 @@ module.exports = {
 			'*': {
 				length: 5800,
 				distance: -269.09,
+				/*chains: {
+					'2-1': 30,
+					3: 30,
+					4: 30,
+					'7-3': 30,
+					'9-10': 30,
+					'9-11': 30,
+					10: 30,
+					11: 30,
+					13: 30,
+					15: 30,
+					19: 30,
+					40: 30
+				},*/
+				triggerAbnormal: { 10152097: 4000 },
+				noRetry: true
+			},
+			1: { type: 'nullChain' },
+			2: {
+				chains: {
+					40: 6		// nullchain after rolling reload, not a nullchain after timebomb/arcane barrage fire
+				}
+			}, 
+			30: true
+		},
+		15: { // Replenishment
+			'*': {
+				fixedSpeed: 1,
+				length: 1325,
+				noInterrupt: [15, 20],
+				triggerAbnormal: { 10152072: 4100 },
 				chains: {
 					'2-1': 30,
 					3: 30,
@@ -3803,34 +3884,11 @@ module.exports = {
 			2: true,
 			30: true
 		},
-		15: { // Replenishment
-			'*': {
-				fixedSpeed: 1,
-				length: 1325,
-				noInterrupt: [15],
-				chains: {
-					'2-1': 30,
-					3: 30,
-					4: 30,
-					'7-3': 30,
-					'9-10': 30,
-					'9-11': 30,
-					10: 30,
-					11: 30,
-					13: 30,
-					15: 30,
-					19: 30,
-					40: 30
-				}
-			},
-			1: true,
-			2: true,
-			30: true
-		},
 		18: { // HB
 			'*': {
 				fixedSpeed: 1,
-				length: 1430
+				length: 1430,
+				noRetry: true
 			},
 			1: true,
 			2: true
@@ -3841,19 +3899,37 @@ module.exports = {
 				noRetry: true
 			},
 			1: { type: 'nullChain' },
-			2: { type: 'nullChain' },
+			2: {
+				chains: {
+					40: 6		// nullchain after rolling reload, not a nullchain after timebomb/arcane barrage fire
+				}
+			}, 
 			30: true
+		},
+		20: { // Retaliate
+			0: {
+				type: 'retaliate',
+				length: 1485,
+				noRetry: true
+			}
 		},
 		40: { // Rolling Reload
 			0: {
 				fixedSpeed: 1,
 				length: 930,
 				distance: 172.5,
+				triggerAbnormal: {
+					10152010: 3100,
+					10152012: 3100,
+					10152071: 3100,
+					10152080: 4100
+				},
 				abnormals: {
 					7692002: { chain: 6 },
 					9692002: { chain: 6 }
 				},
-				forceClip: true
+				forceClip: true,
+				noRetry: true
 			}
 		}
 	},

@@ -5,6 +5,8 @@ This version of SP will handle racial differences instead of elin only.
 
 ## Update/fix logs
 
+Dec 10, 2017, Massive gunner refinements. Mainly arc bomb, ST, and balder's vengeance chains. Bombardment and retaliate emulation is added. **Too fast PBx2 still causes skill goes on cooldown twice so beware** (legit but server response will be very weird)
+
 Dec 9, 2017, Gunner point blank: revert to fast speed, but if you do PBx2 too fast, the skill goes on cooldown twice. Fix arc bomb being no animation when used after timebomb and arcane barrage fire.
 
 Dec 6, 2017, KD/Stagger animation fix, ~~Maybe Sorcerer: Teleport->Arcane pulse rubberband fix and Gunner: Roll->Rocket jump fix.~~
