@@ -85,6 +85,7 @@ module.exports = function SkillPrediction(dispatch) {
 	let burstFireCost = false;
 	
 	let canVB = false;
+	let VBtimer = null;
 
 	dispatch.hook('S_LOGIN', 9, event => {
 		skillsCache = {};
@@ -372,10 +373,7 @@ module.exports = function SkillPrediction(dispatch) {
 			return false
 		}
 		
-		if(info.canVB) {
-			canVB = true;
-			if(DEBUG) console.log('You can now use chained VB');
-		}
+		if(info.canVB) VBtimer = setTimeout(enableVB, 400);	// you need a delay before chaining into VB
 		
 		if(type == 'C_PRESS_SKILL' && event.start && canVB && job == 3 && skillBase == 15){
 			return false;
@@ -1066,6 +1064,7 @@ module.exports = function SkillPrediction(dispatch) {
 		else movePlayer(distance)
 	
 		if(canVB){
+			clearTimeout(VBtimer);
 			canVB = false;
 			if(DEBUG) console.log('Chained VB disabled');
 		}
@@ -1240,6 +1239,12 @@ module.exports = function SkillPrediction(dispatch) {
 				return
 
 		return obj
+	}
+	
+	function enableVB(){
+		canVB = true;
+		clearTimeout(VBtimer);
+		if(DEBUG) console.log('You can now use chained VB');
 	}
 
 	function debug(msg) {
