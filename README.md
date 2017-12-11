@@ -5,7 +5,7 @@ This version of SP will handle racial differences instead of elin only.
 
 ## Update/fix logs
 
-Dec 11, 2017, Chained Vampiric Blow emulation for both in-combat and out-combat. The emulation is hardcoded because the skill made by BHS is hardcoded. Issue: Just full charge TS/Cylone/LS (without losing HP) -> VB will ghost. Make sure you enter the overcharge stage before chaining into VB
+Dec 11, 2017, Chained Vampiric Blow emulation for both in-combat and out-combat. **Highly recommend to turn show default chain off**. The emulation is hardcoded because the skill made by BHS is hardcoded. Issue: Just full charge TS/Cylone/LS (without losing HP) -> VB will ghost. Make sure you enter the overcharge stage before chaining into VB
 
 Dec 10, 2017, Massive gunner refinements. Mainly chains of arc bomb, ST, and balder's vengeance. Bombardment and retaliate emulations are added. Sliently slow down the rate of burst fire to reduce ghosts. **Too fast PBx2 still causes skill go on cooldown twice so beware** (if you do 2nd cast within ping delay, legit but server response will be very weird)
 
