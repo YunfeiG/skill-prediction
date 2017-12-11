@@ -11,7 +11,7 @@ const JITTER_COMPENSATION	= false,
 	FORCE_CLIP_STRICT		= true,		/*	Set this to false for smoother, less accurate iframing near walls.
 											Warning: Will cause occasional clipping through gates when disabled. Do NOT abuse this.
 										*/
-	DEFEND_SUCCESS_STRICT	= true,		//	Set this to false to see Brawler's Perfect Block icon at very high ping (warning: may crash client).
+	DEFEND_SUCCESS_STRICT	= false,		//	Set this to false to see Brawler's Perfect Block icon at very high ping (warning: may crash client).
 	DEBUG					= false,
 	DEBUG_LOC				= false,
 	DEBUG_PROJECTILE		= false,
@@ -84,8 +84,7 @@ module.exports = function SkillPrediction(dispatch) {
 	let manaChargeSpeed = false;
 	let burstFireCost = false;
 	
-	let previousSkill = 0;
-	let timer = null;
+	let canVB = false;
 
 	dispatch.hook('S_LOGIN', 9, event => {
 		skillsCache = {};
@@ -362,7 +361,27 @@ module.exports = function SkillPrediction(dispatch) {
 			skillBase = Math.floor((skill - 0x4000000) / 10000),
 			interruptType = 0
 
-		if(type == 'C_PRESS_SKILL' && !event.start) {
+		if(!alive || abnormality.inMap(silence)) {
+			sendCannotStartSkill(event.skill)
+			return false
+		}
+
+		if(!equippedWeapon) {
+			sendCannotStartSkill(event.skill)
+			sendSystemMessage('SMT_BATTLE_SKILL_NEED_WEAPON')
+			return false
+		}
+		
+		if(info.canVB) {
+			canVB = true;
+			if(DEBUG) console.log('You can now use chained VB');
+		}
+		
+		if(type == 'C_PRESS_SKILL' && event.start && canVB && job == 3 && skillBase == 15){
+			return false;
+		}
+		
+		if(type == 'C_PRESS_SKILL' && !event.start && !(canVB && (job == 3 && skillBase == 15) ) ) {
 			if((info.type == 'hold' || info.type == 'holdInfinite') && currentAction && currentAction.skill == skill) {
 				updateLocation(event)
 
@@ -398,17 +417,6 @@ module.exports = function SkillPrediction(dispatch) {
 			return
 		}
 
-		if(!alive || abnormality.inMap(silence)) {
-			sendCannotStartSkill(event.skill)
-			return false
-		}
-
-		if(!equippedWeapon) {
-			sendCannotStartSkill(event.skill)
-			sendSystemMessage('SMT_BATTLE_SKILL_NEED_WEAPON')
-			return false
-		}
-
 		if(currentAction) {
 			if(currentAction.skill & Flags.CC && (currentAction.skill & 0xffffff !== model * 100 + 2 || info.type !== 'retaliate')) {
 				sendCannotStartSkill(event.skill)
@@ -424,7 +432,7 @@ module.exports = function SkillPrediction(dispatch) {
 				sendCannotStartSkill(event.skill)
 				return false
 			}
-
+			
 			// Some skills are bugged clientside and can interrupt the wrong skills, so they need to be flagged manually
 			if(info.noInterrupt && (info.noInterrupt.includes(currentSkillBase) || info.noInterrupt.includes(currentSkillBase + '-' + currentSkillSub))) {
 				let canInterrupt = false
@@ -469,9 +477,6 @@ module.exports = function SkillPrediction(dispatch) {
 			sendCannotStartSkill(event.skill)
 			return false
 		}
-		
-		// Double cast prevention
-		
 
 		// Skill override (chain)
 		if(skill != event.skill) {
@@ -599,10 +604,6 @@ module.exports = function SkillPrediction(dispatch) {
 				return false
 			})
 	}
-	/*
-	function timerReset(){
-		timer = null;
-	}*/
 
 	function toServerLocked(data) {
 		sending = true
@@ -891,22 +892,6 @@ module.exports = function SkillPrediction(dispatch) {
 	})
 
 	dispatch.hook('S_CAN_LOCKON_TARGET', 1, event => skillInfo(event.skill) ? false : undefined)
-	
-	if(DEBUG_PROJECTILE) {
- 		dispatch.hook('S_START_USER_PROJECTILE', 4, event => {
- 			if(!isMe(event.gameId)) return
- 
- 			debug(`<- S_START_USER_PROJECTILE ${skillId(event.skill, Flags.Player)} ${event.x} ${event.y} ${event.z} ${event.toX} ${event.toY} ${event.toZ} ${event.speed} ${event.curve} ${event.useCurve}`)
- 		})
- 
- 		dispatch.hook('S_END_USER_PROJECTILE', 3, event => {
- 			debug(`<- S_END_USER_PROJECTILE ${event.unk1} ${event.unk2} ${event.target ? 1 : 0}`)
- 		})
- 
- 		dispatch.hook('C_HIT_USER_PROJECTILE', 2, event => {
- 			debug(`-> C_HIT_USER_PROJECTILE ${event.targets.length} ${event.end}`)
- 		})
- 	}
 
 	function startAction(opts) {
 		let info = opts.info
@@ -1079,6 +1064,11 @@ module.exports = function SkillPrediction(dispatch) {
 
 		if(oopsLocation && (FORCE_CLIP_STRICT || !currentLocation.inAction)) sendInstantMove(oopsLocation)
 		else movePlayer(distance)
+	
+		if(canVB){
+			canVB = false;
+			if(DEBUG) console.log('Chained VB disabled');
+		}
 
 		dispatch.toClient('S_ACTION_END', 1, {
 			source: myChar(),
@@ -1091,6 +1081,7 @@ module.exports = function SkillPrediction(dispatch) {
 			type: type || 0,
 			id: currentAction.id
 		})
+		
 
 		if(currentAction.id == actionNumber) {
 			let info = skillInfo(currentAction.skill)

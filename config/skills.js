@@ -285,7 +285,7 @@ module.exports = {
 		20: { // Deadly Gamble
 			0: {
 				fixedSpeed: 1,
-				length: 310,
+				length: 350,
 				noInterrupt: [32]
 			}
 		},
@@ -1455,7 +1455,8 @@ module.exports = {
 					8: { distance: 69.51 }, // Popori: 69.513
 					9: { distance: 87.27 }, // Elin: 87.272
 					10: { distance: 64.88 } // Baraka: 64.884
-				}			  
+				},
+				canVB: true
 			}
 		},
 		4: { // Flatten
@@ -1613,7 +1614,8 @@ module.exports = {
 				noInterrupt: [2, 4, 15, 24, 25, 30],
 				races: {
 					3: { length: [375, 375, 375, 375, 1800] }	// F.Helf, true for low level cyclone, not sure about cyclone XI
-				}
+				},
+				canVB: true
 			}
 		},
 		11: { // Leaping Strike 
@@ -1645,13 +1647,13 @@ module.exports = {
 		},
 		15: { // Vampiric Blow  // Uncomment this for being able to VB if, a VB chain is avaiable, else, it won't work and you may as well before that trigger sCannotStartSkill
             '*': {    // Same animation as thunder strike, just slower                        
-				type: 'chargeCast',  
-				length: 1940        
-			 },                               // Chained VB Usage: 1. "Show default Chained Skills" in the Chained Skills menu must be on.        		                               
+				type: 'chargeCast',
+				length: 1940,
+			},                               // Chained VB Usage: 1. "Show default Chained Skills" in the Chained Skills menu must be on.        		                               
             0: {                             //                    2. Must be in combat when used.  3. the VB chain icon must be shown
                 type: 'charging',           //                    Else the animation of VB won't go off causing slight desync.
 				length: [800, 800, 800],		// 2300
-				noInterrupt: [2, '3-0', 4, '10-0', '18-0', 24, 25, 30], // VB can't chain to stages 10, 11 or 12 in the client, it only can on stages 13
+				noInterrupt: [2, '3-0', 4, '10-0', '15-14', '18-0', 24, 25, 30], // VB can't chain to stages 10, 11 or 12 in the client, it only can on stages 13
 				abnormals: {
 					400500: { chargeSpeed: 0.2 },
 					400501: { chargeSpeed: 0.4 },
@@ -1795,7 +1797,8 @@ module.exports = {
 					8: { distance: 240.4 }, // Popori: 240.4
 					9: { distance: 167.62 }, // Elin: 167.624
 					10: { distance: 158.11 } // Baraka: 158.112
-				}
+				},
+				canVB: true
 			}
 		},
 		19: { // Tenacity
