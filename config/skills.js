@@ -887,7 +887,9 @@ module.exports = {
 				distance: 36.68,
 				race: {
 					0: { distance: 36.68 }, // M.Human: 36.679
+					1: { distance: 36.68 }, // F.Human: 36.679
 					2: { distance: 50.68 }, // M.Helf: 50.68
+					3: { distance: 38.8 }, // F.Helf: 38.796
 					4: { distance: 40 }, // M.Aman: 40
 					5: { distance: 36.68 }, // F.Aman: 36.68
 					6: { distance: 36.68 }, // M.Casta: 36.68
@@ -898,11 +900,13 @@ module.exports = {
 				}
 			},
 			1: {
-				length: 1030,
+				length: 1050,
 				distance: 35.68,
 				race: {
 					0: { distance: 35.68 }, // M.Human: 35.675
+					1: { distance: 35.68 }, // F.Human: 35.675
 					2: { distance: 30.68 }, // M.Helf: 30.675
+					3: { distance: 38.84 }, // F.Helf: 38.837
 					4: { distance: 35 }, // M.Aman: 35
 					5: { distance: 35.68 }, // F.Aman: 35.675
 					6: { distance: 35.68 }, // M.Casta: 35.675
@@ -917,7 +921,9 @@ module.exports = {
 				distance: 28.05,
 				race: {
 					0: { distance: 28.05 }, // M.Human: 28.054
+					1: { distance: 28.05 }, // F.Human: 28.054
 					2: { distance: 33.05 }, // M.Helf: 33.054
+					3: { distance: 24.23 }, // F.Helf: 24.225
 					4: { distance: 20 }, // M.Aman: 20
 					5: { distance: 28.05 }, // F.Aman: 28.054
 					6: { distance: 22.3 }, // M.Casta: 22.302
@@ -932,7 +938,9 @@ module.exports = {
 				distance: 46.76,
 				race: {
 					0: { distance: 46.76 }, // M.Human: 46.758
+					1: { distance: 46.76 }, // F.Human: 46.758
 					2: { distance: 46.76 }, // M.Helf: 46.578
+					3: { distance: 45.32 }, // F.Helf: 45.323
 					4: { distance: 40 }, // M.Aman: 40
 					5: { distance: 64.36 }, // F.Aman: 64.359
 					6: { distance: 118.2 }, // M.Casta: 118.202
@@ -957,7 +965,9 @@ module.exports = {
 				},
 				race: {
 					0: { distance: 220.47 }, // M.Human: 220.47
+					1: { distance: 220.47 }, // F.Human: 220.471
 					2: { distance: 220.15 }, // M.Helf: 220.153
+					3: { distance: 213.63 }, // F.Helf: 213.625
 					4: { distance: 155 }, // M.Aman: 155
 					5: { distance: 174.84 }, // F.Aman: 174.837
 					6: { distance: 201.64 }, // M.Casta: 201.639
@@ -981,7 +991,9 @@ module.exports = {
 				},
 				race: {
 					0: { distance: 123.21 }, // M.Human: 123.208
+					1: { distance: 128.69 }, // F.Human: 128.691
 					2: { distance: 116.49 }, // M.Helf: 116.489
+					3: { distance: 99.61 }, // F.Helf: 99.606
 					4: { distance: 125 }, // M.Aman: 125
 					5: { distance: 137.22 }, // F.Aman: 137.221
 					6: { distance: 123.21 }, // M.Casta: 123.208
@@ -1039,7 +1051,9 @@ module.exports = {
 				distance: 169.5,
 				race: {
 					0: { distance: 171.14 }, // M.Human: 171.138
+					1: { distance: 171.14 }, // F.Human: 171.138
 					2: { distance: 171.14 }, // M.Helf: 171.138
+					3: { distance: 152.19 }, // F.Helf: 152.194
 					4: { distance: 145 }, // M.Aman: 145
 					5: { distance: 134.53 }, // F.Aman: 134.532
 					6: { distance: 161.14 }, // M.Casta: 161.138
@@ -1102,7 +1116,9 @@ module.exports = {
 				},
 				race: {
 					0: { distance: 166.56 }, // M.Human: 166.555
+					1: { distance: 179.55 }, // F.Human: 179.553
 					2: { distance: 173.75 }, // M.Helf: 173.752
+					3: { distance: 179.55 }, // F.Helf: 179.553
 					4: { distance: 175 }, // M.Aman: 175
 					5: { distance: 166.56 }, // F.Aman: 166.555
 					6: { distance: 168.61 }, // M.Casta: 168.612
@@ -1119,7 +1135,9 @@ module.exports = {
 				distance: 76.71,
 				race: {
 					0: { distance: 62.07 }, // M.Human: 62.073
+					1: { distance: 77.39 }, // F.Human: 77.393
 					2: { distance: 55.79 }, // M.Helf: 55.787
+					3: { distance: 69.62 }, // F.Helf: 69.622
 					4: { distance: 40 }, // M.Aman: 40
 					5: { distance: 62.07 }, // F.Aman: 62.073
 					6: { distance: 86.12 }, // M.Casta: 86.124
@@ -1139,7 +1157,8 @@ module.exports = {
 				length: 600,
 				distance: 75,
 				race: {
-					2: { distance: 79.01 }, // M.Helf: 79.014
+					2: { distance: 79.01 }, // M.Helf: 
+					3: { distance: 92.36 } // F.Helf: 92.357
 				}
 			},
 			1: {
@@ -1147,6 +1166,7 @@ module.exports = {
 				distance: 75,
 				race: {
 					2: { distance: 70.99 }, // M.Helf: 70.986
+					3: { distance: 68.07 }, // F.Helf: 68.067
 					5: { distance: 100.02 }, // F.Aman: 100.018
 					9: { distance: 100.02 } // Elin: 100.018
 				}
@@ -1155,6 +1175,7 @@ module.exports = {
 				length: 1500,
 				distance: 120,
 				race: {
+					3: { distance: 109.58 }, //F.Helf: 109.576
 					5: { distance: 94.98 }, // F.Aman: 94.983
 					6: { distance: 150 }, // M.Casta: 150
 					8: { distance: 112.42 }, // Popori: 112.417
@@ -1188,7 +1209,9 @@ module.exports = {
 				distance: 100,
 				race: {
 					0: { distance: 96.26 }, // M.Human: 96.255
+					1: { distance: 120.75 }, // F.Human: 120.753
 					2: { distance: 103.85 }, // M.Helf: 103.848
+					3: { distance: 91.79 }, // F.Helf: 91.787
 					4: { distance: 100 }, // M.Aman: 100
 					5: { distance: 96.25 }, // F.Aman: 96.25
 					6: { distance: 135.85 }, // M.Casta: 135.847
@@ -1204,7 +1227,7 @@ module.exports = {
 				type: 'dash', 
 				fixedSpeed: 1,
 				length: 1000,
-				distance: 413, // Baraka, 420.018 | M.Aman, 420.007 | M.Human 420
+				distance: 413,
 				abnormals: {
 					400800: { chain: 6 },
 					400801: { chain: 6 },
@@ -1288,7 +1311,9 @@ module.exports = {
 				distance: 169.5,
 				race: {
 					0: { distance: 171.14 }, // M.Human: 171.138
+					1: { distance: 171.14 }, // F.Human: 171.138
 					2: { distance: 171.14 }, // M.Helf: 171.138
+					3: { distance: 152.19 }, // F.Helf: 152.194
 					4: { distance: 145 }, // M.Aman: 145
 					5: { distance: 134.53 }, // F.Aman: 134.532
 					6: { distance: 161.14 }, // M.Casta: 161.138
@@ -1645,22 +1670,22 @@ module.exports = {
 				noRetry: true
 			}
 		},
-		15: { // Vampiric Blow
+		15: { // Vampiric Blow  // Uncomment this for being able to VB if, a VB chain is avaiable, else, it won't work and you may as well before that trigger sCannotStartSkill
             '*': {    // Same animation as thunder strike, just slower                        
 				type: 'chargeCast',
 				length: 1940,
-			},                                      		                               
-            0: {
-                type: 'charging',
+			},                               // Chained VB Usage: 1. "Show default Chained Skills" in the Chained Skills menu must be on.        		                               
+            0: {                             //                    2. Must be in combat when used.  3. the VB chain icon must be shown
+                type: 'charging',           //                    Else the animation of VB won't go off causing slight desync.
 				length: [800, 800, 800],		// 2300
-				noInterrupt: [2, '3-0', 4, '10-0', '15-14', '18-0', 24, 25, 30],
+				noInterrupt: [2, '3-0', 4, '10-0', '15-14', '18-0', 24, 25, 30], // VB can't chain to stages 10, 11 or 12 in the client, it only can on stages 13
 				abnormals: {
 					400500: { chargeSpeed: 0.2 },
 					400501: { chargeSpeed: 0.4 },
 					4010150: { chargeSpeed: 0.2 }
 				},
 				chains: {
-                    '3-13': 14,
+                    '3-13': 14, // this is fine though maybe uneeded, 13: 14 does the same
                     '10-13': 14,
                     '18-13': 14
                 },
@@ -3495,14 +3520,14 @@ module.exports = {
 				}
 			},
 			0: {
-				length: 3265,
+				length: 3240,
 				noInterrupt: [1, 3, 4, 5, 6, 8, 9, 10, 11, 14, 20],
 				chains: {
 					12: 1
 				}
 			},
 			1: {
-				length: 2060,
+				length: 2040,
 				noInterrupt: ['12-1']
 			}
 		},

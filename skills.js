@@ -1,7 +1,7 @@
 const JITTER_COMPENSATION	= false,
 	JITTER_ADJUST			= 0,		//	This number is added to your detected minimum ping to get the compensation amount.
 	SKILL_RETRY_COUNT		= 1,		//	Number of times to retry each skill (0 = disabled). Recommended 1-3.
-	SKILL_RETRY_MS			= 40,		/*	Time to wait between each retry.
+	SKILL_RETRY_MS			= 80,		/*	Time to wait between each retry.
 											SKILL_RETRY_MS * SKILL_RETRY_COUNT should be under 100, otherwise skills may go off twice.
 										*/
 	SKILL_RETRY_JITTERCOMP	= 20,		//	Skills that support retry will be sent this much earlier than estimated by jitter compensation.
@@ -131,13 +131,6 @@ module.exports = function SkillPrediction(dispatch) {
 
 		currentGlyphs[event.id] = event.enabled
 	})
-	
-	/*dispatch.hook('S_CREST_MESSAGE', 1, event => {
-		if(event.type == 6) if(previousSkill == event.skillID){
-			clearTimeout(timer);
-			previousSkill = 0;
-		}
-	});*/
 
 	dispatch.hook('S_PLAYER_CHANGE_STAMINA', 1, event => { currentStamina = event.current })
 
@@ -373,7 +366,7 @@ module.exports = function SkillPrediction(dispatch) {
 			return false
 		}
 		
-		if(info.canVB) VBtimer = setTimeout(enableVB, 300);	// you need a delay before chaining into VB
+		if(info.canVB) VBtimer = setTimeout(enableVB, 330);	// you need a delay before chaining into VB
 		
 		if(type == 'C_PRESS_SKILL' && event.start && canVB && job == 3 && skillBase == 15){
 			return false;
