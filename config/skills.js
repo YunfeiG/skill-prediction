@@ -1670,22 +1670,22 @@ module.exports = {
 				noRetry: true
 			}
 		},
-		15: { // Vampiric Blow  // Uncomment this for being able to VB if, a VB chain is avaiable, else, it won't work and you may as well before that trigger sCannotStartSkill
+		15: { // Vampiric Blow 
             '*': {    // Same animation as thunder strike, just slower                        
 				type: 'chargeCast',
 				length: 1940,
-			},                               // Chained VB Usage: 1. "Show default Chained Skills" in the Chained Skills menu must be on.        		                               
-            0: {                             //                    2. Must be in combat when used.  3. the VB chain icon must be shown
-                type: 'charging',           //                    Else the animation of VB won't go off causing slight desync.
+			}, // Chained VB Usage: "Show default Chained Skills" in the Chained Skills menu is strongly advised to be turned off       		                               
+            0: {
+                type: 'charging',
 				length: [800, 800, 800],		// 2300
-				noInterrupt: [2, '3-0', 4, '10-0', '15-14', '18-0', 24, 25, 30], // VB can't chain to stages 10, 11 or 12 in the client, it only can on stages 13
+				noInterrupt: [2, '3-0', 4, '10-0', '15-14', '18-0', 24, 25, 30],
 				abnormals: {
 					400500: { chargeSpeed: 0.2 },
 					400501: { chargeSpeed: 0.4 },
 					4010150: { chargeSpeed: 0.2 }
 				},
 				chains: {
-                    '3-13': 14, // this is fine though maybe uneeded, 13: 14 does the same
+                    '3-13': 14,
                     '10-13': 14,
                     '18-13': 14
                 },
