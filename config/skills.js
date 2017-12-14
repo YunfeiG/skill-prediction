@@ -3727,7 +3727,7 @@ module.exports = {
 		5: { // Burst Fire
 			0: { length: 850 },
 			1: {
-				noInterrupr: ['5-0'],
+				noInterrupt: ['5-0'],
 				noRetry: true,
 				fixedSpeed: 1,
 				length: 130,
@@ -3781,7 +3781,7 @@ module.exports = {
 				length: 1200,
 				consumeAbnormal: 10152040,
 				triggerAbnormal: { 10152081: 4100 },
-				noInterrupr: ['7-3'],
+				noInterrupt: ['7-3'],
 				noRetry: true
 			}
 		},
@@ -4664,7 +4664,7 @@ module.exports = {
 		9: { // Smoke Bomb
 			'*': { 
 				length: 725,
-				noInterrupr: [2, 9],
+				noInterrupt: [2, 9],
 				chains: {
 					1: null,
 					2: null,
