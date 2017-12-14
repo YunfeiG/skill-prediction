@@ -3781,7 +3781,6 @@ module.exports = {
 				length: 1200,
 				consumeAbnormal: 10152040,
 				triggerAbnormal: { 10152081: 4100 },
-				noInterrupt: ['7-3'],
 				noRetry: true
 			}
 		},
