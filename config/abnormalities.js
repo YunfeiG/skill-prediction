@@ -1,6 +1,15 @@
 module.exports = {
 	/* Slayer */
 	23220: true, // Distant Blade & ICB (linked)
+	
+	/* Reaper */
+	10151020: true,
+	10151021: true,
+	10151022: true,
+	10151023: true,
+	10151040: true,
+	10151041: true,
+	10151042: true,
 
 	/* Brawler */
 	10153060: true, // Punch (linked)
@@ -28,7 +37,7 @@ module.exports = {
     10152010: true, // Time Bomb, Arcane Barrage fire & Rolling Reload, responsible for client sending action 2 of many next skills.
 	10152011: true, // Blast, responsible for client sending action 2 of many next skills too.
     10152012: true, // Rolling Reload
-    10152040: true, // Arcane Barrage flying
+    //10152040: true, // Arcane Barrage flying
     10152081: true, // Arcane Barrage detonate
     10152050: true, // Burst fire shoot
     10152053: true, // Burst fire windup
@@ -43,5 +52,5 @@ module.exports = {
     10152086: true, // Arc Bomb
 	10152087: true, // Rocket Jump
     10152097: true, // Balder's Vengeance
-    10153093: true // Rocket Jump & Rolling Reload
+    //10153093: true // Rocket Jump & Rolling Reload
 }

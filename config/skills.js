@@ -1083,7 +1083,7 @@ module.exports = {
 				}
 			},
 			30: {
-				length: 1325,
+				length: 1340,
 				abnormals: {
 					300801: { skill: 250130 }
 				}
@@ -1282,7 +1282,7 @@ module.exports = {
 					25: 30
 				}
 			},
-			30: { length: 1670 } // Maybe 1675~1700
+			30: { length: 1690 } // Maybe 1675~1700
  		},
 		24: { // Eviscerate
 			0: {
@@ -3763,8 +3763,8 @@ module.exports = {
 				fixedSpeed: 1,
 				noInterrupt: [7],
 				triggerAbnormal: {
-					10152010: 3100,
-					10152040: 3100
+					10152010: 3100
+					//10152040: 3100
 				},
 				noRetry: true
 			},
@@ -3772,14 +3772,14 @@ module.exports = {
 				fixedSpeed: 1,
 				noInterrupt: [7],
 				triggerAbnormal: {
-					10152010: 3100,
-					10152040: 3100
+					10152010: 3100
+					//10152040: 3100
 				},
 				noRetry: true
 			},
 			3: {
 				length: 1200,
-				consumeAbnormal: 10152040,
+				//consumeAbnormal: 10152040,
 				triggerAbnormal: { 10152081: 4100 },
 				noRetry: true
 			}
