@@ -37,7 +37,7 @@ module.exports = {
     10152010: true, // Time Bomb, Arcane Barrage fire & Rolling Reload, responsible for client sending action 2 of many next skills.
 	10152011: true, // Blast, responsible for client sending action 2 of many next skills too.
     10152012: true, // Rolling Reload
-    //10152040: true, // Arcane Barrage flying
+    10152040: true, // Arcane Barrage flying
     10152081: true, // Arcane Barrage detonate
     10152050: true, // Burst fire shoot
     10152053: true, // Burst fire windup

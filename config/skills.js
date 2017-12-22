@@ -504,13 +504,7 @@ module.exports = {
 		39: { // Traverse Cut (Defensive Stance)
 			0: {
 				length: 2000,
-				distance: 160,
-				noInterrupt: [1, 2, 3, 4, 8, 9, 10, 12, 13, 16, 17, 19, 21, 22, 29, 32, 34, 36, 37, 39],
-				chains: {
-					11: 30,
-					18: 30,
-					27: 30
-				}
+				distance: 160
 			},
 			30: {
 				length: 2650,
@@ -2043,26 +2037,35 @@ module.exports = {
 			},
 			10: {
 				noInterrupt: [7, 26],
-				abnormals: {
-					500150: { skill: 330110 },
-					501600: { skill: 330150 },
-					501650: { skill: 330150 }
+				level: {
+					11: { 
+						abnormals: {
+							500150: { skill: 330110 },
+							501650: { skill: 330150 }
+						}
+					}
 				}
 			},
 			11: {
 				noInterrupt: [7, 26],
-				abnormals: {
-					500150: { skill: 330111 },
-					501600: { skill: 330150 },
-					501650: { skill: 330150 }
+				level: {
+					11: { 
+						abnormals: {
+							500150: { skill: 330111 },
+							501650: { skill: 330151 }
+						}
+					}
 				}
 			},
 			12: {
 				noInterrupt: [7, 26],
-				abnormals: {
-					500150: { skill: 330112 },
-					501600: { skill: 330150 },
-					501650: { skill: 330150 }
+				level: {
+					11: { 
+						abnormals: {
+							500150: { skill: 330112 },
+							501650: { skill: 330152 }
+						}
+					}
 				}
 			}
 		},
@@ -2078,12 +2081,17 @@ module.exports = {
 				},
 				abnormals: {
 					25100: { speed: 1.25 },
-					500150: { skill: 320100 },
-					//501600: { skill: 320150 },
-					501650: { skill: 320150 }
 				},
 				race: {
 					9: { length: 3700 } // Elin
+				},
+				level: {
+					9: {
+						abnormals: { 
+							500150: { skill: 320100 },
+							501650: { skill: 320150 }
+						}
+					}
 				}
 			}
 		},
@@ -2302,7 +2310,7 @@ module.exports = {
 			0: true,
 			50: {
 				length: 3925,
-			     	race: {
+			    race: {
 					9: { length: 3700 } // Elin
 				}
 			}
@@ -2319,7 +2327,9 @@ module.exports = {
 			10: true,
 			11: true,
 			12: true,
-			50: true
+			50: true,
+			51: true,
+			52: true	//not sure, may need like 500 AttSpd to test
 		},
 		34: { // Mana Boost
 			0: { length: 750 }
@@ -3759,7 +3769,7 @@ module.exports = {
 				fixedSpeed: 1,
 				noInterrupt: [7],
 				triggerAbnormal: {
-					10152010: 3100
+					10152010: 3100,
 					//10152040: 3100
 				},
 				noRetry: true
@@ -3768,7 +3778,7 @@ module.exports = {
 				fixedSpeed: 1,
 				noInterrupt: [7],
 				triggerAbnormal: {
-					10152010: 3100
+					10152010: 3100,
 					//10152040: 3100
 				},
 				noRetry: true
@@ -3776,8 +3786,10 @@ module.exports = {
 			3: {
 				length: 1200,
 				//consumeAbnormal: 10152040,
+				requiredBuff: 10152040,
 				triggerAbnormal: { 10152081: 4100 },
-				noRetry: true
+				noRetry: true,
+				noInterrupt: ['7-3']
 			}
 		},
 		9: { // Mana Missiles
