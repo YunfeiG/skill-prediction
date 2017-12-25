@@ -5,6 +5,8 @@ This version of SP will handle racial differences instead of elin only.
 
 ## Update/fix logs
 
+Dec 25, 2017, Merry Christmas, my SP now enables auto update with Caali's proxy. Fix "Unable to detonate Arcane Barrage bug"
+
 Dec 19, 2017, Fixed Traverse cut animation when Traverse cut is not level X or Defensive stance is not level II.
 
 Dec 11, 2017, Chained Vampiric Blow emulation for both in-combat and out-combat. **Strongly recommend to turn show default chain off**. The emulation is hardcoded because the skill made by BHS is hardcoded.
