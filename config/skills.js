@@ -4633,6 +4633,7 @@ module.exports = {
 		},
 		8: { // Fire Avalanche
 			'*': {
+				triggerAbnormal: { 10154080: 10000 },
 				length: [700, 1375, 325],
 				distance: [0, 367.31, 0],
 				abnormals: {
@@ -4641,6 +4642,7 @@ module.exports = {
 				},
 				chains: {
 					1: 30,
+					3: 30,
 					4: 30,
 					5: 30,
 					6: 30,
@@ -4659,10 +4661,12 @@ module.exports = {
 			},
 			0: true,
 			1: {
+				triggerAbnormal: { 10154081: 5000 },
 				length: [1375, 325],
 				distance: [411.39, 0]
 			},
 			2: {
+				triggerAbnormal: { 10154082: 1 },
 				length: [1375, 325],
 				distance: [455.47, 0]
 			},
@@ -4792,6 +4796,7 @@ module.exports = {
 		},
 		15: { // Burning Heart
 			'*': {
+				length: 390,
 				stamina: 100,
 				instantStamina: true,
 				abnormals: {
@@ -4799,16 +4804,50 @@ module.exports = {
 					32058: { speed: 1.3 }
 				}
 			},
-			0: { length: 880 },
-			1: { length: 390 },
-			2: { length: 390 },
-			3: { length: 390 },
-			4: { length: 390 },
-			5: { length: 390 },
-			6: { length: 390 },
-			7: { length: 390 },
-			8: { length: 390 },
-			9: { length: 390 }
+			0: {
+				triggerAbnormal: {
+					10154060: 1300,
+					10154100: 2000,
+					10154101: 2000
+				},
+				length: 880
+			},
+			1: {
+				triggerAbnormal: { 10154061: 850 },
+				consumeAbnormal: 10154060
+			},
+			2: {
+				triggerAbnormal: { 10154062: 850 },
+				consumeAbnormal: 10154061
+			},
+			3: {
+				triggerAbnormal: { 10154063: 850 },
+				consumeAbnormal: 10154062
+			},
+			4: {
+				triggerAbnormal: { 10154064: 850 },
+				consumeAbnormal: 10154063
+			},
+			5: {
+				triggerAbnormal: { 10154065: 850 },
+				consumeAbnormal: 10154064
+			},
+			6: {
+				triggerAbnormal: { 10154066: 850 },
+				consumeAbnormal: 10154065
+			},
+			7: {
+				triggerAbnormal: { 10154067: 850 },
+				consumeAbnormal: 10154066
+			},
+			8: {
+				triggerAbnormal: { 10154068: 850 },
+				consumeAbnormal: 10154067
+			},
+			9: {
+				triggerAbnormal: { 10154069: 850 },
+				consumeAbnormal: 10154068
+			}
 		},
 		16: { // Death Blossom
 			'*': {

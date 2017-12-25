@@ -29,7 +29,24 @@ module.exports = {
 	10154004: true,
 	10154005: true,
 	10154006: true,
-	
+	// Burning Heart
+	10154100: true,
+	10154101: true,
+	10154060: true,
+	10154061: true,
+	10154062: true,
+	10154063: true,
+	10154064: true,
+	10154065: true,
+	10154066: true,
+	10154067: true,
+	10154068: true,
+	10154069: true,
+	// Fire Avalanche
+	10154080: true,
+	10154081: true,
+	10154082: true,
+
 	/* Gunner */
     10152000: true,	// PB forward
     10152001: true, // PB forward
