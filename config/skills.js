@@ -122,13 +122,13 @@ module.exports = {
 					27: 30
 				},
 				level: {
-					10: { abnormals: { 100801: { skill: 360100 } } }
+					8: { abnormals: { 100801: { skill: 360100 } } }
 				}
 			},
 			30: {
 				length: 2000,
 				level: {
-					10: { abnormals: { 100801: { skill: 360130 } } }
+					8: { abnormals: { 100801: { skill: 360130 } } }
 				}
 			}
 		},
@@ -392,14 +392,14 @@ module.exports = {
 					39: 30
 				},
 				level: {
-					10: { abnormals: { 100801: {skill: 370100} } }
+					8: { abnormals: { 100801: {skill: 370100} } }
 				}
 			},
 			30: {
 				length: 1335,
 				distance: 135,
 				level: {
-					10: { abnormals: { 100801: {skill: 370130} } }
+					8: { abnormals: { 100801: {skill: 370130} } }
 				}
 			}
 		},
@@ -418,13 +418,13 @@ module.exports = {
 					37: 30
 				},
 				level: {
-					10: { abnormals: { 100801: { skill: 380100 } } }
+					8: { abnormals: { 100801: { skill: 380100 } } }
 				}
 			},
 			30: {
 				length: 1385,
 				level: {
-					10: { abnormals: { 100801: { skill: 380130 } } }
+					8: { abnormals: { 100801: { skill: 380130 } } }
 				}
 			}
 		},
