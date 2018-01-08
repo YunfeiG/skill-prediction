@@ -5,6 +5,8 @@ This version of SP will handle racial differences instead of elin only.
 
 ## Update/fix logs
 
+Jan 8, 2018: Minor Deadly Gamble II fix.
+
 Dec 25, 2017, Merry Christmas, my SP now enables auto update with Caali's proxy. Fix "Unable to detonate Arcane Barrage bug", Burning heart and Fire avalanche full emulation.
 
 Dec 19, 2017, Fixed Traverse cut animation when Traverse cut is not level X or Defensive stance is not level II.

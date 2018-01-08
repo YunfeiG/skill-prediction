@@ -67,7 +67,7 @@ module.exports = {
 			0: {
 				length: 830,
 				distance: 150,
-				forceClip: true,
+				//forceClip: true,
 				stamina: 500,
 				instantStamina: true,
 				noInterrupt: [2, 10, 32],
@@ -116,19 +116,19 @@ module.exports = {
 			0: {
 				length: 2550, // 2527/2540  
 				noInterrupt: [1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 16, 17, 19, 22, 23, 28, 29, 32, 34, 35, 36, 37, 39],
-				abnormals: {
-					100801: { skill: 360100 }
-				},
 				chains: {
 					18: 30,
 					21: 30,
 					27: 30
+				},
+				level: {
+					10: { abnormals: { 100801: { skill: 360100 } } }
 				}
 			},
 			30: {
 				length: 2000,
-				abnormals: {
-					100801: { skill: 360130 }
+				level: {
+					10: { abnormals: { 100801: { skill: 360130 } } }
 				}
 			}
 		},
@@ -380,8 +380,7 @@ module.exports = {
 				noInterrupt: [1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, '16-0', 18, '19-0', 21, 22, 23, 27, 29, 34, 35, 36, 37],
 				interruptibleWithAbnormal: { 102010: 3 },
 				abnormals: {
-					102010: { chain: 30 },
-					100801: { skill: 370100 }
+					102010: { chain: 30 }
 				},
 				chains: {
 					3: 30,
@@ -391,13 +390,16 @@ module.exports = {
 					28: 30,
 					32: 30,
 					39: 30
+				},
+				level: {
+					10: { abnormals: { 100801: {skill: 370100} } }
 				}
 			},
 			30: {
 				length: 1335,
 				distance: 135,
-				abnormals: {
-					100801: { skill: 370130 }
+				level: {
+					10: { abnormals: { 100801: {skill: 370130} } }
 				}
 			}
 		},
@@ -406,9 +408,6 @@ module.exports = {
 			0: {
 				length: 1850,
 				noInterrupt: [1, 3, 5, 8, 9, 10, 13, 16, 17, 18, 19, 21, 22, 23, 27, 28, 32, 34, 35, 39],
-				abnormals: {
-					100801: { skill: 380100 }
-				},
 				chains: {
 					2: 30,
 					4: 30,
@@ -417,12 +416,15 @@ module.exports = {
 					29: 30,
 					36: 30,
 					37: 30
+				},
+				level: {
+					10: { abnormals: { 100801: { skill: 380100 } } }
 				}
 			},
 			30: {
 				length: 1385,
-				abnormals: {
-					100801: { skill: 380130 }
+				level: {
+					10: { abnormals: { 100801: { skill: 380130 } } }
 				}
 			}
 		},
@@ -834,7 +836,7 @@ module.exports = {
 			0: {
 				length: 725,
 				distance: -150,
-				forceClip: true,
+				//forceClip: true,
 				stamina: 800,
 				instantStamina: true,
 				noInterrupt: [2, 26],
@@ -998,7 +1000,7 @@ module.exports = {
 			'*': { 
 				length: 905,
 				distance: 150,
-				forceclip: true,
+				//forceClip: true,
 				noInterrupt: [4],
 				noRetry: true,
 				abnormals: {
@@ -1177,7 +1179,7 @@ module.exports = {
 			0: {
 				length: 1500,
 				distance: -175,
-				forceClip: true,
+				//forceClip: true,
 				glyphs: {
 					23060: { speed: 1.25 }
 				},
@@ -1919,7 +1921,7 @@ module.exports = {
 			0: {
 				length: 905,
 				distance: 150,
-				forceClip: true,
+				//forceClip: true,
 				noInterrupt: [2, 29],
 				abnormals: {
 					400800: { chain: 6 },
@@ -2099,7 +2101,7 @@ module.exports = {
 			0: {
 				length: 660,
 				distance: -200,
-				forceClip: true,
+				//forceClip: true,
 				abnormals: {
 					400800: { chain: 6 },
 					400801: { chain: 6 },
@@ -2164,7 +2166,7 @@ module.exports = {
 					7692002: { chain: 6 },
 					9692002: { chain: 6 }
 				},
-				forceClip: true
+				//forceClip: true
 			}
 		},
 		19: { // Mana Siphon
@@ -2482,7 +2484,7 @@ module.exports = {
 			0: {
 				length: 670,
 				distance: -200,
-				forceClip: true,
+				//forceClip: true,
 				abnormals: {
 					400800: { chain: 6 },
 					400801: { chain: 6 },
@@ -2545,7 +2547,7 @@ module.exports = {
 					7692002: { chain: 6 },
 					9692002: { chain: 6 }
 				},
-				forceClip: true
+				//forceClip: true
 			}
 		},
 		17: { // Web Arrow
@@ -2740,7 +2742,7 @@ module.exports = {
 					7692002: { chain: 6 },
 					9692002: { chain: 6 }
 				},
-				forceClip: true
+				//forceClip: true
 			}
 		},
 		27: { // Final Reprisal
@@ -2853,7 +2855,7 @@ module.exports = {
 			0: {
 				length: 665,
 				distance: -200,
-				forceClip: true,
+				//forceClip: true,
 				abnormals: {
 					400800: { chain: 6 },
 					400801: { chain: 6 },
@@ -3580,7 +3582,7 @@ module.exports = {
 			'*': {
 				length: 700,
 				distance: 180,
-				forceClip: true,
+				//forceClip: true,
 				noRetry: true,
 				abnormals: {
 					400800: { chain: 6 },
@@ -3986,7 +3988,7 @@ module.exports = {
 					7692002: { chain: 6 },
 					9692002: { chain: 6 }
 				},
-				forceClip: true,
+				//forceClip: true,
 				noRetry: true
 			}
 		}
@@ -4288,7 +4290,7 @@ module.exports = {
 				fixedSpeed: 1,
 				length: 580,
 				distance: 144,
-				forceClip: true,
+				//forceClip: true,
 				hasChains: true,
 				noRetry: true,
 				abnormals: {
@@ -4468,7 +4470,7 @@ module.exports = {
 				fixedSpeed: 1,
 				length: 650,
 				distance: 175,
-				forceClip: true,
+				//forceClip: true,
 				noRetry: true,
 				abnormals: {
 					400800: { chain: 6 },
@@ -4539,7 +4541,7 @@ module.exports = {
 				length: 1008,
 				distance: -291.6,
 				noInterrupt: [2, 5],
-				forceClip: true,
+				//forceClip: true,
 				noRetry: true,
 				chains: {
 					1: null,
@@ -5370,7 +5372,7 @@ module.exports = {
 				fixedSpeed: 1,
 				length: 825,
 				distance: 188.18,
-				forceClip: true,
+				//forceClip: true,
 				noInterrupt: [14],
 				abnormals: {
 					400800: { chain: 6 },
