@@ -5,6 +5,8 @@ This version of SP will handle racial differences instead of elin only.
 
 ## Update/fix logs
 
+Jan 12, 2018: Ping.js fix. Stops spamming C_REQUEST_GAMESTAT_PING to server after number of teleports. SORRY I WAS TO LATE TO REALIZE THIS ISSUE.
+
 Jan 8, 2018: Minor Deadly Gamble II fix.
 
 Dec 25, 2017, Merry Christmas, my SP now enables auto update with Caali's proxy. Fix "Unable to detonate Arcane Barrage bug", Burning heart and Fire avalanche full emulation.

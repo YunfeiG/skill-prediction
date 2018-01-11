@@ -1,37 +1,45 @@
-const PING_INTERVAL = 6000,
-	PING_TIMEOUT = 30000,
+const PING_INTERVAL = 4000,
+	PING_TIMEOUT = 20000,
 	PING_HISTORY_MAX = 20
 
 class Ping {
 	constructor(dispatch) {
-		this._timeout = null
-		this._waiting = false
-		this._lastSent = this.min = this.max = this.avg = 0
+		this.min = this.max = this.avg = 0
 		this.history = []
 
+		let timeout = null,
+			waiting = false,
+			lastSent = 0
+
 		let ping = () => {
+			clearTimeout(timeout)
 			dispatch.toServer('C_REQUEST_GAMESTAT_PING', 1)
-			this._waiting = true
-			this._lastSent = Date.now()
-			this._timeout = setTimeout(ping, PING_TIMEOUT)
+			waiting = true
+			lastSent = Date.now()
+			timeout = setTimeout(ping, PING_TIMEOUT)
 		}
 
-		dispatch.hook('S_SPAWN_ME', 1, () => { ping() })
-		dispatch.hook('S_LOAD_TOPO', 1, event => { clearTimeout(this._timeout) })
-		dispatch.hook('S_RETURN_TO_LOBBY', 1, () => { clearTimeout(this._timeout) })
+		dispatch.hook('S_SPAWN_ME', 'raw', () => {
+			clearTimeout(timeout)
+			timeout = setTimeout(ping, PING_INTERVAL)
+		})
+
+		dispatch.hook('S_LOAD_TOPO', 'raw', () => { clearTimeout(timeout) })
+		dispatch.hook('S_RETURN_TO_LOBBY', 'raw', () => { clearTimeout(timeout) })
 
 		// Disable inaccurate ingame ping so we have exclusive use of ping packets
-		dispatch.hook('C_REQUEST_GAMESTAT_PING', 1, () => {
+		dispatch.hook('C_REQUEST_GAMESTAT_PING', 'raw', () => {
 			dispatch.toClient('S_RESPONSE_GAMESTAT_PONG', 1)
 			return false
 		})
 
-		dispatch.hook('S_RESPONSE_GAMESTAT_PONG', 1, () => {
-			let result = Date.now() - this._lastSent
+		dispatch.hook('S_RESPONSE_GAMESTAT_PONG', 'raw', () => {
+			let result = Date.now() - lastSent
+			console.log('Yunfei-SP-ping: '+result);
 
-			clearTimeout(this._timeout)
+			clearTimeout(timeout)
 
-			if(!this._waiting) this.history.pop() // Oops! We need to recalculate the last value
+			if(!waiting) this.history.pop() // Oops! We need to recalculate the last value
 
 			this.history.push(result)
 
@@ -50,8 +58,8 @@ class Ping {
 
 			this.avg /= this.history.length
 
-			this._waiting = false
-			this._timeout = setTimeout(ping, PING_INTERVAL - result)
+			waiting = false
+			timeout = setTimeout(ping, PING_INTERVAL - result)
 			return false
 		})
 	}
