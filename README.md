@@ -4,7 +4,7 @@ This version of SP will handle racial differences instead of elin only.
 
 ## Disclaimer
 
-I strongly discourage to use skill prediction for pvp purpose. SP has so many bugs in pvp that I am tired and stuggling to diagnose and fix them. For example, you can't get out of bullrush and knockups. Pvp community is also hostile to skill prediction, you are likely to get reported by having wierd behaviors. I do not take responsibility for people exploit from SP bugs and any sanctions put on your accounts by TERA publishers. If you insist in pvping with high ping, use the script made by someone else who is confident in this.
+I strongly discourage to use skill prediction for pvp purpose. SP has so many bugs in pvp that I am tired and struggling to diagnose and fix them. For example, you can't get out of bullrush or retaliate knockups. Pvp community is also hostile to skill prediction, you are likely to get reported by having weird behaviors. I do not take responsibility for people exploit from SP bugs and any sanctions put on your accounts by TERA publishers. If you insist in pvping with high ping, use the scripts made by someone else who is confident in this.
 
 
 ## Update/fix logs
