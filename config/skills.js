@@ -1942,6 +1942,10 @@ module.exports = {
 				noInterrupt: [1, '3-10', '3-11', '3-12', '3-13', 4, 6, '8-30', '10-10', '10-11', '10-12', '10-13', 11, 12, 13, '15-10', '15-11', '15-12', '15-13', '15-14', '18-10', '18-11', '18-12', '18-13', 24, 25, 26, 27, 28, 29, 30, 31, 32],
 				requiredBuff: 401402,
 				race: {
+					4: { // M.Aman
+						length: 675,
+						distance: 25
+					},
 					8: { // Popori, just WTF
 						length: 1195,
 						distance: 240.4
@@ -1950,7 +1954,7 @@ module.exports = {
 					10: { distance: 21.08 } // Baraka: 21.084
 				}
 			},
-			0: true,
+			0: { abnormals: { 401402: { chain: 30 } } },
 			30: true
 		},
 		31: { // Overwhelm (TODO: Check)
@@ -1980,6 +1984,10 @@ module.exports = {
 				length: 795,
 				distance: 31.58,
 				race: {
+					4: { // M.Aman
+						length: 760,
+						distance: 37.5
+					},
 					8: { // Popori: 930, 61.387
 						length: 930, 
 						distance: 61.39
@@ -1992,6 +2000,7 @@ module.exports = {
 				length: 810,
 				distance: 134.1,
 				race: {
+					4: { distance: 116 }, // M.Aman
 					8: { distance: 192.32 }, // Popori: 192.319
 					9: { distance: 134.1 }, // Elin: 134.1
 					10: { distance: 126.49 } // Baraka: 126.49
