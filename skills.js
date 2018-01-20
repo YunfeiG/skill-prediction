@@ -86,6 +86,7 @@ module.exports = function SkillPrediction(dispatch) {
 	
 	let canVB = false;
 	let VBtimer = null;
+	let delayVB = 0;
 
 	dispatch.hook('S_LOGIN', 9, event => {
 		skillsCache = {};
@@ -366,8 +367,6 @@ module.exports = function SkillPrediction(dispatch) {
 			return false
 		}
 		
-		if(info.canVB) VBtimer = setTimeout(enableVB, 330);	// you need a delay before chaining into VB
-		
 		if(type == 'C_PRESS_SKILL' && event.start && canVB && job == 3 && skillBase == 15){
 			return false;
 		}
@@ -584,6 +583,10 @@ module.exports = function SkillPrediction(dispatch) {
 				z: event.toZ
 			} : null
 		})
+		
+		delayVB = Math.round(500/1.1/speed);
+		if(DEBUG && info.canVB) console.log('VB delay:'+delayVB);
+		if(info.canVB) VBtimer = setTimeout(enableVB, delayVB);	// you need a delay before chaining into VB
 
 		if(send) toServerLocked(data)
 
@@ -1048,6 +1051,12 @@ module.exports = function SkillPrediction(dispatch) {
 
 	function sendActionEnd(type, distance) {
 		clearStage()
+			
+		if(canVB){
+			clearTimeout(VBtimer);
+			canVB = false;
+			if(DEBUG) console.log('Chained VB disabled');
+		}
 
 		if(!currentAction) return
 
@@ -1055,12 +1064,7 @@ module.exports = function SkillPrediction(dispatch) {
 
 		if(oopsLocation && (FORCE_CLIP_STRICT || !currentLocation.inAction)) sendInstantMove(oopsLocation)
 		else movePlayer(distance)
-	
-		if(canVB){
-			clearTimeout(VBtimer);
-			canVB = false;
-			if(DEBUG) console.log('Chained VB disabled');
-		}
+
 
 		dispatch.toClient('S_ACTION_END', 1, {
 			source: myChar(),

@@ -285,7 +285,7 @@ module.exports = {
 		20: { // Deadly Gamble
 			0: {
 				fixedSpeed: 1,
-				length: 350,
+				length: 320,
 				noInterrupt: [32]
 			}
 		},
@@ -526,7 +526,8 @@ module.exports = {
 					4: { distance: 70 }, // M.Aman: 70
 					5: { distance: 75 }, // F.Aman: 75
 					8: { distance: 72.89 }, // Popori: 72.894
-					9: { distance: 74.45 } // Elin: 74.453
+					9: { distance: 74.45 }, // Elin: 74.453
+					10: { distance: 74.89 } // Baraka: 74.876
 				}
 			},
 			1: {
@@ -538,7 +539,8 @@ module.exports = {
 					4: { distance: 25 }, // M.Aman: 25
 					5: { distance: 30.52 }, // F.Aman: 30.523
 					8: { distance: 39.05 }, // Popori: 39.051
-					9: { distance: 19.2 } // Elin: 19.2
+					9: { distance: 19.2 }, // Elin: 19.2
+					10: { distance: 30.8 } // Baraka: 30.81
 				}
 			},
 			2: {
@@ -550,7 +552,8 @@ module.exports = {
 					4: { distance: 60 }, // M.Aman: 60
 					5: { distance: 54.48 }, // F.Aman: 54.476
 					8: { distance: 41.06 }, // Popori: 41.058
-					9: { distance: 66.07 } // Elin: 66.07
+					9: { distance: 66.07 }, // Elin: 66.07
+					10: { distance: 69.99 } // Barake: 69.985
 				}
 			}
 		},
@@ -581,7 +584,8 @@ module.exports = {
 					4: { distance: [0, 100, 100, 100, 100, 13] }, // M.Aman
 					5: { distance: [0, 100, 100, 100, 100, 14] }, // F.Aman
 					8: { distance: [0, 100, 100, 100, 100, 15] }, // Popori
-					9: { distance: [0, 100, 100, 100, 100, 35] } // Elin, 80 FPS
+					9: { distance: [0, 100, 100, 100, 100, 35] }, // Elin, 80 FPS
+					10: { distance: [0, 100, 100, 100, 100, 14.5] } // Baraka: 14.489
 				}
 			},
 			0: { length: [950, 500, 500, 500, 400, 775] },
@@ -609,6 +613,7 @@ module.exports = {
 					5: { distance: 30.000 }, // F.Aman
 					8: { distance: 30.000 }, // Popori*/
 					9: { distance: 43.69 } // Elin: 43.693
+					// 10: { distance: 30 } // Baraka: 30
 				}
 			}
 		},
@@ -637,7 +642,8 @@ module.exports = {
 					4: { distance: 85 }, // M.Aman: 85
 					5: { distance: 85 }, // F.Aman: 85
 					8: { distance: 90 }, // Popori: 90
-					9: { distance: 108.06 } // Elin: 108.063
+					9: { distance: 108.06 }, // Elin: 108.063
+					10: { distance: 90 } // Baraka: 90
 				}
 			}
 		},
@@ -659,6 +665,7 @@ module.exports = {
 					5: { distance: 30 }, // F.Aman
 					8: { distance: 30 }, // Popori*/
 					9: { distance: 43.693 } // Elin: 43.693
+					// 10: { distance: 30 } // Baraka
 				}
 			}
 		},
@@ -742,7 +749,8 @@ module.exports = {
 					4: { distance: 95 }, // M.Aman: 95
 					5: { distance: 100.13 }, // F.Aman: 100.125
 					8: { distance: 92.39 }, // Popori: 92.39
-					9: { distance: 122.66 } // Elin: 122.66
+					9: { distance: 122.66 }, // Elin: 122.66
+					10: { distance: 92.13 } // Baraka: 92.125
 				}
 			},
 			1: {
@@ -755,7 +763,8 @@ module.exports = {
 					4: { distance: 87 }, // M.Aman: 87
 					5: { distance: 74.84 }, // F.Aman: 74.836
 					8: { distance: 89.46 }, // Popori: 89.462
-					9: { distance: 66.04 } // Elin: 66.043
+					9: { distance: 66.04 }, // Elin: 66.043
+					10: { distance: 74.84 } // Baraka: 74.836
 				}
 			}
 		},
@@ -787,7 +796,8 @@ module.exports = {
 					4: { distance: 95 }, // M.Aman: 95
 					5: { distance: 100.13 }, // F.Aman: 100.125
 					8: { distance: 92.39 }, // Popori: 92.39
-					9: { distance: 122.66 } // Elin: 122.66
+					9: { distance: 122.66 }, // Elin: 122.66
+					10: { distance: 92.13 } // Baraka: 92.125
 				}
 			}
 		},
@@ -867,6 +877,7 @@ module.exports = {
 					5: { length: 625 }, // F.Aman*/
 					8: { length: 950 }, // Popori
 					9: { length: 650 } // Elin
+					// 10: { length: 625 } // Baraka
 				}
 		    }
 		}	
