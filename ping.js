@@ -1,6 +1,8 @@
 const PING_INTERVAL = 4000,
 	PING_TIMEOUT = 20000,
 	PING_HISTORY_MAX = 20
+	
+const DISPLAY_PING = false
 
 class Ping {
 	constructor(dispatch) {
@@ -35,7 +37,7 @@ class Ping {
 
 		dispatch.hook('S_RESPONSE_GAMESTAT_PONG', 'raw', () => {
 			let result = Date.now() - lastSent
-			console.log('Yunfei-SP-ping: '+result);
+			if(DISPLAY_PING) console.log('Yunfei-SP-ping: '+result);
 
 			clearTimeout(timeout)
 

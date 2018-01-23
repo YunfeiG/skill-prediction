@@ -4030,7 +4030,22 @@ module.exports = {
 					'1-32': 2,
 					'2-2': 31,
 					'2-3': 31,
-					2: 30
+					2: 30,
+					'3-1': 30,
+					4: 30,
+					5: 30,
+					6: 30,
+					7: 30,
+					8: 30,
+					9: 30,
+					10: 30,
+					14: 30,
+					15: 30,
+					16: 30,
+					17: 30,
+					18: 30,
+					20: 30,
+					40: 30
 				},
 				noRetry: true
 			},
@@ -4137,6 +4152,26 @@ module.exports = {
 				abnormals: {
 					7692002: { chain: 6 },
 					9692002: { chain: 6 }
+				},
+				noInterrupt: [4],
+				chains: {
+					1: 30,
+					2: 30,
+					'3-1': 30,
+					//4: 30,
+					5: 30,
+					6: 30,
+					7: 30,
+					8: 30,
+					9: 30,
+					10: 30,
+					14: 30,
+					15: 30,
+					16: 30,
+					17: 30,
+					18: 30,
+					20: 30,
+					40: 30
 				}
 			},
 			0: true,
@@ -4171,6 +4206,7 @@ module.exports = {
 					7: 30,
 					8: 30,
 					9: 30,
+					10: 30,
 					14: 30,
 					15: 30,
 					16: 30,
@@ -4190,7 +4226,25 @@ module.exports = {
 				length: 860,
 				distance: 105,
 				noInterrupt: [7],
-				hasChains: true
+				chains: {
+					1: 30,
+					2: 30,
+					'3-1': 30,
+					4: 30,
+					5: 30,
+					6: 30,
+					//7: 30,
+					8: 30,
+					9: 30,
+					10: 30,
+					14: 30,
+					15: 30,
+					16: 30,
+					17: 30,
+					18: 30,
+					20: 30,
+					40: 30
+				}
 			},
 			0: true,
 			30: true
@@ -4210,7 +4264,9 @@ module.exports = {
 					5: 30,
 					6: 30,
 					7: 30,
+					//8: 30,
 					9: 30,
+					10: 30,
 					14: 30,
 					15: 30,
 					16: 30,
@@ -4222,7 +4278,7 @@ module.exports = {
 			},
 			1: true,
 			2: true,
-			30: { fixedSpeed: 1},
+			30: true,
 			31: true
 		},
 		9: { // Jackhammer
@@ -4234,7 +4290,25 @@ module.exports = {
 				abnormals: {
 					31120: { chain: 31 }
 				},
-				hasChains: true
+				chains:{
+					1: 30,
+					2: 30,
+					'3-1': 30,
+					4: 30,
+					5: 30,
+					6: 30,
+					7: 30,
+					8: 30,
+					//9: 30,
+					10: 30,
+					14: 30,
+					15: 30,
+					16: 30,
+					17: 30,
+					18: 30,
+					20: 30,
+					40: 30
+				}
 			},
 			1: true,
 			2: true,
@@ -4246,6 +4320,7 @@ module.exports = {
 				length: 1850,
 				distance: 155,
 				requiredBuff: 10153000,
+				noInterrupt: [10],
 				abnormals: {
 					7692002: { chain: 6 },
 					9692002: { chain: 6 }
@@ -4260,6 +4335,7 @@ module.exports = {
 					7: 30,
 					8: 30,
 					9: 30,
+					//10: 30,
 					14: 30,
 					15: 30,
 					16: 30,
@@ -4272,34 +4348,175 @@ module.exports = {
 			0: true,
 			30: true
 		},
+		/*12: { // Retaliate
+			'*': {
+				length: 1000
+			},
+			0: true
+		},*/
 		13: { // Provoke
 			'*': {
 				fixedSpeed: 1,
-				length: 1275
+				length: 1275,
+				noRetry: true,
+				noInterrupt: [13]
 			},
 			1: true,
 			2: true
 		},
 		14: { // Infuriate
-			'*': { length: 1650 },
+			'*': {
+				length: 1650,
+				noRetry: true,
+				noInterrupt: [14],
+				chains: {
+					1: 30,
+					2: 30,
+					'3-1': 30,
+					4: 30,
+					5: 30,
+					6: 30,
+					7: 30,
+					8: 30,
+					9: 30,
+					10: 30,
+					//14: 30,
+					15: 30,
+					16: 30,
+					17: 30,
+					18: 30,
+					20: 30,
+					40: 30
+				}
+			},
 			1: true,
 			2: true,
+			30: true
+		},
+		15: { // High Kick
+			'*': {
+				length: 1300,
+				distance: 133.27,
+				requiredBuff: 10153503,
+				chains: {
+					1: 30,
+					2: 30,
+					'3-1': 30,
+					4: 30,
+					5: 30,
+					6: 30,
+					7: 30,
+					8: 30,
+					9: 30,
+					10: 30,
+					14: 30,
+					//15: 30,
+					16: 30,
+					17: 30,
+					18: 30,
+					20: 30,
+					40: 30
+				}
+			},
+			0: true,
 			30: true
 		},
 		16: { // Flip Kick
 			'*': {
 				length: 2050,
 				distance: 134,
-				hasChains: true
+				chains: {
+					1: 30,
+					2: 30,
+					'3-1': 30,
+					4: 30,
+					5: 30,
+					6: 30,
+					7: 30,
+					8: 30,
+					9: 30,
+					10: 30,
+					14: 30,
+					15: 30,
+					//16: 30,
+					17: 30,
+					18: 30,
+					20: 30,
+					40: 30
+				}
 			},
 			1: true,
 			2: true,
 			30: true
 		},
+		/*17: { // Rampage
+			// should be similar to one thousand cut?
+			0: {
+				type: 'dash',
+				fixedSpeed: 1,
+				length: 600,
+				distance: 500
+			},
+			10: {
+				fixedSpeed: 1,
+				length: 3570,
+				distance: 293.56	// need a duel dummy to iframe this skill to avoid collision, not accurate
+			}
+		},*/
+		18: { // Growing Fury
+			'*': {
+				length: 1370,
+				noRetry: true,
+				noInterrupt: [18],
+				chains: {
+					1: 30,
+					2: 30,
+					'3-1': 30,
+					4: 30,
+					5: 30,
+					6: 30,
+					7: 30,
+					8: 30,
+					9: 30,
+					10: 30,
+					14: 30,
+					15: 30,
+					16: 30,
+					17: 30,
+					//18: 30,
+					20: 30,
+					40: 30
+				},
+			},
+			1: true,
+			2: true,
+			30: true
+		},
+		19: { // Invigorating Rage
+			'*': {
+				fixedSpeed: 1,
+				length: 1430,
+				noRetry: true,
+				noInterrupt: [19],
+				stamina: 1500,
+				instantStamina: true,
+			},
+			1: true,
+			2: true
+		},
+		/*20: { // Meat Grinder
+			0: {
+				fixedSpeed: 1,
+				length: 3270,
+				onlyTarget: true
+			}
+		},*/
 		21: { // Mounting Rage
 			'*': {
 				fixedSpeed: 1,
 				length: 1275,
+				noRetry: true,
+				noInterrupt: [21],
 				abnormals: { 10153040: { chain: 6 } }
 			},
 			1: true,
@@ -4311,7 +4528,6 @@ module.exports = {
 				length: 580,
 				distance: 144,
 				//forceClip: true,
-				hasChains: true,
 				noRetry: true,
 				abnormals: {
 					400800: { chain: 6 },
@@ -4323,7 +4539,7 @@ module.exports = {
 					7692002: { chain: 6 },
 					9692002: { chain: 6 },
 					10153150: { chain: 30 },
-				}
+				},
 			},
 			0: true,
 			1: true,

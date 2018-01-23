@@ -9,6 +9,8 @@ I strongly discourage to use skill prediction for pvp purpose. SP has so many bu
 
 ## Update/fix logs
 
+Jan 24, 2018: Brawler: Growing fury, Invigorating rage, High kick added, piledriver fixed and minor refinements to other skills. Meat grinder, Rampage are still under testing. Hide ping spam in the console window, if you want to reactivate this, go edit ping.js and set DISPLAY_PING to true.
+
 Jan 12, 2018: Ping.js fix. Stops spamming C_REQUEST_GAMESTAT_PING to server after number of teleports. SORRY I WAS TOO LATE TO REALIZE THIS ISSUE.
 
 Jan 8, 2018: Minor Deadly Gamble II fix.
@@ -19,11 +21,11 @@ Dec 19, 2017, Fixed Traverse cut animation when Traverse cut is not level X or D
 
 Dec 11, 2017, Chained Vampiric Blow emulation for both in-combat and out-combat. **Strongly recommend to turn show default chain off**. The emulation is hardcoded because the skill made by BHS is hardcoded.
 
-Issue 1: Just full charge TS/Cylone/LS (without losing HP) -> VB will ghost. Make sure you enter the overcharge stage before chaining into VB
+Issue 1: Just full charge TS/Cylone/LS (without losing HP) -> VB will ghost. Make sure you enter the overcharge stage before chaining into VB.
 
 Issue 2: You can still chain VB even if it is on cooldown, of course that is a ghost cast.
 
-Dec 10, 2017, Massive gunner refinements. Mainly chains of arc bomb, ST, and balder's vengeance. Bombardment and retaliate emulations are added. Slightly slow down the rate of burst fire to reduce ghosts. **Too fast PBx2 still causes skill go on cooldown twice so beware** (if you do 2nd cast within ping delay, legit but server response will be very weird)
+Dec 10, 2017, Massive gunner refinements. Mainly chains of arc bomb, ST, and balder's vengeance. Bombardment and retaliate emulations are added. Slightly slow down the rate of burst fire to reduce ghosts. **Too fast PBx2 still causes skill go on cooldown twice so beware** (if you do 2nd cast within ping delay, legit but server response will be very weird).
 
 Dec 9, 2017, Gunner point blank: revert to fast speed, but if you do PBx2 too fast, the skill goes on cooldown twice. Fix arc bomb being no animation when used after timebomb and arcane barrage fire.
 
@@ -33,12 +35,21 @@ Dec 4, 2017, Removed some unused silence/fear abnormalities in the check. Mystic
 
 Dec 1, 2017, NA Elin gunner patch, using new def.
 
-Nov 27, 2017, Brawler: You can no longer cast Mounting rage client side when Growing fury is active
+Nov 27, 2017, Brawler: You can no longer cast Mounting rage client side when Growing fury is active.
 
-Nov 23, 2017, Gunner Burst fire -5 willpower cost armor roll support. Priest Mana charge +15% charge speed armor roll support
+Nov 23, 2017, Gunner Burst fire -5 willpower cost armor roll support. Priest Mana charge +15% charge speed armor roll support.
 
 Nov 22, 2017: ~~Point blank, blocks button spam and invalid skill casts, and becomes slow, it was not supposed to be that fast.~~
 
+Nov 21, 2017: Archer's low level charge skills support.
+
+Nov 19, 2017: Berzerker's low level charge skills support.
+
+Nov 4, 2017: Ninja's attunement no longer triggers auto attack glitch.
+
+Oct 28, 2017: Thunderbolt, Poison arrow recoil distance added.
+
+Oct 26, 2017: Fix Evasive roll for popori slayer, warrior. Reaper Auto attack and cable step glyph.
 
 Soon™: Double casts prevention(Short skills like Teleporting jaunts, Overpower, Restraning arrow, Web arrow)
 
