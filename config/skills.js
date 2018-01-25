@@ -213,14 +213,14 @@ module.exports = {
 				}	
 			}
 		},
-		/*13: { // Retaliate
+		13: { // Retaliate
 			0: {
 				type: 'retaliate',
 				length: 1630,
 				noInterrupt: [32],
 				noRetry: true
 			}
-		},*/
+		},
 		16: { // Charging Slash
 			0: {
 				type: 'dash',
@@ -3559,13 +3559,13 @@ module.exports = {
 				noInterrupt: ['12-1']
 			}
 		},
-		/*14: { // Retaliate
+		14: { // Retaliate
 			0: {
 				type: 'retaliate',
 				length: 1610,
 				noRetry: true
 			}
-		},*/
+		},
 		15: { // Retribution
 			0: {
 				fixedSpeed: 1,
@@ -4350,7 +4350,9 @@ module.exports = {
 		},
 		/*12: { // Retaliate
 			'*': {
-				length: 1000
+				type: 'retaliate',
+				length: 1000,
+				noRetry: true
 			},
 			0: true
 		},*/
@@ -4508,6 +4510,7 @@ module.exports = {
 			0: {
 				fixedSpeed: 1,
 				length: 3270,
+				abnormals: { 10153040: { chain: 6 } }
 				onlyTarget: true
 			}
 		},*/
@@ -5688,13 +5691,13 @@ module.exports = {
 				length: 1075
 			}
 		},
-		/*18: { // Retaliate
+		18: { // Retaliate
 			0: { 
 				type: 'retaliate',
 				length: 1630,
 				noRetry: true 
 			}
-		},*/
+		},
 		19: { // Reclamation
 			'*': {
 				length: 1525,

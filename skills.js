@@ -83,6 +83,7 @@ module.exports = function SkillPrediction(dispatch) {
 	
 	let manaChargeSpeed = false;
 	let burstFireCost = false;
+	let inviRageCost = false;
 	
 	let canVB = false;
 	let VBtimer = null;
@@ -168,6 +169,7 @@ module.exports = function SkillPrediction(dispatch) {
 				equippedWeapon = false
 				manaChargeSpeed = false
 				burstFireCost = false
+				inviRageCost = false
 				for(let item of inventory)
 					if(item.slot == 1) {
 						equippedWeapon = true
@@ -181,6 +183,7 @@ module.exports = function SkillPrediction(dispatch) {
 						for(let roll of entries) {
 							if(roll.dbid == 350708) manaChargeSpeed = true
 							if(roll.dbid == 350905) burstFireCost = true
+							if(roll.dbid == 351009) inviRageCost = true
 						}
 						break
 					}
@@ -545,6 +548,7 @@ module.exports = function SkillPrediction(dispatch) {
 			stamina = info.stamina
 
 		if(burstFireCost) stamina -= 5;	
+		if(inviRageCost) stamina -= 600;
 		
 		if(info.glyphs)
 			for(let id in info.glyphs)
