@@ -108,6 +108,7 @@ module.exports = {
 				distance: 151.87,
 				race: {
 					2: { distance: 152.73 }, // M.Helf: 152.733
+					3: { distance: 143.35 }, // F.Helf: 143.351
 					5: { distance: 150.71 }, // F.Aman: 150.714
 					8: { distance: 148.9 }, // Popori: 148.904
 					9: { distance: 151.87 } // Elin: 151.867
@@ -173,6 +174,7 @@ module.exports = {
 				},
 				race: {
 					2: { length: 2055 }, // M.Helf
+					3: { length: 2055 }, // F.Helf
 					7: { length: 2055 }, // F.Castanic
 					8: { length: 2055 }, // Popori
 					9: { length: 2055 } // Elin
@@ -186,6 +188,10 @@ module.exports = {
 				noInterrupt: [32],
 				race: {
 					2: { distance: 0 }, // M.Helf
+					3: {	// F.Helf
+						length: 925,
+						distance: 40
+					},
 					5: { distance: 40 }, // F.Aman
 					8: { distance: 35 }, // Popori
 					9: {	// Elin
@@ -250,6 +256,7 @@ module.exports = {
 				noInterrupt: [32],
 				race: {
 					2: { distance: 120.28 }, // M.Helf: 120.277
+					3: { distance: 127.11 }, // F.Helf: 127.113
 					5: { distance: 120.28 }, // F.Aman: 120.277
 					8: { distance: 128.89 }, // Popori: 128.889
 					9: { distance: 138.28 } // Elin: 138.284
@@ -266,6 +273,7 @@ module.exports = {
 				distance: 144.85,
 				race: {
 					2: { distance: 144.85 }, // M.Helf: 144.846
+					3: { distance: 155.3 }, // F.Helf 155.303
 					5: { distance: 143.27 }, // F.Aman: 143.269
 					8: { distance: 161.74 }, // Popori: 161.738
 					9: { distance: 170.67 } // Elin: 170.671
@@ -276,6 +284,7 @@ module.exports = {
 				distance: 100.15,
 				race: {
 					2: { distance: 100.11 }, // M.Helf: 100.114
+					3: { distance: 92.11 }, // F.Helf 92.105
 					5: { distance: 101.69 }, // F.Aman: 101.689
 					8: { distance: 116.63 }, // Popori: 116.629
 					9: { distance: 122.34 } // Elin: 122.342
@@ -4138,10 +4147,12 @@ module.exports = {
 		/*3: { // Divine Wrath
 			0: {
 				fixedSpeed: 1,
+				requiredBuff: 10153050,
 				length: 29900
 			},
 			1: {
 				type: 'lockonCast',
+				requiredBuff: 10153050,
 				length: [,,],
 				distance: [,,]
 			}
@@ -4456,6 +4467,7 @@ module.exports = {
 			0: {
 				type: 'dash',
 				fixedSpeed: 1,
+				requiredBuff: 10153050,
 				length: 600,
 				distance: 500
 			},
@@ -4470,6 +4482,7 @@ module.exports = {
 				length: 1370,
 				noRetry: true,
 				noInterrupt: [18],
+				requiredBuff: 10153050,
 				chains: {
 					1: 30,
 					2: 30,
