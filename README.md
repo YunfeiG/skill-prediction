@@ -9,6 +9,10 @@ I strongly discourage to use skill prediction for pvp purpose. SP has so many bu
 
 ## Update/fix logs
 
+Feb 4, 2018: Rain of Arrows, Regeneration Circle, Resurrection: Attack speed bonus from Rare and Superior and other kinds of noctenium support.
+
+Growing Fury: fixed the problem when you can cast this skill without having full rage.
+
 Jan 24, 2018: Brawler: Growing fury, Invigorating rage, High kick added, piledriver fixed and minor refinements to other skills. Meat grinder, Rampage are still under testing. Hide ping spam in the console window, if you want to reactivate this, go edit ping.js and set DISPLAY_PING to true.
 
 Jan 12, 2018: Ping.js fix. Stops spamming C_REQUEST_GAMESTAT_PING to server after number of teleports. SORRY I WAS TOO LATE TO REALIZE THIS ISSUE.
