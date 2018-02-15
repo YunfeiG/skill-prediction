@@ -9,6 +9,8 @@ I strongly discourage to use skill prediction for pvp purpose. SP has so many bu
 
 ## Update/fix logs
 
+Feb 16, Celebrate the new year of the dog. Petrification fix(KDNM 2nd boss cone attack).
+
 Feb 4, 2018: Rain of Arrows, Regeneration Circle, Resurrection: Attack speed bonus from Rare and Superior and other kinds of noctenium support.
 
 Growing Fury: fixed the problem when you can cast this skill without having full rage.
