@@ -6,6 +6,25 @@ Currently suspending unless I find serious issues. I will go back to work when a
 
 I strongly discourage to use skill prediction for pvp purpose. SP has so many bugs in pvp that I am tired and struggling to diagnose and fix them. For example, you can't get out of bullrush or retaliate knockups. Pvp community is also hostile to skill prediction, you are likely to get reported by having weird behaviors. I do not take responsibility for people exploiting from SP bugs and any consequences like sanctions put on accounts by TERA publishers. If you insist in pvping with high ping, use the scripts made by someone else who is confident in this.
 
+## Issues that still persist:
+
+Double casts when your ping is higher than animation length, or the cooldown applies at the very end of the skill animation(Short skills like Teleporting jaunts, Boomerang pulse, Overpower, Restraning arrow, Web arrow)
+
+Triple point blank casts(Point blank forward, blast cancel, forward->backward)
+
+Buggy chained Vampiric Blow(Hardcoded skill at server side, you can chain this skill even if it's on cooldown)
+
+Headlong rush buff delay(For HLR->WW chain, WW appears to be the slow cast because HLR buff doesn't arrive in time, requires attack speed emulation to fix this which involves a lot of resources)
+
+Fake skills when mounting(Doesn't hurt much)
+
+Ninja auto attack glitch(Server sided bug, can't eliminate this, better comment this skill out)
+
+Sorcerer jaunt->charging arcane pulse rubberband(side effect of preventing teleport janut clip through walls)
+
+Brawler's location in other's pov(often seen to be at back of the enemy) when actively attacking.
+
+Repeatitive animation of Brawler's provoke, mounting rage when there is ping jitter.(Looks like client sided bug)
 
 ## Update/fix logs
 
@@ -58,23 +77,3 @@ Nov 4, 2017: Ninja's attunement no longer triggers auto attack glitch.
 Oct 28, 2017: Thunderbolt, Poison arrow recoil distance added.
 
 Oct 26, 2017: Fix Evasive roll for popori slayer, warrior. Reaper Auto attack and cable step glyph.
-
-## Issues that still persist:
-
-Double casts(Short skills like Teleporting jaunts, Boomerang pulse, Overpower, Restraning arrow, Web arrow)
-
-Triple point blank casts(Point blank forward, blast cancel, forward, backward)
-
-Buggy chained Vampiric Blow(Hardcoded skill at server side)
-
-Headlong rush buff delay(For HLR->WW chain, requires attack speed emulation to fix this which involves a lot of resources)
-
-Fake skills when mounting(Doesn't hurt much)
-
-Ninja auto attack glitch(Server sided bug, can't eliminate this, better comment this skill out)
-
-Sorcerer jaunt->charging arcane pulse rubberband
-
-Brawler's location in other's pov(often seen to be at back of the enemy) when actively attacking.
-
-Repeatitive animation of Brawler's provoke, mounting rage when there is ping jitter.(Looks like client sided bug)
