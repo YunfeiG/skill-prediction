@@ -999,6 +999,7 @@ module.exports = {
 				length: 2900,
 				distance: 128.69,
 				abnormals: {
+					301150: { speed: 1.20 },
 					23080: { speed: 1.25 }
 				},
 				race: {
@@ -2304,7 +2305,21 @@ module.exports = {
 			}
 		},
 		27: { // Hailstorm
-			0: { length: 980 }
+			0: {
+				length: 980,
+				abnormals: {
+					902: { speed: 1.15 },
+					911: { speed: 1.15 },
+					912: { speed: 1.15 },
+					913: { speed: 1.15 },
+					916: { speed: 1.15 },
+					917: { speed: 1.15 },
+					920: { speed: 1.225 },
+					921: { speed: 1.225 },
+					922: { speed: 1.225 },
+					929: { speed: 1.225 }
+				}
+			}
 		},
 		30: { // Nova
 			0: {
@@ -2511,7 +2526,7 @@ module.exports = {
 					920: { speed: 1.225 },
 					921: { speed: 1.225 },
 					922: { speed: 1.225 },
-					929: { speed: 1.15 }
+					929: { speed: 1.225 }
 				}
 			}
 		},
@@ -2699,7 +2714,7 @@ module.exports = {
 					920: { speed: 1.225 },
 					921: { speed: 1.225 },
 					922: { speed: 1.225 },
-					929: { speed: 1.15 }
+					929: { speed: 1.225 }
 				}
 			}
 		},
@@ -2742,7 +2757,7 @@ module.exports = {
 					920: { speed: 1.225 },
 					921: { speed: 1.225 },
 					922: { speed: 1.225 },
-					929: { speed: 1.15 }
+					929: { speed: 1.225 }
 				}
 			}
 		},
@@ -3012,7 +3027,7 @@ module.exports = {
 					920: { speed: 1.375 },
 					921: { speed: 1.375 },
 					922: { speed: 1.375 },
-					929: { speed: 1.25 }
+					929: { speed: 1.375 }
 				}
 			}
 		},
@@ -4588,7 +4603,7 @@ module.exports = {
 		}
 	},
 	11: { // Ninja
-		'*': { consumeAbnormal: [10154000, 10154001, 10154002, 10154003, 10154004, 10154005, 10154006] },
+		'*': { consumeAbnormal: [10154000, 10154001, 10154002, 10154003, 10154004, 10154005, 10154006, 10154081, 10154082, 10154085] },
 		1: { // Combo Attack
 			'*': {
 				fixedSpeed: 1,

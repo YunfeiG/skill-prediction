@@ -1,15 +1,17 @@
 # Yunfei's fork of skill prediction
 
-This version of SP will handle racial differences instead of elin only.
+Currently suspending unless I find serious issues. I will go back to work when awakening patch arrives.
 
 ## Disclaimer
 
-I strongly discourage to use skill prediction for pvp purpose. SP has so many bugs in pvp that I am tired and struggling to diagnose and fix them. For example, you can't get out of bullrush or retaliate knockups. Pvp community is also hostile to skill prediction, you are likely to get reported by having weird behaviors. I do not take responsibility for people exploit from SP bugs and any sanctions put on your accounts by TERA publishers. If you insist in pvping with high ping, use the scripts made by someone else who is confident in this.
+I strongly discourage to use skill prediction for pvp purpose. SP has so many bugs in pvp that I am tired and struggling to diagnose and fix them. For example, you can't get out of bullrush or retaliate knockups. Pvp community is also hostile to skill prediction, you are likely to get reported by having weird behaviors. I do not take responsibility for people exploiting from SP bugs and any consequences like sanctions put on accounts by TERA publishers. If you insist in pvping with high ping, use the scripts made by someone else who is confident in this.
 
 
 ## Update/fix logs
 
-Feb 16, Celebrate the new year of the dog. Petrification fix(KDNM 2nd boss cone attack).
+Feb 20, 2018: Hailstorm noctenium effect.
+
+Feb 16 2018: Celebrate the new year of the dog. Petrification fix(KDNM 2nd boss cone attack).
 
 Feb 4, 2018: Rain of Arrows, Regeneration Circle, Resurrection: Attack speed bonus from Rare and Superior and other kinds of noctenium support.
 
@@ -57,33 +59,22 @@ Oct 28, 2017: Thunderbolt, Poison arrow recoil distance added.
 
 Oct 26, 2017: Fix Evasive roll for popori slayer, warrior. Reaper Auto attack and cable step glyph.
 
-Soon™: Double casts prevention(Short skills like Teleporting jaunts, Overpower, Restraning arrow, Web arrow)
+## Issues that still persist:
 
-Reading exact length and distance data from tera data center (Boring af)
+Double casts(Short skills like Teleporting jaunts, Boomerang pulse, Overpower, Restraning arrow, Web arrow)
 
+Triple point blank casts(Point blank forward, blast cancel, forward, backward)
 
-## Races/Classes that are specialized so far
+Buggy chained Vampiric Blow(Hardcoded skill at server side)
 
-Any races/classes that are not mentioned here will use elin's configuration as default, if the class is non-race locked. F.cast's if gunner.
+Headlong rush buff delay(For HLR->WW chain, requires attack speed emulation to fix this which involves a lot of resources)
 
-- M.Human: Lancer, Slayer, Archer
+Fake skills when mounting(Doesn't hurt much)
 
-- F.Human: Archer
+Ninja auto attack glitch(Server sided bug, can't eliminate this, better comment this skill out)
 
-- M.Elf: Warrior, Lancer, Slayer
+Sorcerer jaunt->charging arcane pulse rubberband
 
-- F.Elf: Mystic
+Brawler's location in other's pov(often seen to be at back of the enemy) when actively attacking.
 
-- M.Aman: Lancer, Slayer, Sorcerer
-
-- F.Aman: Lancer, Warrior, Slayer, Sorcerer
-
-- M.Cast: Slayer, Berserker
-
-- F.Cast: Slayer
-
-- Popori: Warrior, Lancer, Slayer, Berserker, Archer, Mystic
-
-- Elin: Gunner
-
-- Baraka: Slayer, Berserker
+Repeatitive animation of Brawler's provoke, mounting rage when there is ping jitter.(Looks like client sided bug)
