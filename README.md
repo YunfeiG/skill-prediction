@@ -23,8 +23,14 @@ Ninja auto attack glitch(Server sided bug, can't eliminate this, better comment 
 Sorcerer jaunt->charging arcane pulse rubberband(side effect of preventing teleport janut clip through walls)
 
 Brawler's location in other's pov(often seen to be at back of the enemy) when actively attacking.
+Perhaps this is not SP related. I often see slayers were attacking at back of enemies in duels before SP was introduced.
 
 Repeatitive animation of Brawler's provoke, mounting rage when there is ping jitter.(Looks like client sided bug)
+
+Fake lock-on skill casts on invincible or invisible targets (Energy star on barriers before last boss in TRNM for example)
+
+High chance of ghost when attack speed suddenly decreased due to expiration of attack speed buff on previous skill(Astance Warrior is the most suffering class because skill like charging slash will ghost when roll/DFA buff expired on previous skill)
+Again, Attack speed emulation is in demand.
 
 ## Update/fix logs
 
