@@ -1,6 +1,6 @@
 # Yunfei's fork of skill prediction
 
-Currently suspending unless I find serious issues. I will go back to work when awakening patch arrives.
+Yunfei is now back online for awakening patch. However, I only play NA TERA where awakening patch arrives on 17th this month so the updates at this moment are made based on logs from EU and TW players and they are not thoroughly tested.
 
 ## Disclaimer
 
@@ -33,6 +33,8 @@ High chance of ghost when attack speed suddenly decreased due to expiration of a
 Again, Attack speed emulation is in demand.
 
 ## Update/fix logs
+
+Apr 12, 2018: So-called vec3 adaption, Brawler awakening skills, NEED MANY TESTS!
 
 Feb 20, 2018: Hailstorm noctenium effect.
 

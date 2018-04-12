@@ -20,7 +20,6 @@ const JITTER_COMPENSATION	= false,
 const {protocol, sysmsg} = require('tera-data-parser'),
 	Ping = require('./ping'),
 	AbnormalityPrediction = require('./abnormalities'),
-	skills = require('./config/skills'),
 	silence = require('./config/silence').reduce((map, value) => { // Convert array to object for fast lookup
 		map[value] = true
 		return map
@@ -40,6 +39,7 @@ const Flags = {
 module.exports = function SkillPrediction(dispatch) {
 	const ping = Ping(dispatch),
 		abnormality = AbnormalityPrediction(dispatch)
+	const Vec3 = require('tera-vec3')
 
 	let sending = false,
 		skillsCache = null,
@@ -88,8 +88,10 @@ module.exports = function SkillPrediction(dispatch) {
 	let canVB = false;
 	let VBtimer = null;
 	let delayVB = 0;
+	
+	let skills = dispatch.base.majorPatchVersion >= 67 ? require('./config/awakening') : require('./config/skills')
 
-	dispatch.hook('S_LOGIN', 9, event => {
+	dispatch.hook('S_LOGIN', dispatch.base.majorPatchVersion >= 67 ? 10 : 9, event => {
 		skillsCache = {};
 		cid = event.gameId;
 		model = event.templateId;
@@ -97,13 +99,13 @@ module.exports = function SkillPrediction(dispatch) {
 		job = (model - 10101) % 100
 
 		if(DEBUG) console.log('Race '+race+', Class '+ job);
-		SERVER_TIMEOUT = 240;
+		SERVER_TIMEOUT = 600;;
 		if(job==3) SERVER_TIMEOUT = 2800;	// prevent charge skills from getting animation cancelled at client side
-		if(job==5) SERVER_TIMEOUT = 1600;	// prevent charge skills from getting animation cancelled at client side
+		if(job==5) SERVER_TIMEOUT = 2000;	// prevent charge skills from getting animation cancelled at client side
 		hookInventory()
 	})
 
-	dispatch.hook('S_LOAD_TOPO', 2, event => {
+	dispatch.hook('S_LOAD_TOPO', 3, event => {
 		vehicleEx = null
 
 		currentAction = null
@@ -136,9 +138,12 @@ module.exports = function SkillPrediction(dispatch) {
 
 	dispatch.hook('S_PLAYER_CHANGE_STAMINA', 1, event => { currentStamina = event.current })
 
-	dispatch.hook('S_SPAWN_ME', 1, event => { alive = event.alive })
+	dispatch.hook('S_SPAWN_ME', 2, event => {
+		updateLocation(event)
+		alive = event.alive
+	})
 
-	dispatch.hook('S_CREATURE_LIFE', 1, event => {
+	dispatch.hook('S_CREATURE_LIFE', 2, event => {
 		if(isMe(event.target)) {
 			alive = event.alive
 
@@ -162,7 +167,7 @@ module.exports = function SkillPrediction(dispatch) {
 	})
 
 	function hookInventory() {
-		if(!inventoryHook) inventoryHook = dispatch.hook('S_INVEN', 10, event => {
+		if(!inventoryHook) inventoryHook = dispatch.hook('S_INVEN', 12, event => {
 			inventory = event.first ? event.items : inventory.concat(event.items)
 
 			if(!event.more) {
@@ -198,12 +203,12 @@ module.exports = function SkillPrediction(dispatch) {
 		})
 	}
 
-	dispatch.hook('S_PARTY_MEMBER_LIST', 5, event => {
+	dispatch.hook('S_PARTY_MEMBER_LIST', 6, event => {
 		partyMembers = []
 
 		for(let member of event.members)
-			if(!member.cid.equals(cid))
-				partyMembers.push(member.cid)
+			if(!member.gameId.equals(cid))
+				partyMembers.push(member.gameId)
 	})
 
 	dispatch.hook('S_LEAVE_PARTY', () => { partyMembers = null })
@@ -216,8 +221,8 @@ module.exports = function SkillPrediction(dispatch) {
 		if(cid.equals(event.target)) vehicleEx = null
 	})
 
-	dispatch.hook('C_PLAYER_LOCATION', 2, event => {
-		if(DEBUG_LOC) console.log('Location %d %d (%d %d %d %d) > (%d %d %d)', event.type, event.speed, Math.round(event.x), Math.round(event.y), Math.round(event.z), event.w, Math.round(event.toX), Math.round(event.toY), Math.round(event.toZ))
+	dispatch.hook('C_PLAYER_LOCATION', 3, event => {
+		if(DEBUG_LOC) console.log('Location %d %d (%d %d %d %s) > (%d %d %d)', event.type, event.unk2, Math.round(event.loc.x), Math.round(event.loc.y), Math.round(event.loc.z), degrees(event.w), Math.round(event.dest.x), Math.round(event.dest.y), Math.round(event.dest.z))
 
 		if(currentAction) {
 			let info = skillInfo(currentAction.skill)
@@ -225,28 +230,18 @@ module.exports = function SkillPrediction(dispatch) {
 			if(info && info.distance) return false
 		}
 
-		currentLocation = {
-			// This is not correct, but the midpoint location seems to be "close enough" for the client to not teleport the player
-			x: (event.x + event.toX) / 2,
-			y: (event.y + event.toY) / 2,
-			z: (event.z + event.toZ) / 2,
-			w: event.w
-		}
+		
+		// This is not correct, but the midpoint location seems to be "close enough" for the client to not teleport the player
+		updateLocation({loc: event.loc.addN(event.dest).scale(0.5), w: event.w})
 	})
 
-	dispatch.hook('C_NOTIFY_LOCATION_IN_ACTION', 1, notifyLocation.bind(null, 'C_NOTIFY_LOCATION_IN_ACTION', 1))
-	dispatch.hook('C_NOTIFY_LOCATION_IN_DASH', 1, notifyLocation.bind(null, 'C_NOTIFY_LOCATION_IN_DASH', 1))
+	dispatch.hook('C_NOTIFY_LOCATION_IN_ACTION', 2, notifyLocation.bind(null, 'C_NOTIFY_LOCATION_IN_ACTION', 2))
+	dispatch.hook('C_NOTIFY_LOCATION_IN_DASH', 2, notifyLocation.bind(null, 'C_NOTIFY_LOCATION_IN_DASH', 2))
 
 	function notifyLocation(type, version, event) {
-		if(DEBUG_LOC) console.log('-> %s %s %d (%d %d %d %d)', type, skillId(event.skill), event.stage, Math.round(event.x), Math.round(event.y), Math.round(event.z), event.w)
+		if(DEBUG_LOC) console.log('-> %s %s %d (%d %d %d %s)', type, skillId(event.skill), event.stage, Math.round(event.loc.x), Math.round(event.loc.y), Math.round(event.loc.z), degrees(event.w))
 
-		currentLocation = {
-			x: event.x,
-			y: event.y,
-			z: event.z,
-			w: event.w,
-			inAction: true
-		}
+		updateLocation(event, true)
 
 		let info = skillInfo(event.skill)
 		// The server rejects and logs packets with an incorrect skill, so if a skill has multiple possible IDs then we wait for a response
@@ -277,12 +272,12 @@ module.exports = function SkillPrediction(dispatch) {
 	}
 
 	for(let packet of [
-			['C_START_SKILL', 3],
-			['C_START_TARGETED_SKILL', 3],
-			['C_START_COMBO_INSTANT_SKILL', 1],
-			['C_START_INSTANCE_SKILL', 1],
-			['C_START_INSTANCE_SKILL_EX', 2],
-			['C_PRESS_SKILL', 1],
+			['C_START_SKILL', dispatch.base.majorPatchVersion >= 67 ? 5 : 4],
+			['C_START_TARGETED_SKILL', 4],
+			['C_START_COMBO_INSTANT_SKILL', 2],
+			['C_START_INSTANCE_SKILL', 3],
+			['C_START_INSTANCE_SKILL_EX', 3],
+			['C_PRESS_SKILL', 2],
 			['C_NOTIMELINE_SKILL', 1]
 		])
 		dispatch.hook(packet[0], 'raw', {order: -10, filter: {fake: null}}, startSkill.bind(null, ...packet))
@@ -308,7 +303,7 @@ module.exports = function SkillPrediction(dispatch) {
 			let strs = ['->', type, skillId(event.skill)]
 
 			if(type == 'C_START_SKILL') strs.push(...[event.unk ? 1 : 0, event.moving ? 1 : 0, event.continue ? 1 : 0])
-			if(type == 'C_PRESS_SKILL') strs.push(event.start)
+			if(type == 'C_PRESS_SKILL') strs.push(event.press)
 			else if(type == 'C_START_TARGETED_SKILL') {
 				let tmp = []
 
@@ -318,10 +313,10 @@ module.exports = function SkillPrediction(dispatch) {
 			}
 
 			if(DEBUG_LOC) {
-				strs.push(...[event.w + '\xb0', '(' + Math.round(event.x), Math.round(event.y), Math.round(event.z) + ')'])
+				strs.push(...[degrees(event.w), '(' + Math.round(event.loc.x), Math.round(event.loc.y), Math.round(event.loc.z) + ')'])
 
 				if(type == 'C_START_SKILL' || type == 'C_START_TARGETED_SKILL' || type == 'C_START_INSTANCE_SKILL_EX')
-					strs.push(...['>', '(' + Math.round(event.toX), Math.round(event.toY), Math.round(event.toZ) + ')'])
+					strs.push(...['>', '(' + Math.round(event.dest.x), Math.round(event.dest.y), Math.round(event.dest.z) + ')'])
 			}
 
 			if(delay) strs.push('DELAY=' + delay)
@@ -370,11 +365,11 @@ module.exports = function SkillPrediction(dispatch) {
 			return false
 		}
 		
-		if(type == 'C_PRESS_SKILL' && event.start && canVB && job == 3 && skillBase == 15){
+		if(type == 'C_PRESS_SKILL' && event.press && canVB && job == 3 && skillBase == 15){
 			return false;
 		}
 		
-		if(type == 'C_PRESS_SKILL' && !event.start && !(canVB && (job == 3 && skillBase == 15) ) ) {
+		if(type == 'C_PRESS_SKILL' && !event.press && !(canVB && (job == 3 && skillBase == 15) ) ) {
 			if((info.type == 'hold' || info.type == 'holdInfinite') && currentAction && currentAction.skill == skill) {
 				updateLocation(event)
 
@@ -581,11 +576,7 @@ module.exports = function SkillPrediction(dispatch) {
 			movement,
 			moving: type == 'C_START_SKILL' && event.moving == 1,
 			distanceMult,
-			targetLoc: specialLoc ? {
-				x: event.toX,
-				y: event.toY,
-				z: event.toZ
-			} : null
+			targetLoc: event.dest
 		})
 		
 		delayVB = Math.round(500/1.1/speed);
@@ -620,19 +611,19 @@ module.exports = function SkillPrediction(dispatch) {
 		}
 	})
 
-	dispatch.hook('S_ACTION_STAGE', 1, event => {
-		if(isMe(event.source)) {
+	dispatch.hook('S_ACTION_STAGE', 4, event => {
+		if(isMe(event.gameId)) {
 			if(DEBUG) {
 				let duration = Date.now() - debugActionTime,
-					strs = [skillInfo(event.skill) ? '<X' : '<-', 'S_ACTION_STAGE', skillId(event.skill), event.stage, (Math.round(event.speed * 1000) / 1000) + 'x']
+					strs = [skillInfo(event.skill) ? '<X' : '<-', 'S_ACTION_STAGE', skillId(event.skill), event.stage, decimal(event.speed, 3) + 'x']
 
-				if(DEBUG_LOC) strs.push(...[event.w + '\xb0', '(' + Math.round(event.x), Math.round(event.y), Math.round(event.z) + ')'])
+				if(DEBUG_LOC) strs.push(...[degrees(event.w) + '\xb0', '(' + Math.round(event.loc.x), Math.round(event.loc.y), Math.round(event.loc.z) + ')'])
 
-				strs.push(...[event.unk, event.unk1, event.toX, event.toY, event.toZ, event.unk2, event.unk3])
+				strs.push(...[event.unk, event.unk1, event.dest.x, event.dest.y, event.dest.z, event.unk2, event.unk3])
 
 				if(serverAction)
 					strs.push(...[
-						(Math.round(calcDistance(serverAction, event) * 1000) / 1000) + 'u',
+						decimal(serverAction.loc.dist2D(event.loc), 3) + 'u',
 						duration + 'ms',
 						'(' + Math.round(duration * serverAction.speed) + 'ms)'
 					])
@@ -705,16 +696,16 @@ module.exports = function SkillPrediction(dispatch) {
 		if(DEBUG) debug(['<- S_GRANT_SKILL', skillId(event.skill)].join(' '))
 	})
 
-	dispatch.hook('S_INSTANT_DASH', 1, event => {
-		if(isMe(event.source)) {
+	dispatch.hook('S_INSTANT_DASH', 3, event => {
+		if(isMe(event.gameId)) {
 			if(DEBUG) {
 				let duration = Date.now() - debugActionTime,
 					strs = [(serverAction && skillInfo(serverAction.skill)) ? '<X' : '<-', 'S_INSTANT_DASH', event.unk1, event.unk2, event.unk3]
 
-				if(DEBUG_LOC) strs.push(...[event.w + '\xb0', '(' + Math.round(event.x), Math.round(event.y), Math.round(event.z) + ')'])
+				if(DEBUG_LOC) strs.push(...[degrees(event.w) + '\xb0', '(' + Math.round(event.loc.x), Math.round(event.loc.y), Math.round(event.loc.z) + ')'])
 
 				strs.push(...[
-					(Math.round(calcDistance(serverAction, event) * 1000) / 1000) + 'u',
+					decimal(serverAction.loc.dist2D(event.loc), 3) + 'u',
 					duration + 'ms',
 					'(' + Math.round(duration * serverAction.speed) + 'ms)'
 				])
@@ -726,17 +717,16 @@ module.exports = function SkillPrediction(dispatch) {
 		}
 	})
 
-	dispatch.hook('S_INSTANT_MOVE', 1, event => {
-		if(isMe(event.id)) {
+	dispatch.hook('S_INSTANT_MOVE', 3, event => {
+		if(isMe(event.gameId)) {
 			if(DEBUG) {
-				let info = serverAction && skillInfo(serverAction.skill),
 					duration = Date.now() - debugActionTime,
 					strs = ['<- S_INSTANT_MOVE']
 
-				if(DEBUG_LOC) strs.push(...[event.w + '\xb0', '(' + Math.round(event.x), Math.round(event.y), Math.round(event.z) + ')'])
+				if(DEBUG_LOC) strs.push(...[degrees(event.w) + '\xb0', '(' + Math.round(event.loc.x), Math.round(event.loc.y), Math.round(event.loc.z) + ')'])
 
 				strs.push(...[
-					(Math.round(Math.sqrt(Math.pow(event.x - serverAction.x, 2) + Math.pow(event.y - serverAction.y, 2)) * 1000) / 1000) + 'u',
+					decimal(serverAction.loc.dist2D(event.loc), 3) + 'u',
 					duration + 'ms',
 					'(' + Math.round(duration * serverAction.speed) + 'ms)'
 				])
@@ -744,13 +734,7 @@ module.exports = function SkillPrediction(dispatch) {
 				debug(strs.join(' '))
 			}
 
-			currentLocation = {
-				x: event.x,
-				y: event.y,
-				z: event.z,
-				w: event.w,
-				inAction: true
-			}
+			updateLocation(event,true)
 
 			let info = serverAction && skillInfo(serverAction.skill)
 
@@ -759,17 +743,17 @@ module.exports = function SkillPrediction(dispatch) {
 		}
 	})
 
-	dispatch.hook('S_ACTION_END', 1, event => {
-		if(isMe(event.source)) {
+	dispatch.hook('S_ACTION_END', 3, event => {
+		if(isMe(event.gameId)) {
 			if(DEBUG) {
 				let duration = Date.now() - debugActionTime,
 					strs = [(event.id == lastEndedId || skillInfo(event.skill)) ? '<X' : '<-', 'S_ACTION_END', skillId(event.skill), event.type]
 
-				if(DEBUG_LOC) strs.push(...[event.w + '\xb0', '(' + Math.round(event.x), Math.round(event.y), Math.round(event.z) + ')'])
+				if(DEBUG_LOC) strs.push(...[degrees(event.w) + '\xb0', '(' + Math.round(event.loc.x), Math.round(event.loc.y), Math.round(event.loc.z) + ')'])
 
 				if(serverAction)
 					strs.push(...[
-						(Math.round(Math.sqrt(Math.pow(event.x - serverAction.x, 2) + Math.pow(event.y - serverAction.y, 2)) * 1000) / 1000) + 'u',
+						decimal(serverAction.loc.dist2D(event.loc), 3) + 'u',
 						duration + 'ms',
 						'(' + Math.round(duration * serverAction.speed) + 'ms)'
 					])
@@ -792,22 +776,12 @@ module.exports = function SkillPrediction(dispatch) {
 				if(info.type == 'dash')
 					// If the skill ends early then there should be no significant error
 					if(currentAction && event.skill == currentAction.skill) {
-						currentLocation = {
-							x: event.x,
-							y: event.y,
-							z: event.z,
-							w: event.w
-						}
+						updateLocation(event)
 						sendActionEnd(event.type)
 					}
 					// Worst case scenario, teleport the player back if the error was large enough for the client to act on it
 					else if(!lastEndLocation || Math.round(lastEndLocation.x / 100) != Math.round(event.x / 100) || Math.round(lastEndLocation.y / 100) != Math.round(event.y / 100) || Math.round(lastEndLocation.z / 100) != Math.round(event.z / 100))
-						sendInstantMove({
-							x: event.x,
-							y: event.y,
-							z: event.z,
-							w: event.w
-						})
+						sendInstantMove(event)
 
 				// Skills that may only be cancelled during part of the animation are hard to emulate, so we use server response instead
 				// This may cause bugs with very high ping and casting the same skill multiple times
@@ -825,28 +799,21 @@ module.exports = function SkillPrediction(dispatch) {
 		}
 	})
 
-	dispatch.hook('S_EACH_SKILL_RESULT', 4, event => {
-		if(isMe(event.target) && event.setTargetAction) {
+	dispatch.hook('S_EACH_SKILL_RESULT', dispatch.base.majorPatchVersion >= 67 ? 6 : 5, event => {
+		let target = event.targetAction
+		if(isMe(event.target) && target.enable) {
 			if(DEBUG) {
 				let duration = Date.now() - debugActionTime,
-					strs = ['<- S_EACH_SKILL_RESULT.setTargetAction', skillId(event.targetAction), event.targetStage]
+					strs = ['<- S_EACH_SKILL_RESULT.targetAction', skillId(target.skill), target.stage]
 
-				if(DEBUG_LOC) strs.push(...[event.targetW + '\xb0', '(' + Math.round(event.targetX), Math.round(event.targetY), Math.round(event.targetZ) + ')'])
+				if(DEBUG_LOC) strs.push(...[degrees(target.w) + '\xb0', '(' + Math.round(target.loc.x), Math.round(target.loc.y), Math.round(target.loc.z) + ')'])
 
 				debug(strs.join(' '))
 			}
 
 			if(currentAction && skillInfo(currentAction.skill)) sendActionEnd(9)
 
-			currentAction = serverAction = {
-				x: event.targetX,
-				y: event.targetY,
-				z: event.targetZ,
-				w: event.targetW,
-				skill: event.targetAction,
-				stage: event.targetStage,
-				id: event.targetId
-			}
+			currentAction = serverAction = target
 
 			updateLocation()
 		}
@@ -933,24 +900,19 @@ module.exports = function SkillPrediction(dispatch) {
 		else
 			movement = movement || !opts.moving && get(info, 'inPlace', 'movement') || info.movement || []
 
-		dispatch.toClient('S_ACTION_STAGE', 1, currentAction = {
-			source: myChar(),
-			x: currentLocation.x,
-			y: currentLocation.y,
-			z: currentLocation.z,
+		dispatch.toClient('S_ACTION_STAGE', 4, currentAction = {
+			gameId: myChar(),
+			loc: currentLocation.loc,
 			w: currentLocation.w,
-			model,
+			templateId: model,
 			skill: opts.skill,
 			stage: opts.stage,
 			speed: info.type == 'charging' ? 1 : opts.speed,
 			id: actionNumber,
-			unk: 1,
-			unk1: 0,
-			toX: 0,
-			toY: 0,
-			toZ: 0,
-			unk2: 0,
-			unk3: 0,
+			unk1: 1,
+			unk2: false,
+			dest: undefined,
+			target: 0,
 			movement
 		})
 
@@ -959,8 +921,10 @@ module.exports = function SkillPrediction(dispatch) {
 		let serverTimeoutTime = ping.max + (SKILL_RETRY_COUNT * SKILL_RETRY_MS) + SERVER_TIMEOUT
 
 		if(info.type == 'teleport' && opts.stage == info.teleportStage) {
-			opts.distance = Math.min(opts.distance, Math.max(0, calcDistance(currentLocation, opts.targetLoc) - 15)) // Client is approx. 15 units off
-			sendInstantMove(Object.assign(applyDistance(currentLocation, opts.distance), {z: opts.targetLoc.z, w: currentLocation.w}))
+			opts.distance = Math.min(opts.distance, Math.max(0, currentLocation.loc.dist2D(opts.targetLoc) - 15)) // Client is approx. 15 units off
+			applyDistance(currentLocation, opts.distance)
+			currentLocation.loc.z = opts.targetLoc.z
+			sendInstantMove()
 			opts.distance = 0
 		}
 		else if(info.type == 'holdInfinite' || info.type == 'charging' && opts.stage > 0 && !(opts.stage < info.length.length)) {
@@ -997,7 +961,7 @@ module.exports = function SkillPrediction(dispatch) {
 			}
 
 		if(info.type == 'dash' && opts.distance) {
-			let distance = calcDistance(lastStartLocation, opts.targetLoc)
+			let distance = lastStartLocation.loc.dist2D(opts.targetLoc)
 
 			if(distance < opts.distance) {
 				length *= distance / opts.distance
@@ -1028,27 +992,22 @@ module.exports = function SkillPrediction(dispatch) {
 		stageEndTimeout = setTimeout(stageEnd, stageEndTime - Date.now())
 	}
 
-	function sendInstantDash(location) {
-		dispatch.toClient('S_INSTANT_DASH', 1, {
-			source: myChar(),
-			unk1: 0,
-			unk2: 0,
-			unk3: 0,
-			x: location.x,
-			y: location.y,
-			z: location.z,
+	function sendInstantDash(dest) {
+		dispatch.toClient('S_INSTANT_DASH', 3, {
+			gameId: myChar(),
+			target: 0,
+			unk: 0,
+			loc: dest,
 			w: currentLocation.w
 		})
 	}
 
-	function sendInstantMove(location) {
-		if(location) currentLocation = location
+	function sendInstantMove(event) {
+		if(event) updateLocation(event)
 
-		dispatch.toClient('S_INSTANT_MOVE', 1, {
-			id: myChar(),
-			x: currentLocation.x,
-			y: currentLocation.y,
-			z: currentLocation.z,
+		dispatch.toClient('S_INSTANT_MOVE', 3, {
+			gameId: myChar(),
+			loc: currentLocation.loc,
 			w: currentLocation.w
 		})
 	}
@@ -1064,19 +1023,17 @@ module.exports = function SkillPrediction(dispatch) {
 
 		if(!currentAction) return
 
-		if(DEBUG) debug(['<* S_ACTION_END', skillId(currentAction.skill), type || 0, currentLocation.w + '\xb0', (distance || 0) + 'u'].join(' '))
+		if(DEBUG) debug(['<* S_ACTION_END', skillId(currentAction.skill), type || 0, degrees(currentLocation.w) + '\xb0', (distance || 0) + 'u'].join(' '))
 
 		if(oopsLocation && (FORCE_CLIP_STRICT || !currentLocation.inAction)) sendInstantMove(oopsLocation)
 		else movePlayer(distance)
 
 
-		dispatch.toClient('S_ACTION_END', 1, {
-			source: myChar(),
-			x: currentLocation.x,
-			y: currentLocation.y,
-			z: currentLocation.z,
+		dispatch.toClient('S_ACTION_END', 3, {
+			gameId: myChar(),
+			loc: currentLocation.loc,
 			w: currentLocation.w,
-			model,
+			templateId: model,
 			skill: currentAction.skill,
 			type: type || 0,
 			id: currentAction.id
@@ -1120,17 +1077,9 @@ module.exports = function SkillPrediction(dispatch) {
 	function updateLocation(event, inAction, special) {
 		event = event || currentAction
 
-		currentLocation = special ? {
-			x: event.x,
-			y: event.y,
-			z: event.z,
-			w: event.w || currentLocation.w, // Should be a skill flag maybe?
-			inAction
-		} : {
-			x: event.x,
-			y: event.y,
-			z: event.z,
-			w: event.w,
+		currentLocation = {
+			loc: event.loc,
+			w: special ? event.w || currentLocation.w : event.w, // Should be a skill flag maybe?
 			inAction
 		}
 	}
@@ -1149,15 +1098,8 @@ module.exports = function SkillPrediction(dispatch) {
 		if(distance && !currentLocation.inAction) applyDistance(currentLocation, distance)
 	}
 
-	function calcDistance(loc1, loc2) {
-		return Math.sqrt(Math.pow(loc2.x - loc1.x, 2) + Math.pow(loc2.y - loc1.y, 2))
-	}
-
 	function applyDistance(loc, distance) {
-		let r = (loc.w / 0x8000) * Math.PI
-
-		loc.x += Math.cos(r) * distance
-		loc.y += Math.sin(r) * distance
+		loc.loc.add(new Vec3(distance, 0, 0).rotate(loc.w))
 		return loc
 	}
 	
@@ -1165,27 +1107,35 @@ module.exports = function SkillPrediction(dispatch) {
  	function modifyChain(id, chain) {
  		return id - ((id & 0xffffff) % 100) + chain
  	}
+	
+	function decimal(n, p) {
+		p = 10 ** p
+		return Math.round(n * p)  / p
+	}
+	
+	function degrees(w) { return Math.round(w / Math.PI * 180) + '\xb0' }
 
 	function skillId(id, flagAs) {
 		id |= flagAs
- 
- 		let skillFlags = ['[?1]', '[?2]', 'P', 'C', '[?5]', '[?6]', '[?7]', '[?8]'],
- 			flags = ''
- 
- 		for(let i = 0, x = id >>> 24; x; i++, x >>>= 1)
- 			if(x & 1) flags += skillFlags[i]
- 
- 		id = (id & 0xffffff).toString()
+
+		let skillFlags = ['[?1]', 'N', '[?2]', '[?3]', 'C', 'S']
+
+		let flags = ''
+
+		for(let i = 0; i < 6; i++)
+			if(id & (1 << 31 - i)) flags += skillFlags[i]
+
+		id = (id & 0x3ffffff).toString()
+
 		switch(flags) {
- 			case 'P':
- 				id = [id.slice(0, -4), id.slice(-4, -2), id.slice(-2)].join('-')
- 				break
- 			case 'C':
- 				id = [id.slice(0, -2), id.slice(-2)].join('-')
- 				break
- 		}
- 
- 		return flags + id
+			case 'S':
+				id = [id.slice(0, -4), id.slice(-4, -2), id.slice(-2)].join('-')
+				break
+			case 'C':
+				id = [id.slice(0, -2), id.slice(-2)].join('-')
+				break
+		}
+		return flags + id
 	}
 
 	function skillInfo(id, local) {
