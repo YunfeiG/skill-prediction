@@ -12,7 +12,7 @@ class AbnormalityPrediction {
 		this.cid = null
 		this.myAbnormals = {}
 
-		dispatch.hook('S_LOGIN', 6, event => { this.cid = event.guid })
+		dispatch.hook('S_LOGIN', dispatch.base.majorPatchVersion >= 67 ? 10 : 9, event => { this.cid = event.gameId })
 
 		dispatch.hook('S_RETURN_TO_LOBBY', 1, () => { this.removeAll() })
 
