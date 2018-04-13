@@ -16,8 +16,8 @@ class AbnormalityPrediction {
 
 		dispatch.hook('S_RETURN_TO_LOBBY', 1, () => { this.removeAll() })
 
-		dispatch.hook('S_CREATURE_LIFE', 1, event => {
-			if(event.target.equals(this.cid) && !event.alive) this.removeAll()
+		dispatch.hook('S_CREATURE_LIFE', 2, event => {
+			if(event.gameId.equals(this.cid) && !event.alive) this.removeAll()
 		})
 
 		let abnormalityUpdate = (type, event) => {

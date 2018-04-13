@@ -144,7 +144,7 @@ module.exports = function SkillPrediction(dispatch) {
 	})
 
 	dispatch.hook('S_CREATURE_LIFE', 2, event => {
-		if(isMe(event.target)) {
+		if(isMe(event.gameId)) {
 			alive = event.alive
 
 			if(!alive) {
@@ -203,12 +203,12 @@ module.exports = function SkillPrediction(dispatch) {
 		})
 	}
 
-	dispatch.hook('S_PARTY_MEMBER_LIST', 6, event => {
+	dispatch.hook('S_PARTY_MEMBER_LIST', dispatch.base.majorPatchVersion >= 67 ? 6 : 5, event => {
 		partyMembers = []
-
-		for(let member of event.members)
-			if(!member.gameId.equals(cid))
-				partyMembers.push(member.gameId)
+		
+		for (let member of event.members)
+            if (!((dispatch.base.majorPatchVersion >= 67 ? member.gameId : member.cid).equals(cid)))
+                partyMembers.push(dispatch.base.majorPatchVersion >= 67 ? member.gameId : member.cid)
 	})
 
 	dispatch.hook('S_LEAVE_PARTY', () => { partyMembers = null })
