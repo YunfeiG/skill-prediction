@@ -34,6 +34,8 @@ Again, Attack speed emulation is in demand.
 
 ## Update/fix logs
 
+Apr 14, 2018: Lancer and Berserker awakening skills, Brawler rhk(grounding glyph)->1-inch punch fix, NEED MANY TESTS!
+
 Apr 12, 2018: So-called vec3 adaption, Brawler awakening skills, NEED MANY TESTS!
 
 Feb 20, 2018: Hailstorm noctenium effect.
