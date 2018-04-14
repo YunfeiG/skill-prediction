@@ -1583,7 +1583,7 @@ module.exports = {
 					25: 30,
 					26: 30
 				},
-				abnormal: {
+				abnormals: {
 					301603: { chain : 31 },
 				}
 			},
