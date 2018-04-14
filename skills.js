@@ -913,7 +913,8 @@ module.exports = function SkillPrediction(dispatch) {
 			unk2: false,
 			dest: undefined,
 			target: 0,
-			movement
+			movement,
+			defendSuccess: opts.stage > 0 ? currentAction.defendSuccess : false
 		})
 
 		opts.distance = (multiStage ? get(info, 'distance', opts.stage) : info.distance) || 0
