@@ -255,16 +255,13 @@ module.exports = {
 			},
 			1: { length: 800 }
 		},
-		17: { // Vortex Slash (New)
-			/*0: {
-				length: 1633,
-				requiredBuff: 100400,
-				noInterrupt: [32]
-			}*/
+		17: { // Vortex Slash (Awakening patch)
 			'*': {
 				length: 1633,
-				noInterrupt: [32]
+				noInterrupt: [32],
+				glyphs: { 21040: { speed: 0.3 } }
 			},
+			0: true,
 			1: true,
 			2: true
 		},
@@ -407,7 +404,9 @@ module.exports = {
 				length: 3000,
 				distance: 94.5,
 				noInterrupt: [1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, '16-0', 18, '19-0', 21, 22, 23, 27, 29, 34, 35, 36, 37, 41, 42],
-				interruptibleWithAbnormal: { 102010: 3 },
+				interruptibleWithAbnormal: {
+					102010: 3
+				},
 				abnormals: {
 					102010: { chain: 30 }
 				},
@@ -548,33 +547,72 @@ module.exports = {
 		40: { // Blade Waltz
 			'*': {
 				length: 810.6,
-				//distance: ?
-				noInterrupt: [2, 32]
+				distance: 150,
+				consumeAbnormalEnd: 104110,
+				triggerAbnormal: {
+					104100: 8000,
+					104110: 2000
+				},
+				noRetry: true,
+				noInterrupt: [2, 32, 40]
 			},
-			10: true,	// astance C_START_SKILL seems
-			11: true,	// astance 1st cast?
-			12: true,	// astance 2nd cast?
-			20: true,	// dstance C_START_SKILL seems
-			21: true,	// dstance 1st cast?
-			22: true	// dstance 2nd cast?
+			10: {
+				abnormals: { 104100: { chain: 12 } }
+			},
+			11: true,
+			12: true,
+			20: {
+				abnormals: { 104100: { chain: 22 } }
+			},
+			21: true,
+			22: true
 		},
 		41: { // Aerial Scythe
 			'*': {
+				noRetry: true,
 				length: 1976.15,
-				//distance: ?
+				distance: 200,
+				triggerAbnormal: {
+					105100: 1800
+				},
+				consumeAbnormalEnd: 105100,
+				abnormals: { 105100: { chain: 31 } },
+				chains: {	// NEED TO CONFIRM THE CHAINS
+					1: 30,
+					3: 30,
+					4: 30,
+					10: 30,
+					12: 30,
+					'16-1': 30,
+					17: 30,
+					18: 30,
+					19: 30,
+					21: 30,
+					28: 30,
+					29: 30,
+					30: 30,
+					31: 30,
+					36: 30,
+					37: 30,
+					38: 30,
+					39: 30,
+					40: 30,
+					42: 30
+				}
 			},
-			0: true,	// 1st cast
-			30: true,	// 1st cast as a chain
-			31: {	// 2nd cast
+			0: true,
+			30: true,
+			31: {
 				length: 1800,
-				//distance: ?
+				distance: 0
 			}
 		},
 		42: { // Blade Frenzy
 			0: {
 				length: 3309.23,
-				//distance: ?
+				distance: 300,
 				noInterrupt: [32, 42],
+				triggerAbnormal: { 103103: 10000 },
 				chains: {
 					2: 30,
 					30: 30,
@@ -584,7 +622,7 @@ module.exports = {
 			},
 			30: {
 				length: 2507.06,
-				//distance: ?
+				distance: 300
 			}
 		},
 		91: { // Awakening Eyes Aura
@@ -1241,10 +1279,9 @@ module.exports = {
 			},
 			0: {
 				length: 3365,
-				noInterrupt: ['1-0', '1-1', '1-2', 4, 6, 8, 10, '14-0', '14-1', 17, 21, 25],
+				noInterrupt: ['1-0', '1-1', '1-2', 4, 6, 8, 10, '14-0', '14-1', 17, 21, 25, 26, 27, 28],
 				abnormals: {
-					300801: { skill: 250100 },
-					300805: { skill: 250100 }
+					300801: { skill: 250100 }
 				},
 				chains: {
 					1: 30,
@@ -1418,11 +1455,12 @@ module.exports = {
 				}
 			}
 		},
-		18: { // Overpower
-			0: {
-				fixedSpeed: 1,
-				length: 200
-			}
+		18: { // Overpower (Awakening Patch)
+			'*': {
+				length: 1531
+			},
+			0: true,
+			50: true
 		},
 		19: { // Tenacity
 			0: {
@@ -1453,7 +1491,7 @@ module.exports = {
 			},
 			0: {
 				length: 3685,
-				noInterrupt: [1, 2, 3, 4, 6, 9, 10, 12, 13, 14, 15, 16, 17, 21, 22],
+				noInterrupt: [1, 2, 3, 4, 6, 9, 10, 12, 13, 14, 15, 16, 17, 21, 22, 26, 27, 28],
 				chains: {
 					8: 30,
 					24: 30,
@@ -1466,7 +1504,7 @@ module.exports = {
 			0: {
 				length: 1925,
 				distance: 50,
-				noInterrupt: ['1-0', '1-1', '1-2', 4, 6, 10, 14, 16, 17, 21, 22, 24],
+				noInterrupt: ['1-0', '1-1', '1-2', 4, 6, 10, 14, 16, 17, 21, 22, 24, 26, 27, 28],
 				chains: {
 					1: 30,
 					2: 30,
@@ -1503,6 +1541,89 @@ module.exports = {
 			},
 			0: { length: 3365 },
 			30: { length: 1325 }
+		},
+		26: { // Decimate
+			0: {
+				length: 3375,
+				distance: 11.21,
+				noRetry: true,
+				chains: {
+					8: 30,
+					23: 30,
+					24: 30,
+					25: 30,
+					27: 30
+				},
+				noInterrupt: [1, 2, 3, 4, 6, 9, 10, 12, 13, 14, 15, 16, 17, 21, 22, 26, 28]
+			}, // super cancel 
+			30: {
+				length: 900,
+				distance: 21
+			}
+		},
+		27: { // Blazing Thrust
+			0: {
+				length: [900, 1316.25],
+				distance: [0, 268.19],
+				noRetry: true,
+				triggerAbnormal: { 301603: 5000 },
+				noInterrupt: [1, 4, 6, 10, '14-1', '14-2', 17, 21, 22, '27-31', 28],
+				chains: {
+					2: 30,
+					3: 30,
+					8: 30,
+					9: 30,
+					12: 30,
+					13: 30,
+					'14-2': 30,
+					15: 30,
+					16: 30,
+					23: 30,
+					24: 30,
+					25: 30,
+					26: 30
+				},
+				abnormal: {
+					301603: { chain : 31 },
+				}
+			},
+			30: {
+				length: [900, 1316.25],
+				distance: [0, 268.19],
+				triggerAbnormal: { 301603: 5000 }
+			},
+			31: {
+				length: 751.25,
+				distance: -194.98,
+				consumeAbnormal: 301603
+			}
+		},
+		28: { // Unsheathe
+			0: {
+				type: 'charging',
+				length: [650, 650], // no hold stage?
+				abnormals: {
+					301601: { chargeSpeed: 0.6 },
+				}
+			},
+			1: {
+				type: 'chargeCast',
+				distance: [1.41, 44.82],
+				length: [929.4, 1248]
+			},
+			2: {	// Missing logs
+				type: 'chargeCast',
+				distance: [1.41, 44.82],
+				length: [929.4, 978]
+			},	// Why length is different here?
+			3: {
+				type: 'chargeCast',
+				distance: [1.41, 44.82],
+				length: [929.4, 1248]
+			}
+		},
+		91: { // Awakening Eyes Aura
+			0: { length: 3000 }
 		}
 	},
 	3: { // Berserker
