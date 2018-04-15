@@ -34,6 +34,8 @@ Again, Attack speed emulation is in demand.
 
 ## Update/fix logs
 
+Apr 15, 2018: Preist Holy burst, Slayer awakening skills fix.
+
 Apr 14, 2018: Priest and Mystic attempt, NEED MANY TESTS!
 
 Apr 14, 2018: Warrior and Slayer attempt, NEED MANY TESTS!
