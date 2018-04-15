@@ -3056,9 +3056,9 @@ module.exports = {
 			2: { length: 675 },
 			3: { length: 725 }
 		},
-		2: { // Regeneration Circle
+		2: { // Regeneration Circle (Awakening patch)
 			0: {
-				length: 3150,
+				length: 2165.63,
 				abnormals: {
 					902: { speed: 1.15 },
 					911: { speed: 1.15 },
@@ -3073,14 +3073,24 @@ module.exports = {
 				}
 			}
 		},
-		3: { // Healing Circle
-			0: { length: 1750 }
+		3: { // Healing Circle (Awakening patch)
+			0: {
+				length: 1750,
+				chains: {
+					'19-10': 30,	// Focus heal->Healing circle, need to confirm this chain
+					26: 30,
+					38: 30
+				}
+			},
+			30: {
+				length: 1480.76
+			}
 		},
-		5: { // Blessing of Shakan
-			0: { length: 1300 }
+		5: { // Blessing of Shakan (Awakening patch)
+			0: { length: 1293.63 }
 		},
 		6: { // Arise
-			0: { length: 830 }
+			0: { length: 839 }
 		},
 		8: { // Mana Infusion
 			0: {
@@ -3093,8 +3103,16 @@ module.exports = {
 		10: { // Purifying Circle
 			0: { length: 1275 }
 		},
-		11: { // Metamorphic Blast
-			0: { length: 830 }
+		11: { // Metamorphic Blast (Awakening patch)
+			'*': {
+				length: 820,
+				abnormals: {
+					805800: { chain: 2 }
+				}
+			},
+			0: true,
+			1: true,
+			2: true
 		},
 		12: { // Resurrect
 			0: {
@@ -3119,17 +3137,40 @@ module.exports = {
 		14: { // Summon: Party
 			0: { length: 4500 }
 		},
-		16: { // Shocking Implosion
-			0: { length: 1700 }
+		16: { // Shocking Implosion (Awakening patch)
+			'*': {
+				length: 1700,
+				abnormals: {
+					805800: { chain: 20 }
+				}
+			},
+			0: {
+				chains: {
+					11: 30
+				}
+			},
+			10: {
+				chains: {
+					11: 11
+				}
+			},
+			11: { length: 1438.45 },
+			20: {
+				chains: {
+					11: 21
+				}
+			},
+			21: { length: 1438.45 },
+			30: { length: 1438.45 }
 		},
-		17: { // Prayer of Peace
+		/*17: { // Prayer of Peace (Removed)
 			0: {
 				length: [925, 925, 850],
 				glyphs: {
 					28021: { speed: 2 }
 				}
 			}
-		},
+		},*/
 		18: { // Heal Thyself
 			0: { length: 1250 }
 		},
@@ -3138,7 +3179,7 @@ module.exports = {
 			0: {
 				type: 'lockon',
 				fixedSpeed: 1,
-				length: 54440
+				length: 54445.45
 			},
 			10: {
 				type: 'lockonCast',
@@ -3148,9 +3189,9 @@ module.exports = {
 		22: { // Kaia's Shield
 			0: { length: 650 }
 		},
-		23: { // Blessing of Balder
+		/*23: { // Blessing of Balder (Removed)
 			0: { length: 1300 }
-		},
+		},*/
 		26: { // Fiery Escape
 			0: {
 				length: 1125,
@@ -3163,9 +3204,14 @@ module.exports = {
 			}
 		},
 		27: { // Final Reprisal
-			0: {
+			'*' : {
 				length: 2600,
-				noInterrupt: [2, 3, 5, 10, 12, 14, 17, 18, 19, 23, 25, 26, 27, 28-10, 34, 38, 41-10],
+				noInterrupt: [2, 3, 5, 10, 12, 14, 17, 18, 19, 23, 25, 26, 27, '28-10', 34, 38, '41-10'],
+				abnormals: {
+					805800: { chain: 20 }
+				}
+			},
+			0: {
 				chains: {
 					11: 30,
 					16: 30,
@@ -3173,12 +3219,33 @@ module.exports = {
 					40: 30
 				}
 			},
+			10: {
+				chains: {
+					11: 11,
+					16: 11,
+					29: 11,
+					40: 11
+				}
+			},
+			11: { length: 1040 },
+			20: {
+				chains: {
+					11: 21,
+					16: 21,
+					29: 21,
+					40: 21
+				}
+			},
+			21: { length: 1040 },
 			30: { length: 1040 }
 		},
-		28: { // Mana Charge
+		28: { // Words of Vitality (Awakening patch, Mana Charge)
 			'*': {
 				type: 'chargeCast',
-				length: 825
+				length: 825,
+				level: {
+					1: { length : 700 }
+				}
 			},
 			0: {
 				type: 'charging',
@@ -3186,14 +3253,18 @@ module.exports = {
 				noInterrupt: [26, 27, 38],
 				glyphs: {
 					28031: { chargeSpeed: 0.25 }
+				},
+				level: {
+					1: { length: [900, 900, 900] }
 				}
 			},
-			10: { noInterrupt: [26, 27, 38] },
-			11: { noInterrupt: [26, 27, 38] },
-			12: { noInterrupt: [26, 27, 38] }
+			10: true,
+			11: true,
+			12: true,
+			13: true
 		},
 		29: { // Triple Nemesis
-			0: { length: 800 },
+			0: { length: 810 },
 			1: { length: 800 },
 			2: { length: 1250 }
 		},
@@ -3207,7 +3278,7 @@ module.exports = {
 			10: {
 				type: 'lockonCast',
 				fixedSpeed: 1,
-				length: 1430
+				length: 1433
 			}
 		},
 		31: { // Guardian Sanctuary
@@ -3216,12 +3287,12 @@ module.exports = {
 				length: 700
 			}
 		},
-		32: { // Divine Respite
+		/*32: { // Divine Respite (Removed)
 			0: {
 				fixedSpeed: 1,
 				length: [1300, 900]
 			}
-		},
+		},*/
 		33: { // Ishara's Lullaby
 			'*': { noRetry: true },
 			0: {
@@ -3233,11 +3304,11 @@ module.exports = {
 			10: {
 				type: 'lockonCast',
 				fixedSpeed: 1,
-				length: [300, 1430]
+				length: [300, 1433]
 			}
 		},
 		34: { // Restorative Burst
-			0: { length: 1430 }
+			0: { length: 1433 }
 		},
 		35: { // Energy Stars
 			'*': { noRetry: true },
@@ -3249,7 +3320,7 @@ module.exports = {
 			10: {
 				type: 'lockonCast',
 				fixedSpeed: 1,
-				length: 1430
+				length: 1433
 			}
 		},
 		37: { // Healing Immersion
@@ -3264,7 +3335,7 @@ module.exports = {
 			10: {
 				type: 'lockonCast',
 				fixedSpeed: 1,
-				length: 1430,
+				length: 1433,
 				noInterrupt: ['37-10']
 			}
 		},
@@ -3289,23 +3360,47 @@ module.exports = {
 			0: { length: 5900 }
 		},
 		40: { // Zenobia's Vortex
-			0: {
-				length: 1080,
-				noInterrupt: [40]
-			}
+			'*': {
+				length: 1070.71,
+				noInterrupt: [40],
+				abnormals: {
+					805800: { chain: 20 }
+				}
+			},
+			0: true,
+			10: true,
+			20: true
 		},
-		41: { // Divine Intervention
+		41: { // Divine Vitality (Awakening patch, Divine Intervention)
 			'*': { noRetry: true },
 			0: {
 				type: 'lockon',
 				fixedSpeed: 1,
-				length: 54440,
+				length: 54445.45,
 				partyOnly: true
 			},
 			10: {
 				type: 'lockonCast',
-				length: 925
+				length: 933
 			}
+		},
+		42: { // Holy Burst
+			'*': {
+				length: 866,
+				abnormals: {
+					805800: { chain: 20 }
+				}
+			},
+			0: true,
+			20: true,
+			30: true
+		},
+		43: { // Words of Judgment
+			0: { length: 1416 },
+			50: { length: 200 }
+		},
+		91: { // Awakening Eyes Aura
+			0: { length: 3000 }
 		}
 	},
 	7: { // Mystic
@@ -3324,9 +3419,9 @@ module.exports = {
 			11: { length: 835 }, // 840
 			12: { length: 1300 }
 		},
-		4: { // Ancient Binding
+		/*4: { // Ancient Binding (Removed)
 			0: { length: 1280 }
-		},
+		},*/
 		5: { // Titanic Favor
 			'*': { noRetry: true },
 			0: {
@@ -3616,6 +3711,23 @@ module.exports = {
 		},
 		43: { // Release																																																																							
 			0: { length: [400, 575] }
+		},
+		44: { // Mass Teleport
+			0: { length: [222, 355] }
+		},
+		45: { // Thrall Augumentation
+			'*': { length: 1626.36 },
+			0: true,
+			50: true
+		},
+		47: { // Arunic Release
+			0: { length: 2466 }
+		},
+		48: { // Summon: Thrall Lord
+			0: { length: 4050 } // 4399 | 10239003
+		},
+		91: { // Awakening Eyes Aura
+			0: { length: 3000 }
 		}
 	},
 	8: { // Reaper
@@ -4742,7 +4854,7 @@ module.exports = {
 		},
 		10: { // Counterpunch
 			'*': {
-				length: 1850,
+				length: 1855,
 				distance: 155,
 				requiredBuff: 10153000,
 				noInterrupt: [10],
@@ -4787,7 +4899,7 @@ module.exports = {
 		13: { // Provoke
 			'*': {
 				fixedSpeed: 1,
-				length: [1275, 0],
+				length: 1291,
 				noRetry: true,
 				noInterrupt: [13]
 			},
@@ -4796,7 +4908,7 @@ module.exports = {
 		},
 		14: { // Infuriate
 			'*': {
-				length: 1650,
+				length: 1666,
 				noRetry: true,
 				noInterrupt: [14],
 				chains: {
@@ -4828,7 +4940,7 @@ module.exports = {
 		},
 		15: { // High Kick
 			'*': {
-				length: 1300,
+				length: 1305.44,
 				distance: 133.27,
 				requiredBuff: 10153503,
 				chains: {
@@ -4859,7 +4971,7 @@ module.exports = {
 		},
 		16: { // Flip Kick
 			'*': {
-				length: 2050,
+				length: 2066,
 				distance: 134,
 				chains: {
 					1: 30,
@@ -4905,7 +5017,7 @@ module.exports = {
 		},*/
 		18: { // Growing Fury
 			'*': {
-				length: 1370,
+				length: 1371.66,
 				noRetry: true,
 				noInterrupt: [18],
 				requiredBuff: 10153050,
@@ -4939,7 +5051,7 @@ module.exports = {
 		19: { // Invigorating Rage
 			'*': {
 				fixedSpeed: 1,
-				length: 1430,
+				length: 1433,
 				noRetry: true,
 				noInterrupt: [19],
 				stamina: 1500,
@@ -4959,7 +5071,7 @@ module.exports = {
 		21: { // Mounting Rage
 			'*': {
 				fixedSpeed: 1,
-				length: [1275, 0],
+				length: 1275,
 				noRetry: true,
 				noInterrupt: [21],
 				abnormals: { 10153040: { chain: 6 } }
