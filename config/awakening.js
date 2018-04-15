@@ -141,7 +141,7 @@ module.exports = {
 				}
 			}
 		},
-		5: { // Battle Cry
+		/*5: { // Battle Cry (Removed)
 			0: {
 				length: 1666,
 				noInterrupt: [32],
@@ -149,7 +149,7 @@ module.exports = {
 					21040: { speed: 1.5 }
 				}
 			}
-		},
+		},*/
 		8: { // Assault Stance
 			'*': {
 				length: 566.4,
@@ -556,13 +556,72 @@ module.exports = {
 				noRetry: true,
 				noInterrupt: [2, 32, 40]
 			},
-			10: {
-				abnormals: { 104100: { chain: 12 } }
+			10: {		// astance 1st?
+				abnormals: {
+					100201: { chain: 20 },
+					104100: { chain: 12 }
+				},
+				chains: {
+					// essential mana says all skills can chain into BW, but need to specify them
+					1: 11,
+					2: 11,
+					3: 11,
+					4: 11,
+					10: 11,
+					11: 11,
+					12: 11,
+					16: 11,
+					17: 11,
+					18: 11,
+					19: 11,
+					21: 11,
+					23: 11,
+					28: 11,
+					29: 11,
+					30: 11,
+					31: 11,
+					34: 11,
+					36: 11,
+					37: 11,
+					38: 11,
+					39: 11
+				}
 			},
-			11: true,
-			12: true,
-			20: {
-				abnormals: { 104100: { chain: 22 } }
+			11: {		// astance chained 1st?
+				abnormals: { 100201: { chain: 21 } }
+			},
+			12: {		// astance 2nd ?
+				abnormals: { 100201: { chain: 22 } }
+			},
+			20: {		// dstance 1st ?
+				abnormals: {
+					104100: { chain: 22 }
+				},
+				chains: {
+					// essential mana says all skills can chain into BW, but need to specify them
+					1: 21,
+					2: 21,
+					3: 21,
+					4: 21,
+					10: 21,
+					11: 21,
+					12: 21,
+					16: 21,
+					17: 21,
+					18: 21,
+					19: 21,
+					21: 21,
+					23: 21,
+					28: 21,
+					29: 21,
+					30: 21,
+					31: 21,
+					34: 21,
+					36: 21,
+					37: 21,
+					38: 21,
+					39: 21
+				}
 			},
 			21: true,
 			22: true
@@ -611,7 +670,7 @@ module.exports = {
 			0: {
 				length: 3309.23,
 				distance: 300,
-				noInterrupt: [32, 42],
+				noInterrupt: [1, 3, 4, 8, 9, 10, 12, 13, 16, 17, 19, 21, 22, 29, 32, 34, 36, 37, 39, 40, 42],
 				triggerAbnormal: { 103103: 10000 },
 				chains: {
 					2: 30,
@@ -1300,8 +1359,7 @@ module.exports = {
 			30: {
 				length: 1340,
 				abnormals: {
-					300801: { skill: 250130 },
-					300805: { skill: 250100 }
+					300801: { skill: 250130 }
 				}
 			}
 		},
@@ -1547,8 +1605,8 @@ module.exports = {
 		},
 		26: { // Decimate
 			0: {
-				length: 3375,
-				distance: 11.21,
+				length: [1078, 2166, 120],
+				distance: [40.51, 122.33, 11.21],
 				noRetry: true,
 				chains: {
 					8: 30,
@@ -1560,16 +1618,15 @@ module.exports = {
 				noInterrupt: [1, 2, 3, 4, 6, 9, 10, 12, 13, 14, 15, 16, 17, 21, 22, 26, 28]
 			}, // super cancel 
 			30: {
-				length: 900,
-				distance: 21
+				length: [1710, 0],
+				distance: [122, 22]
 			}
 		},
 		27: { // Blazing Thrust
 			0: {
-				length: [900, 1316.25],
-				distance: [0, 268.19],
+				length: [625, 1000, 1316.25],
+				distance: [0, 274.6, 1],
 				noRetry: true,
-				triggerAbnormal: { 301603: 5000 },
 				noInterrupt: [1, 4, 6, 10, '14-0', '14-1', 17, 21, 22, '27-31', 28],
 				chains: {
 					2: 30,
@@ -1591,14 +1648,13 @@ module.exports = {
 				}
 			},
 			30: {
-				length: [900, 1316.25],
-				distance: [0, 268.19],
+				length: [625, 751.25],
+				distance: [274.8, 0],
 				triggerAbnormal: { 301603: 5000 }
 			},
 			31: {
 				length: 751.25,
-				distance: -194.98,
-				consumeAbnormal: 301603
+				distance: 275.6
 			}
 		},
 		28: { // Unsheathe
@@ -3094,14 +3150,14 @@ module.exports = {
 		},
 		8: { // Mana Infusion
 			0: {
-				length: 4600,
+				length: 4595.5,
 				glyphs: {
 					28044: { speed: 1.25 }
 				}
 			}
 		},
 		10: { // Purifying Circle
-			0: { length: 1275 }
+			0: { length: 1294 }
 		},
 		11: { // Metamorphic Blast (Awakening patch)
 			'*': {
@@ -3139,7 +3195,7 @@ module.exports = {
 		},
 		16: { // Shocking Implosion (Awakening patch)
 			'*': {
-				length: 1700,
+				length: 1718,
 				abnormals: {
 					805800: { chain: 20 }
 				}
@@ -3206,42 +3262,56 @@ module.exports = {
 				//forceClip: true
 			}
 		},
-		27: { // Final Reprisal
-			'*' : {
-				length: 2600,
-				noInterrupt: [2, 3, 5, 10, 12, 14, 17, 18, 19, 23, 25, 26, 27, '28-10', 34, 38, '41-10'],
-				abnormals: {
-					805800: { chain: 20 }
-				}
-			},
-			0: {
-				chains: {
-					11: 30,
-					16: 30,
-					29: 30,
-					40: 30
-				}
-			},
-			10: {
-				chains: {
-					11: 11,
-					16: 11,
-					29: 11,
-					40: 11
-				}
-			},
-			11: { length: 1040 },
-			20: {
-				chains: {
-					11: 21,
-					16: 21,
-					29: 21,
-					40: 21
-				}
-			},
-			21: { length: 1040 },
-			30: { length: 1040 }
-		},
+        27: { // Final Reprisal
+            '*': {
+                length: 2933,
+                noInterrupt: [27],
+                race: {
+                    9: { length: 3333 }
+                }
+            },
+            0: {
+                chains: {
+                    11: 30,
+                    16: 30,
+                    29: 30,
+                    40: 30
+                }
+            },
+            10: {
+                chains: {
+                    11: 11,
+                    16: 11,
+                    29: 11,
+                    40: 11
+                },
+                abnormals: {
+                    805800: { chain: 20 }
+                }
+            },
+            11: {
+                length: 1113,
+                abnormals: {
+                    805800: { chain: 21 }
+                },
+                race: {
+                    9: { length: 1273 }
+                }
+            },
+            20: true,
+            21: {
+                length: 1113,
+                race: {
+                    9: { length: 1273 }
+                }
+            },
+            30: {
+                length: 1113,
+                race: {
+                    9: { length: 1273 }
+                }
+            }
+        },
 		28: { // Words of Vitality (Awakening patch, Mana Charge)
 			'*': {
 				type: 'chargeCast',
@@ -3388,14 +3458,12 @@ module.exports = {
 			}
 		},
 		42: { // Holy Burst
-			'*': {
-				length: 866,
+			'*': { length: 800 },
+			20: {
 				abnormals: {
-					805800: { chain: 20 }
+					805800: { chain: 30 }
 				}
 			},
-			0: true,
-			20: true,
 			30: true
 		},
 		43: { // Words of Judgment
