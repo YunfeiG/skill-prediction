@@ -34,7 +34,7 @@ Again, Attack speed emulation is in demand.
 
 ## Update/fix logs
 
-Apr 15, 2018: Preist Holy burst, Slayer awakening skills fix. Warrior's Leaping Strike->Traverse cut/Rain of blows chains added, Blade waltz chains added.
+Apr 15, 2018: Preist Holy burst, Slayer awakening skills fix. Warrior's Leaping Strike->Traverse cut~~/Rain of blows~~ chains added, Blade waltz chains added.
 
 Apr 14, 2018: Priest and Mystic attempt, NEED MANY TESTS!
 
