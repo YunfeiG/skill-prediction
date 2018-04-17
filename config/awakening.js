@@ -141,15 +141,6 @@ module.exports = {
 				}
 			}
 		},
-		/*5: { // Battle Cry (Removed)
-			0: {
-				length: 1666,
-				noInterrupt: [32],
-				glyphs: {
-					21040: { speed: 1.5 }
-				}
-			}
-		},*/
 		8: { // Assault Stance
 			'*': {
 				length: 566.4,
@@ -369,17 +360,6 @@ module.exports = {
 				noInterrupt: [32]
 			}
 		},
-		/*27: { // Pounce (Removed)
-			0: {
-				length: 2000,
-				distance: 180,
-				noInterrupt: [32],
-				glyphs: {
-					21048: { speed: 1.3 },
-					21082: { speed: 1.3 }
-				}
-			}
-		},*/
 		28: { // Traverse Cut
 			0: {
 				length: 2000,
@@ -1047,7 +1027,7 @@ module.exports = {
 			},
 			2: {
 				requiredBuff: 201803,
-				length: 1820
+				length: 1692.42
 			}
 		},
 		25: { // Wallop
@@ -1598,7 +1578,7 @@ module.exports = {
 			0: { length: 3365 },
 			30: { length: 1325 }
 		},
-		26: { // Decimate
+		26: { // Decimate(EU), Punishing Blow(NA)
 			0: {
 				length: [1078, 2166, 120],
 				distance: [40.51, 122.33, 11.21],
@@ -1617,30 +1597,47 @@ module.exports = {
 				distance: [122, 22]
 			}
 		},
-		27: { // Blazing Thrust
+		27: { // Blazing Thrust(EU), Savage Strike(NA)
+			'*': {
+				noRetry: true,
+				noInterrupt: ['27-31'],
+				abnormals: {
+					301603: { chain : 31 }
+				}
+			},
 			0: {
 				length: [625, 1000, 1316.25],
-				distance: [0, 274.6, 1],
-				noRetry: true,
-				noInterrupt: [1, 4, 6, 10, '14-0', '14-1', 17, 21, 22, '27-31', 28],
+				distance: [0, 274.69, 0.91],
 				chains: {
+					1: 30,
 					2: 30,
 					3: 30,
+					4: 30,
+					5: 30,
+					6: 30,
 					8: 30,
 					9: 30,
+					10: 30, // i assume retaliate can chain into this too
 					12: 30,
 					13: 30,
-					'14-2': 30,
+					14: 30,
 					15: 30,
 					16: 30,
+					17: 30,
+					18: 30,
+					19: 30,
+					20: 30,
+					21: 30,
+					22: 30,
 					23: 30,
 					24: 30,
 					25: 30,
-					26: 30
+					26: 30,
+					'28-1': 30,
+					'28-2': 30,
+					'28-3': 30
 				},
-				abnormals: {
-					301603: { chain : 31 },
-				}
+				triggerAbnormal: { 301603: 5000 },
 			},
 			30: {
 				length: [625, 751.25],
@@ -1662,18 +1659,18 @@ module.exports = {
 			},
 			1: {
 				type: 'chargeCast',
-				distance: [1.41, 44.82],
-				length: [929.4, 1248]
+				distance: [44.814, 0],
+				length: [1248, 1]
 			},
 			2: {	// Missing logs
 				type: 'chargeCast',
-				distance: [1.41, 44.82],
-				length: [929.4, 978]
+				distance: [44.814, 0],
+				length: [1248, 1]
 			},	// Why length is different here?
 			3: {
 				type: 'chargeCast',
-				distance: [1.41, 44.82],
-				length: [929.4, 1248]
+				distance: [44.814, 0],
+				length: [1248, 1]
 			}
 		},
 		91: { // Awakening Eyes Aura
@@ -1926,13 +1923,6 @@ module.exports = {
 			1:  true,
 			30: true,
 		},
-		/*7: { // Mocking Shout // Removed
-		    0: {
-				fixedSpeed: 1,
-				length: [315, 1100],
-				noInterrupt: [2]
-			}
-        },*/
 		8: { // Fiery Rage
 			'*': { noInterrupt: [2] },
 			0: {
@@ -2030,14 +2020,6 @@ module.exports = {
 				noInterrupt: [2]
 			}
 		},
-		/*12: { // Unchained Anger // Removed
-			'*': { 
-				length: [1050, 550],
-				noInterrupt: [2]
-			},
-			30: true,
-			31: true
-		},*/
 		13: { // Retaliate (TODO: Check)
 			0: {
 				type: 'retaliate',
