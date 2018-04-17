@@ -901,18 +901,19 @@ module.exports = {
 				length: 2800,
 				distance: 85,
 				triggerAbnormal: { 201831: 2000 },
-				noInterrupt: ['1-0', '1-1', 2, 3, 4, 9, 11, 12, 13, 15, '18-0', 23, 24, 25, 26, 27, 28, 29],
+				noInterrupt: ['1-0', '1-1', 2, 3, 4, 9, 11, 12, 13, 15, 23, 24, 25, 26, 27, 28, 29],
 				chains: {
 					'1-2': 30,
 					5: 30,
 					8: 30,
 					10: 30,
-					'18-1': 30,
+					18: 30,
 					21: 30
 			    }
 			},
 			30: {
 				length: 1850,
+				triggerAbnormal: { 201831: 2000 },
 				distance: 85
 			}
 		},
@@ -973,7 +974,6 @@ module.exports = {
 				length: 800,
 				distance: 87, // M.Aman
 				noInterrupt: [2],
-				triggerAbnormal: { 201831: 2000 },
 				race: {
 					0: { distance: 74.84 }, // M.Human: 74.836
 					2: { distance: 80.43 }, // M.Helf: 80.428
@@ -997,11 +997,7 @@ module.exports = {
 			'*': {
 				length: 1400,
 				noInterrupt: [2],
-				distance: 100.13, // M.Human, 100.126
-				abnormals: {
-					201830: { chain: 30 },		// Debiliate -> Lockdown blow
-					201831: { chain: 30 }		// Shield barrage(1st or 2nd)-> Lockdown blow
-				},
+				distance: 100.13, // M.Human, 100.126,
 				race: {
 					0: { distance: 100.13 }, // M.Human: 100.125
 					2: {
@@ -1046,7 +1042,7 @@ module.exports = {
 		},
 		24: { // Chained Leash
 			1: {
-				length: [725, 850],
+				length: [733, 833],
 				noInterrupt: [2]
 			},
 			2: {
@@ -1066,13 +1062,13 @@ module.exports = {
 					10: 30,
 					13: 30,
 					15: 30,
-					'18-1': 30,
+					18: 30,
 					21: 30
 			    }
 			},
 			0: {
-				length: 2375,
-				noInterrupt: [1, 2, 3, 4, 5, 9, 11, 12, '18-0', 21, 23, 24, 25, 26, 27, 28, 29]
+				length: 2391.3,
+				noInterrupt: [1, 2, 3, 4, 5, 9, 11, 12, 21, 23, 24, 25, 26, 27, 28, 29]
 			},
 			30: { length: 1913.04 }
 		},
