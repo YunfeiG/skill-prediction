@@ -1,6 +1,6 @@
 # Yunfei's fork of skill prediction
 
-Yunfei is now back online for awakening patch. However, I only play NA TERA where awakening patch arrives on 17th this month so the updates at this moment are made based on logs from EU and TW players and they are not thoroughly tested.
+NA finally gets awakening patch. Yunfei can now directly test new skills and changed skills to deliver much more accurate skill emulation.
 
 ## Disclaimer
 
@@ -34,7 +34,9 @@ Again, Attack speed emulation is in demand.
 
 ## Update/fix logs
 
-Apr 15, 2018: Preist Holy burst, Slayer awakening skills fix. Warrior's Leaping Strike->Traverse cut~~/Rain of blows~~ chains added, Blade waltz chains added.
+Apr 17, 2018: Lancer skill chains
+
+Apr 15, 2018: Priest Holy burst, Slayer awakening skills fix. Warrior's Leaping Strike->Traverse cut~~/Rain of blows~~ chains added, Blade waltz chains added.
 
 Apr 14, 2018: Priest and Mystic attempt, NEED MANY TESTS!
 

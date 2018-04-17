@@ -755,14 +755,14 @@ module.exports = {
 		3: { // Onslaught
 			'*': {
 				distance: [0, 100, 100, 100, 100, 35], // 15~ M.Human, Popori and M.Aman?, do not log this skill with low fps
-				noInterrupt: [1, 2, 3, 4, 8, 9, 10, 11, 12, 13, 15, 18, 21, 23, 24, 25, 26, 27, 28, 29],
+				noInterrupt: [2, 3, 4, 8, 9, 10, 11, 12, 13, 15, '18-0', 21, 23, 24, 25, 26, 27, 28, 29],
 				abnormals: {
 					22060: { speed: 1.25 }
 				},
 				chains: {
 					1: 30,
 					5: 30,
-					18: 30
+					'18-1': 30
 				},
 				race: {
 					0: { distance: [0, 100, 100, 100, 100, 15] }, // M.Human
@@ -790,6 +790,7 @@ module.exports = {
 					3: 30,
 					5: 30,
 					8: 30,
+					10: 30,
 					13: 30,
 					15: 30,
 					18: 30,
@@ -820,7 +821,7 @@ module.exports = {
 			},
 			0: true,
 			1: true,
-			2: true,
+			2: { requiredBuff: 201830 },	//Debilitate->Shield Bash
 			30: { length: 694.6 }
 		},
 		7: { // Guardian Shout
@@ -863,11 +864,11 @@ module.exports = {
 			0: { // Same animation as shield bash, just slower
 				length: 925,
 				distance: 30, // Seems pretty equalized
-				noInterrupt: [2, 3, 4, 8, 9, 10, 11, 12, 13, 15, 21, 23, 24, 25, 26, 27, 28, 29],
+				noInterrupt: ['1-0', '1-1', 2, 3, 4, 8, 9, 10, 11, 12, 13, 15, '18-0', 21, 23, 24, 25, 26, 27, 28, 29],
 				triggerAbnormal: { 201830: 2000 },
 				chains: {
-					1: 30,
-					18: 30,
+					'1-2': 30,
+					'18-1': 30,
 				},
 				race: {
 					0: { distance: 30 }, // M.Human
@@ -899,9 +900,10 @@ module.exports = {
 			0: {
 				length: 2800,
 				distance: 85,
+				triggerAbnormal: { 201831: 2000 },
 				noInterrupt: ['1-0', '1-1', 2, 3, 4, 9, 11, 12, 13, 15, '18-0', 23, 24, 25, 26, 27, 28, 29],
 				chains: {
-					1: 30,
+					'1-2': 30,
 					5: 30,
 					8: 30,
 					10: 30,
@@ -990,13 +992,6 @@ module.exports = {
 				noInterrupt: [2]
 			}
 		},
-		20: { // Menacing Wave
-			0: {
-				fixedSpeed: 1,
-				length: [700, 800], // 715, 815
-				noInterrupt: [2]
-			}
-		},
 		21: { // Lockdown Blow
 			// Same animation as 1st cast of shield barrage, just slower
 			'*': {
@@ -1021,13 +1016,13 @@ module.exports = {
 				},
 				chains: {
 					10: 30,
-					13: 30, // are you sure spring attack -> lockdown blow is legit?
+					13: 30,
 					18: 30
 				}
 			},
-			0: true,
-			1: true,
-			2: true,
+			0: true,		// low level skill?
+			1: true,		// raw cast, Shield barrage 2nd -> Lockdown blow
+			2: { requiredBuff: [201830, 201831] },	// Shield barrage 1st(201830)/Debilitate(201831)/Spring attack(201831) -> Lockdown blow
 			30: {
 				length: 1272.72,
 				race: {
@@ -1050,11 +1045,10 @@ module.exports = {
 			}
 		},
 		24: { // Chained Leash
-			'*': {
-				length: 1000,
+			1: {
+				length: [725, 850],
 				noInterrupt: [2]
 			},
-			1: true,
 			2: {
 				requiredBuff: 201803,
 				length: 1820
