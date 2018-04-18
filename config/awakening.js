@@ -765,7 +765,8 @@ module.exports = {
 				level: {
 					1: {
 						length: 333,
-						stamina: 40
+						stamina: 40,
+						endType51: true
 					}
 				}
 			}
@@ -1136,7 +1137,7 @@ module.exports = {
 				}
 		    }
 		},
-		28: { // Righteous Leap
+		28: { // Righteous Leap(EU), Super Leap(NA)
 			0: {
 				length: [333.33, 1055, 3121.67],
 				distance: [29.48, 445.52, 0],
@@ -1155,7 +1156,8 @@ module.exports = {
 			0: {
 				type: 'holdInfinite',
 				fixedSpeed: 1,
-				length: 700
+				length: 700,
+				endType51: true
 			}
 		},
 		30: { // Divine Protection
@@ -4759,7 +4761,8 @@ module.exports = {
 				length: 800,
 				distance: 33.38,
 				triggerAbnormal: { 10153006: 0x7fffffff },
-				consumeAbnormalEnd: 10153006
+				consumeAbnormalEnd: 10153006,
+				endType51: true
 			},
 			11: {
 				type: 'holdInfinite',
@@ -4767,7 +4770,8 @@ module.exports = {
 				length: 800,
 				distance: 33.38,
 				triggerAbnormal: { 10153005: 0x7fffffff },
-				consumeAbnormalEnd: 10153005
+				consumeAbnormalEnd: 10153005,
+				endType51: true
 			},
 			12: {
 				/*abnormals: {
@@ -5276,9 +5280,7 @@ module.exports = {
 			31: { length: 950 }
 		},
 		26: { // Brawling roll 颶風連打
-			0: {
-				length: [178.57, 412.85],
-				distance: [0, 30],
+			'*': {
 				noRetry: true,
 				abnormals: {
                     10153190: { chain: 2 },
@@ -5287,7 +5289,11 @@ module.exports = {
                     10153193: { chain: 5 },
                     10153194: { chain: 6 },
                     10153195: { chain: 7 }
-                },
+                }
+			},
+			0: {
+				length: [178.57, 412.85],
+				distance: [0, 30],
 				chains: {
 					1: 2,
 					2: 2,

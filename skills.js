@@ -272,7 +272,7 @@ module.exports = function SkillPrediction(dispatch) {
 	}
 
 	for(let packet of [
-			['C_START_SKILL', dispatch.base.majorPatchVersion >= 67 ? 5 : 4],
+			['C_START_SKILL', dispatch.base.majorPatchVersion >= 67 ? 5 : 4 ],
 			['C_START_TARGETED_SKILL', 4],
 			['C_START_COMBO_INSTANT_SKILL', 2],
 			['C_START_INSTANCE_SKILL', 3],
@@ -280,8 +280,9 @@ module.exports = function SkillPrediction(dispatch) {
 			['C_PRESS_SKILL', 2],
 			['C_NOTIMELINE_SKILL', 1]
 		])
+		
 		dispatch.hook(packet[0], 'raw', {order: -10, filter: {fake: null}}, startSkill.bind(null, ...packet))
-
+	
 	function startSkill(type, version, code, data) {
 		if(sending) return
 
@@ -342,7 +343,7 @@ module.exports = function SkillPrediction(dispatch) {
 		let specialLoc = type == 'C_START_SKILL' || type == 'C_START_TARGETED_SKILL' || type == 'C_START_INSTANCE_SKILL_EX'
 
 		if(!info) {
-			if(type != 'C_PRESS_SKILL' || event.start)
+			if(type != 'C_PRESS_SKILL' || event.press)
 				// Sometimes invalid (if this skill can't be used, but we have no way of knowing that)
 				if(type != 'C_NOTIMELINE_SKILL') updateLocation(event, false, specialLoc)
 
@@ -370,37 +371,30 @@ module.exports = function SkillPrediction(dispatch) {
 		}
 		
 		if(type == 'C_PRESS_SKILL' && !event.press && !(canVB && (job == 3 && skillBase == 15) ) ) {
-			if((info.type == 'hold' || info.type == 'holdInfinite') && currentAction && currentAction.skill == skill) {
-				updateLocation(event)
+			if(currentAction && currentAction.skill == skill) {
+				if(info.type == 'hold' || info.type == 'holdInfinite') {
+					updateLocation(event)
+					
+					if(info.chainOnRelease) {
+						sendActionEnd(11)
+						
+						info = skillInfo(skill += info.chainOnRelease - ((skill - 0x4000000) % 100))
+						if(!info) {
+							if(send) toServerLocked(data)
+							return
+						}
 
-				if(info.chainOnRelease) {
-					sendActionEnd(11)
-
-					info = skillInfo(skill += info.chainOnRelease - ((skill - 0x4000000) % 100))
-					if(!info) {
-						if(send) toServerLocked(data)
-						return
+						startAction({
+							skill,
+							info,
+							stage: 0,
+							speed: info.fixedSpeed || aspd * (info.speed || 1)
+						})
 					}
-
-					startAction({
-						skill,
-						info,
-						stage: 0,
-						speed: info.fixedSpeed || aspd * (info.speed || 1)
-					})
+					else sendActionEnd(info.endType51 ? 51: 10)
 				}
-				else if(info.length) {
-					let length = lastStartTime + info.length - Date.now()
-					if(length > 0) {
-						stageEnd = sendActionEnd.bind(null, 51, info.distance)
-						stageEndTime = Date.now() + length
-						stageEndTimeout = setTimeout(stageEnd, length)
-					}
-					else sendActionEnd(51)
-				}
-				else sendActionEnd(10)
 			}
-
+			
 			if(send) toServerLocked(data)
 			return
 		}
@@ -919,6 +913,12 @@ module.exports = function SkillPrediction(dispatch) {
 
 		opts.distance = (multiStage ? get(info, 'distance', opts.stage) : info.distance) || 0
 
+		let stageEnd = null
+		let speed = opts.speed + (info.type == 'charging' ? opts.chargeSpeed : 0)
+		let noTimeout = false
+		if(serverAction && (serverAction.skill === currentAction.skill || Math.floor((serverAction.skill - 0x4000000) / 10000) === Math.floor((currentAction.skill - 0x4000000) / 10000)) && serverAction.stage === currentAction.stage)
+			noTimeout = true
+
 		let serverTimeoutTime = ping.max + (SKILL_RETRY_COUNT * SKILL_RETRY_MS) + SERVER_TIMEOUT
 
 		if(info.type == 'teleport' && opts.stage == info.teleportStage) {
@@ -928,16 +928,15 @@ module.exports = function SkillPrediction(dispatch) {
 			sendInstantMove()
 			opts.distance = 0
 		}
-		else if(info.type == 'holdInfinite' || info.type == 'charging' && opts.stage > 0 && !(opts.stage < info.length.length)) {
-			serverTimeout = setTimeout(sendActionEnd, serverTimeoutTime, 6)
+		if((info.type === 'charging' || info.type === 'holdInfinite') && opts.stage === ((info.length && (info.length.length || 1)) || 0)) {
+			if(!noTimeout) serverTimeout = setTimeout(sendActionEnd, serverTimeoutTime, 6)
 			stageEnd = null
 			return
 		}
 
-		let speed = opts.speed + (info.type == 'charging' ? opts.chargeSpeed : 0),
-			length = Math.round((multiStage ? info.length[opts.stage] : info.length) / speed)
+		let	length = Math.round((multiStage ? info.length[opts.stage] : info.length) / speed)
 
-		if(length > serverTimeoutTime) serverTimeout = setTimeout(sendActionEnd, serverTimeoutTime, 6)
+		if(!noTimeout && length > serverTimeoutTime) serverTimeout = setTimeout(sendActionEnd, serverTimeoutTime, 6)
 
 		if(multiStage) {
 			if(!opts.moving) {
@@ -970,7 +969,7 @@ module.exports = function SkillPrediction(dispatch) {
 			}
 		}
 
-		if(info.type == 'charging') {
+		if(info.type == 'charging'|| info.type == 'holdInfinite') {
 			opts.stage += 1
 			stageEnd = sendActionStage.bind(null, opts)
 			stageEndTime = Date.now() + length
