@@ -544,12 +544,12 @@ module.exports = {
 				distance: 156.248,
 				noRetry: true,
 				noInterrupt: [32, 40, '41-0', '41-30'],
-			},
-			10: {	// astance 1st?
-				triggerAbnormal: { 104100: 8000 },
 				abnormals: {
 					104100: { chain: 12 }
 				},
+			},
+			10: {	// astance 1st?
+				triggerAbnormal: { 104100: 8000 },
 				chains: {
 					// essential mana says all skills can chain into BW, but need to specify them
 					1: 11,
@@ -1353,7 +1353,8 @@ module.exports = {
 				length: 3365,
 				noInterrupt: ['1-0', '1-1', '1-2', 4, 6, 8, 10, '14-0', '14-1', 17, 21, 25, 26, 28],
 				abnormals: {
-					300801: { skill: 250100 }
+					300801: { skill: 250100 },
+					300802: { skill: 250100 }
 				},
 				chains: {
 					1: 30,
@@ -1372,7 +1373,8 @@ module.exports = {
 			30: {
 				length: 1340,
 				abnormals: {
-					300801: { skill: 250130 }
+					300801: { skill: 250130 },
+					300802: { skill: 250130 }
 				}
 			}
 		},
