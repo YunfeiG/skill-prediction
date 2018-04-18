@@ -8,6 +8,8 @@ I strongly discourage to use skill prediction for pvp purpose. SP has so many bu
 
 ## Issues that still persist:
 
+**Slayer's Savaging strike(blazing thrust) 2nd cast -> Ultimate Overhand Strike is broken. I can't fix it.**
+
 Double casts when your ping is higher than animation length, or the cooldown applies at the very end of the skill animation(Short skills like Teleporting jaunts, Boomerang pulse, Overpower, Restraning arrow, Web arrow)
 
 Triple point blank casts(Point blank forward, blast cancel, forward->backward)
@@ -33,6 +35,8 @@ High chance of ghost when attack speed suddenly decreased due to expiration of a
 Again, Attack speed emulation is in demand.
 
 ## Update/fix logs
+
+Apr 18, 2018: Brawler, Mystic should be completed.
 
 Apr 17, 2018: Warrior, Lancer, Slayer, Berzerker, Priest fix should be completed. Mystic and Brawler untested by myself yet.
 

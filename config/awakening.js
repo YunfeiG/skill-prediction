@@ -1630,7 +1630,10 @@ module.exports = {
 				},
 				consumeAbnormal: 301604
 			},
-			0: { length: 3365 },
+			0: {
+				length: 3365,
+				abnormals: { 301604: { chain: 30 } }
+			},
 			30: { length: 1325 }
 		},
 		26: { // Decimate(EU), Punishing Blow(NA)
@@ -5258,6 +5261,7 @@ module.exports = {
 			0: {
 				length: 1815,
 				distance: 245.21,
+				noInterrupt: [22],
 				chains: {
 					1: 30,
 					2: 30,
@@ -5291,6 +5295,7 @@ module.exports = {
 				abnormals: {
 					31120: { chain: 31 },
 				},
+				noInterrupt: [24],
 				chains: {
 					1: 30,
 					2: 30,
