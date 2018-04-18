@@ -1356,7 +1356,8 @@ module.exports = {
 					8: { distance: 150 }, // Popori: 150
 					9: { distance: 169.65 }, // Elin: 169.648
 					10: { distance: 151.14 } // Baraka: 151.138
-				}
+				},
+				abnormals: { 301604: { chain: 30 } }
 			},
 			0: {
 				length: 3365,
@@ -1541,7 +1542,7 @@ module.exports = {
 		18: { // Overpower (Awakening Patch)
 			'*': {
 				length: 1433,
-				noInterrupt: [1, 2, 3, 4, 6, 9, 12, 13, 14, 15, 16, 17, 21, 23, 25]
+				noInterrupt: [1, 2, 3, 4, 6, 9, 12, 13, 14, 15, 16, 17, 21, 23, 25, 26, 27, 28]
 			},
 			0: true,
 			50: true
@@ -1571,7 +1572,8 @@ module.exports = {
 				races: {
 					5: { distance: 190}, // F.Aman
 					10: { distance: 190 } // Baraka
-				}
+				},
+				abnormals: { 301604: { chain: 30 } }
 			},
 			0: {
 				length: 3685,
@@ -1601,7 +1603,8 @@ module.exports = {
 					15: 30,
 					25: 30,
 					27: 30
-				}
+				},
+				abnormals: { 301604: { chain: 30 } }
 			},
 			30: {
 				 length: 1525,
@@ -1640,6 +1643,7 @@ module.exports = {
 					25: 30,
 					27: 30
 				},
+				abnormals: { 301604: { chain: 30 } },
 				noInterrupt: [1, 2, 3, 4, 6, 9, 10, 12, 13, 14, 15, 16, 17, 21, 22, 26, 28]
 			}, // super cancel 
 			30: {
@@ -1703,10 +1707,11 @@ module.exports = {
 		28: { // Unsheathe
 			0: {
 				type: 'charging',
-				length: [650, 650], // no hold stage?
+				length: [650, 650],
 				noInterrupt: [28],
 				abnormals: {
-					301601: { chargeSpeed: 0.6 },
+					301604: { chargeSpeed: 0.4 },
+					301601: { chargeSpeed: 0.6 }
 				}
 			},
 			1: {
@@ -1714,11 +1719,11 @@ module.exports = {
 				distance: [44.814, 0],
 				length: [1248, 1]
 			},
-			2: {	// Missing logs
+			2: {
 				type: 'chargeCast',
 				distance: [44.814, 0],
 				length: [1248, 1]
-			},	// Why length is different here?
+			},
 			3: {
 				type: 'chargeCast',
 				distance: [44.814, 0],
