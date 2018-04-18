@@ -1357,8 +1357,7 @@ module.exports = {
 					8: { distance: 150 }, // Popori: 150
 					9: { distance: 169.65 }, // Elin: 169.648
 					10: { distance: 151.14 } // Baraka: 151.138
-				},
-				consumeAbnormal: 301604
+				}
 			},
 			0: {
 				length: 3365,
@@ -1378,7 +1377,8 @@ module.exports = {
 					14: 30,
 					15: 30,
 					16: 30,
-					24: 30
+					24: 30,
+					27: 30
 				}
 			},
 			30: {
@@ -1570,7 +1570,6 @@ module.exports = {
 		23: { // Measured Slice
 			'*': {
 				distance: 189, // Sometimes 190 but most of the time 189
-				consumeAbnormal: 301604,
 				races: {
 					5: { distance: 190}, // F.Aman
 					10: { distance: 190 } // Baraka
@@ -1582,7 +1581,8 @@ module.exports = {
 				chains: {
 					8: 30,
 					24: 30,
-					25: 30
+					25: 30,
+					27: 30
 				},
 				abnormals: { 301604: { chain: 30 } }
 			},
@@ -1602,10 +1602,10 @@ module.exports = {
 					12: 30,
 					13: 30,
 					15: 30,
-					25: 30
+					25: 30,
+					27: 30
 				},
-				abnormals: { 301604: { chain: 30 } },
-				consumeAbnormal: 301604
+				abnormals: { 301604: { chain: 30 } }
 			},
 			30: {
 				 length: 1525,
@@ -1627,8 +1627,7 @@ module.exports = {
 					8: { distance: 150 }, // Popori: 150
 					9: { distance: 169.65 }, // Elin: 169.648
 					10: { distance: 151.14 } // Baraka: 151.138
-				},
-				consumeAbnormal: 301604
+				}
 			},
 			0: {
 				length: 3365,
@@ -1641,12 +1640,12 @@ module.exports = {
 				length: [1078, 2166, 120],
 				distance: [40.51, 122.33, 11.21],
 				noRetry: true,
-				consumeAbnormal: 301604,
 				chains: {
 					8: 30,
 					23: 30,
 					24: 30,
-					25: 30
+					25: 30,
+					27: 30
 				},
 				abnormals: { 301604: { chain: 30 } },
 				noInterrupt: [1, 2, 3, 4, 6, 9, 10, 12, 13, 14, 15, 16, 17, 21, 22, 26, 28]
@@ -5323,7 +5322,7 @@ module.exports = {
 			30: { length: 950 },
 			31: { length: 950 }
 		},
-		26: { // Brawling roll 颶風連打
+		26: { // Brawling roll(EU), Rhythmic Blow(NA), 颶風連打(TW)
 			'*': {
 				noRetry: true,
 				abnormals: {

@@ -8,7 +8,7 @@ I strongly discourage to use skill prediction for pvp purpose. SP has so many bu
 
 ## Issues that still persist:
 
-**Slayer's Savaging strike(blazing thrust) 2nd cast -> Ultimate Overhand Strike is broken. I can't fix it.**
+**Slayer's Savaging strike(blazing thrust) 2nd cast -> Overhand Strike is slightly broken.**
 
 Double casts when your ping is higher than animation length, or the cooldown applies at the very end of the skill animation(Short skills like Teleporting jaunts, Boomerang pulse, Overpower, Restraning arrow, Web arrow)
 
