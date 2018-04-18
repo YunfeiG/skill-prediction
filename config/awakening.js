@@ -705,7 +705,7 @@ module.exports = {
 				distance: 326.55
 			}
 		},
-		91: { // Awakening Eyes Aura
+		91: { // Awakening Eyes Aura(EU), Apex Urgency(NA)
 			0: { length: 3000 }
 		}
 	},
@@ -1105,7 +1105,7 @@ module.exports = {
 				//forceClip: true,
 				stamina: 800,
 				instantStamina: true,
-				noInterrupt: [2, 26],
+				noInterrupt: [26],
 				glyphs: {
 					22067: { stamina: -100 },
 					22089: { stamina: -100 }
@@ -1163,7 +1163,7 @@ module.exports = {
 		30: { // Divine Protection
 			0: { length: 1252 }
 		},
-		91: { // Awakening Eyes Aura
+		91: { // Awakening Eyes Aura(EU), Apex Urgency(NA)
 			0: { length: 3000 }
 		}
 	},
@@ -1725,7 +1725,7 @@ module.exports = {
 				length: [1248, 1]
 			}
 		},
-		91: { // Awakening Eyes Aura
+		91: { // Awakening Eyes Aura(EU), Apex Urgency(NA)
 			0: { length: 3000 }
 		}
 	},
@@ -2499,7 +2499,7 @@ module.exports = {
 			},
 			30: true
 		},
-		91: { // Awakening Eyes Aura
+		91: { // Awakening Eyes Aura(EU), Apex Urgency(NA)
 			0: { length: 3000 }
 		}
 	},
@@ -3533,7 +3533,7 @@ module.exports = {
 			0: { length: 1416 },
 			50: { length: 200 }
 		},
-		91: { // Awakening Eyes Aura
+		91: { // Awakening Eyes Aura(EU), Apex Urgency(NA)
 			0: { length: 3000 }
 		}
 	},
@@ -3890,7 +3890,7 @@ module.exports = {
 				length: 4050 
 			} // 4399 | 10239003
 		},
-		91: { // Awakening Eyes Aura
+		91: { // Awakening Eyes Aura(EU), Apex Urgency(NA)(EU)
 			0: { length: 3000 }
 		}
 	},
@@ -5404,7 +5404,7 @@ module.exports = {
 			30: true,
 			31: true
 		},
-		91: { // Awakening Eyes Aura 覺醒氣息
+		91: { // Awakening Eyes Aura(EU), Apex Urgency(NA) 覺醒氣息
 			0: { length: 3000 }
 		}
 	},
