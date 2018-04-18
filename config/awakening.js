@@ -141,6 +141,15 @@ module.exports = {
 				}
 			}
 		},
+		5: { // Battle Cry
+			0: {
+				length: 1665,
+				noInterrupt: [32],
+				glyphs: {
+					21040: { speed: 1.5 }
+				}
+			}
+		},
 		8: { // Assault Stance
 			'*': {
 				length: 566.4,
@@ -532,18 +541,13 @@ module.exports = {
 		40: { // Blade Waltz
 			'*': {
 				length: 810.6,
-				distance: 150,
-				consumeAbnormalEnd: 104110,
-				triggerAbnormal: {
-					104100: 8000,
-					104110: 2000
-				},
+				distance: 156.248,
 				noRetry: true,
-				noInterrupt: [2, 32, 40]
+				noInterrupt: [32, 40, '41-0', '41-30'],
 			},
-			10: {		// astance 1st?
+			10: {	// astance 1st?
+				triggerAbnormal: { 104100: 8000 },
 				abnormals: {
-					100201: { chain: 20 },
 					104100: { chain: 12 }
 				},
 				chains: {
@@ -552,33 +556,41 @@ module.exports = {
 					2: 11,
 					3: 11,
 					4: 11,
+					5: 11,
+					8: 11,
+					9: 11,
 					10: 11,
 					11: 11,
 					12: 11,
+					13: 11, // I assume retaliate can chain into this skill
 					16: 11,
 					17: 11,
 					18: 11,
 					19: 11,
+					20: 11,
 					21: 11,
 					23: 11,
+					24: 11,
+					25: 11,
+					26: 11,
 					28: 11,
 					29: 11,
 					30: 11,
 					31: 11,
 					34: 11,
+					35: 11,
 					36: 11,
 					37: 11,
 					38: 11,
-					39: 11
+					39: 11,
+					'41-31': 11,
+					42: 11,
 				}
 			},
-			11: {		// astance chained 1st?
-				abnormals: { 100201: { chain: 21 } }
-			},
-			12: {		// astance 2nd ?
-				abnormals: { 100201: { chain: 22 } }
-			},
-			20: {		// dstance 1st ?
+			11: { triggerAbnormal: { 104100: 8000 } },
+			12: { consumeAbnormal: 104100 },
+			20: {
+				triggerAbnormal: { 104100: 8000 },
 				abnormals: {
 					104100: { chain: 22 }
 				},
@@ -588,65 +600,90 @@ module.exports = {
 					2: 21,
 					3: 21,
 					4: 21,
+					5: 21,
+					8: 21,
+					9: 21,
 					10: 21,
 					11: 21,
 					12: 21,
+					13: 21, // I assume retaliate can chain into this skill
 					16: 21,
 					17: 21,
 					18: 21,
 					19: 21,
+					20: 21,
 					21: 21,
 					23: 21,
+					24: 21,
+					25: 21,
+					26: 21,
 					28: 21,
 					29: 21,
 					30: 21,
 					31: 21,
 					34: 21,
+					35: 21,
 					36: 21,
 					37: 21,
 					38: 21,
-					39: 21
+					39: 21,
+					'41-31': 21,
+					42: 21,
 				}
 			},
-			21: true,
-			22: true
+			21: { triggerAbnormal: { 104100: 8000 } },
+			22: { consumeAbnormal: 104100 }
 		},
 		41: { // Aerial Scythe
 			'*': {
 				noRetry: true,
 				length: 1976.15,
-				distance: 200,
-				triggerAbnormal: {
-					105100: 1800
-				},
-				consumeAbnormalEnd: 105100,
-				abnormals: { 105100: { chain: 31 } },
-				chains: {	// NEED TO CONFIRM THE CHAINS
+				distance: 219.04,
+				abnormals: { 105100: { chain: 31 } }
+			},
+			0: {
+				triggerAbnormal: { 105100: 1800 },
+				chains: {
 					1: 30,
+					2: 30,
 					3: 30,
 					4: 30,
+					5: 30,
+					8: 30,
+					9: 30,
 					10: 30,
+					11: 30,
 					12: 30,
-					'16-1': 30,
+					13: 30, // I assume retaliate can chain into this skill
+					16: 30,
 					17: 30,
 					18: 30,
 					19: 30,
+					20: 30,
 					21: 30,
+					23: 30,
+					24: 30,
+					25: 30,
+					26: 30,
 					28: 30,
 					29: 30,
 					30: 30,
 					31: 30,
+					34: 30,
+					35: 30,
 					36: 30,
 					37: 30,
 					38: 30,
 					39: 30,
 					40: 30,
-					42: 30
+					42: 30,
 				}
 			},
-			0: true,
-			30: true,
+			30: {
+				triggerAbnormal: { 105100: 1800 },
+			},
 			31: {
+				consumeAbnormal: 105100,
 				length: 1800,
 				distance: 0
 			}
@@ -654,19 +691,18 @@ module.exports = {
 		42: { // Blade Frenzy
 			0: {
 				length: 3309.23,
-				distance: 300,
-				noInterrupt: [1, 3, 4, 8, 9, 10, 12, 13, 16, 17, 19, 21, 22, 29, 32, 34, 36, 37, 39, 40, 42],
-				triggerAbnormal: { 103103: 10000 },
+				distance: 326.55,
+				noInterrupt: [1, 3, 4, 8, 9, 10, 12, 13, 16, 17, 19, 21, 22, 29, 32, 34, 36, 37, 39, 40, '41-0', '41-30', 42],
 				chains: {
 					2: 30,
 					30: 30,
 					38: 30,
-					41: 30
+					'41-31': 30
 				}
 			},
 			30: {
 				length: 2507.06,
-				distance: 300
+				distance: 326.55
 			}
 		},
 		91: { // Awakening Eyes Aura
@@ -727,8 +763,10 @@ module.exports = {
 				},
 				stamina: 50,
 				level: {
-					length: 333,
-					1: { stamina: 40 }
+					1: {
+						length: 333,
+						stamina: 40
+					}
 				}
 			}
 		},
@@ -1491,7 +1529,8 @@ module.exports = {
 		},
 		18: { // Overpower (Awakening Patch)
 			'*': {
-				length: 1531
+				length: 1531,
+				noInterrupt: [1, 2, 3, 4, 6, 9, 12, 13, 14, 15, 16, 17, 21, 23, 25]
 			},
 			0: true,
 			50: true
@@ -1653,6 +1692,7 @@ module.exports = {
 			0: {
 				type: 'charging',
 				length: [650, 650], // no hold stage?
+				noInterrupt: [28],
 				abnormals: {
 					301601: { chargeSpeed: 0.6 },
 				}
@@ -1856,20 +1896,22 @@ module.exports = {
 				}
 			},
 			0: {
-				noInterrupt: [1, 2, '3-10', '3-11', '3-12', '3-13', 4, '8-30', '10-10', '10-11', '10-12', 11, '10-13', 12, 13, '15-10', '15-11', '15-12', '15-13', '15-14', '16', '18-10', '18-11', '18-12', '18-13', 24, 27, 28, 29, 30, 31, '32-0'],
+				noInterrupt: [1, 2, '3-10', '3-11', '3-12', '3-13', 4, '8-30', '10-10', '10-11', '10-12', 11, '10-13', 12, 13, '15-10', '15-11', '15-12', '15-13', '15-14', '16', '18-10', '18-11', '18-12', '18-13', 24, 28, 29, 30, 31, '32-0'],
 				abnormals: {
 					401400: { chain: 1 }
 				},
 				chains: {
 					6: 30,
 					25: 30,
-					32: 31				
+					32: 31,
+					31: 30,
 				}
 			},
 			1: { 
 				chains: {
 					6: 31,
 					25: 31,
+					31: 31
 				 }
 		    },
 			30: { length: 2336.55 },
@@ -2124,8 +2166,10 @@ module.exports = {
 			'*': {
 				length: 687.5,
 				abnormals: {
-					24120: { speed: 1.3 }
+					24120: { speed: 1.3 },
+					401400: { chain: 6 }
 				},
+				noInterrupt:[1, 4, 6, 13, 18, 24, 25, 26, 28, 29, 31],
 				chains: {
 					3: 30,
 					11: 30,
@@ -2195,7 +2239,7 @@ module.exports = {
 				}
 			},
 			0: {
-				noInterrupt: [2, '3-10', '3-11', '3-12', '3-13', 4, 6, '8-30', '10-10', '10-11', '10-12', '10-13', 11, 12, 13, '15-10', '15-11', '15-12', '15-13', '15-14', '18-10', '18-11', '18-12', '18-13', 24, 25, 26, 27, 28, 29, '32-0'],
+				noInterrupt: [2, 4, 6, '8-30', 11, 12, 13, 18, 24, 25, 26, 27, 28, 29, '32-0'],
 				interruptibleWithAbnormal: { 
 					401404: 2
 				}, 
@@ -2204,13 +2248,19 @@ module.exports = {
 				},
 				chains: {
 					1: 30,
+					3: 30,
+					10: 30,
+					15: 30,
 					30: 31,
 					31: 30,
 					32: 31
 				}
 			},
 			1: true,
-			30: { length: 965 },
+			30: {
+				length: 965,
+				abnormals: { 401400: { chain: 31 } },
+			},
 			31: { length: 965 }
 		},
 		26: { // Tackle
@@ -2346,32 +2396,32 @@ module.exports = {
 					401716: { chain: 31 }
 				},
 				chains: { // x3 to 30
+					33: 1,
 					35: 30
 				}
 			},
+			1: true,
 			30: { length: [833, 833] },
 			31: { length: [833, 833] }
 		},
-		35: { // Unleash: Sinister
-			'*': {
-				length: [1133, 833],
-				distance: 180
-			},
+		/*35: { // Unleash: Sinister
 			0: {
 				abnormals: {
 					401707: { speed: 1.2 },
 					401717: { chain: 31 }
 				},
 				chains: {
-					//:1
+					33: 30
 					34: 30
-				}
+				},
+				length: [1133, 833],
+				distance: [198, 0]
 			},
 			1: true,
 			30: { length: [871.5, 833] },
 			31: { length: [871.5, 833] }
 		},
-		36: { // Unleash: Rampage
+		/*36: { // Unleash: Rampage
 			'*': {
 				length: 1588.6,
 				distance: 35,
@@ -2415,7 +2465,7 @@ module.exports = {
 		},
 		91: { // Awakening Eyes Aura
 			0: { length: 3000 }
-		}
+		}*/
 	},
 	4: { // Sorcerer
 		1: { // Fireball
