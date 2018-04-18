@@ -3335,7 +3335,7 @@ module.exports = {
                     11: 30,
                     16: 30,
                     29: 30,
-                    40: 30
+                    40: 30		// REALLY REALLY HARD TO DO ZENOBIA'S VORTEX->FINAL REPRISAL CHAIN IN THIS PATCH, I'VE NEVER SUCCEEDED EVEN ONCE.
                 }
             },
             10: {
@@ -3547,15 +3547,17 @@ module.exports = {
 		2: { // Corruption Ring
 			0: {
 				type: 'hold',
-				length: 10850,
+				length: 10869,
 				chainOnRelease: 11
 			},
 			11: { length: 835 }, // 840
-			12: { length: 1300 }
+			12: {
+				length: 1300,
+				race: {
+					1: { length: 1224 }
+				}
+			}
 		},
-		/*4: { // Ancient Binding (Removed)
-			0: { length: 1280 }
-		},*/
 		5: { // Titanic Favor
 			'*': { noRetry: true },
 			0: {
@@ -3569,18 +3571,18 @@ module.exports = {
 			}
 		},
 		6: { // Shara's Lash
-			0: { length: 1300 }
+			0: { length: 1294 }
 		},
 		8: { // Metamorphic Blast
 			0: {
-				length: 820,
+				length: 839,
 				noInterrupt: [1, 2, 4, '5-10', 6, '9-10', 10, 13, 14, 15, 16, 17, 21, '18-10', '22-10', 37, '41-10', 43], // The skill behaves the same way Metamorphic Smite does from lvls 1 to 10 then at lvl 11 it loses its cancelling properties
 				chains: {
 					8: 30,
 					23: 30
 				}
 			},
-			30: { length: 820 }
+			30: { length: 839 }
 		},
 		9: { // Arun's Cleansing
 			'*': { noRetry: true },
@@ -3616,7 +3618,7 @@ module.exports = {
 			}
 		},
 		11: { // Summon: Party
-			0: { length: 4400 }
+			0: { length: 4445 }
 		},
 		12: { // Vow of Rebirth
 			'*': { noRetry: true },
@@ -3675,21 +3677,24 @@ module.exports = {
 			'*': { noInterrupt: [8, 17, 23] },
 			0: {
 				type: 'charging',
-				length: 1050	// 450
+				length: 1240	// 450
 			},
 			10: {
 				type: 'chargeCast',
-				length: 850,
+				length: 800,
 				abnormals: {
-					27070: { speed: 1.25 },
-					27080: { speed: 1.25 }
+					27070: { chargeSpeed: 0.25 },
+					27080: { chargeSpeed: 0.25 }
+				},
+				race: {
+					9: { length: 833 }
 				}
 			}
 		},
 		21: { // Retaliate
 			0: {
 				type: 'retaliate',
-				length: 1625,
+				length: 1633,
 				noRetry: true
 			}
 		},
@@ -3697,19 +3702,22 @@ module.exports = {
 		    '*': { noInterrupt: [8, 17, 23] },
 			0: {
 				type: 'charging',
-				length: 1050	// 450
+				length: 1240	// 450
 			},
 			10: {
 				type: 'chargeCast',
-				length: 850, // 810 female high elf
+				length: 800, // 810 female high elf
 				abnormals: {
-					27100: { speed: 1.25 }
+					27100: { chargeSpeed: 0.25 }
+				},
+				race: {
+					9: { length: 833 }
 				}
 			}
 		},
 		23: { // Metamorphic Smite
 			0: {
-				length: 1430,
+				length: 1440,
 				noInterrupt: [1, 2, 4, '5-10', 6, '9-10', 10, 13, 14, 15, 16, 17, '18-10', 21, '22-10', 23, 37, '41-10', 43],
 				chains: {
 					8: 30
@@ -3731,16 +3739,22 @@ module.exports = {
 			}
 		},
 		25: { // Thrall of Protection
-			0: {
+			'*': {
 				fixedSpeed: 1,
-				length: [1000, 1720]
-			}
+				length: [1000, 1700]
+			},
+			0: true,
+			10: true,
+			30: { length: [500, 700] }
 		},
 		27: { // Thrall of Life
-			0: {
+			'*': {
 				fixedSpeed: 1,
-				length: [230, 470] // 240, 470
-			}
+				length: [229, 438]
+			},
+			0: true,
+			10: true,
+			30: { length: [500, 700] }
 		},
 		28: { // Sonorous Dreams
 			'*': { noRetry: true },
@@ -3752,7 +3766,7 @@ module.exports = {
 			10: {
 				type: 'lockonCast',
 				fixedSpeed: 1,
-				length: 1430
+				length: 1400
 			}
 		},
 		29: { // Regression
@@ -3769,7 +3783,7 @@ module.exports = {
 			10: {
 				type: 'lockonCast',
 				fixedSpeed: 1,
-				length: 1430
+				length: 1400
 			}
 		},
 		31: { // Curse of Confusion
@@ -3782,7 +3796,7 @@ module.exports = {
 			10: {
 				type: 'lockonCast',
 				fixedSpeed: 1,
-				length: 1430
+				length: 1400
 			}
 		},
 		32: { // Mire
@@ -3795,20 +3809,26 @@ module.exports = {
 			10: {
 				type: 'lockonCast',
 				fixedSpeed: 1,
-				length: 1430
+				length: 1400
 			}
 		},
 		33: { // Thrall of Vengeance
-			0: {
+			'*': {
 				fixedSpeed: 1,
-				length: [275, 575]
-			}
+				length: [267, 511]
+			},
+			0: true,
+			10: true,
+			30: { length: [500, 700] }
 		},
 		34: { // Thrall of Wrath
-			0: {
+			'*': {
 				fixedSpeed: 1,
 				length: [1000, 1700]
-			}
+			},
+			0: true,
+			10: true,
+			30: { length: [500, 1200] }
 		},
 		35: { // Command: Attack
 			0: {
@@ -3834,31 +3854,41 @@ module.exports = {
 			},
 			10: {
 				type: 'lockonCast',
-				length: 1000
+				length: 1020
 			}
 		},
 		42: { // Boomerang Pulse
 			0: {
-				length: 550, // 530, 550, 575
+				length: 545, // 530, 550, 575
 				noInterrupt: [42]
 			}
 		},
-		43: { // Release																																																																							
+		43: { // Unsummon Thrall																																																																							
 			0: { length: [400, 575] }
 		},
 		44: { // Mass Teleport
-			0: { length: [222, 355] }
+			0: {
+				type: 'teleport',
+				length: [222, 255],
+				distance: [0, 333],
+				noInterrupt: [17],
+				teleportStage: 1,
+				noRetry: true
+			}
 		},
 		45: { // Thrall Augumentation
-			'*': { length: 1626.36 },
+			'*': { length: 91 },
 			0: true,
 			50: true
 		},
 		47: { // Arunic Release
-			0: { length: 2466 }
+			0: { length: 1060 }
 		},
 		48: { // Summon: Thrall Lord
-			0: { length: 4050 } // 4399 | 10239003
+			0: {
+				fixedSpeed: 1,
+				length: 4050 
+			} // 4399 | 10239003
 		},
 		91: { // Awakening Eyes Aura
 			0: { length: 3000 }
