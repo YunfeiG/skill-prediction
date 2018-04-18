@@ -586,7 +586,7 @@ module.exports = {
 			},
 			11: { triggerAbnormal: { 104100: 8000 } },
 			12: {
-				abnormals: { 100201: { chain: 22 } },
+				abnormals: { 100201: { skill: 400122 } },
 				consumeAbnormal: 104100
 			},
 			20: {
@@ -1344,6 +1344,7 @@ module.exports = {
 		8: { // Overhand Strike
 			'*': {
 				distance: 169.5,
+				noRetry: true,
 				race: {
 					0: { distance: 171.14 }, // M.Human: 171.138
 					1: { distance: 171.14 }, // F.Human: 171.138
@@ -1357,14 +1358,15 @@ module.exports = {
 					9: { distance: 169.65 }, // Elin: 169.648
 					10: { distance: 151.14 } // Baraka: 151.138
 				},
-				abnormals: { 301604: { chain: 30 } }
+				consumeAbnormal: 301604
 			},
 			0: {
 				length: 3365,
 				noInterrupt: ['1-0', '1-1', '1-2', 4, 6, 8, 10, '14-0', '14-1', 17, 21, 25, 26, 28],
 				abnormals: {
 					300801: { skill: 250100 },
-					300802: { skill: 250100 }
+					300802: { skill: 250100 },
+					301604: { chain: 30 }
 				},
 				chains: {
 					1: 30,
@@ -1376,12 +1378,11 @@ module.exports = {
 					14: 30,
 					15: 30,
 					16: 30,
-					24: 30,
-					27: 30
+					24: 30
 				}
 			},
 			30: {
-				length: 1340,
+				length: 1325,
 				abnormals: {
 					300801: { skill: 250130 },
 					300802: { skill: 250130 }
@@ -1569,11 +1570,11 @@ module.exports = {
 		23: { // Measured Slice
 			'*': {
 				distance: 189, // Sometimes 190 but most of the time 189
+				consumeAbnormal: 301604,
 				races: {
 					5: { distance: 190}, // F.Aman
 					10: { distance: 190 } // Baraka
-				},
-				abnormals: { 301604: { chain: 30 } }
+				}
 			},
 			0: {
 				length: 3685,
@@ -1581,9 +1582,9 @@ module.exports = {
 				chains: {
 					8: 30,
 					24: 30,
-					25: 30,
-					27: 30
-				}
+					25: 30
+				},
+				abnormals: { 301604: { chain: 30 } }
 			},
 			30: { length: 1690 } // Maybe 1675~1700
  		},
@@ -1601,10 +1602,10 @@ module.exports = {
 					12: 30,
 					13: 30,
 					15: 30,
-					25: 30,
-					27: 30
+					25: 30
 				},
-				abnormals: { 301604: { chain: 30 } }
+				abnormals: { 301604: { chain: 30 } },
+				consumeAbnormal: 301604
 			},
 			30: {
 				 length: 1525,
@@ -1612,7 +1613,7 @@ module.exports = {
 			}
 		},
 		25: { // Ultimate Overhand Strike
-			'*': { 
+			'*': {				
 				distance: 169.5,
 				race: {
 					0: { distance: 171.14 }, // M.Human: 171.138
@@ -1626,7 +1627,8 @@ module.exports = {
 					8: { distance: 150 }, // Popori: 150
 					9: { distance: 169.65 }, // Elin: 169.648
 					10: { distance: 151.14 } // Baraka: 151.138
-				}
+				},
+				consumeAbnormal: 301604
 			},
 			0: { length: 3365 },
 			30: { length: 1325 }
@@ -1636,12 +1638,12 @@ module.exports = {
 				length: [1078, 2166, 120],
 				distance: [40.51, 122.33, 11.21],
 				noRetry: true,
+				consumeAbnormal: 301604,
 				chains: {
 					8: 30,
 					23: 30,
 					24: 30,
-					25: 30,
-					27: 30
+					25: 30
 				},
 				abnormals: { 301604: { chain: 30 } },
 				noInterrupt: [1, 2, 3, 4, 6, 9, 10, 12, 13, 14, 15, 16, 17, 21, 22, 26, 28]
@@ -1657,7 +1659,8 @@ module.exports = {
 				noInterrupt: ['27-31'],
 				abnormals: {
 					301603: { chain : 31 }
-				}
+				},
+				triggerAbnormal: { 301604: 5000 }
 			},
 			0: {
 				length: [625, 1000, 1316.25],
@@ -1709,6 +1712,7 @@ module.exports = {
 				type: 'charging',
 				length: [650, 650],
 				noInterrupt: [28],
+				consumeAbnormal: [301601, 301604],
 				abnormals: {
 					301604: { chargeSpeed: 0.4 },
 					301601: { chargeSpeed: 0.6 }
