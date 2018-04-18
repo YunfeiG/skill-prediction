@@ -879,15 +879,8 @@ module.exports = {
 		    }
 		},
 		10: { // Debilitate
-			0: { // Same animation as shield bash, just slower
-				length: 925,
+			'*': {
 				distance: 30, // Seems pretty equalized
-				noInterrupt: ['1-0', '1-1', 2, 3, 4, 8, 9, 10, 11, 12, 13, 15, '18-0', 21, 23, 24, 25, 26, 27, 28, 29],
-				triggerAbnormal: { 201830: 2000 },
-				chains: {
-					'1-2': 30,
-					'18-1': 30,
-				},
 				race: {
 					0: { distance: 30 }, // M.Human
 					2: { distance: 30 }, // M.Helf
@@ -897,7 +890,21 @@ module.exports = {
 					9: { distance: 43.69 } // Elin: 43.693
 					// 10: { distance: 30 } // Baraka
 				},
-				30: { length: 840 }
+				triggerAbnormal: { 201830: 2000 }
+			},
+			0: { // Same animation as shield bash, just slower
+				length: 925,
+				noInterrupt: [2, 3, 4, 8, 9, 10, 11, 12, 13, 15, 21, 23, 24, 25, 26, 27, 28, 29],
+				abnormals: {
+					201831: { chain: 30 }
+				},
+				chains: {
+					1: 30,
+					18: 30
+				}
+			},
+			30: {
+				length: 840	
 			}
 		},
 		11: { // Retaliate
@@ -1531,7 +1538,7 @@ module.exports = {
 		},
 		18: { // Overpower (Awakening Patch)
 			'*': {
-				length: 1531,
+				length: 1433,
 				noInterrupt: [1, 2, 3, 4, 6, 9, 12, 13, 14, 15, 16, 17, 21, 23, 25]
 			},
 			0: true,
@@ -1687,7 +1694,8 @@ module.exports = {
 			},
 			31: {
 				length: 751.25,
-				distance: 275.6
+				distance: 275.6,
+				consumeAbnormal: 301603
 			}
 		},
 		28: { // Unsheathe
@@ -2454,7 +2462,7 @@ module.exports = {
 				length: 1588.6,
 				distance: 38.5,
 				noRetry: true,
-				noInterrupt: [37],
+				noInterrupt: [37]
 			},
 			0: {
 				length: 2714.4,
@@ -2484,7 +2492,7 @@ module.exports = {
 					33: 30,
 					34: 30,
 					35: 30,
-					36: 30,
+					36: 30
 				}
 			},
 			30: true
