@@ -34,7 +34,7 @@ Again, Attack speed emulation is in demand.
 
 ## Update/fix logs
 
-Apr 17, 2018: Warrior, Lancer, Slayer, Berzerker fix should be completed.
+Apr 17, 2018: Warrior, Lancer, Slayer, Berzerker, Priest fix should be completed.
 
 Apr 15, 2018: Priest Holy burst, Slayer awakening skills fix. Warrior's Leaping Strike->Traverse cut~~/Rain of blows~~ chains added, Blade waltz chains added.
 

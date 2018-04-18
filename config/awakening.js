@@ -542,11 +542,8 @@ module.exports = {
 			'*': {
 				length: 810.6,
 				distance: 156.248,
-				noRetry: true,
 				noInterrupt: [32, 40, '41-0', '41-30'],
-				abnormals: {
-					104100: { chain: 12 }
-				},
+				abnormals: { 104100: { chain: 12 } }
 			},
 			10: {	// astance 1st?
 				triggerAbnormal: { 104100: 8000 },
@@ -588,7 +585,10 @@ module.exports = {
 				}
 			},
 			11: { triggerAbnormal: { 104100: 8000 } },
-			12: { consumeAbnormal: 104100 },
+			12: {
+				abnormals: { 100201: { chain: 22 } },
+				consumeAbnormal: 104100
+			},
 			20: {
 				triggerAbnormal: { 104100: 8000 },
 				abnormals: {
@@ -3188,11 +3188,15 @@ module.exports = {
 					920: { speed: 1.225 },
 					921: { speed: 1.225 },
 					922: { speed: 1.225 },
-					929: { speed: 1.225 }
+					929: { speed: 1.225 },
+					805800: { chain: 6 }
 				}
 			}
 		},
 		3: { // Healing Circle (Awakening patch)
+			'*': {
+				abnormals: { 805800: { chain: 6 } }
+			},
 			0: {
 				length: 1750,
 				chains: {
@@ -3216,7 +3220,8 @@ module.exports = {
 				length: 4595.5,
 				glyphs: {
 					28044: { speed: 1.25 }
-				}
+				},
+				abnormals: { 805800: { chain: 6 } }
 			}
 		},
 		10: { // Purifying Circle
@@ -3224,10 +3229,7 @@ module.exports = {
 		},
 		11: { // Metamorphic Blast (Awakening patch)
 			'*': {
-				length: 820,
-				abnormals: {
-					805800: { chain: 2 }
-				}
+				length: 820
 			},
 			0: true,
 			1: true,
@@ -3258,10 +3260,7 @@ module.exports = {
 		},
 		16: { // Shocking Implosion (Awakening patch)
 			'*': {
-				length: 1718,
-				abnormals: {
-					805800: { chain: 20 }
-				}
+				length: 1718
 			},
 			0: {
 				chains: {
@@ -3285,19 +3284,17 @@ module.exports = {
 			21: { length: 1438.45 },
 			30: { length: 1438.45 }
 		},
-		/*17: { // Prayer of Peace (Removed)
-			0: {
-				length: [925, 925, 850],
-				glyphs: {
-					28021: { speed: 2 }
-				}
-			}
-		},*/
 		18: { // Heal Thyself
-			0: { length: 1250 }
+			0: { 
+				length: 1250,
+				abnormals: { 805800: { chain: 6 } }
+			}
 		},
 		19: { // Focus Heal
-			'*': { noRetry: true },
+			'*': {
+				noRetry: true,
+				805800: { chain: 6 }
+			},
 			0: {
 				type: 'lockon',
 				fixedSpeed: 1,
@@ -3309,11 +3306,11 @@ module.exports = {
 			}
 		},
 		22: { // Kaia's Shield
-			0: { length: 650 }
+			0: {
+				length: 650,
+				abnormals: { 805800: { chain: 6 } }
+			}
 		},
-		/*23: { // Blessing of Balder (Removed)
-			0: { length: 1300 }
-		},*/
 		26: { // Fiery Escape
 			0: {
 				length: 1125,
@@ -3347,21 +3344,20 @@ module.exports = {
                     16: 11,
                     29: 11,
                     40: 11
-                },
-                abnormals: {
-                    805800: { chain: 20 }
                 }
             },
             11: {
                 length: 1113,
-                abnormals: {
-                    805800: { chain: 21 }
-                },
                 race: {
                     9: { length: 1273 }
                 }
             },
-            20: true,
+            20: {
+				11: 21,
+                16: 21,
+                29: 21,
+                40: 21
+			},
             21: {
                 length: 1113,
                 race: {
@@ -3375,7 +3371,7 @@ module.exports = {
                 }
             }
         },
-		28: { // Words of Vitality (Awakening patch, Mana Charge)
+		28: { // Words of Vitality(EU), Divine Charge(NA) (Mana Charge)
 			'*': {
 				type: 'chargeCast',
 				length: 825,
@@ -3420,15 +3416,17 @@ module.exports = {
 		31: { // Guardian Sanctuary
 			0: {
 				fixedSpeed: 1,
-				length: 700
+				length: 700,
+				abnormals: { 805800: { chain: 6 } }
 			}
 		},
-		/*32: { // Divine Respite (Removed)
+		32: { // Divine Respite (Removed)
 			0: {
 				fixedSpeed: 1,
-				length: [1300, 900]
+				length: [1300, 900],
+				abnormals: { 805800: { chain: 6 } }
 			}
-		},*/
+		},
 		33: { // Ishara's Lullaby
 			'*': { noRetry: true },
 			0: {
@@ -3460,7 +3458,10 @@ module.exports = {
 			}
 		},
 		37: { // Healing Immersion
-			'*': { noRetry: true },
+			'*': {
+				noRetry: true,
+				abnormals: { 805800: { chain: 6 } }
+			},
 			0: {
 				type: 'lockon',
 				fixedSpeed: 1,
@@ -3498,16 +3499,13 @@ module.exports = {
 		40: { // Zenobia's Vortex
 			'*': {
 				length: 1070.71,
-				noInterrupt: [40],
-				abnormals: {
-					805800: { chain: 20 }
-				}
+				noInterrupt: [40]
 			},
 			0: true,
 			10: true,
 			20: true
 		},
-		41: { // Divine Vitality (Awakening patch, Divine Intervention)
+		41: { // Divine Vitality(EU), Mass Divine Intervention(NA)
 			'*': { noRetry: true },
 			0: {
 				type: 'lockon',
@@ -3529,7 +3527,7 @@ module.exports = {
 			},
 			30: true
 		},
-		43: { // Words of Judgment
+		43: { // Words of Judgement(EU), Edict of Judgement(NA)
 			0: { length: 1416 },
 			50: { length: 200 }
 		},
