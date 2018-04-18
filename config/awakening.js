@@ -2275,8 +2275,12 @@ module.exports = {
 		27: { // Unbreakable /Need M.Casta
 			0: { 
 				length: 2100,
-				noInterrupt: [2] 
+				noInterrupt: [2],
+				abnormals: { 401705: { chain: 30 } }
 			},
+			30: {
+				length: 1450
+			}
 		},
 		28: { // Intimidation /Need M.Casta
 		    '*': {
@@ -2390,48 +2394,71 @@ module.exports = {
 			0: { length: [700, 1500, 1766] },
 		},
 		34: { // Unleash: Dexter
-			'*': { distance: 25 },
 			0: {
 				length: [600, 833, 833],
+				distance: [0, 27.5, 0],
+				noInterrupt: [34, 36, 37],
+				noRetry: true,
 				abnormals: {
 					401706: { speed: 1.2 },
 					401716: { chain: 31 }
 				},
 				chains: { // x3 to 30
-					33: 1,
+					33: 30,
 					35: 30
 				}
 			},
-			1: true,
-			30: { length: [833, 833] },
-			31: { length: [833, 833] }
+			1: { 
+				length: [600, 833, 833],
+				distance: [0, 27.5, 0]
+			},
+			30: {
+				length: [833, 833],
+				distance: [27.5, 0]
+			},
+			31: {
+				length: [833, 833],
+				distance: [27.5, 0]
+			}
 		},
-		/*35: { // Unleash: Sinister
+		35: { // Unleash: Sinister
 			0: {
 				abnormals: {
 					401707: { speed: 1.2 },
 					401717: { chain: 31 }
 				},
 				chains: {
-					33: 30
+					33: 1,
 					34: 30
 				},
+				noRetry: true,
+				noInterrupt: [35, 36, 37],
 				length: [1133, 833],
 				distance: [198, 0]
 			},
-			1: true,
-			30: { length: [871.5, 833] },
-			31: { length: [871.5, 833] }
+			1: {
+				length: [1133, 833],
+				distance: [198, 0]
+			},
+			30: {
+				length: [625, 833],
+				distance: [27.5, 0]
+			},
+			31: {
+				length: [625, 833],
+				distance: [27.5, 0]
+			}
 		},
-		/*36: { // Unleash: Rampage
+		36: { // Unleash: Rampage
 			'*': {
 				length: 1588.6,
-				distance: 35,
-				noRetry: true
+				distance: 38.5,
+				noRetry: true,
+				noInterrupt: [37],
 			},
 			0: {
 				length: 2714.4,
-				noRetry: false,
+				noRetry: true,
 				abnormals: {
 					401708: { speed: 1.2 },
 					401718: { chain: 31 }
@@ -2447,8 +2474,10 @@ module.exports = {
 		},
 		37: { // Unleash: Beast Fury
 			'*': {
-				length: [610.8, 694, 721.6, 1194, 471.66], // 853[4]
-				distance: [120, 137, 143, 76.5, 8.5]
+				// race difference is a thing
+				length: [610.8, 694, 721.6, 471.66, 1194],
+				distance: [126, 144.824, 151.1, 9.4, 98.64],
+				noInterrupt: [37]
 			},
 			0: {
 				chains: {
@@ -2456,18 +2485,13 @@ module.exports = {
 					34: 30,
 					35: 30,
 					36: 30,
-					37: 30,
-					38: 30
 				}
 			},
 			30: true
 		},
-		38: { // Unleash End
-			0: { length: [700, 1000, 966] }
-		},
 		91: { // Awakening Eyes Aura
 			0: { length: 3000 }
-		}*/
+		}
 	},
 	4: { // Sorcerer
 		1: { // Fireball
