@@ -427,7 +427,10 @@ module.exports = {
 			}
 		},
 		30: { // Scythe
-			'*': { distance: 150 }, // Old fast cast value was wrong on Elin, unless that had a pve intention on it, idk.
+			'*': {
+				distance: 150,
+				noRetry: true
+			}, // Old fast cast value was wrong on Elin, unless that had a pve intention on it, idk.
 			0: {
 				length: 1833,
 				noInterrupt: [1, 3, 5, 8, 9, 10, 13, 16, 17, 18, 19, 21, 22, 23, 27, 28, 30, 32, 34, 35, 38, 39, 41, 42],
@@ -3586,7 +3589,7 @@ module.exports = {
 		8: { // Metamorphic Blast
 			0: {
 				length: 839,
-				noInterrupt: [1, 2, 4, '5-10', 6, '9-10', 10, 13, 14, 15, 16, 17, 21, '18-10', '22-10', 37, '41-10', 43], // The skill behaves the same way Metamorphic Smite does from lvls 1 to 10 then at lvl 11 it loses its cancelling properties
+				noInterrupt: [1, 2, 4, '5-10', 6, '9-10', 10, 13, 14, 15, 16, 17, 21, '18-10', '22-10', 37, '41-10', 43, 48], // The skill behaves the same way Metamorphic Smite does from lvls 1 to 10 then at lvl 11 it loses its cancelling properties
 				chains: {
 					8: 30,
 					23: 30
@@ -3728,7 +3731,7 @@ module.exports = {
 		23: { // Metamorphic Smite
 			0: {
 				length: 1440,
-				noInterrupt: [1, 2, 4, '5-10', 6, '9-10', 10, 13, 14, 15, 16, 17, '18-10', 21, '22-10', 23, 37, '41-10', 43],
+				noInterrupt: [1, 2, 4, '5-10', 6, '9-10', 10, 13, 14, 15, 16, 17, '18-10', 21, '22-10', 23, 37, '41-10', 43, 48],
 				chains: {
 					8: 30
 				}
