@@ -10,13 +10,13 @@ I strongly discourage to use skill prediction for pvp purpose. SP has so many bu
 
 **Slayer's chain after Savaging strike(blazing thrust) 2nd cast is slightly broken if you don't chain OHS/UOHS/MS/evis/PS fast enough**
 
-Double casts when your ping is higher than animation length, or the cooldown applies at the very end of the skill animation(Short skills like Teleporting jaunts, Boomerang pulse, Overpower, Restraning arrow, Web arrow)
+~~Double casts when your ping is higher than animation length, or the cooldown applies at the very end of the skill animation(Short skills like Teleporting jaunts, Boomerang pulse, Overpower, Restraning arrow, Web arrow)~~, Use https://github.com/YunfeiG/no-double-casts alongside my SP.
 
 Triple point blank casts(Point blank forward, blast cancel, forward->backward)
 
 Buggy chained Vampiric Blow(Hardcoded skill at server side, you can chain this skill even if it's on cooldown)
 
-Headlong rush buff delay(For HLR->WW chain, WW appears to be the slow cast because HLR buff doesn't arrive in time, requires attack speed emulation to fix this which involves a lot of resources)
+Headlong rush buff not be applied when you pointblank this skill to an enemy.
 
 Fake skills when mounting(Doesn't hurt much)
 
@@ -31,8 +31,7 @@ Repeatitive animation of Brawler's provoke, mounting rage when there is ping jit
 
 Fake lock-on skill casts on invincible or invisible targets (Energy star on barriers before last boss in TRNM for example)
 
-High chance of ghost when attack speed suddenly decreased due to expiration of attack speed buff on previous skill,(Astance Warrior is the most suffering class because skill like charging slash will ghost when roll/DFA buff expired on previous skill and SP can't receive new attack speed value in time due to high ping)
-Again, Attack speed emulation is in demand.
+High chance of ghost when attack speed suddenly decreased due to expiration of attack speed buff on previous skill,(Astance Warrior is the most suffering class because skill like charging slash will ghost when roll/DFA buff expired on previous skill and SP can't receive new attack speed value in time due to high ping). Attack speed emulation is in demand.
 
 ## Update/fix logs
 
@@ -40,7 +39,7 @@ Apr 18, 2018: Brawler, Mystic should be completed.
 
 Apr 17, 2018: Warrior, Lancer, Slayer, Berzerker, Priest fix should be completed. Mystic and Brawler untested by myself yet.
 
-Apr 15, 2018: Priest Holy burst, Slayer awakening skills fix. Warrior's Leaping Strike->Traverse cut~~/Rain of blows~~ chains added, Blade waltz chains added.
+Apr 15, 2018: Priest Holy burst, Slayer awakening skills fix. Warrior's Leaping Strike->Traverse cut/~~Rain of blows~~ chains added, Blade waltz chains added.
 
 Apr 14, 2018: Priest and Mystic attempt, NEED MANY TESTS!
 
