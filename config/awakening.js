@@ -1096,7 +1096,7 @@ module.exports = {
 			},
 			0: {
 				length: 2391.3,
-				noInterrupt: [1, 2, 3, 4, 5, 9, 11, 12, 21, 23, 24, 25, 26, 27, 28, 29]
+				noInterrupt: [1, 2, 3, 4, 5, 9, 11, 12, 23, 24, 25, 26, 27, 28, 29]
 			},
 			30: { length: 1913.04 }
 		},
@@ -4835,16 +4835,28 @@ module.exports = {
 			}
 		},
 		/*3: { // Divine Wrath
+			'*': {
+				abnormals: {
+					7692002: { chain: 6 },
+					9692002: { chain: 6 }
+				}
+			},
 			0: {
+				type: 'lockon',
 				fixedSpeed: 1,
-				requiredBuff: 10153050,
-				length: 29900
+				length: 29900,
+				noRetry: true
 			},
 			1: {
 				type: 'lockonCast',
-				requiredBuff: 10153050,
-				length: [,,],
-				distance: [,,]
+				fixedSpeed: 1,
+				triggerAbnormal: { 
+					10153051 : 0x7fffffff,
+					10154054 : 6000
+				},
+				length: [1780, 1440, 1265],
+				distance: [0, 0, 0],	//no movement in stage 0, C_NOTIFY_LOCATION_IN_ACTION in stage 1(at least 2 packets) and stage 2(1 packet)
+				noRetry: true
 			}
 		},*/
 		4: { // Ground Pound
