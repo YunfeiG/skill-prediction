@@ -430,7 +430,7 @@ module.exports = {
 			'*': { distance: 150 }, // Old fast cast value was wrong on Elin, unless that had a pve intention on it, idk.
 			0: {
 				length: 1833,
-				noInterrupt: [1, 3, 5, 8, 9, 10, 13, 16, 17, 18, 19, 21, 22, 23, 27, 28, 32, 34, 35, 39, 41, 42],
+				noInterrupt: [1, 3, 5, 8, 9, 10, 13, 16, 17, 18, 19, 21, 22, 23, 27, 28, 30, 32, 34, 35, 38, 39, 41, 42],
 				chains: {
 					2: 30,
 					4: 30,
@@ -543,6 +543,7 @@ module.exports = {
 				length: 810.6,
 				distance: 156.248,
 				noInterrupt: [32, 40, '41-0', '41-30', 42],
+				noRetry: true,
 				abnormals: { 104100: { chain: 12 } }
 			},
 			10: {	// astance 1st?
