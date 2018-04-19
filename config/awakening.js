@@ -4801,7 +4801,7 @@ module.exports = {
 			10: {
 				type: 'holdInfinite',
 				fixedSpeed: 1,
-				length: 800,
+				//length: 800,
 				distance: 33.38,
 				triggerAbnormal: { 10153006: 0x7fffffff },
 				consumeAbnormalEnd: 10153006,
@@ -4810,7 +4810,7 @@ module.exports = {
 			11: {
 				type: 'holdInfinite',
 				fixedSpeed: 1,
-				length: 800,
+				//length: 800,
 				distance: 33.38,
 				triggerAbnormal: { 10153005: 0x7fffffff },
 				consumeAbnormalEnd: 10153005,
