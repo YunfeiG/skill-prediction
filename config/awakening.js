@@ -547,7 +547,10 @@ module.exports = {
 				distance: 156.248,
 				noInterrupt: [32, 40, '41-0', '41-30', 42],
 				noRetry: true,
-				abnormals: { 104100: { chain: 12 } }
+				abnormals: {
+					104100: { chain: 12 },
+					104101: { chain: 6 }
+				}
 			},
 			10: {	// astance 1st?
 				triggerAbnormal: { 104100: 8000 },
@@ -590,7 +593,7 @@ module.exports = {
 			11: { triggerAbnormal: { 104100: 8000 } },
 			12: {
 				abnormals: { 100201: { skill: 400122 } },
-				consumeAbnormal: 104100
+				consumeAbnormal: [104100, 104101]
 			},
 			20: {
 				triggerAbnormal: { 104100: 8000 },
@@ -634,7 +637,7 @@ module.exports = {
 				}
 			},
 			21: { triggerAbnormal: { 104100: 8000 } },
-			22: { consumeAbnormal: 104100 }
+			22: { consumeAbnormal: [104100, 104101] }
 		},
 		41: { // Aerial Scythe
 			'*': {
@@ -3435,7 +3438,7 @@ module.exports = {
 				abnormals: { 805800: { chain: 6 } }
 			}
 		},
-		32: { // Divine Respite (Removed)
+		32: { // Divine Prayer
 			0: {
 				fixedSpeed: 1,
 				length: [1300, 900],
