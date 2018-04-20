@@ -82,14 +82,14 @@ module.exports = {
 					21101: { stamina: -120 }
 				},
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				},
 				race: {
 					7: { length: 837 }, // F.Casta
@@ -181,14 +181,14 @@ module.exports = {
 				length: 2066, 
 				noInterrupt: [2, 32],
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				},
 				race: {
 					1: { length: 2100 }, // F.Human
@@ -230,8 +230,8 @@ module.exports = {
 				distance: 250,
 				noInterrupt: [32],
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				},
 				glyphs: {
 					21048: { speed: 0.2 },
@@ -261,8 +261,8 @@ module.exports = {
 				length: 1117,
 				distance: 467.88,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				},
 				//noRetry: true,
 				noInterrupt: [16, 32]
@@ -346,8 +346,8 @@ module.exports = {
 				distance: 65.35,
 				requiredBuff: 100700,
 				abnormals: {
-					100200: { chain: 6 },
-					100201: { chain: 6 }
+					100200: { chain: '' },
+					100201: { chain: '' }
 				},
 				race: {
 					2: { distance: 68.81 }, // M.Helf: 68.805
@@ -524,8 +524,8 @@ module.exports = {
 				fixedSpeed: 1,
 				requiredBuff: [100200, 100201],
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				},
 				stamina: 50
 			}
@@ -620,7 +620,7 @@ module.exports = {
 				noInterrupt: [32, 40, '41-0', '41-30', 42],
 				noRetry: true,
 				abnormals: {
-					104101: { chain: 6 },
+					104101: { chain: 'invalid' },
 					104100: { chain: 12 }
 				}
 			},
@@ -684,7 +684,7 @@ module.exports = {
 					104100: 8000
 				},
 				abnormals: {
-					104101: { chain: 6 },
+					104101: { chain: 'invalid' },
 					104100: { chain: 22 }
 				},
 				chains: {
@@ -863,8 +863,8 @@ module.exports = {
 				fixedSpeed: 1,
 				noRetry: true,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				},
 				stamina: 50,
 				level: {
@@ -1055,8 +1055,8 @@ module.exports = {
 				length: 1115,
 				distance: 474.5,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				},
 				noInterrupt: [2, 15]
 			},
@@ -1185,8 +1185,8 @@ module.exports = {
 			'*' :{
 				distance: 100,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				},
 				chains: {
 					8: 30,
@@ -1216,14 +1216,14 @@ module.exports = {
 					22089: { stamina: -100 }
 				},
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				}
 			}
 		},
@@ -1412,14 +1412,14 @@ module.exports = {
 				noInterrupt: [4],
 				noRetry: true,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 },
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' },
 					301200: { chain: 30 },
 				},
 				race: {
@@ -1437,12 +1437,12 @@ module.exports = {
 				fixedSpeed: 1,
 				length: 700,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' }
 				}
 			}
 		},
@@ -1500,8 +1500,8 @@ module.exports = {
 				length: 2175,
 				distance: 250,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				}
 			}
 		},
@@ -1598,14 +1598,14 @@ module.exports = {
 					23060: { speed: 1.25 }
 				},
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				}
 		    }
 		},
@@ -1635,14 +1635,14 @@ module.exports = {
 				length: 1000,
 				distance: 413,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				}
 			}
 		},
@@ -1933,8 +1933,8 @@ module.exports = {
 		    '*': {
 				type: 'holdInfinite',
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				}
 			},
 			0: { fixedSpeed: 1 },
@@ -2066,12 +2066,12 @@ module.exports = {
 				length: 700,
 				noInterrupt: [2],
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' }
 				}
 			}
 		},
@@ -2144,7 +2144,7 @@ module.exports = {
 					400500: { chargeSpeed: 0.2 },
 					400501: { chargeSpeed: 0.4 },
 					4010150: { chargeSpeed: 0.2 },
-					401400: { chain: 6 }
+					401400: { chain: 'invalid' }
 				},
 				level: [
 					{ length: 800 },	// 2300
@@ -2199,8 +2199,8 @@ module.exports = {
 				length: 2191.25,
 				distance: 250,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				},
 				noInterrupt: [2]
 			}
@@ -2310,7 +2310,7 @@ module.exports = {
 				length: 687.5,
 				abnormals: {
 					24120: { speed: 1.3 },
-					401400: { chain: 6 }
+					401400: { chain: 'invalid' }
 				},
 				noInterrupt:[1, 4, 6, 13, 18, 24, 25, 26, 28, 29, 31],
 				chains: {
@@ -2360,12 +2360,12 @@ module.exports = {
 				length: 1020.9,
 				distance: 150,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' }
 				}
 			},
 			10: { noInterrupt: [2, 3, 4, 10, 15, 18, 25, 30] },
@@ -2441,14 +2441,14 @@ module.exports = {
 				//forceClip: true,
 				noInterrupt: [2, 29],
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				}
 			}
 		},
@@ -2481,8 +2481,8 @@ module.exports = {
 				length: 1115,
 				distance: 470,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				},
 				noInterrupt: [2],
 				noRetry: true
@@ -2738,14 +2738,14 @@ module.exports = {
 				distance: -200,
 				//forceClip: true,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				}
 			}
 		},
@@ -2798,8 +2798,8 @@ module.exports = {
 				length: 1100,
 				distance: -187.5,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				},
 				//forceClip: true
 			}
@@ -2898,14 +2898,14 @@ module.exports = {
 				teleportStage: 1,
 				noRetry: true,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				}
 			}
 		},
@@ -2938,8 +2938,8 @@ module.exports = {
 			'*': { 
 				length: 475,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				}
 			},
 			0: true,
@@ -3141,14 +3141,14 @@ module.exports = {
 				distance: -200,
 				//forceClip: true,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				}
 			}
 		},
@@ -3199,8 +3199,8 @@ module.exports = {
 				length: 1340,
 				distance: -250,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				},
 				//forceClip: true
 			}
@@ -3289,12 +3289,12 @@ module.exports = {
 				length: 1075, // 1000
 				distance: 413, // 412.078
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' }
 				}
 			}
 		}
@@ -3320,13 +3320,13 @@ module.exports = {
 					921: { speed: 1.225 },
 					922: { speed: 1.225 },
 					929: { speed: 1.225 },
-					805800: { chain: 6 }
+					805800: { chain: 'invalid' }
 				}
 			}
 		},
 		3: { // Healing Circle (Awakening patch)
 			'*': {
-				abnormals: { 805800: { chain: 6 } }
+				abnormals: { 805800: { chain: 'invalid' } }
 			},
 			0: {
 				length: 1750,
@@ -3352,7 +3352,7 @@ module.exports = {
 				glyphs: {
 					28044: { speed: 1.25 }
 				},
-				abnormals: { 805800: { chain: 6 } }
+				abnormals: { 805800: { chain: 'invalid' } }
 			}
 		},
 		10: { // Purifying Circle
@@ -3418,13 +3418,13 @@ module.exports = {
 		18: { // Heal Thyself
 			0: { 
 				length: 1250,
-				abnormals: { 805800: { chain: 6 } }
+				abnormals: { 805800: { chain: 'invalid' } }
 			}
 		},
 		19: { // Focus Heal
 			'*': {
 				noRetry: true,
-				805800: { chain: 6 }
+				805800: { chain: 'invalid' }
 			},
 			0: {
 				type: 'lockon',
@@ -3439,7 +3439,7 @@ module.exports = {
 		22: { // Kaia's Shield
 			0: {
 				length: 650,
-				abnormals: { 805800: { chain: 6 } }
+				abnormals: { 805800: { chain: 'invalid' } }
 			}
 		},
 		26: { // Fiery Escape
@@ -3447,8 +3447,8 @@ module.exports = {
 				length: 1125,
 				distance: -250.5,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				},
 				//forceClip: true
 			}
@@ -3550,14 +3550,14 @@ module.exports = {
 			0: {
 				fixedSpeed: 1,
 				length: 700,
-				abnormals: { 805800: { chain: 6 } }
+				abnormals: { 805800: { chain: 'invalid' } }
 			}
 		},
 		32: { // Divine Prayer
 			0: {
 				fixedSpeed: 1,
 				length: [1300, 900],
-				abnormals: { 805800: { chain: 6 } }
+				abnormals: { 805800: { chain: 'invalid' } }
 			}
 		},
 		33: { // Ishara's Lullaby
@@ -3593,7 +3593,7 @@ module.exports = {
 		37: { // Healing Immersion
 			'*': {
 				noRetry: true,
-				abnormals: { 805800: { chain: 6 } }
+				abnormals: { 805800: { chain: 'invalid' } }
 			},
 			0: {
 				type: 'lockon',
@@ -3615,14 +3615,14 @@ module.exports = {
 				distance: -200,
 				//forceClip: true,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				}
 			}
 		},
@@ -3793,14 +3793,14 @@ module.exports = {
 				teleportStage: 1,
 				noRetry: true,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				}
 			}
 		},
@@ -4291,12 +4291,12 @@ module.exports = {
 					distance: 0
 				},
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' }
 				},
 				noInterrupt: [1, 3, 4, 5, 6, 8, 9, 10, 11, 12, 14, 20]
 			}
@@ -4306,8 +4306,8 @@ module.exports = {
 				length: 1000,
 				distance: -200,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				},
 				noInterrupt: [10],
 				chains: {
@@ -4381,8 +4381,8 @@ module.exports = {
 				fixedSpeed: 1,
 				length: 1575,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				}
 			}
 		},
@@ -4397,14 +4397,14 @@ module.exports = {
 				length: 850,
 				distance: 150,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				}
 			}
 		},
@@ -4415,14 +4415,14 @@ module.exports = {
 				//forceClip: true,
 				noRetry: true,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 },
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' },
 					10151000: { chain: 30 }
 				}
 			},
@@ -4691,14 +4691,14 @@ module.exports = {
 					40: 31
 				},
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				},
 				noRetry: true
 			},
@@ -4817,8 +4817,8 @@ module.exports = {
 					10152080: 4100
 				},
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				},
 				//forceClip: true,
 				noRetry: true
@@ -4887,8 +4887,8 @@ module.exports = {
 		2: { // Counter
 			'*': {
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				},
 				noRetry: true
 			},
@@ -4955,8 +4955,8 @@ module.exports = {
 		/*3: { // Divine Wrath
 			'*': {
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				}
 			},
 			0: {
@@ -4981,8 +4981,8 @@ module.exports = {
 			'*': {
 				length: 3225,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				},
 				noInterrupt: [4],
 				chains: {
@@ -5017,8 +5017,8 @@ module.exports = {
 				length: [2950, 650],
 				distance: [0, 135],
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				}
 			}
 		},
@@ -5168,8 +5168,8 @@ module.exports = {
 				requiredBuff: 10153000,
 				noInterrupt: [10],
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				},
 				chains: {
 					1: 30,
@@ -5373,7 +5373,7 @@ module.exports = {
 			0: {
 				fixedSpeed: 1,
 				length: 3270,
-				abnormals: { 10153040: { chain: 6 } }
+				abnormals: { 10153040: { chain: 'invalid' } }
 				onlyTarget: true
 			}
 		},*/
@@ -5383,7 +5383,7 @@ module.exports = {
 				length: 1275,
 				noRetry: true,
 				noInterrupt: [21],
-				abnormals: { 10153040: { chain: 6 } }
+				abnormals: { 10153040: { chain: 'invalid' } }
 			},
 			1: true,
 			2: true
@@ -5534,14 +5534,14 @@ module.exports = {
 				//forceClip: true,
 				noRetry: true,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 },
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' },
 					10153150: { chain: 30 },
 				},
 			},
@@ -5716,14 +5716,14 @@ module.exports = {
 				//forceClip: true,
 				noRetry: true,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 },
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' },
 					10154010: { chain: 30 }
 				}
 			},
@@ -5763,14 +5763,14 @@ module.exports = {
 				length: 665,
 				distance: 469,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				}	
 			},
 			10: { length: 1500 },
@@ -5807,14 +5807,14 @@ module.exports = {
 					20: null
 				},
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				}
 			},
 			0: true,
@@ -5840,14 +5840,14 @@ module.exports = {
 					20: 30
 				},
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				}
 			 },
 			0: true,
@@ -5865,14 +5865,14 @@ module.exports = {
 				length: 1550,
 				onlyTarget: true,
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				}
 			}
 		},
@@ -5942,12 +5942,12 @@ module.exports = {
 					20: null
 				},
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' }
 				}
 			},
 			0: true,
@@ -6618,14 +6618,14 @@ module.exports = {
 				//forceClip: true,
 				noInterrupt: [14],
 				abnormals: {
-					400800: { chain: 6 },
-					400801: { chain: 6 },
-					501320: { chain: 6 },
-					501321: { chain: 6 },
-					501322: { chain: 6 },
-					501323: { chain: 6 },
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				}
 			},
 			0: true,
@@ -6733,8 +6733,8 @@ module.exports = {
 			0: {
 				length: 1500,
 				abnormals: {
-					7692002: { chain: 6 },
-					9692002: { chain: 6 }
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				},
 				onlyTarget: true
 			}

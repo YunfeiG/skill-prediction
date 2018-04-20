@@ -432,6 +432,7 @@ module.exports = function SkillPrediction(dispatch) {
 
 			let chain = get(info, 'chains', currentSkillBase + '-' + currentSkillSub) || get(info, 'chains', currentSkillBase)
 
+
 			if(chain !== undefined) {
 				if(chain === null) {
 					updateLocation(event, false, specialLoc)
@@ -443,8 +444,6 @@ module.exports = function SkillPrediction(dispatch) {
 				interruptType = INTERRUPT_TYPES[info.type] || 4
 			}
 			else interruptType = INTERRUPT_TYPES[info.type] || 6
-			
-			
 		}
 
 		if(info.onlyDefenceSuccess)
@@ -507,8 +506,16 @@ module.exports = function SkillPrediction(dispatch) {
 
 					if(abnormal.speed) abnormalSpeed *= abnormal.speed
 					if(abnormal.chargeSpeed) chargeSpeed += abnormal.chargeSpeed
-					if(abnormal.chain) skill = modifyChain(skill, abnormal.chain)
 					if(abnormal.skill) skill = 0x4000000 + abnormal.skill
+					if(abnormal.chain) {
+						if(abnormal.chain != 'invalid') {
+							skill = modifyChain(skill, abnormal.chain)
+						}
+						else {
+							sendCannotStartSkill(event.skill)
+							return false
+						}
+					}
 				}
 
 		// Skill override (abnormal)
