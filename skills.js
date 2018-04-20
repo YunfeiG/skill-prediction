@@ -513,6 +513,7 @@ module.exports = function SkillPrediction(dispatch) {
 						}
 						else {
 							sendCannotStartSkill(event.skill)
+							sendSystemMessage('SMT_SKILL_FAIL_CATEGORY')
 							return false
 						}
 					}
