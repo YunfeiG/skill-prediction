@@ -8,7 +8,7 @@ I strongly discourage to use skill prediction for pvp purpose. SP has so many bu
 
 ## Issues that still persist:
 
-**Slayer's chain after Savaging strike(blazing thrust) 2nd cast is slightly broken if you don't chain OHS/UOHS/MS/evis/PS fast enough**
+**Slayer's chain after Savaging strike(blazing thrust) is buggy af from server side. e.g. SS->UOHS is broken if you don't chain UOHS fast enough to supercancel SS. anyskills after SS 1st->SS 2nd will be broken if you don't chain them fast enough to supercancel SS 2nd**
 
 ~~Double casts when your ping is higher than animation length, or the cooldown applies at the very end of the skill animation(Short skills like Teleporting jaunts, Boomerang pulse, Overpower, Restraning arrow, Web arrow)~~, Use https://github.com/YunfeiG/no-double-casts alongside my SP.
 
@@ -34,6 +34,8 @@ Fake lock-on skill casts on invincible or invisible targets (Energy star on barr
 High chance of ghost when attack speed suddenly decreased due to expiration of attack speed buff on previous skill,(Astance Warrior is the most suffering class because skill like charging slash will ghost when roll/DFA buff expired on previous skill and SP can't receive new attack speed value in time due to high ping). Attack speed emulation is in demand.
 
 ## Update/fix logs
+
+Apr 20, 2018: Warrior Blade Waltz, Slayer Savaging strike refinement.
 
 Apr 18, 2018: Brawler, Mystic should be completed.
 

@@ -119,7 +119,8 @@ module.exports = {
 					5: { distance: 150.71 }, // F.Aman: 150.714
 					8: { distance: 148.9 }, // Popori: 148.904
 					9: { distance: 151.87 } // Elin: 151.867
-				}
+				},
+				consumeAbnormalEnd: 104110
 			},
 			0: {
 				length: 2545.45, // 2527/2540  
@@ -130,8 +131,16 @@ module.exports = {
 					27: 30,
 					40: 30
 				},
+				abnormals: {
+					104110: { chain: 30 }
+				},
 				level: {
-					8: { abnormals: { 100801: { skill: 360100 } } }
+					8: { 
+						abnormals: { 
+							100801: { skill: 360100 },
+							104110: { chain: 30 }
+						}
+					}
 				}
 			},
 			30: {
@@ -370,6 +379,9 @@ module.exports = {
 			}
 		},
 		28: { // Traverse Cut
+			'*': {
+				consumeAbnormalEnd: 104110
+			},
 			0: {
 				length: 2000,
 				distance: 160,
@@ -381,8 +393,16 @@ module.exports = {
 					27: 30,
 					40: 30
 				},
+				abnormals: {
+					104110: { chain: 30 }
+				},
 				level: {
-					9: { abnormals: { 100201: {skill: 390100 } } }
+					9: {
+						abnormals: {
+							100201: {skill: 390100 },
+							104110: { chain: 30 }
+						}
+					}
 				}
 			},
 			30: {
@@ -394,6 +414,9 @@ module.exports = {
 			}
 		},
 		29: { // Blade Draw
+			'*': {
+				consumeAbnormalEnd: 104110
+			},
 			0: {
 				length: 3000,
 				distance: 94.5,
@@ -402,7 +425,8 @@ module.exports = {
 					102010: 3
 				},
 				abnormals: {
-					102010: { chain: 30 }
+					102010: { chain: 30 },
+					104110: { chain: 30 }
 				},
 				chains: {
 					3: 30,
@@ -415,7 +439,13 @@ module.exports = {
 					40: 30
 				},
 				level: {
-					8: { abnormals: { 100801: {skill: 370100} } }
+					8: { 
+						abnormals: {
+							100801: {skill: 370100},
+							102010: { chain: 30 },
+							104110: { chain: 30 }
+						}
+					}
 				}
 			},
 			30: {
@@ -429,7 +459,8 @@ module.exports = {
 		30: { // Scythe
 			'*': {
 				distance: 150,
-				noRetry: true
+				noRetry: true,
+				consumeAbnormalEnd: 104110
 			}, // Old fast cast value was wrong on Elin, unless that had a pve intention on it, idk.
 			0: {
 				length: 1833,
@@ -444,8 +475,16 @@ module.exports = {
 					37: 30,
 					40: 30
 				},
+				abnormals: {
+					104110: { chain: 30 }
+				},
 				level: {
-					8: { abnormals: { 100801: { skill: 380100 } } }
+					8: {
+						abnormals: {
+							100801: { skill: 380100 },
+							104110: { chain: 30 }
+						}
+					}
 				}
 			},
 			30: {
@@ -456,7 +495,10 @@ module.exports = {
 			}
 		},
 		31: { // Reaping Slash
-			'*': { distance: 110 },
+			'*': {
+				distance: 110,
+				consumeAbnormalEnd: 104110
+			},
 			0: {
 				length: 2275,
 				noInterrupt: [1, 2, 3, 5, 8, 9, 10, 11, 12, 13, 16, 17, 19, 21, 22, 23, 27, 28, 29, 32, 33, 34, 35, 37, 39, 41, 42],
@@ -465,6 +507,9 @@ module.exports = {
 					18: 30,
 					36: 30,
 					40: 30
+				},
+				abnormals: {
+					104110: { chain: 30 }
 				}
 			},
 			30: { length: 1667 }
@@ -502,15 +547,22 @@ module.exports = {
 					5: { distance: 150.71 }, // F.Aman: 150.714
 					8: { distance: 148.9 }, // Popori: 148.904
 					9: { distance: 151.87 } // Elin: 151.867
-				}
+				},
+				consumeAbnormalEnd: 104110
 			},
 			0: { 
 				length: 2800,
-				noInterrupt: [32]
+				noInterrupt: [32],
+				abnormals: {
+					104110: { chain: 30 }
+				}
 		    },
 			30: { length: 2000 }
 		},
 		37: { // Blade Draw (Deadly Gamble)
+			'*': {
+				consumeAbnormalEnd: 104110
+			},
 			0: {
 				length: 3000,
 				distance: 94.5,
@@ -524,17 +576,29 @@ module.exports = {
 			}
 		},
 		38: { // Scythe (Deadly Gamble)
-			'*': { distance: 150 },
+			'*': {
+				distance: 150,
+				consumeAbnormalEnd: 104110
+			},
 			0: { 
 				length: 1833,
-				noInterrupt: [32]
+				noInterrupt: [32],
+				abnormals: {
+					104110: { chain: 30 }
+				}
 			},
 			30: { length: 1387 }
 		},
 		39: { // Traverse Cut (Defensive Stance)
+			'*': {
+				consumeAbnormalEnd: 104110
+			},
 			0: {
 				length: 2000,
-				distance: 160
+				distance: 160,
+				abnormals: {
+					104110: { chain: 30 }
+				}
 			},
 			30: {
 				length: 2666.66,
@@ -548,12 +612,15 @@ module.exports = {
 				noInterrupt: [32, 40, '41-0', '41-30', 42],
 				noRetry: true,
 				abnormals: {
-					104100: { chain: 12 },
-					104101: { chain: 6 }
+					104101: { chain: 6 },
+					104100: { chain: 12 }
 				}
 			},
 			10: {	// astance 1st?
-				triggerAbnormal: { 104100: 8000 },
+				triggerAbnormal: {
+					104110: 2000,
+					104100: 8000
+				},
 				chains: {
 					// essential mana says all skills can chain into BW, but need to specify them
 					1: 11,
@@ -590,14 +657,26 @@ module.exports = {
 					'41-31': 11
 				}
 			},
-			11: { triggerAbnormal: { 104100: 8000 } },
+			11: {
+				triggerAbnormal: { 
+					104110: 2000,
+					104100: 8000
+				}
+			},
 			12: {
 				abnormals: { 100201: { skill: 400122 } },
-				consumeAbnormal: [104100, 104101]
+				consumeAbnormal: 104100,
+				triggerAbnormal: {
+					104110: 2000
+				}
 			},
 			20: {
-				triggerAbnormal: { 104100: 8000 },
+				triggerAbnormal: { 
+					104110: 2000,
+					104100: 8000
+				},
 				abnormals: {
+					104101: { chain: 6 },
 					104100: { chain: 22 }
 				},
 				chains: {
@@ -636,15 +715,25 @@ module.exports = {
 					'41-31': 21
 				}
 			},
-			21: { triggerAbnormal: { 104100: 8000 } },
-			22: { consumeAbnormal: [104100, 104101] }
+			21: { 
+				triggerAbnormal: {
+					104110: 2000,
+					104100: 8000
+				} 
+			},
+			22: { 
+				consumeAbnormal: 104100,
+				triggerAbnormal: {
+					104110: 2000
+				}
+			}
 		},
 		41: { // Aerial Scythe
 			'*': {
 				noRetry: true,
 				length: 1976.15,
 				distance: 219.04,
-				abnormals: { 105100: { chain: 31 } }
+				consumeAbnormal: 104110
 			},
 			0: {
 				triggerAbnormal: { 105100: 1800 },
@@ -682,6 +771,9 @@ module.exports = {
 					39: 30,
 					40: 30,
 					42: 30,
+				},
+				abnormals: {
+					105100: { chain: 31 }
 				}
 			},
 			30: {
@@ -1362,7 +1454,8 @@ module.exports = {
 					8: { distance: 150 }, // Popori: 150
 					9: { distance: 169.65 }, // Elin: 169.648
 					10: { distance: 151.14 } // Baraka: 151.138
-				}
+				},
+				consumeAbnormalEnd: 301604
 			},
 			0: {
 				length: 3365,
@@ -1578,7 +1671,8 @@ module.exports = {
 				races: {
 					5: { distance: 190}, // F.Aman
 					10: { distance: 190 } // Baraka
-				}
+				},
+				consumeAbnormalEnd: 301604
 			},
 			0: {
 				length: 3685,
@@ -1594,6 +1688,9 @@ module.exports = {
 			30: { length: 1690 } // Maybe 1675~1700
  		},
 		24: { // Eviscerate
+			'*': {
+				consumeAbnormalEnd: 301604
+			},
 			0: {
 				length: 1925,
 				distance: 50,
@@ -1632,12 +1729,9 @@ module.exports = {
 					8: { distance: 150 }, // Popori: 150
 					9: { distance: 169.65 }, // Elin: 169.648
 					10: { distance: 151.14 } // Baraka: 151.138
-				}
+				},
 			},
-			0: {
-				length: 3365,
-				abnormals: { 301604: { chain: 30 } }
-			},
+			0: { length: 3365 },
 			30: { length: 1325 }
 		},
 		26: { // Decimate(EU), Punishing Blow(NA)
@@ -1653,7 +1747,8 @@ module.exports = {
 					27: 30
 				},
 				abnormals: { 301604: { chain: 30 } },
-				noInterrupt: [1, 2, 3, 4, 6, 9, 10, 12, 13, 14, 15, 16, 17, 21, 22, 26, 28]
+				noInterrupt: [1, 2, 3, 4, 6, 9, 10, 12, 13, 14, 15, 16, 17, 21, 22, 26, 28],
+				consumeAbnormalEnd: 301604
 			}, // super cancel 
 			30: {
 				length: [1710, 0],
@@ -1666,8 +1761,7 @@ module.exports = {
 				noInterrupt: ['27-31'],
 				abnormals: {
 					301603: { chain : 31 }
-				},
-				triggerAbnormal: { 301604: 5000 }
+				}
 			},
 			0: {
 				length: [625, 1000, 1316.25],
@@ -1701,17 +1795,26 @@ module.exports = {
 					'28-2': 30,
 					'28-3': 30
 				},
-				triggerAbnormal: { 301603: 5000 },
+				triggerAbnormal: {
+					301604: 5000,
+					301603: 5000
+				}
 			},
 			30: {
 				length: [625, 751.25],
 				distance: [274.8, 0],
-				triggerAbnormal: { 301603: 5000 }
+				triggerAbnormal: {
+					301604: 5000,
+					301603: 5000
+				}
 			},
 			31: {
 				length: 751.25,
 				distance: 275.6,
-				consumeAbnormal: 301603
+				consumeAbnormal: 301603,
+				triggerAbnormal: {
+					301604: 5000
+				}
 			}
 		},
 		28: { // Unsheathe
