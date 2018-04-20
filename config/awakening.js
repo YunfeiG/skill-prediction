@@ -120,6 +120,7 @@ module.exports = {
 					8: { distance: 148.9 }, // Popori: 148.904
 					9: { distance: 151.87 } // Elin: 151.867
 				},
+				noRetry: true,
 				consumeAbnormalEnd: 104110
 			},
 			0: {
@@ -380,6 +381,7 @@ module.exports = {
 		},
 		28: { // Traverse Cut
 			'*': {
+				noRetry: true,
 				consumeAbnormalEnd: 104110
 			},
 			0: {
@@ -415,7 +417,8 @@ module.exports = {
 		},
 		29: { // Blade Draw
 			'*': {
-				consumeAbnormalEnd: 104110
+				consumeAbnormalEnd: 104110,
+				noRetry: true
 			},
 			0: {
 				length: 3000,
@@ -497,6 +500,7 @@ module.exports = {
 		31: { // Reaping Slash
 			'*': {
 				distance: 110,
+				noRetry: true,
 				consumeAbnormalEnd: 104110
 			},
 			0: {
@@ -548,6 +552,7 @@ module.exports = {
 					8: { distance: 148.9 }, // Popori: 148.904
 					9: { distance: 151.87 } // Elin: 151.867
 				},
+				noRetry: true,
 				consumeAbnormalEnd: 104110
 			},
 			0: { 
@@ -561,7 +566,8 @@ module.exports = {
 		},
 		37: { // Blade Draw (Deadly Gamble)
 			'*': {
-				consumeAbnormalEnd: 104110
+				consumeAbnormalEnd: 104110,
+				noRetry: true
 			},
 			0: {
 				length: 3000,
@@ -578,6 +584,7 @@ module.exports = {
 		38: { // Scythe (Deadly Gamble)
 			'*': {
 				distance: 150,
+				noRetry: true,
 				consumeAbnormalEnd: 104110
 			},
 			0: { 
@@ -591,6 +598,7 @@ module.exports = {
 		},
 		39: { // Traverse Cut (Defensive Stance)
 			'*': {
+				noRetry: true,
 				consumeAbnormalEnd: 104110
 			},
 			0: {
@@ -1672,6 +1680,7 @@ module.exports = {
 					5: { distance: 190}, // F.Aman
 					10: { distance: 190 } // Baraka
 				},
+				noRetry: true,
 				consumeAbnormalEnd: 301604
 			},
 			0: {
@@ -1689,6 +1698,7 @@ module.exports = {
  		},
 		24: { // Eviscerate
 			'*': {
+				noRetry: true,
 				consumeAbnormalEnd: 301604
 			},
 			0: {
@@ -1717,6 +1727,7 @@ module.exports = {
 		25: { // Ultimate Overhand Strike
 			'*': {				
 				distance: 169.5,
+				noRetry: true,
 				race: {
 					0: { distance: 171.14 }, // M.Human: 171.138
 					1: { distance: 171.14 }, // F.Human: 171.138
@@ -1730,6 +1741,7 @@ module.exports = {
 					9: { distance: 169.65 }, // Elin: 169.648
 					10: { distance: 151.14 } // Baraka: 151.138
 				},
+				consumeAbnormalEnd: 301604
 			},
 			0: { length: 3365 },
 			30: { length: 1325 }

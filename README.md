@@ -8,7 +8,7 @@ I strongly discourage to use skill prediction for pvp purpose. SP has so many bu
 
 ## Issues that still persist:
 
-**Slayer's chain after Savaging strike(blazing thrust) is buggy af from server side. e.g. SS->UOHS is broken if you don't chain UOHS fast enough to supercancel SS. anyskills after SS 1st->SS 2nd will be broken if you don't chain them fast enough to supercancel SS 2nd**
+**Slayer's chain after Savaging strike(blazing thrust) is buggy af from server side. e.g. OHS/MS/evis/UOHS/PB after SS 1st->SS 2nd will be broken if you don't chain them fast enough to supercancel SS 2nd**
 
 ~~Double casts when your ping is higher than animation length, or the cooldown applies at the very end of the skill animation(Short skills like Teleporting jaunts, Boomerang pulse, Overpower, Restraning arrow, Web arrow)~~, Use https://github.com/YunfeiG/no-double-casts alongside my SP.
 
