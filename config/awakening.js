@@ -2544,7 +2544,7 @@ module.exports = {
 			0: {
 				length: [600, 833, 833],
 				distance: [0, 27.5, 0],
-				noInterrupt: [34, 36, 37],
+				noInterrupt: [34, 36],
 				noRetry: true,
 				abnormals: {
 					401706: { speed: 1.2 },
@@ -2552,7 +2552,8 @@ module.exports = {
 				},
 				chains: { // x3 to 30
 					33: 30,
-					35: 30
+					35: 30,
+					37: 30
 				}
 			},
 			1: { 
