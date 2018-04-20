@@ -5413,6 +5413,7 @@ module.exports = {
 				distance: 16.59,
 				abnormals: {
 					31120: { chain: 31 },
+					10153540: { speed: 1.2 }
 				},
 				noInterrupt: [24],
 				chains: {
