@@ -346,8 +346,8 @@ module.exports = {
 				distance: 65.35,
 				requiredBuff: 100700,
 				abnormals: {
-					100200: { chain: '' },
-					100201: { chain: '' }
+					100200: { chain: 'invalid' },
+					100201: { chain: 'invalid' }
 				},
 				race: {
 					2: { distance: 68.81 }, // M.Helf: 68.805
@@ -881,7 +881,9 @@ module.exports = {
 				distance: [0, 100, 100, 100, 100, 35], // 15~ M.Human, Popori and M.Aman?, do not log this skill with low fps
 				noInterrupt: [2, 3, 4, 8, 9, 10, 11, 12, 13, 15, '18-0', 21, 23, 24, 25, 26, 27, 28, 29],
 				abnormals: {
-					22060: { speed: 1.25 }
+					22060: { speed: 1.25 },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				},
 				chains: {
 					1: 30,
@@ -1250,6 +1252,10 @@ module.exports = {
 				chains: {
 					15: 1,
 					25: 1
+				},
+				abnormals: {
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
 				}
 			},
 			1: {
@@ -4004,6 +4010,16 @@ module.exports = {
 				distance: [0, 333],
 				noInterrupt: [17],
 				teleportStage: 1,
+				abnormals: {
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
+				},
 				noRetry: true
 			}
 		},
