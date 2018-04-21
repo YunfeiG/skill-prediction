@@ -5417,6 +5417,7 @@ module.exports = {
 				length: 1815,
 				distance: 245.21,
 				noInterrupt: [22],
+				noRetry: true,
 				chains: {
 					1: 30,
 					2: 30,
@@ -5444,13 +5445,14 @@ module.exports = {
 				distance: 351.98
 			}
 		},
-		24: { // One-Inch Punch 原值暴擊
+		24: { // One-Inch Punch(EU,NA), 原值暴擊(TW)
 			'*': {
-				distance: 16.59,
+				distance: 23.7,
 				abnormals: {
 					31120: { chain: 31 },
 					10153540: { speed: 1.2 }
 				},
+				noRetry: true,
 				noInterrupt: [24],
 				chains: {
 					1: 30,
@@ -5574,7 +5576,7 @@ module.exports = {
 			30: true,
 			31: true
 		},
-		91: { // Awakening Eyes Aura(EU), Apex Urgency(NA) 覺醒氣息
+		91: { // Awakening Eyes Aura(EU), Apex Urgency(NA), 覺醒氣息(TW)
 			0: { length: 3000 }
 		}
 	},
