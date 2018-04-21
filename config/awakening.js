@@ -1248,6 +1248,7 @@ module.exports = {
 			0: {
 				length: [333.33, 1055, 3121.67],
 				distance: [29.48, 445.52, 0],
+				noRetry: true,
 				noInterrupt: [1, 2, 3, 4, 5, 9, 10, 12, 13, 18, 21, 23, 24, 26, 28, 29],
 				chains: {
 					15: 1,
@@ -3470,6 +3471,7 @@ module.exports = {
         27: { // Final Reprisal
             '*': {
                 length: 2933,
+				noRetry: true,
                 noInterrupt: [27],
                 race: {
                     9: { length: 3333 }
@@ -3646,6 +3648,7 @@ module.exports = {
 		40: { // Zenobia's Vortex
 			'*': {
 				length: 1070.71,
+				noRetry: true,
 				noInterrupt: [40]
 			},
 			0: true,
@@ -4042,7 +4045,8 @@ module.exports = {
 		48: { // Summon: Thrall Lord
 			0: {
 				fixedSpeed: 1,
-				length: 4050 
+				length: 4050,
+				noRetry: true
 			} // 4399 | 10239003
 		},
 		91: { // Awakening Eyes Aura(EU), Apex Urgency(NA)(EU)
