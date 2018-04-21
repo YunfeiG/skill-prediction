@@ -2314,6 +2314,7 @@ module.exports = {
 		18: { // Lethal Strike (Awakening patch)
 			'*': {
 				length: 687.5,
+				distance: 167.63,
 				abnormals: {
 					24120: { speed: 1.3 },
 					401400: { chain: 'invalid' }
@@ -2325,7 +2326,13 @@ module.exports = {
 					10: 30,
 					15: 30
 				},
-				canVB: true
+				race: {
+					6: { distance: 168.11 }, // M.Casta: 168.112
+					8: { distance: 240.4 }, // Popori: 240.4
+					9: { distance: 167.62 }, // Elin: 167.624
+					10: { distance: 158.11 } // Baraka: 158.112
+				},
+				canVB: true,
 			},
 			0: true,
 			30: { length: 550 }
