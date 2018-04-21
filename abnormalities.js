@@ -1,4 +1,4 @@
-const DEBUG = false
+const DEBUG = true
 
 const Ping = require('./ping'),
 	abnormals = require('./config/abnormalities')
@@ -12,7 +12,7 @@ class AbnormalityPrediction {
 		this.cid = null
 		this.myAbnormals = {}
 
-		dispatch.hook('S_LOGIN', dispatch.base.majorPatchVersion >= 67 ? 10 : 9, event => { this.cid = event.gameId })
+		dispatch.hook('S_LOGIN', 10, event => { this.cid = event.gameId })
 
 		dispatch.hook('S_RETURN_TO_LOBBY', 1, () => { this.removeAll() })
 

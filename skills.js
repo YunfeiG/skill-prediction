@@ -89,9 +89,9 @@ module.exports = function SkillPrediction(dispatch) {
 	let VBtimer = null;
 	let delayVB = 0;
 	
-	let skills = dispatch.base.majorPatchVersion >= 67 ? require('./config/awakening') : require('./config/skills')
+	let skills = require('./config/awakening')
 
-	dispatch.hook('S_LOGIN', dispatch.base.majorPatchVersion >= 67 ? 10 : 9, event => {
+	dispatch.hook('S_LOGIN', 10, event => {
 		skillsCache = {};
 		cid = event.gameId;
 		model = event.templateId;
@@ -203,12 +203,12 @@ module.exports = function SkillPrediction(dispatch) {
 		})
 	}
 
-	dispatch.hook('S_PARTY_MEMBER_LIST', dispatch.base.majorPatchVersion >= 67 ? 6 : 5, event => {
+	dispatch.hook('S_PARTY_MEMBER_LIST', 6, event => {
 		partyMembers = []
 		
 		for (let member of event.members)
-            if (!((dispatch.base.majorPatchVersion >= 67 ? member.gameId : member.cid).equals(cid)))
-                partyMembers.push(dispatch.base.majorPatchVersion >= 67 ? member.gameId : member.cid)
+            if (!member.gameId.equals(cid))
+                partyMembers.push(member.gameId)
 	})
 
 	dispatch.hook('S_LEAVE_PARTY', () => { partyMembers = null })
@@ -272,7 +272,7 @@ module.exports = function SkillPrediction(dispatch) {
 	}
 
 	for(let packet of [
-			['C_START_SKILL', dispatch.base.majorPatchVersion >= 67 ? 5 : 4 ],
+			['C_START_SKILL', 5],
 			['C_START_TARGETED_SKILL', 4],
 			['C_START_COMBO_INSTANT_SKILL', 2],
 			['C_START_INSTANCE_SKILL', 3],
@@ -801,7 +801,7 @@ module.exports = function SkillPrediction(dispatch) {
 		}
 	})
 
-	dispatch.hook('S_EACH_SKILL_RESULT', dispatch.base.majorPatchVersion >= 67 ? 6 : 5, event => {
+	dispatch.hook('S_EACH_SKILL_RESULT', 6, event => {
 		let target = event.targetAction
 		if(isMe(event.target) && target.enable) {
 			if(DEBUG) {
