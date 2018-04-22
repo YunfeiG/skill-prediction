@@ -2223,7 +2223,7 @@ module.exports = {
             0: {
                 type: 'charging',
 				length: [800, 800, 800],		// 2300
-				noInterrupt: [2, '3-0', 4, '10-0', '15-14', '18-0', 24, 25, 30],
+				noInterrupt: [2, '3-0', 4, '10-0', '15-14', 18, 24, 25, 30],
 				abnormals: {
 					400500: { chargeSpeed: 0.2 },
 					400501: { chargeSpeed: 0.4 },
@@ -2232,7 +2232,6 @@ module.exports = {
 				chains: {
                     '3-13': 14,
                     '10-13': 14,
-                    '18-13': 14
                 },
 				level: [
 					{ length: 800 },	// 2300
