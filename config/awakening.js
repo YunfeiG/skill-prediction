@@ -2134,7 +2134,6 @@ module.exports = {
 			0: {
 				type: 'charging',
 				length: [650, 650, 650],		// 2300
-			    noInterrupt: [2, 3, 4, 15, 18, 24, 25, 30],
 				interruptibleWithAbnormal: { 401720: '10-13' },
 				abnormals:{
 					401720: { chain : null },
@@ -2162,7 +2161,6 @@ module.exports = {
 			10: {
 				length: 1333, // Cast F. - TODO
 				distance: 50,
-				noInterrupt: [2, 4, 24, 25, 30],
 				races: {
 					2: { length: 1400 }, // M.Helf
 					3: { length: 1800 }, // F.Helf,
@@ -2172,7 +2170,6 @@ module.exports = {
 			11: {
 				length: [366, 366, 1333],
 				distance: [33.33, 33.33, 50],
-				noInterrupt: [2, 4, 24, 25, 30],
 				races: {
 					2: { length: [366, 366, 1400] }, // M.Helf
 					3: { length: [366, 366, 1800] }, // F.Helf
@@ -2182,7 +2179,6 @@ module.exports = {
 			12: {
 				length: [366, 366, 366, 366, 1333],
 				distance: [33.33, 33.33, 33.33, 33.33, 50],
-				noInterrupt: [2, 4, 24, 25, 30],
 				races: {
 					2: { length: [366, 366, 366, 366, 1400] }, // M.Helf
 					3: { length: [366, 366, 366, 366, 1800] }, // F.Helf
@@ -2192,7 +2188,6 @@ module.exports = {
 			13: {
 				length: [366, 366, 366, 366, 1333],
 				distance: [33.33, 33.33, 33.33, 33.33, 50],
-				noInterrupt: [2, 4, 15, 24, 25, 30],
 				races: {
 					2: { length: [366, 366, 366, 366, 1400] }, // M.Helf
 					3: { length: [366, 366, 366, 366, 1800] }, // F.Helf
@@ -4860,7 +4855,7 @@ module.exports = {
 				distance: 71.28,
 				triggerAbnormal: { 10153060: 3000 },
 				consumeAbnormalEnd: 10153060,
-				noInterrupt: ['1-3'],
+				noInterrupt: ['1-3', 22, 24, 26],
 				chains: {
 					'1-0': 1,
 					'1-1': 2,
@@ -4885,9 +4880,6 @@ module.exports = {
 					17: 30,
 					18: 30,
 					20: 30,
-					22: 30,
-					24: 30,
-					26: 30,
 					40: 30
 				},
 				noRetry: true
@@ -5422,6 +5414,14 @@ module.exports = {
 				distance: 245.21,
 				noInterrupt: [22],
 				noRetry: true,
+				abnormals: {
+					10153190 : { chain: 30 },
+					10153191 : { chain: 30 },
+					10153192 : { chain: 30 },
+					10153193 : { chain: 30 },
+					10153194 : { chain: 30 },
+					10153195 : { chain: 30 }
+				},
 				chains: {
 					1: 30,
 					2: 30,
@@ -5458,6 +5458,15 @@ module.exports = {
 				},
 				noRetry: true,
 				noInterrupt: [24],
+				abnormals: {
+					31120: { chain: 31 },
+					10153190 : { chain: 30 },
+					10153191 : { chain: 30 },
+					10153192 : { chain: 30 },
+					10153193 : { chain: 30 },
+					10153194 : { chain: 30 },
+					10153195 : { chain: 30 }
+				},
 				chains: {
 					1: 30,
 					2: 30,
