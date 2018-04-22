@@ -2326,8 +2326,7 @@ module.exports = {
 					8: { distance: 240.4 }, // Popori: 240.4
 					9: { distance: 167.62 }, // Elin: 167.624
 					10: { distance: 158.11 } // Baraka: 158.112
-				},
-				canVB: true,
+				}
 			},
 			0: true,
 			30: { length: 550 }
