@@ -1820,7 +1820,7 @@ module.exports = {
 				}
 			},
 			30: {
-				length: [625, 751.25],
+				length: [1000, 1316.25],
 				distance: [274.8, 0],
 				triggerAbnormal: {
 					301604: 5000,
@@ -3334,7 +3334,8 @@ module.exports = {
 		},
 		3: { // Healing Circle (Awakening patch)
 			'*': {
-				abnormals: { 805800: { chain: 'invalid' } }
+				abnormals: { 805800: { chain: 'invalid' } },
+				noInterrupt: [2, 3, 5, 10, 12, 14, 17, 18, 23, 25, 27, 28, '30-10', '33-10', 34, '35-10', '37-10', '41-10', 42]
 			},
 			0: {
 				length: 1750,
@@ -4673,16 +4674,18 @@ module.exports = {
 				noRetry: true,
 				triggerAbnormal: { 10152086: 4100 },
 				chains: {
+					1: null,
 					'2-1': null,
 					3: null,
 					4: null,
-					'7-3': null,
-					'9-10': null,
-					'9-11': null,
+					6: null,
+					7: null,
+					9: null,
 					//10: null,
 					11: null,
 					13: null,
 					15: null,
+					18: null,
 					19: null,
 					40: null
 				}
