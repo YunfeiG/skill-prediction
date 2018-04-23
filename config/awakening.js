@@ -626,6 +626,7 @@ module.exports = {
 			},
 			10: {	// astance 1st?
 				triggerAbnormal: {
+					104101: 800,
 					104110: 2000,
 					104100: 8000
 				},
@@ -666,7 +667,8 @@ module.exports = {
 				}
 			},
 			11: {
-				triggerAbnormal: { 
+				triggerAbnormal: {
+					104101: 800,
 					104110: 2000,
 					104100: 8000
 				}
@@ -680,6 +682,7 @@ module.exports = {
 			},
 			20: {
 				triggerAbnormal: { 
+					104101: 800,
 					104110: 2000,
 					104100: 8000
 				},
@@ -723,8 +726,13 @@ module.exports = {
 					'41-31': 21
 				}
 			},
-			21: { 
+			21: {
+				abnormals: {
+					104101: { chain: 'invalid' },
+					104100: { chain: 22 }
+				},
 				triggerAbnormal: {
+					104101: 800,
 					104110: 2000,
 					104100: 8000
 				} 
