@@ -887,7 +887,7 @@ module.exports = {
 		3: { // Onslaught
 			'*': {
 				distance: [0, 100, 100, 100, 100, 35], // 15~ M.Human, Popori and M.Aman?, do not log this skill with low fps
-				noInterrupt: [2, 3, 4, 8, 9, 10, 11, 12, 13, 15, '18-0', 21, 23, 24, 25, 26, 27, 28, 29],
+				noInterrupt: [3, 4, 8, 9, 10, 11, 12, 13, 15, '18-0', 21, 23, 24, 25, 26, 27, 28, 29],
 				abnormals: {
 					22060: { speed: 1.25 },
 					7692002: { chain: 'invalid' },
@@ -1010,7 +1010,7 @@ module.exports = {
 			},
 			0: { // Same animation as shield bash, just slower
 				length: 925,
-				noInterrupt: [2, 3, 4, 8, 9, 10, 11, 12, 13, 15, 21, 23, 24, 25, 26, 27, 28, 29],
+				noInterrupt: [3, 4, 5, 8, 9, 10, 11, 12, 13, 15, 21, 23, 24, 25, 26, 27, 28, 29],
 				abnormals: {
 					201831: { chain: 30 }
 				},
@@ -1042,7 +1042,7 @@ module.exports = {
 				length: 2800,
 				distance: 85,
 				triggerAbnormal: { 201831: 2000 },
-				noInterrupt: ['1-0', '1-1', 2, 3, 4, 9, 11, 12, 13, 15, 23, 24, 25, 26, 27, 28, 29],
+				noInterrupt: ['1-0', '1-1', 3, 4, 9, 11, 12, 13, 15, 23, 24, 25, 26, 27, 28, 29],
 				chains: {
 					'1-2': 30,
 					5: 30,
@@ -1209,7 +1209,7 @@ module.exports = {
 			},
 			0: {
 				length: 2391.3,
-				noInterrupt: [1, 2, 3, 4, 5, 9, 11, 12, 23, 24, 25, 26, 27, 28, 29]
+				noInterrupt: [1, 3, 4, 5, 9, 11, 12, 23, 24, 25, 26, 27, 28, 29]
 			},
 			30: { length: 1913.04 }
 		},
@@ -1257,7 +1257,7 @@ module.exports = {
 				length: [333.33, 1055, 3121.67],
 				distance: [29.48, 445.52, 0],
 				noRetry: true,
-				noInterrupt: [1, 2, 3, 4, 5, 9, 10, 12, 13, 18, 21, 23, 24, 26, 28, 29],
+				noInterrupt: [1, 3, 4, 5, 9, 10, 12, 13, 18, 21, 23, 24, 26, 28, 29],
 				chains: {
 					15: 1,
 					25: 1
