@@ -1,10 +1,6 @@
 module.exports = {
-	/* Warrior */
-	104110: true,	// Blade Waltz
-	
 	/* Slayer */
 	23220: true, // Distant Blade & ICB (linked)
-	301604: true,	//Savaging Strike
 	
 	/* Reaper */
 	10151020: true,

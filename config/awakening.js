@@ -273,7 +273,7 @@ module.exports = {
 			'*': {
 				length: 1633,
 				noInterrupt: [32],
-				glyphs: { 21040: { speed: 0.3 } }
+				glyphs: { 21040: { speed: 1.3 } }
 			},
 			0: true,
 			1: true,
@@ -3408,7 +3408,8 @@ module.exports = {
 		},
 		16: { // Shocking Implosion (Awakening patch)
 			'*': {
-				length: 1718
+				length: 1718,
+				noInterrupt: [2, 3, 5, 10, 12, 14, 16, 17, 18, '19-10', 23, 25, 26, 28, 29, '30-10', '33-10', 34, '35-10', '37-10', 38, 40, '41-10', 42],
 			},
 			0: {
 				chains: {
