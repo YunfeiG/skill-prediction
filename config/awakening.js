@@ -2555,6 +2555,7 @@ module.exports = {
 				distance: [0, 27.5, 0],
 				noInterrupt: [34, 36],
 				noRetry: true,
+				requiredBuff: 401705,
 				abnormals: {
 					401706: { speed: 1.2 },
 					401716: { chain: 31 }
@@ -2580,6 +2581,7 @@ module.exports = {
 		},
 		35: { // Unleash: Sinister
 			0: {
+				requiredBuff: 401705,
 				abnormals: {
 					401707: { speed: 1.2 },
 					401717: { chain: 31 }
@@ -2608,6 +2610,7 @@ module.exports = {
 		},
 		36: { // Unleash: Rampage
 			'*': {
+				requiredBuff: 401705,
 				length: 1588.6,
 				distance: 38.5,
 				noRetry: true,
@@ -2632,6 +2635,7 @@ module.exports = {
 		37: { // Unleash: Beast Fury
 			'*': {
 				// race difference is a thing
+				requiredBuff: 401705,
 				length: [610.8, 694, 721.6, 471.66, 1194],
 				distance: [126, 144.824, 151.1, 9.4, 98.64],
 				noInterrupt: [37]
