@@ -35,6 +35,8 @@ High chance of ghost when attack speed suddenly decreased due to expiration of a
 
 ## Update/fix logs
 
+Apr 26, 2018: Fixed moving blast/time bomb->rocket jump ghosting
+
 Apr 20, 2018: Warrior Blade Waltz, Slayer Savaging strike refinement.
 
 Apr 18, 2018: Brawler, Mystic should be completed.
