@@ -35,6 +35,8 @@ High chance of ghost when attack speed suddenly decreased due to expiration of a
 
 ## Update/fix logs
 
+May 1, 2018: Minor Fixes, Zerk Leaping strike->Lethal strike swfitlinked glyph disabled (broken from server side)
+
 Apr 26, 2018: Fixed moving blast/time bomb->rocket jump/scatter shot ghosting
 
 Apr 20, 2018: Warrior Blade Waltz, Slayer Savaging strike refinement.
