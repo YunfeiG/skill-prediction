@@ -1847,6 +1847,7 @@ module.exports = {
 		28: { // Unsheathe
 			0: {
 				type: 'charging',
+				noRetry: true,
 				length: [650, 650],
 				noInterrupt: [28],
 				consumeAbnormal: [301601, 301604],
@@ -3645,6 +3646,7 @@ module.exports = {
 			0: {
 				length: 665,
 				distance: -200,
+				noInterrupt: [26],
 				//forceClip: true,
 				abnormals: {
 					400800: { chain: 'invalid' },
@@ -5007,7 +5009,7 @@ module.exports = {
 			}
 		},
 		/*3: { // Divine Wrath
-			'*': {
+			'*': {	// impossible to emulate this skill as the client needs to get the correct position in S_ACTION_STAGE stage 1 to send correct series of C_NOTIFY_LOCATION_IN_ACTION
 				abnormals: {
 					7692002: { chain: 'invalid' },
 					9692002: { chain: 'invalid' }

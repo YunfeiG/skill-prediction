@@ -185,6 +185,7 @@ module.exports = function SkillPrediction(dispatch) {
 						let passivitySet = item.passivitySet
 						let passivitySets = item.passivitySets[passivitySet]
 						let entries = passivitySets.passivities
+						if (entries == undefined) break
 						for(let roll of entries) {
 							if(roll.dbid == 350708) manaChargeSpeed = true
 							if(roll.dbid == 350905) burstFireCost = true
