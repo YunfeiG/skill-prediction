@@ -234,8 +234,8 @@ module.exports = {
 					9692002: { chain: 'invalid' }
 				},
 				glyphs: {
-					21048: { speed: 0.2 },
-					21082: { speed: 0.2 }
+					21048: { speed: 1.2 },
+					21082: { speed: 1.2 }
 				},
 				race: {
 					2: { length: 1533 }, // M.Helf
