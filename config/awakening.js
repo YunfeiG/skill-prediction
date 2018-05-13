@@ -818,8 +818,8 @@ module.exports = {
 				distance: 326.55
 			}
 		},
-		91: { // Awakening Eyes Aura(EU), Apex Urgency(NA)
-			0: { length: 3000 }
+		910: { // Awakening Eyes Aura(EU), Apex Urgency(NA)
+			0: { length: 500 }
 		}
 	},
 	1: { // Lancer
@@ -1283,8 +1283,8 @@ module.exports = {
 		30: { // Divine Protection
 			0: { length: 1252 }
 		},
-		91: { // Awakening Eyes Aura(EU), Apex Urgency(NA)
-			0: { length: 3000 }
+		910: { // Awakening Eyes Aura(EU), Apex Urgency(NA)
+			0: { length: 500 }
 		}
 	},
 	2: { // Slayer
@@ -1872,8 +1872,8 @@ module.exports = {
 				length: [1248, 1]
 			}
 		},
-		91: { // Awakening Eyes Aura(EU), Apex Urgency(NA)
-			0: { length: 3000 }
+		910: { // Awakening Eyes Aura(EU), Apex Urgency(NA)
+			0: { length: 500 }
 		}
 	},
 	3: { // Berserker
@@ -2660,8 +2660,8 @@ module.exports = {
 			},
 			30: true
 		},
-		91: { // Awakening Eyes Aura(EU), Apex Urgency(NA)
-			0: { length: 3000 }
+		910: { // Awakening Eyes Aura(EU), Apex Urgency(NA)
+			0: { length: 500 }
 		}
 	},
 	4: { // Sorcerer
@@ -3699,8 +3699,8 @@ module.exports = {
 			0: { length: 1416 },
 			50: { length: 200 }
 		},
-		91: { // Awakening Eyes Aura(EU), Apex Urgency(NA)
-			0: { length: 3000 }
+		910: { // Awakening Eyes Aura(EU), Apex Urgency(NA)
+			0: { length: 500 }
 		}
 	},
 	7: { // Mystic
@@ -4067,8 +4067,8 @@ module.exports = {
 				noRetry: true
 			} // 4399 | 10239003
 		},
-		91: { // Awakening Eyes Aura(EU), Apex Urgency(NA)(EU)
-			0: { length: 3000 }
+		910: { // Awakening Eyes Aura(EU), Apex Urgency(NA)(EU)
+			0: { length: 500 }
 		}
 	},
 	8: { // Reaper
@@ -4454,7 +4454,11 @@ module.exports = {
 					7692002: { chain: 'invalid' },
 					9692002: { chain: 'invalid' }
 				}
-			}
+			}/*,
+			80: { // cannot emulate triggering animation
+				length: 990,
+				distance: 276.7
+			}*/
 		},
 		16: { // Shadow Reaping
 			0: {
@@ -5693,8 +5697,8 @@ module.exports = {
 			30: true,
 			31: true
 		},
-		91: { // Awakening Eyes Aura(EU), Apex Urgency(NA), 覺醒氣息(TW)
-			0: { length: 3000 }
+		910: { // Awakening Eyes Aura(EU), Apex Urgency(NA), 覺醒氣息(TW)
+			0: { length: 500 }
 		}
 	},
 	11: { // Ninja
