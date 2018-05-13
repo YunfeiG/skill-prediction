@@ -340,6 +340,16 @@ module.exports = {
 				}
 			}
 		},
+		22: { // Backstab
+			0: {
+				length: 1275,
+				abnormals: {
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
+				},
+				onlyTarget: true
+			}
+		},
 		23: { // Spinning Counter
 			0: {
 				length: 1091,
@@ -1459,6 +1469,16 @@ module.exports = {
 					501322: { chain: 'invalid' },
 					501323: { chain: 'invalid' }
 				}
+			}
+		},
+		6: { // Backstab
+			0: {
+				length: 1350,
+				abnormals: {
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
+				},
+				onlyTarget: true
 			}
 		},
 		8: { // Overhand Strike
@@ -4429,6 +4449,8 @@ module.exports = {
 				abnormals: {
 					10151030: { chain: 'invalid' },
 					10151034: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' },
 					10151035: { chain: 40 },
 					10151031: { chain: 30 }
 				},

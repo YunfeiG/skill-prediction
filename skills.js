@@ -223,7 +223,7 @@ module.exports = function SkillPrediction(dispatch) {
 	})
 
 	dispatch.hook('C_PLAYER_LOCATION', 3, event => {
-		if(DEBUG_LOC) console.log('Location %d %d (%d %d %d %s) > (%d %d %d)', event.type, event.unk2, Math.round(event.loc.x), Math.round(event.loc.y), Math.round(event.loc.z), degrees(event.w), Math.round(event.dest.x), Math.round(event.dest.y), Math.round(event.dest.z))
+		if(DEBUG_LOC) console.log('-> C_PLAYER_LOCATION %d %d (%d %d %d %s) > (%d %d %d)', event.type, event.unk2, Math.round(event.loc.x), Math.round(event.loc.y), Math.round(event.loc.z), degrees(event.w), Math.round(event.dest.x), Math.round(event.dest.y), Math.round(event.dest.z))
 
 		if(currentAction) {
 			let info = skillInfo(currentAction.skill)
@@ -620,7 +620,7 @@ module.exports = function SkillPrediction(dispatch) {
 				let duration = Date.now() - debugActionTime,
 					strs = [skillInfo(event.skill) ? '<X' : '<-', 'S_ACTION_STAGE', skillId(event.skill), event.stage, decimal(event.speed, 3) + 'x']
 
-				if(DEBUG_LOC) strs.push(...[degrees(event.w) + '\xb0', '(' + Math.round(event.loc.x), Math.round(event.loc.y), Math.round(event.loc.z) + ')'])
+				if(DEBUG_LOC) strs.push(...[degrees(event.w), '(' + Math.round(event.loc.x), Math.round(event.loc.y), Math.round(event.loc.z) + ')'])
 
 				strs.push(...[event.unk, event.unk1, event.dest.x, event.dest.y, event.dest.z, event.unk2, event.unk3])
 
@@ -705,7 +705,7 @@ module.exports = function SkillPrediction(dispatch) {
 				let duration = Date.now() - debugActionTime,
 					strs = [(serverAction && skillInfo(serverAction.skill)) ? '<X' : '<-', 'S_INSTANT_DASH', event.unk1, event.unk2, event.unk3]
 
-				if(DEBUG_LOC) strs.push(...[degrees(event.w) + '\xb0', '(' + Math.round(event.loc.x), Math.round(event.loc.y), Math.round(event.loc.z) + ')'])
+				if(DEBUG_LOC) strs.push(...[degrees(event.w), '(' + Math.round(event.loc.x), Math.round(event.loc.y), Math.round(event.loc.z) + ')'])
 
 				strs.push(...[
 					decimal(serverAction.loc.dist2D(event.loc), 3) + 'u',
@@ -725,14 +725,15 @@ module.exports = function SkillPrediction(dispatch) {
 			if(DEBUG) {
 					duration = Date.now() - debugActionTime,
 					strs = ['<- S_INSTANT_MOVE']
-				// S_INSTANT_MOVE with undefined loc is received when finish climbing a ladder, leading an error in debug message.
-				if(DEBUG_LOC && event.loc) strs.push(...[degrees(event.w) + '\xb0', '(' + Math.round(event.loc.x), Math.round(event.loc.y), Math.round(event.loc.z) + ')'])
-
-				strs.push(...[
-					decimal(serverAction.loc.dist2D(event.loc), 3) + 'u',
-					duration + 'ms',
-					'(' + Math.round(duration * serverAction.speed) + 'ms)'
-				])
+					
+				if(DEBUG_LOC && event.loc) strs.push(...[degrees(event.w), '(' + Math.round(event.loc.x), Math.round(event.loc.y), Math.round(event.loc.z) + ')'])
+				
+				if(serverAction)
+					strs.push(...[
+						decimal(serverAction.loc.dist2D(event.loc), 3) + 'u',
+						duration + 'ms',
+						'(' + Math.round(duration * serverAction.speed) + 'ms)'
+					])
 
 				debug(strs.join(' '))
 			}
@@ -752,7 +753,7 @@ module.exports = function SkillPrediction(dispatch) {
 				let duration = Date.now() - debugActionTime,
 					strs = [(event.id == lastEndedId || skillInfo(event.skill)) ? '<X' : '<-', 'S_ACTION_END', skillId(event.skill), event.type]
 
-				if(DEBUG_LOC) strs.push(...[degrees(event.w) + '\xb0', '(' + Math.round(event.loc.x), Math.round(event.loc.y), Math.round(event.loc.z) + ')'])
+				if(DEBUG_LOC) strs.push(...[degrees(event.w), '(' + Math.round(event.loc.x), Math.round(event.loc.y), Math.round(event.loc.z) + ')'])
 
 				if(serverAction)
 					strs.push(...[
@@ -809,7 +810,7 @@ module.exports = function SkillPrediction(dispatch) {
 				let duration = Date.now() - debugActionTime,
 					strs = ['<- S_EACH_SKILL_RESULT.targetAction', skillId(target.skill), target.stage]
 
-				if(DEBUG_LOC) strs.push(...[degrees(target.w) + '\xb0', '(' + Math.round(target.loc.x), Math.round(target.loc.y), Math.round(target.loc.z) + ')'])
+				if(DEBUG_LOC) strs.push(...[degrees(target.w), '(' + Math.round(target.loc.x), Math.round(target.loc.y), Math.round(target.loc.z) + ')'])
 
 				debug(strs.join(' '))
 			}
