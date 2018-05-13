@@ -35,6 +35,8 @@ High chance of ghost when attack speed suddenly decreased due to expiration of a
 
 ## Update/fix logs
 
+May 13, 2018: Reaper Soul reversal added.
+
 May 7, 2018: Fix S_INVEN issue for low level players(whose bodywear doesn't have any stats).
 
 May 1, 2018: Minor Fixes, Zerk Leaping strike->Lethal strike swfitlinked glyph disabled (broken from server side)

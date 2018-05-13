@@ -4415,6 +4415,22 @@ module.exports = {
 				noInterrupt: ['12-1']
 			}
 		},
+		13: { // Soul Reversal
+			0: {
+				length: 600,
+				distance: 6.84,
+				noRetry: true,
+				noInterrupt: [1, 3, 4, 5, 6, 8, 9, 10, 11, 12, 14, 15, 16, 18, 20, 40],
+				abnormals: {
+					10151030: { chain: 'invalid' },
+					10151034: { chain: 'invalid' },
+					10151035: { chain: 40 },
+					10151031: { chain: 30 }
+				}
+			},
+			30: { length: 1040 },
+			40: { length: 1040 }
+		},
 		14: { // Retaliate
 			0: {
 				type: 'retaliate',
@@ -4454,6 +4470,11 @@ module.exports = {
 				}
 			}
 		},
+		/*20: { // Cable Step
+			0: {	// cannot emulate this skill. requires location in S_ACTION_STAGE
+				length: 1250
+			}
+		},*/
 		40: { // Shadow Step
 			'*': {
 				length: 700,
