@@ -749,6 +749,7 @@ module.exports = {
 				noRetry: true,
 				length: 1976.15,
 				distance: 219.04,
+				noInterrupt: ['41-31', 42],
 				consumeAbnormal: 104110
 			},
 			0: {
