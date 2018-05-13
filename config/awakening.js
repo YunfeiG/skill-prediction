@@ -4374,9 +4374,8 @@ module.exports = {
 		},
 		11: { // Shadow Lash
 			'*': {
-				length: 1250, // Length for any stage unless the stage itself has one stated already
-				noRetry: true,
-				noInterrupt: [1, 3, 4, 5, 6, 8, 9, 10, '11-3', 12, 13, 14, 15, 16, 18, 20, 40]
+				length: 1250,
+				noRetry: true
 			},
 			0: {
 				length: 2150, // Specific length for stage 0
@@ -4385,6 +4384,12 @@ module.exports = {
 					10151040: { chain: 1 },
 					10151041: { chain: 2 },
 					10151042: { chain: 3 }
+				},
+				noInterrupt: [1, 3, 4, 5, 6, 8, 9, 10, '11-3', 12, 13, 14, 15, 16, 18, 20, 40],
+				interruptibleWithAbnormal: {
+					10151040: [1, 3, 4, 5, 6, 8, 9, 10, 12, 13, 14, 15, 16, 18, 20, 40],
+					10151041: [1, 3, 4, 5, 6, 8, 9, 10, 12, 13, 14, 15, 16, 18, 20, 40],
+					10151042: [1, 3, 4, 5, 6, 8, 9, 10, 12, 13, 14, 15, 16, 18, 20, 40]
 				}
 			},
 			1: { 
