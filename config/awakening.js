@@ -2142,9 +2142,9 @@ module.exports = {
 			0: {
 				type: 'charging',
 				length: [650, 650, 650],		// 2300
-				interruptibleWithAbnormal: { 401720: ['10-13'] },
+				interruptibleWithAbnormal: { 401720: [10] },
 				abnormals:{
-					401720: { chain : null },
+					401720: { chain : null }
 				},
 				consumeAbnormal: 401720,
 				glyphs: {
@@ -4376,7 +4376,7 @@ module.exports = {
 			'*': {
 				length: 1250, // Length for any stage unless the stage itself has one stated already
 				noRetry: true,
-				noInterrupt: [1, 3, 4, 5, 6, 8, 9, 10, 12, 13, 14, 15, 16, 18, 20, 40]
+				noInterrupt: [1, 3, 4, 5, 6, 8, 9, 10, '11-3', 12, 13, 14, 15, 16, 18, 20, 40]
 			},
 			0: {
 				length: 2150, // Specific length for stage 0
