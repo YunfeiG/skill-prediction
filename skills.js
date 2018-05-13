@@ -422,7 +422,7 @@ module.exports = function SkillPrediction(dispatch) {
 
 				if(info.interruptibleWithAbnormal)
 					for(let abnormal in info.interruptibleWithAbnormal)
-						if(abnormality.exists(abnormal) && currentSkillBase == info.interruptibleWithAbnormal[abnormal])
+						if(abnormality.exists(abnormal) && info.interruptibleWithAbnormal[abnormal].includes(currentSkillBase) )
 							canInterrupt = true
 
 				if(!canInterrupt) {

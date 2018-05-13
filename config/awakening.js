@@ -425,7 +425,7 @@ module.exports = {
 				distance: 94.5,
 				noInterrupt: [1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, '16-0', 18, '19-0', 21, 22, 23, 29, 34, 35, 36, 37, 41, 42],
 				interruptibleWithAbnormal: {
-					102010: 3
+					102010: [3]
 				},
 				abnormals: {
 					102010: { chain: 30 },
@@ -2114,7 +2114,7 @@ module.exports = {
 			0: { 
 				noInterrupt: [2],
 			    interruptibleWithAbnormal: {
-				    401404: 2
+				    401404: [2]
 				},
 				abnormals: {
 					401404: { chain: 30 }
@@ -2142,7 +2142,7 @@ module.exports = {
 			0: {
 				type: 'charging',
 				length: [650, 650, 650],		// 2300
-				interruptibleWithAbnormal: { 401720: '10-13' },
+				interruptibleWithAbnormal: { 401720: ['10-13'] },
 				abnormals:{
 					401720: { chain : null },
 				},
@@ -2409,7 +2409,7 @@ module.exports = {
 			0: {
 				noInterrupt: [2, 4, 6, '8-30', 11, 13, 18, 24, 25, 26, 27, 28, 29, '32-0'],
 				interruptibleWithAbnormal: { 
-					401404: 2
+					401404: [2]
 				}, 
 				abnormals: {
 					401404: { chain: 31 }
@@ -4426,6 +4426,9 @@ module.exports = {
 					10151034: { chain: 'invalid' },
 					10151035: { chain: 40 },
 					10151031: { chain: 30 }
+				},
+				interruptibleWithAbnormal: {
+					10151031: [1, 3, 4, 5, 6, 8, 9, 10, 11, 12, 14, 15, 16, 18, 20, 40]
 				}
 			},
 			30: { length: 1040 },
