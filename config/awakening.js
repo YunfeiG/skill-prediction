@@ -785,8 +785,7 @@ module.exports = {
 					37: 30,
 					38: 30,
 					39: 30,
-					40: 30,
-					42: 30,
+					40: 30
 				},
 				abnormals: {
 					105100: { chain: 31 }
@@ -4483,9 +4482,7 @@ module.exports = {
 			}
 		},
 		/*20: { // Cable Step
-			0: {	// cannot emulate this skill. requires location in S_ACTION_STAGE
-				length: 1250
-			}
+			0: { length: 1250 }	// cannot emulate this skill
 		},*/
 		40: { // Shadow Step
 			'*': {

@@ -725,8 +725,8 @@ module.exports = function SkillPrediction(dispatch) {
 			if(DEBUG) {
 					duration = Date.now() - debugActionTime,
 					strs = ['<- S_INSTANT_MOVE']
-
-				if(DEBUG_LOC) strs.push(...[degrees(event.w) + '\xb0', '(' + Math.round(event.loc.x), Math.round(event.loc.y), Math.round(event.loc.z) + ')'])
+				// S_INSTANT_MOVE with undefined loc is received when finish climbing a ladder, leading an error in debug message.
+				if(DEBUG_LOC && event.loc) strs.push(...[degrees(event.w) + '\xb0', '(' + Math.round(event.loc.x), Math.round(event.loc.y), Math.round(event.loc.z) + ')'])
 
 				strs.push(...[
 					decimal(serverAction.loc.dist2D(event.loc), 3) + 'u',
