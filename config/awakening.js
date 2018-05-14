@@ -397,7 +397,7 @@ module.exports = {
 			0: {
 				length: 2000,
 				distance: 160,
-				noInterrupt: [1, 2, 3, 4, 8, 9, 10, 13, 16, 17, 19, 21, 22, 28, 29, 32, 34, 36, 37, 39, 40, 41, 42],
+				noInterrupt: [1, 2, 3, 4, 8, 9, 10, 13, 16, 17, 19, 21, 22, 28, 29, 32, 34, 36, 37, 39, 41, 42],
 				chains: {
 					11: 30,
 					12: 30,
@@ -2580,26 +2580,25 @@ module.exports = {
 			0: { length: [700, 1500, 1766] },
 		},
 		34: { // Unleash: Dexter
-			0: {
+			'*': {
 				length: [600, 833, 833],
 				distance: [0, 27.5, 0],
-				noInterrupt: [34, 36],
 				noRetry: true,
 				requiredBuff: 401705,
 				abnormals: {
 					401706: { speed: 1.2 },
 					401716: { chain: 31 }
-				},
+				}
+			},
+			0: {
+				noInterrupt: [34, 36],
 				chains: { // x3 to 30
 					33: 30,
 					35: 30,
 					37: 30
 				}
 			},
-			1: { 
-				length: [600, 833, 833],
-				distance: [0, 27.5, 0]
-			},
+			1: true,
 			30: {
 				length: [833, 833],
 				distance: [27.5, 0]
@@ -2610,25 +2609,24 @@ module.exports = {
 			}
 		},
 		35: { // Unleash: Sinister
-			0: {
+			'*': {
+				length: [1133, 833],
+				distance: [198, 0],
 				requiredBuff: 401705,
 				abnormals: {
 					401707: { speed: 1.2 },
 					401717: { chain: 31 }
 				},
+				noRetry: true
+			},
+			0: {
+				noInterrupt: [35, 36, 37],
 				chains: {
 					33: 1,
 					34: 30
-				},
-				noRetry: true,
-				noInterrupt: [35, 36, 37],
-				length: [1133, 833],
-				distance: [198, 0]
+				}
 			},
-			1: {
-				length: [1133, 833],
-				distance: [198, 0]
-			},
+			1: true,
 			30: {
 				length: [625, 833],
 				distance: [27.5, 0]
@@ -2640,19 +2638,18 @@ module.exports = {
 		},
 		36: { // Unleash: Rampage
 			'*': {
-				requiredBuff: 401705,
 				length: 1588.6,
 				distance: 38.5,
-				noRetry: true,
-				noInterrupt: [37]
-			},
-			0: {
-				length: 2714.4,
-				noRetry: true,
+				requiredBuff: 401705,
 				abnormals: {
 					401708: { speed: 1.2 },
 					401718: { chain: 31 }
 				},
+				noRetry: true
+			},
+			0: {
+				length: 2714.4,
+				noInterrupt: [37],
 				chains: { // x 3 to 30
 					34: 30,
 					35: 30,
@@ -2665,10 +2662,10 @@ module.exports = {
 		37: { // Unleash: Beast Fury
 			'*': {
 				// race difference is a thing
-				requiredBuff: 401705,
 				length: [610.8, 694, 721.6, 471.66, 1194],
 				distance: [126, 144.824, 151.1, 9.4, 98.64],
-				noInterrupt: [37]
+				noInterrupt: [37],
+				requiredBuff: 401705
 			},
 			0: {
 				chains: {
