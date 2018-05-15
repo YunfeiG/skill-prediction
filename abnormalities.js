@@ -11,6 +11,7 @@ class AbnormalityPrediction {
 
 		this.cid = null
 		this.myAbnormals = {}
+		this.stacks = {}
 
 		dispatch.hook('S_LOGIN', 10, event => { this.cid = event.gameId })
 
@@ -38,7 +39,7 @@ class AbnormalityPrediction {
 					return false
 				}
 
-				this._add(event.id, event.duration)
+				this._add(event.id, event.duration, event.stacks)
 				return true
 			}
 		}
@@ -68,6 +69,10 @@ class AbnormalityPrediction {
 			if(map[id]) return true
 		return false
 	}
+	
+	stacks(id) {
+		return stacks[id]
+	}
 
 	add(id, duration, stacks) {
 		let type = this.myAbnormals[id] ? 'S_ABNORMALITY_REFRESH' : 'S_ABNORMALITY_BEGIN',
@@ -85,7 +90,7 @@ class AbnormalityPrediction {
 			unk2: 0
 		})
 
-		this._add(id, duration)
+		this._add(id, duration, stacks)
 	}
 
 	remove(id) {
@@ -105,14 +110,16 @@ class AbnormalityPrediction {
 		for(let id in this.myAbnormals) this.remove(id)
 	}
 
-	_add(id, duration) {
+	_add(id, duration, stacks) {
 		clearTimeout(this.myAbnormals[id])
 		this.myAbnormals[id] = duration >= 0x7fffffff ? true : setTimeout(() => { this.remove(id) }, duration)
+		this.stacks[id] = stacks
 	}
 
 	_remove(id) {
 		clearTimeout(this.myAbnormals[id])
 		delete this.myAbnormals[id]
+		delete this.stacks[id]
 	}
 }
 
