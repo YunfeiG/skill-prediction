@@ -2586,7 +2586,7 @@ module.exports = {
 				noRetry: true,
 				requiredBuff: 401705,
 				abnormals: {
-					401706: { speed: 1.2 },
+					//401706: { speed: 1.2 }, // no effect
 					401716: { chain: 31 }
 				}
 			},

@@ -506,7 +506,8 @@ module.exports = function SkillPrediction(dispatch) {
 					let stacks = abnormality.getStacks(id);
 					let abnormal = info.abnormals[id]
 
-					if(abnormal.speed) abnormalSpeed *= ((abnormal.speed - 1) * stacks + 1 )
+					//if(abnormal.speed) abnormalSpeed *= ((abnormal.speed - 1) * stacks + 1 )
+					if(abnormal.speed) abnormalSpeed *= abnormal.speed
 					if(abnormal.chargeSpeed) chargeSpeed += abnormal.chargeSpeed
 					if(abnormal.skill) skill = 0x4000000 + abnormal.skill
 					if(abnormal.chain) {
