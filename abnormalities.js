@@ -70,8 +70,8 @@ class AbnormalityPrediction {
 		return false
 	}
 	
-	stacks(id) {
-		return stacks[id]
+	getStacks(id) {
+		return !!this.stacks[id]
 	}
 
 	add(id, duration, stacks) {

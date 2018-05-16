@@ -503,7 +503,7 @@ module.exports = function SkillPrediction(dispatch) {
 		if(info.abnormals)
 			for(let id in info.abnormals)
 				if(abnormality.exists(id)) {
-					let stacks = abnormality.stacks(id);
+					let stacks = abnormality.getStacks(id);
 					let abnormal = info.abnormals[id]
 
 					if(abnormal.speed) abnormalSpeed *= ((abnormal.speed - 1) * stacks + 1 )
