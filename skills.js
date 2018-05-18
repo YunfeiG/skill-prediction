@@ -389,7 +389,8 @@ module.exports = function SkillPrediction(dispatch) {
 							skill,
 							info,
 							stage: 0,
-							speed: info.fixedSpeed || aspd * (info.speed || 1)
+							speed: info.fixedSpeed || aspd * (info.speed || 1),
+							range: 1
 						})
 					}
 					else sendActionEnd(info.endType51 ? 51: 10)
