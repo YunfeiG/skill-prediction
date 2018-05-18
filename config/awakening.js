@@ -3579,11 +3579,16 @@ module.exports = {
 				length: [800, 1600],	// 3500
 				noInterrupt: [26, 27, 38],
 				glyphs: {
-					28031: { chargeSpeed: 0.25 },
-					28039: { range: 1.5 }
+					28031: { chargeSpeed: 0.25 }
 				},
 				level: {
-					1: { length: [900, 900, 900] }
+					1: {
+						length: [900, 900, 900],
+						glyphs: {
+							28031: { chargeSpeed: 0.25 },
+							28039: { range: 1.5 }
+						}
+					}
 				}
 			},
 			10: { glyphs: { 28039: { range: 1.5 } } },
