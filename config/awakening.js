@@ -1711,7 +1711,7 @@ module.exports = {
 		23: { // Measured Slice
 			'*': {
 				distance: 189, // Sometimes 190 but most of the time 189
-				races: {
+				race: {
 					5: { distance: 190}, // F.Aman
 					10: { distance: 190 } // Baraka
 				},
@@ -2189,7 +2189,7 @@ module.exports = {
 			10: {
 				length: 1333, // Cast F. - TODO
 				distance: 50,
-				races: {
+				race: {
 					2: { length: 1400 }, // M.Helf
 					3: { length: 1800 }, // F.Helf,
 					6: { length: 1366 }, // M.Castanic
@@ -2198,7 +2198,7 @@ module.exports = {
 			11: {
 				length: [366, 366, 1333],
 				distance: [33.33, 33.33, 50],
-				races: {
+				race: {
 					2: { length: [366, 366, 1400] }, // M.Helf
 					3: { length: [366, 366, 1800] }, // F.Helf
 					6: { length: [366, 366, 1366] } // M.Castanic
@@ -2207,7 +2207,7 @@ module.exports = {
 			12: {
 				length: [366, 366, 366, 366, 1333],
 				distance: [33.33, 33.33, 33.33, 33.33, 50],
-				races: {
+				race: {
 					2: { length: [366, 366, 366, 366, 1400] }, // M.Helf
 					3: { length: [366, 366, 366, 366, 1800] }, // F.Helf
 					6: { length: [366, 366, 366, 366, 1366] } // M.Castanic
@@ -2216,7 +2216,7 @@ module.exports = {
 			13: {
 				length: [366, 366, 366, 366, 1333],
 				distance: [33.33, 33.33, 33.33, 33.33, 50],
-				races: {
+				race: {
 					2: { length: [366, 366, 366, 366, 1400] }, // M.Helf
 					3: { length: [366, 366, 366, 366, 1800] }, // F.Helf
 					6: { length: [366, 366, 366, 366, 1366] } // M.Castanic
@@ -2973,6 +2973,17 @@ module.exports = {
 				}
 			}
 		},
+		/*28: { // Stone skin
+			'*': { noRetry: true },
+			0: {
+				noInterrupt: [1, 2, 3, '4-10', '4-11', '4-12', 5, 6, 7, 8, 10, 11, 12, 13, 16, 17, 18, '19-10', '19-11', '19-12', '20-10', '21-10', '22-10', '23-10', '25-10', 26, 27, 28, 30, 31, 32, 33],
+				length: 300
+			},
+			50: {
+				type: 'retaliate', //C11005-05
+				length: 340
+			}
+		},*/
 		30: { // Nova
 			0: {
 				length: 2850,
@@ -2993,7 +3004,7 @@ module.exports = {
 			10: true,
 			20: true
 		},
-		32: { // Meteor Shower
+		32: { // Meteor Shower (Mana Boost)
 			'*': {
 				length: 6775,
 				glyphs: {
@@ -3057,7 +3068,7 @@ module.exports = {
 			'*': {
 				type: 'chargeCast',
 				length: 1760,
-				races: {
+				race: {
 					1: { length: 1600 }	// F.Human
 				}
 			},
@@ -3108,7 +3119,7 @@ module.exports = {
 			'*': {
 				type: 'chargeCast',
 				length: 1315,
-				races: {
+				race: {
 					1: { length: 1275 }	// F.Human
 				}
 			},
@@ -3558,6 +3569,7 @@ module.exports = {
 			'*': {
 				type: 'chargeCast',
 				length: 825,
+				noRetry: true,
 				level: {
 					1: { length : 700 }
 				}
@@ -3567,16 +3579,17 @@ module.exports = {
 				length: [800, 1600],	// 3500
 				noInterrupt: [26, 27, 38],
 				glyphs: {
-					28031: { chargeSpeed: 0.25 }
+					28031: { chargeSpeed: 0.25 },
+					28039: { range: 1.5 }
 				},
 				level: {
 					1: { length: [900, 900, 900] }
 				}
 			},
-			10: true,
-			11: true,
-			12: true,
-			13: true
+			10: { glyphs: { 28039: { range: 1.5 } } },
+			11: { glyphs: { 28039: { range: 1.5 } } },
+			12: { glyphs: { 28039: { range: 1.5 } } },
+			13: { glyphs: { 28039: { range: 1.5 } } }
 		},
 		29: { // Triple Nemesis
 			0: { length: 810 },

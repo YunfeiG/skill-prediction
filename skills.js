@@ -550,6 +550,8 @@ module.exports = function SkillPrediction(dispatch) {
 		if(burstFireCost) stamina -= 5;	
 		if(inviRageCost) stamina -= 600;
 		
+		let range = 1;
+		
 		if(info.glyphs)
 			for(let id in info.glyphs)
 				if(currentGlyphs[id]) {
@@ -560,6 +562,7 @@ module.exports = function SkillPrediction(dispatch) {
 					if(glyph.movement) movement = glyph.movement
 					if(glyph.distance) distanceMult *= glyph.distance
 					if(glyph.stamina) stamina += glyph.stamina
+					if(glyph.range) range *= glyph.range
 				}
 
 		if(stamina) {
@@ -580,6 +583,7 @@ module.exports = function SkillPrediction(dispatch) {
 			chargeSpeed,
 			movement,
 			moving: type == 'C_START_SKILL' && event.moving == 1,
+			range,
 			distanceMult,
 			targetLoc: event.dest
 		})
@@ -624,7 +628,7 @@ module.exports = function SkillPrediction(dispatch) {
 
 				if(DEBUG_LOC) strs.push(...[degrees(event.w), '(' + Math.round(event.loc.x), Math.round(event.loc.y), Math.round(event.loc.z) + ')'])
 
-				strs.push(...[event.unk, event.unk1, event.dest.x, event.dest.y, event.dest.z, event.unk2, event.unk3])
+				strs.push(...[event.unk1, event.unk2, event.dest.x, event.dest.y, event.dest.z])
 
 				if(serverAction)
 					strs.push(...[
@@ -915,7 +919,7 @@ module.exports = function SkillPrediction(dispatch) {
 			stage: opts.stage,
 			speed: info.type == 'charging' ? 1 : opts.speed,
 			id: actionNumber,
-			unk1: 1,
+			unk1: opts.range,
 			unk2: false,
 			dest: undefined,
 			target: 0,

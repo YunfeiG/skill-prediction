@@ -35,6 +35,8 @@ High chance of ghost when attack speed suddenly decreased due to expiration of a
 
 ## Update/fix logs
 
+May 17, 2018: Fixed Priest Divine Charge Range with glyph
+
 May 14, 2018: Blade frenzy->Aerial scythe is no longer a chain. Blade waltz->Traverse cut enabled.
 
 May 13, 2018: Reaper Soul reversal added. Shadow Lash 2nd, 3rd and last cast fix. Apex Urgency fix.
