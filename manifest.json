@@ -4,15 +4,13 @@
     "cooldowns.js": "7e4af8df16e93c3fff64eadee61dafa05cdb4bc0ded95210b60955d50be4d634",
     "index.js": "8c52d8a2819f91199c2097000265db5aa4e173d4829dd7d08718fa599c7b9b55",
     "LICENSE": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
-    "manifest.json": "370cc7920645cf936a422d15ee803d3f5f7cc6ba9199cf7639ab9b01f1c4f11c",
     "module.json": "5ae73f53d9722dcdb88391066983a3245159cab1e737c7434a174f583c1494b2",
     "ping.js": "1148bc94546ff245846664002fd705f09f96bcf30dfebc9247612b85d4823b6b",
     "README.md": "8e7d015e3ccd70599e8bb76f33d4c320d9ddb5ffa6e3006af3558bc9a3dc9969",
     "skills.js": "e4c5e437f53be2830afe1dba582453058f98a3ec4538787d36c7dea077871bc0",
     "config/abnormalities.js": "25322688d62d77bcb607956666f394c9206a4d970ae4ae07cbc5d186192294d1",
     "config/awakening.js": "611e14764ac1b868713d8a5204f9a8806f67e0a5a95610d8eac7b852b1fc3a77",
-    "config/silence.json": "0d2995f082458897e7c403d1ad6dcdd084e6ef9aaabb039b749693b9dc9bdd6e",
-    "config/skills.js": "9f38008167f07b9a305196825d58cedb0d014401f438d47aec809279a08da92a"
+    "config/silence.json": "0d2995f082458897e7c403d1ad6dcdd084e6ef9aaabb039b749693b9dc9bdd6e"
   },
   "defs": {
 	"S_LOGIN": 10,
