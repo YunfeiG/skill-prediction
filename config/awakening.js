@@ -477,7 +477,7 @@ module.exports = {
 			}, // Old fast cast value was wrong on Elin, unless that had a pve intention on it, idk.
 			0: {
 				length: 1833,
-				noInterrupt: [1, 3, 5, 8, 9, 10, 13, 16, 17, 18, 19, 21, 22, 23, 28, 30, 32, 34, 35, 38, 39, 41, 42],
+				noInterrupt: [1, 3, 5, 8, 9, 10, 13, 16, 17, 18, 19, 21, 22, 23, 28, 30, 31, 32, 34, 35, 38, 39, 41, 42],
 				chains: {
 					2: 30,
 					4: 30,
