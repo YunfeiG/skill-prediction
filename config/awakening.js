@@ -918,7 +918,9 @@ module.exports = {
 					10: { distance: [0, 100, 100, 100, 100, 14.5] } // Baraka: 14.489
 				}
 			},
-			0: { length: [939, 514.54, 514.54, 514.54, 393.63, 760.11] },
+			0: {
+				length: [939, 514.54, 514.54, 514.54, 393.63, 760.11]
+			},
 			30: { length: [686.66, 373.33, 373.33, 373.33, 288.66, 557.35] }
 		},
 		4: { // Challenging Shout
@@ -4362,6 +4364,9 @@ module.exports = {
 			0: {
 				length: 1725,
 				distance: 168,
+				chains: {
+					1: 30
+				},
 				inPlace: {
 					movement: [{
 						duration: 1832,
@@ -4380,7 +4385,11 @@ module.exports = {
 					501323: { chain: 'invalid' }
 				},
 				noInterrupt: [1, 3, 4, 5, 6, 8, 9, 10, 11, 12, 14, 20]
-			}
+			}/*,
+			30: {	//unused
+				length: 1725,
+				distance: 168
+			}*/
 		},
 		10: { // Pendulum Strike
 			'*': {
@@ -5591,12 +5600,7 @@ module.exports = {
 				distance: 23.7,
 				abnormals: {
 					31120: { chain: 31 },
-					10153540: { speed: 1.2 }
-				},
-				noRetry: true,
-				noInterrupt: [24],
-				abnormals: {
-					31120: { chain: 31 },
+					10153540: { speed: 1.2 },
 					10153190 : { chain: 30 },
 					10153191 : { chain: 30 },
 					10153192 : { chain: 30 },
@@ -5604,6 +5608,8 @@ module.exports = {
 					10153194 : { chain: 30 },
 					10153195 : { chain: 30 }
 				},
+				noRetry: true,
+				noInterrupt: [24],
 				chains: {
 					1: 30,
 					2: 30,
@@ -5643,7 +5649,9 @@ module.exports = {
                     10153192: { chain: 4 },
                     10153193: { chain: 5 },
                     10153194: { chain: 6 },
-                    10153195: { chain: 7 }
+                    10153195: { chain: 7 },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
                 }
 			},
 			0: {
@@ -5965,7 +5973,7 @@ module.exports = {
 			'*': {
 				length: 1008,
 				distance: -291.6,
-				noInterrupt: [2, 5],
+				noInterrupt: [2, 4, 5],
 				//forceClip: true,
 				noRetry: true,
 				chains: {

@@ -9,8 +9,8 @@
     "README.md": "8e7d015e3ccd70599e8bb76f33d4c320d9ddb5ffa6e3006af3558bc9a3dc9969",
     "skills.js": "e4c5e437f53be2830afe1dba582453058f98a3ec4538787d36c7dea077871bc0",
     "config/abnormalities.js": "25322688d62d77bcb607956666f394c9206a4d970ae4ae07cbc5d186192294d1",
-    "config/awakening.js": "5ac45b2266f6b6d32f6c9437df676fcf0bb33bf82c55064a25b5d2199074e39f",
-    "config/silence.json": "0d2995f082458897e7c403d1ad6dcdd084e6ef9aaabb039b749693b9dc9bdd6e"
+    "config/awakening.js": "5dc9bf4e647e08c5d07adbf21b5560a46918008bf858f976acf58896e93082e1",
+    "config/silence.json": "6389178ef070e2d3167ee4679d097ee634a63a65a8d6029e478ed15d8cfea0ee"
   },
   "defs": {
 	"S_LOGIN": 10,
