@@ -918,9 +918,7 @@ module.exports = {
 					10: { distance: [0, 100, 100, 100, 100, 14.5] } // Baraka: 14.489
 				}
 			},
-			0: {
-				length: [939, 514.54, 514.54, 514.54, 393.63, 760.11]
-			},
+			0: { length: [939, 514.54, 514.54, 514.54, 393.63, 760.11] },
 			30: { length: [686.66, 373.33, 373.33, 373.33, 288.66, 557.35] }
 		},
 		4: { // Challenging Shout
@@ -4364,9 +4362,6 @@ module.exports = {
 			0: {
 				length: 1725,
 				distance: 168,
-				chains: {
-					1: 30
-				},
 				inPlace: {
 					movement: [{
 						duration: 1832,
@@ -5644,15 +5639,15 @@ module.exports = {
 			'*': {
 				noRetry: true,
 				abnormals: {
-                    10153190: { chain: 2 },
-                    10153191: { chain: 3 },
-                    10153192: { chain: 4 },
-                    10153193: { chain: 5 },
-                    10153194: { chain: 6 },
-                    10153195: { chain: 7 },
+					10153190: { chain: 2 },
+					10153191: { chain: 3 },
+					10153192: { chain: 4 },
+					10153193: { chain: 5 },
+					10153194: { chain: 6 },
+					10153195: { chain: 7 },
 					7692002: { chain: 'invalid' },
 					9692002: { chain: 'invalid' }
-                }
+				}
 			},
 			0: {
 				length: [178.57, 412.85],
