@@ -863,7 +863,7 @@ module.exports = function SkillPrediction(dispatch) {
 						}
 			}
 
-			dispatch.toClient('S_CAN_LOCKON_TARGET', Object.assign({ok}, event))
+			dispatch.toClient('S_CAN_LOCKON_TARGET', 1, Object.assign({ok}, event))
 		}
 	})
 
