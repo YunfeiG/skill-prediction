@@ -212,7 +212,7 @@ module.exports = function SkillPrediction(dispatch) {
                 partyMembers.push(member.gameId)
 	})
 
-	dispatch.hook('S_LEAVE_PARTY', () => { partyMembers = null })
+	dispatch.hook('S_LEAVE_PARTY', 1 => { partyMembers = null })
 
 	dispatch.hook('S_MOUNT_VEHICLE_EX', 1, event => {
 		if(cid.equals(event.target)) vehicleEx = event.vehicle
