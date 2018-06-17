@@ -924,7 +924,7 @@ module.exports = {
 		4: { // Challenging Shout
 			'*': {
 				length: 2215, // TODO: Verify
-				noInterrupt: [2, 9, 12, 23, 26],
+				noInterrupt: [2, 9, 12, 23, 24, 26],
 				glyphs: {
 					22056: { speed: 1.25 },
 					22085: { speed: 1.25 }
@@ -939,7 +939,8 @@ module.exports = {
 					15: 30,
 					18: 30,
 					21: 30,
-					25: 30
+					25: 30,
+					29: 30
 				}
 			},
 			0: true,
@@ -4771,12 +4772,13 @@ module.exports = {
 				noRetry: true,
 				triggerAbnormal: { 10152086: 4100 },
 				chains: {
-					1: null,
+					//1: null,
 					'2-1': null,
 					3: null,
 					4: null,
-					6: null,
-					7: null,
+					//6: null,
+					//7: null,
+					'7-3': null,
 					9: null,
 					//10: null,
 					11: null,
@@ -4842,12 +4844,13 @@ module.exports = {
 				length: 5800,
 				distance: -269.09,
 				chains: {
-					1: null,
+					//1: null,
 					'2-1': null,
 					3: null,
 					4: null,
-					6: null,
-					7: null,
+					//6: null,
+					//7: null,
+					'7-3': null,
 					9: null,
 					10: null,
 					11: null,
@@ -4906,12 +4909,13 @@ module.exports = {
 				length: 1325,
 				noRetry: true,
 				chains: {
-					1: null,
+					//1: null,
 					'2-1': null,
 					3: null,
 					4: null,
-					6: null,
-					7: null,
+					//6: null,
+					//7: null,
+					'7-3': null,
 					9: null,
 					10: null,
 					11: null,
