@@ -540,6 +540,15 @@ module.exports = {
 				stamina: 50
 			}
 		},
+		/*33: { // Smoke Flanker
+			0: {
+				onlyTarget: true,
+				length: 1925,
+				requiredBuff: 104110,
+				interruptibleWithAbnormal: { 104110: [32] },
+				noInterrupt: [3, 40],
+			}
+		},*/
 		34: { // Binding Sword
 			0: { 
 				length: 1902,
@@ -6068,9 +6077,11 @@ module.exports = {
 		8: { // Fire Avalanche
 			'*': {
 				triggerAbnormal: { 10154080: 10000 },
-				length: [700, 1375, 325],
+				length: [700, 1366, 333],
 				distance: [0, 367.31, 0],
 				abnormals: {
+					32033: { speed: 1.2 },
+					32058: { speed: 1.3 },
 					10154080: { chain: 1 },
 					10154081: { chain: 2 }
 				},
@@ -6096,12 +6107,12 @@ module.exports = {
 			0: true,
 			1: {
 				triggerAbnormal: { 10154081: 5000 },
-				length: [1375, 325],
+				length: [1366, 333],
 				distance: [411.39, 0]
 			},
 			2: {
 				triggerAbnormal: { 10154082: 1 },
-				length: [1375, 325],
+				length: [1366, 333],
 				distance: [455.47, 0]
 			},
 			30: true
@@ -6230,7 +6241,7 @@ module.exports = {
 		},
 		15: { // Burning Heart
 			'*': {
-				length: 390,
+				length: 400,
 				stamina: 100,
 				instantStamina: true,
 				abnormals: {
@@ -6244,7 +6255,7 @@ module.exports = {
 					10154100: 2000,
 					10154101: 2000
 				},
-				length: 880
+				length: 900
 			},
 			1: {
 				triggerAbnormal: { 10154061: 850 },
@@ -6361,7 +6372,7 @@ module.exports = {
 		19: { // Chakra Thrust
 			'*': {
 				length: [225, 825],
-				distance: 127.5,
+				distance: [26.5, 127.5],
 				noInterrupt: [19],
 				chains: {
 					1: 30,
