@@ -6372,7 +6372,7 @@ module.exports = {
 		19: { // Chakra Thrust
 			'*': {
 				length: [225, 825],
-				distance: [26.5, 127.5],
+				distance: [-26.5, 127.5],
 				noInterrupt: [19],
 				chains: {
 					1: 30,
