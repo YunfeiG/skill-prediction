@@ -1513,6 +1513,7 @@ module.exports = {
 			0: {
 				length: 3365,
 				noInterrupt: ['1-0', '1-1', '1-2', 4, 6, 8, 10, '14-0', '14-1', 17, 21, 23, 25, 26, 28],
+				interruptibleWithAbnormal: { 301604: [23, 25, 26] },
 				abnormals: {
 					300801: { skill: 250100 },
 					300802: { skill: 250100 },
@@ -1731,6 +1732,7 @@ module.exports = {
 			0: {
 				length: 3685,
 				noInterrupt: [1, 2, 3, 4, 6, 9, 10, 12, 13, 14, 15, 16, 17, 21, 22, 23, 26, 28],
+				interruptibleWithAbnormal: { 301604: [26] },
 				chains: {
 					8: 30,
 					24: 30,
@@ -1750,6 +1752,7 @@ module.exports = {
 				length: 1925,
 				distance: 50,
 				noInterrupt: ['1-0', '1-1', '1-2', 4, 6, 10, 14, 16, 17, 21, 22, 23, 24, 26, 28],
+				interruptibleWithAbnormal: { 301604: [25, 26] },
 				chains: {
 					1: 30,
 					2: 30,
