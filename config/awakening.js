@@ -3055,6 +3055,59 @@ module.exports = {
 		},
 		34: { // Mana Boost
 			0: { length: 750 }
+		},
+		35: { // Ice spear
+			// No S_ACTION_STAGE
+			// C_START_SKILL 35-01-10
+			// C_START_SKILL 35-02-00
+			// C_START_SKILL 35-03-00
+			0: {
+				level: {
+					1: { requiredBuff: 502060 },
+					2: { requiredBuff: 502061 }
+				}
+			},
+			10: true
+		},
+		36: { // Elemental Fusion
+			0: {
+				level: {
+					0: {
+					},
+					1: { // Primal Flare 1st cast (Fire+Ice)
+						length: 855,
+						abnormals: {
+							502021: { skill: 360230 }
+						}
+					},
+					2: { // Lightning Storm (Fire+Lightning)
+						length: 1570
+					},
+					3: { // Glacial Rise (Ice+Lightning)
+						length: 1545
+					},
+					5: { // Core Fusion
+						length: 2660
+					}
+				}
+			},
+			30: {
+				level: {
+					1: { // Primal Flare 2nd cast (Fire+Ice)
+						length: 890
+					}
+				}
+			}
+		},
+		39: { // Elemental Fusion: Collapse
+			requiredBuff: 502052,
+			length: [3775, 3820, 2500],
+			distance: [0, 0, 219.52]
+		},
+		910: { // Apex Urgency
+			0: {
+				length: 500
+			}
 		}
 	},
 	5: { // Archer
@@ -3222,6 +3275,26 @@ module.exports = {
 					9692002: { chain: 'invalid' }
 				}
 			}
+			/* for awakening patch
+			0: {
+				instantStamina: true,
+				stamina: 120,
+				length: 670,
+				distance: -200,
+				//forceClip: true,
+				abnormals: {
+					400800: { chain: 'invalid' },
+					400801: { chain: 'invalid' },
+					501320: { chain: 'invalid' },
+					501321: { chain: 'invalid' },
+					501322: { chain: 'invalid' },
+					501323: { chain: 'invalid' },
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
+				}
+				// get the passive skill so RE cost -40
+				// get the glyph so RE cost -20
+			}*/
 		},
 		7: { // Feign Death
 			0: {
@@ -3368,6 +3441,46 @@ module.exports = {
 					501323: { chain: 'invalid' }
 				}
 			}
+		},
+		34: { // Gale step
+			'*': {
+				// evasive skill
+				length: 666,
+				instantStamina: true,
+				stamina: 70,
+				//forceClip: true
+			},
+			0: { distance: -120 },
+			10: { distance: 181.21 },
+			20: { distance: 181.21 },
+			30: { distance: 181.17814 },
+			40: { distance: 176.4728 },
+			50: { distance: 181.20966 },
+			60: { distance: 186.93656 },
+			70: { distance: 186.93656 },
+		},
+		35: { // Melodic breeze
+			0: { length: 200 }
+		},
+		36: { // Tempest Arrow
+			'*': {
+				length: 2125
+			},
+			0: {
+				type: 'charging',
+				length: [3180, 100],
+				noInterrupt: [36],
+				noRetry: true,
+			},
+			//10: false
+			13: {
+				type: 'chargeCast',
+				distance: -100,
+				noInterrupt: ['36-13'],
+			}
+		},
+		910: { // Apex Urgency
+			0: { length: 500 }
 		}
 	},
 	6: { // Priest
@@ -4259,7 +4372,8 @@ module.exports = {
 					9: null,
 					10: null,
 					11: null,
-					12: null
+					12: null,
+					19: 31
 				},
 				noRetry: true
 			},
@@ -4281,6 +4395,22 @@ module.exports = {
 				}
 			},
 			30: {
+				length: [1750, 1025],
+				distance: [100, 0],
+				inPlace: {
+					movement: [
+						[{
+							duration: 1757,
+							speed: 1,
+							unk: 1,
+							distance: 0
+						}],
+						[]
+					],
+					distance: [0, 0]
+				}
+			},
+			31: {
 				length: [1750, 1025],
 				distance: [100, 0],
 				inPlace: {
@@ -4464,13 +4594,17 @@ module.exports = {
 				length: 3240,
 				noInterrupt: [1, 3, 4, 5, 6, 8, 9, 10, 11, 14, 20],
 				chains: {
-					12: 1
+					'12-0': 1,
+					'12-30': 31,
+					19: 30
 				}
 			},
 			1: {
 				length: 2040,
 				noInterrupt: ['12-1']
-			}
+			},
+			30: { length: 3240 },
+			31: { length: 2040 }
 		},
 		13: { // Soul Reversal
 			0: {
@@ -4508,11 +4642,24 @@ module.exports = {
 					7692002: { chain: 'invalid' },
 					9692002: { chain: 'invalid' }
 				}
-			}/*,
+			},
+			30: {
+				fixedSpeed: 1,
+				length: 1575,
+				abnormals: {
+					7692002: { chain: 'invalid' },
+					9692002: { chain: 'invalid' }
+				}
+			},/*
 			80: { // cannot emulate triggering animation
 				length: 990,
 				distance: 276.7
-			}*/
+			},*/
+			81: {
+				requiredBuff: 10151240,
+				length: 990,
+				distance: 276.7
+			}
 		},
 		16: { // Shadow Reaping
 			0: {
@@ -4536,9 +4683,49 @@ module.exports = {
 				}
 			}
 		},
+		19: {	// Reverse Scythe Retrival
+			'*': {
+				chains: {
+					4: 30,
+					5: 30
+				}
+			},
+			0: {
+			},
+			30: {
+				distance: 0.03,
+				length: 2600
+			}
+		},
 		/*20: { // Cable Step
 			0: { length: 1250 }	// cannot emulate this skill
 		},*/
+		21: {	// Scythe Retrival
+			'*': {
+				chains: {
+					4: 30,
+					5: 30
+				}
+			},
+			0: {
+			},
+			30: {
+				distance: 70,
+				length: 1470
+			}
+		},
+		23: { // Restraining Chains
+			0: {
+				distance: 100,
+				length: 1275
+			},
+			31: {
+				fixedSpeed: 1,
+				length: 1990
+			},
+			33: {
+			}
+		},
 		40: { // Shadow Step
 			'*': {
 				length: 700,
@@ -4559,6 +4746,11 @@ module.exports = {
 			},
 			0: true,
 			30: true
+		},
+		910: { // Apex Urgency
+			0: {
+				length: 500
+			}
 		}
 	},
 	9: { // Gunner
@@ -4966,6 +5158,77 @@ module.exports = {
 				},
 				//forceClip: true,
 				noRetry: true
+			}
+		},
+		41: { // Beam Panel: Summon
+			"*": {
+				instantStamina: true,
+				fixedSpeed: true,
+				length: 2190,
+				stamina: 1000,
+				noInterrupt: [41],
+			},
+			1: true,
+			2: true,
+			30: true //?
+		},
+		42: { // Beam Panel: Blast
+			1: {
+				noRetry: true,
+				fixedSpeed: true,
+				length: 632,
+				//noInterrupt: [42],
+			}
+		},
+		43: { // Arcane Ray
+			'*': {
+				noRetry: true,
+				fixedSpeed: 1,
+				length: 876
+			},
+			1: {
+				distance: -108.2,
+			},
+			3: {
+				distance: -216.42,
+			},
+			30: {
+				distance: -108.2,
+			},
+			31: {
+				distance: -105,
+				length: 1669
+			},
+			50: {
+				distance: -216.42,
+			},
+			51: {
+				distance: -210,
+				length: 1669
+			}
+		},
+		44: { // Beam Panel: Balder's Vengeance
+			'*': {
+				length: 5813,
+				fixedSpeed: 1,
+				noInterrupt: [44],
+				distance: -269
+			},
+			1: true,
+			2: true
+		},
+		47: { // Beam Panel: Carpet Bombing
+			'*': {
+				distance: -129.74,
+				length: 5190,
+			},
+			1: true,
+			2: true,
+			30: true
+		},
+		910: { // Apex Urgency
+			0: {
+				length: 500
 			}
 		}
 	},
@@ -6079,9 +6342,16 @@ module.exports = {
 		},
 		8: { // Fire Avalanche
 			'*': {
-				triggerAbnormal: { 10154080: 10000 },
+				abnormals: {
+					32033: { speed: 1.2 },
+					32058: { speed: 1.3 }
+				},
+				noRetry: true
+			},
+			0: {
 				length: [700, 1366, 333],
 				distance: [0, 367.31, 0],
+				triggerAbnormal: { 10154080: 10000 },
 				abnormals: {
 					32033: { speed: 1.2 },
 					32058: { speed: 1.3 },
@@ -6104,10 +6374,8 @@ module.exports = {
 					18: 30,
 					19: 30,
 					20: 30
-				},
-				noRetry: true
+				}
 			},
-			0: true,
 			1: {
 				triggerAbnormal: { 10154081: 5000 },
 				length: [1366, 333],
@@ -6118,7 +6386,42 @@ module.exports = {
 				length: [1366, 333],
 				distance: [455.47, 0]
 			},
-			30: true
+			30: {
+				length: [700, 1366, 333],
+				distance: [0, 367.31, 0]
+			},
+			31: {
+				length: [700, 1366, 333],
+				distance: [0, 367.31, 0],
+				triggerAbnormal: { 10154080: 10000 },
+				abnormals: {
+					32033: { speed: 1.2 },
+					32058: { speed: 1.3 },
+					10154080: { chain: 1 },
+					10154081: { chain: 2 }
+				},
+				chains: {
+					1: 30,
+					3: 30,
+					4: 30,
+					5: 30,
+					6: 30,
+					7: 30,
+					9: 30,
+					12: 30,
+					13: 30,
+					14: 30,
+					15: 30,
+					16: 30,
+					18: 30,
+					19: 30,
+					20: 30
+				}
+			},
+			51: {						// with enlightment
+				requiredBuff: 10154480,
+				length: [2200, 866]
+			}
 		},
 		9: { // Smoke Bomb
 			'*': { 
@@ -6152,9 +6455,11 @@ module.exports = {
 					501322: { chain: 'invalid' },
 					501323: { chain: 'invalid' }
 				}
+				// which glyph leads to action 31(no null chain)?
 			},
 			0: true,
-			30: true
+			30: true,
+			31: true
 		},
 		11: { // Focus
 			'*': {
@@ -6295,6 +6600,11 @@ module.exports = {
 			9: {
 				triggerAbnormal: { 10154069: 850 },
 				consumeAbnormal: 10154068
+			},
+			31: {
+				requiredBuff: 10154480,
+				length: 2400,
+				stamina: 0
 			}
 		},
 		16: { // Death Blossom
@@ -6401,6 +6711,80 @@ module.exports = {
 			0: {
 				fixedSpeed: 1,
 				length: 1275
+			}
+		},
+		21: { //Boomerrang shuriken
+			10:	{	//1st cast
+				length: 1000,
+				abnormals: {
+					10154301: { chain: 11 },
+					10154351: { chain: 50 }
+				}
+			},
+			11: { length: 1000 }, //2nd cast
+			12: {	//1st cast with enlightment
+				length: 1000,
+				abnormals: {
+					10154301: { chain: 13 },
+					10154351: { chain: 51 }
+				}
+			},
+			13: { length: 1000 }, //2nd cast with enlightment
+			50: { length: 1600 }, //3rd cast
+			51: { length: 1600 }, //3rd cast with enlightment
+		},
+		22: { //Lightning thrust RIP... bunch of chains
+			10: {
+				distance: 125,
+				length: 1300,
+				chains: {
+					19: 30
+				}
+			},
+			20: { distance: 125 },	// unused?
+			30: { 
+				distance: 80,
+				length: 2250
+			},
+			40: { 
+				distance: 125,
+				length: 1300,
+				chains: {
+					19: 60		// with enlightment
+				}
+			},
+			50: { distance: 125 },	// unused?
+			60: { 
+				distance: 80,
+				length: 2250
+			},
+
+		},
+		23: { //Enlightenment RIP... bunch of chains
+			0: {
+				length: 2085,
+				chains: {
+					1: 30,
+					4: 30,
+					5: 30,
+					6: 30,
+					7: 30,
+					8: 30,
+					9: 30,
+					12: 30,
+					14: 30,
+					13: 30,
+					15: 30,
+					16: 30,
+					18: 30,
+					20: 30
+				}
+			},
+			30: { length: 2085 }
+		},
+		910: { // Awakening Eyes Aura
+			0: {
+				length: 500
 			}
 		}
 	},
@@ -6948,6 +7332,56 @@ module.exports = {
 				length: 925,
 				requiredBuff: 10155201
 			}
+		},
+		23: {	// Half Moon Slice
+			'*': {
+				length: 900
+			},
+			0: {
+				abnormals: {
+					10155530: { chain: 2 }
+				}
+			},	// 1st cast
+			1: true,	// unused?
+			2: true,	// 2nd cast
+		},
+		24: {	// Barbaric Aggression
+			'*': {
+				distance: 0.07,
+				length: 1590,
+				abnormals: {
+					10155540: { chains: 2 },
+					10155541: { chains: 3 },
+					10155541: { chains: 4 }
+				}
+			},
+			0: true,
+			1: true,	// unused?
+			2: { length: 1250 },
+			3: { length: 1540 },
+			4: { length: 4240 }
+		},
+		25: {	// War Cry
+			0: {
+				length: 2655,
+				chains: {
+					24: 31
+				}
+			},
+			1: true,
+			2: {
+				abnormals: {
+					10155510: { chain: 3 }
+				}
+			},
+			3: { length: [755, 3720] },
+			9: true,
+			31: { length: 3035 },
+			32: true,
+			99: true
+		},
+		910: { // Awakening Eyes Aura
+			0: { length: 500 }
 		}
 	}
 }
