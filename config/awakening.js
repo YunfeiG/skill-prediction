@@ -2353,7 +2353,7 @@ module.exports = {
 				distance: 167.63,
 				abnormals: {
 					//24120: { speed: 1.3 },	//broken in this patch
-					401400: { chain: 'invalid' }
+					//401400: { chain: 'invalid' }	
 				},
 				noInterrupt:[1, 4, 6, 13, 18, 24, 25, 26, 28, 29, 31],
 				chains: {
