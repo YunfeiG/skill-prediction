@@ -2440,12 +2440,13 @@ module.exports = {
 				}
 			},
 			0: {
+				abnormals: {
+					401404: { chain: 31 },
+					401400: { chain: 1 }
+				},
 				noInterrupt: [2, 4, 6, '8-30', 11, 13, 24, 25, 26, 27, 28, 29, '32-0'],
 				interruptibleWithAbnormal: { 
 					401404: [2]
-				}, 
-				abnormals: {
-					401404: { chain: 31 }
 				},
 				chains: {
 					1: 30,
