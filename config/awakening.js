@@ -2355,7 +2355,7 @@ module.exports = {
 					//24120: { speed: 1.3 },	//broken in this patch
 					//401400: { chain: 'invalid' }	
 				},
-				noInterrupt:[1, 4, 6, 13, 18, 24, 25, 26, 28, 29, 31, 32],
+				noInterrupt:[1, 4, 6, 13, 18, 24, 25, 26, 28, 29, 30, 31, 32],
 				chains: {
 					'3-10': 30,
 					'3-11': 30,
