@@ -2440,7 +2440,7 @@ module.exports = {
 				}
 			},
 			0: {
-				noInterrupt: [2, 4, 6, '8-30', 11, 13, 18, 24, 25, 26, 27, 28, 29, '32-0'],
+				noInterrupt: [2, 4, 6, '8-30', 11, 13, 24, 25, 26, 27, 28, 29, '32-0'],
 				interruptibleWithAbnormal: { 
 					401404: [2]
 				}, 
@@ -2452,6 +2452,7 @@ module.exports = {
 					3: 30,
 					10: 30,
 					15: 30,
+					18: 30,
 					30: 31,
 					31: 30,
 					32: 31
@@ -4776,7 +4777,7 @@ module.exports = {
 			1: {
 				type: 'lockonCast',
 				triggerAbnormal: { 10152082: 4100 },
-				stamina: 1100,
+				stamina: 1000,
 				instantStamina: true,
 				length: 3000,
 				glyphs: {
@@ -5163,7 +5164,7 @@ module.exports = {
 		41: { // Beam Panel: Summon
 			"*": {
 				instantStamina: true,
-				fixedSpeed: true,
+				fixedSpeed: 1,
 				length: 2190,
 				stamina: 1000,
 				noInterrupt: [41],
@@ -5175,7 +5176,7 @@ module.exports = {
 		42: { // Beam Panel: Blast
 			1: {
 				noRetry: true,
-				fixedSpeed: true,
+				fixedSpeed: 1,
 				length: 632,
 				//noInterrupt: [42],
 			}
