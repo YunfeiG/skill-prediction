@@ -3317,18 +3317,17 @@ module.exports = {
 		},
 		8: { // Rapid Fire
 			'*': { 
-				noRetry: true,
-				noInterrupt: [22] // this actually doesn't do anything
+				noRetry: true
 			},
 			0: { 
 				length: 433, // 445
-				noInterrupt: [6] 
+				noInterrupt: [5, 6, '8-6', 22] 
 			},
-			1: { length: 600 },
+			1: { length: 700 },
 			2: { length: 700 },
-			3: { length: 800 },
+			3: { length: 700 },
 			4: { length: 700 },
-			5: { length: 800 },
+			5: { length: 700 },
 			6: { length: 1233 } // 1240
 		},
 		9: { // Slow Trap
@@ -3379,9 +3378,12 @@ module.exports = {
 		},
 		19: { // Poison Arrow
 			0: { 
-				length: 1125,
+				length: 1102.36,
 				distance: -12.5,
 				noInterrupt: [22],
+				abnormals: {
+					26100: { speed: 1.25 }
+				},
 				race: {
 					8: { distance: -12.17 } // Popori, 12.167
 				}
@@ -6399,6 +6401,7 @@ module.exports = {
 				distance: [455.47, 0]
 			},
 			30: {
+				triggerAbnormal: { 10154080: 10000 },
 				length: [700, 1366, 333],
 				distance: [0, 367.31, 0]
 			},
@@ -6721,6 +6724,7 @@ module.exports = {
 		},
 		20: { // Clone Jutsu
 			0: {
+				onlyTarget: true,
 				fixedSpeed: 1,
 				length: 1275
 			}
